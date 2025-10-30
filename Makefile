@@ -15,6 +15,8 @@ JVM_MEMORY ?= -Xmx1g -Xms512m
 JAVA_HOME_11 = C:/Users/willy/OpenJDK11U-jdk_x86-32_windows_hotspot_11.0.24_8/jdk-11.0.24+8
 JAVA_BIN = $(JAVA_HOME_11)/bin/java
 JAVAC_BIN = $(JAVA_HOME_11)/bin/javac
+JAVADOC_BIN = $(JAVA_HOME_11)/bin/javadoc
+DOCS_DIR = $(PROJECT_ROOT)/docs
 
 # VM arguments from the launch configuration - Windows-compatible format
 VM_ARGS = -XX:+IgnoreUnrecognizedVMOptions \
@@ -55,11 +57,22 @@ PROGRAM_ARGS = $(PROJECT_ROOT)/single-facility.rs
 .PHONY: help
 help:
 	@echo "Available targets:"
+	@echo ""
+	@echo "Simulation:"
 	@echo "  validate           - Compile and validate the simulation code"
+	@echo "  compile           - Compile Java source files"
 	@echo "  run-eclipse-headless - Information about running via Eclipse"
 	@echo "  create-run-script  - Create a helper batch script"
-	@echo "  compile           - Compile Java source files"  
+	@echo ""
+	@echo "Documentation:"
+	@echo "  docs              - Generate all documentation (Javadoc + Quarto)"
+	@echo "  javadoc           - Generate API documentation (Javadoc only)"
+	@echo "  website           - Build Quarto website"
+	@echo "  website-preview   - Build and preview website locally"
+	@echo ""
+	@echo "Utilities:"
 	@echo "  clean             - Clean compiled files"
+	@echo "  clean-docs        - Clean generated documentation"
 	@echo "  debug-classpath   - Show classpath information for debugging"
 	@echo "  help              - Show this help message"
 	@echo ""
@@ -118,7 +131,7 @@ validate: compile
 	@echo "To run: Use Eclipse with the launcher configuration"
 	@echo "  File: launchers/single-facility Model.launch"
 
-# Target for batch runs - optimized for command line  
+# Target for batch runs - optimized for command line
 .PHONY: run-batch
 run-batch:
 	@echo "Running batch simulation..."
@@ -139,11 +152,59 @@ compile:
 	@mkdir -p $(BIN_DIR)
 	find src -name "*.java" -exec "$(JAVAC_BIN)" -cp "$(CLASSPATH)" -d $(BIN_DIR) {} +
 
+# Target to generate Javadoc documentation
+.PHONY: javadoc
+javadoc: compile
+	@echo "Generating Javadoc documentation..."
+	@mkdir -p $(DOCS_DIR)
+	"$(JAVADOC_BIN)" -d $(DOCS_DIR) -sourcepath src \
+		-cp "$(BIN_DIR)$(CLASSPATH_SEP)$(REPAST_BIN_JAR)$(CLASSPATH_SEP)$(REPAST_CORE_JARS)" \
+		agents agentcontainers builders data disease processes utils \
+		-windowtitle "Single-Facility Disease Transmission Model" \
+		-doctitle "Single-Facility Disease Transmission Model (Repast Simphony)" \
+		-use -version -author -linksource
+	@echo "Javadoc generated successfully!"
+	@echo "View documentation at: $(DOCS_DIR)/index.html"
+
+# Target to generate Quarto website
+.PHONY: website
+website:
+	@echo "Building Quarto website..."
+	quarto render
+	@echo "Website built successfully!"
+	@echo "View website at: ./_site/index.html"
+
+# Target to preview website locally
+.PHONY: website-preview
+website-preview:
+	@echo "Building and previewing Quarto website..."
+	quarto preview
+
+# Target to generate all documentation (Javadoc + Quarto)
+.PHONY: docs
+docs: javadoc website
+	@echo ""
+	@echo "=========================================="
+	@echo "All documentation generated successfully!"
+	@echo "=========================================="
+	@echo ""
+	@echo "Javadoc:     $(DOCS_DIR)/index.html"
+	@echo "Website:     ./_site/index.html"
+	@echo ""
+
 # Clean compiled files
 .PHONY: clean
 clean:
 	@echo "Cleaning compiled files..."
 	rm -rf $(BIN_DIR)/*
+
+# Clean documentation files
+.PHONY: clean-docs
+clean-docs:
+	@echo "Cleaning documentation files..."
+	rm -rf $(DOCS_DIR)
+	rm -rf ./_site
+	@echo "Documentation cleaned!"
 
 # Development target - compile and run
 .PHONY: dev

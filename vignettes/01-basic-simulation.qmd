@@ -1,0 +1,321 @@
+---
+title: "Basic Simulation"
+subtitle: "Running Your First Simulation and Interpreting Results"
+---
+
+## Overview
+
+This vignette walks through running a single simulation with default parameters and interpreting the output.
+
+## Setup
+
+### Prerequisites
+
+- Java 11 installed
+- Repast Simphony 2.11.0 configured
+- Project compiled (`make compile`)
+
+### Default Parameters
+
+The baseline configuration uses realistic parameters for CRE transmission in long-term acute care:
+
+```yaml
+Transmission:
+  - Beta: 0.0615
+  - Isolation effectiveness: 0.5
+
+Importation:
+  - Rate: 20.6% of new admits
+
+Surveillance:
+  - Admission testing: 91.1% adherence
+  - Periodic testing: Every 14 days, 95.4% adherence
+
+Decolonization:
+  - Average duration: 387 days (~13 months)
+```
+
+## Running the Simulation
+
+### Eclipse Method
+
+1. **Right-click project** → Run As → Java Application
+2. **Select** `SingleFacilityBuilder`
+3. **Click** the green Run button
+4. **Wait** for "Simulation completed" message (typically 5-15 minutes)
+
+### Command Line Method
+
+```bash
+make compile  # If not already done
+make run-batch
+```
+
+### Monitoring Progress
+
+Watch the console output:
+
+```
+Simulation starting...
+Building simulation...
+Simulation initialized
+Tick: 1.0
+Tick: 100.0
+Tick: 200.0
+...
+Tick: 5475.0 (End of simulation)
+Simulation completed
+```
+
+## Output Files
+
+After completion, you'll have these files in your project root:
+
+### `simulation_results.txt`
+
+Summary statistics from the entire run:
+
+```
+Total Admissions: 12,500
+Total Patient-Days: 3,250,000
+Mean LOS: 26.0 days
+Average Daily Census: 297.8
+
+Measurement Period Results:
+  Admissions (5-year): 4,250
+  Patient-Days (5-year): 1,085,000
+
+Disease Prevalence (5-year average): 12.3%
+Disease Incidence: 8.7 per 100 admissions
+
+Detected Cases: 567
+Surveillance Detections: 423
+Clinical Detections: 144
+```
+
+### `daily_population_stats.txt`
+
+Time series data, one row per day:
+
+```
+Tick,Population,Colonized,Isolated,IncidenceCount,PrevalencePercent
+3651.0,298,32,18,2,10.74
+3652.0,302,33,19,1,10.93
+3653.0,300,31,16,3,10.33
+...
+```
+
+### Event Log Files
+
+#### `admissions.txt`
+```
+Time: 3651.50, Patient ID: 1024, Importation: true
+Time: 3652.25, Patient ID: 1025, Importation: false
+Time: 3653.75, Patient ID: 1026, Importation: true
+```
+
+#### `clinicalDetection.txt`
+```
+Time: 3660.33, Patient ID: 1002, Disease: CRE
+Time: 3671.50, Patient ID: 1015, Disease: CRE
+```
+
+#### `surveillance.txt`
+```
+Time: 3651.0, Patient ID: 1024, Disease: CRE, Result: Positive
+Time: 3651.0, Patient ID: 1025, Disease: CRE, Result: Negative
+```
+
+#### `transmissions.txt` (if enabled)
+```
+Time: 3660.75, Source: 988, Target: 1003, Disease: CRE
+Time: 3670.25, Source: 1015, Target: 1027, Disease: CRE
+```
+
+#### `decolonization.txt`
+```
+Time: 4001.50, Patient ID: 1002, Disease: CRE
+Time: 4015.33, Patient ID: 1008, Disease: CRE
+```
+
+## Interpreting Results
+
+### Key Metrics
+
+**Census (Population)**
+- Target: ~300 patients (based on facility size)
+- Variation: ±20 due to random admission/discharge timing
+- Steady-state should be reached by end of burn-in
+
+**Prevalence** (% of population colonized)
+- Baseline: 12-15% typical
+- Reflects balance of importation, transmission, detection, and decolonization
+- Low prevalence (< 5%): Good infection control
+- High prevalence (> 25%): Poor infection control or high transmission
+
+**Incidence** (new cases per 100 admissions)
+- Baseline: 8-12 typical
+- Includes both importation and nosocomial transmission
+- Rising incidence suggests increasing transmission risk
+
+**Detection Rates**
+- Surveillance detections: Should capture ~90% of colonized admissions
+- Clinical detections: Should be low (only undetected cases developing symptoms)
+
+### Stability Indicators
+
+**Good simulation characteristics:**
+
+1. ✅ Population stabilizes around target (after burn-in)
+2. ✅ Prevalence oscillates within expected range (no trends)
+3. ✅ Detection ratio matches surveillance adherence
+4. ✅ Event logs show continuous admission/discharge pattern
+
+**Warning signs:**
+
+1. ⚠️ Population declining → Admission rate too low
+2. ⚠️ Prevalence trending upward → Increasing transmission
+3. ⚠️ Few detection events → Check surveillance settings
+4. ⚠️ Few transmission events → Beta too low
+
+## Analysis in R
+
+### Load and Plot Results
+
+```r
+library(tidyverse)
+library(ggplot2)
+
+# Load daily statistics
+daily_stats <- read_csv("daily_population_stats.txt")
+
+# Plot population over time
+daily_stats %>%
+  ggplot(aes(x = Tick)) +
+  geom_line(aes(y = Population), color = "blue") +
+  geom_hline(yintercept = 300, linetype = "dashed", color = "red") +
+  labs(
+    title = "Facility Census Over Time",
+    x = "Simulation Day",
+    y = "Number of Patients"
+  ) +
+  theme_minimal()
+
+# Plot prevalence over time
+daily_stats %>%
+  ggplot(aes(x = Tick, y = PrevalencePercent)) +
+  geom_line(color = "darkred") +
+  geom_smooth(method = "loess", color = "red", alpha = 0.2) +
+  labs(
+    title = "Disease Prevalence Over Time",
+    x = "Simulation Day",
+    y = "Prevalence (%)"
+  ) +
+  theme_minimal()
+```
+
+### Load Event Data
+
+```r
+# Load admissions
+admissions <- read.csv("admissions.txt", sep = ",")
+
+# Count imported vs. acquired cases
+admitted <- read.table("admissions.txt", sep = ",", header = FALSE)
+colnames(admitted) <- c("Label1", "Time", "Label2", "PatientID", "Label3", "Importation")
+
+import_count <- sum(admitted$Importation == "true")
+acquired_count <- sum(admitted$Importation == "false")
+
+cat("Imported cases:", import_count, "\n")
+cat("Acquired cases:", acquired_count, "\n")
+```
+
+## Troubleshooting
+
+### Simulation Crashes Early
+
+**Symptoms**: "Exception in thread..." message
+
+**Causes**:
+- Invalid parameters in `parameters.xml`
+- Output directory not writable
+- Memory issues (increase `-Xmx1g` in Eclipse launcher)
+
+**Solution**: Check console output for specific error message
+
+### No Output Files Generated
+
+**Symptoms**: Files not created after simulation completes
+
+**Causes**:
+- `isBatchRun = true` (set to false for individual outputs)
+- Output directory permission issues
+- Simulation didn't actually complete
+
+**Solution**: Check console and ensure output directory is writable
+
+### Files Generated but Are Empty
+
+**Symptoms**: Files exist but contain no data
+
+**Causes**:
+- No events occurred during measurement period
+- Parameters set events to zero probability
+
+**Solution**: Increase simulation duration or adjust parameters
+
+### Simulation Too Slow
+
+**Symptoms**: Running longer than 15 minutes
+
+**Causes**:
+- Population too large (> 1000 patients)
+- Too many scheduled events
+- Disk I/O bottleneck
+
+**Solution**:
+- Reduce population target
+- Use batch mode for multiple runs
+- Run on faster machine
+
+## Variations to Try
+
+### 1. Stronger Transmission
+
+Change `longTermAcuteCareBeta` from 0.0615 to 0.15:
+
+- **Expected**: Prevalence increases, more transmission events
+- **Interpretation**: More aggressive strain or worse infection control practices
+
+### 2. No Surveillance
+
+Set `doActiveSurveillanceAfterBurnIn` to false:
+
+- **Expected**: Higher prevalence, detection only via clinical symptoms
+- **Interpretation**: Baseline infection control without active testing
+
+### 3. Isolation Ineffective
+
+Set `isolationEffectiveness` to 0:
+
+- **Expected**: Prevalence stays high even with detection
+- **Interpretation**: Inability to prevent transmission from isolated patients
+
+## Next Steps
+
+- **Explore Parameters**: See [Parameters](../docs/parameters.qmd) guide
+- **Learn the Model**: Read [Model Overview](../docs/model-overview.qmd)
+- **Compare Scenarios**: Try the [Surveillance Comparison](02-surveillance-comparison.qmd) vignette
+- **Analyze Sensitivity**: See [Parameter Sensitivity](03-parameter-sensitivity.qmd) vignette
+
+## Summary
+
+You now understand:
+
+✓ How to run simulations
+✓ What outputs are generated
+✓ How to interpret key statistics
+✓ How to identify issues
+
+The next vignette explores how surveillance strategies affect outcomes.
