@@ -48,7 +48,7 @@ jobs:
 
       - name: Install required R packages
         run: |
-        Rscript -e "install.packages(c('ggplot2','dplyr','knitr','readr','tidyr','rmarkdown'), repos='https://cloud.r-project.org/')"
+          Rscript -e "install.packages(c('ggplot2','dplyr','knitr','readr','tidyr','rmarkdown'), repos='https://cloud.r-project.org/')"
 
       - name: Compile Java sources
         run: |
