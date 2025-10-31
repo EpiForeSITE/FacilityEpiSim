@@ -57,6 +57,12 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private int sumDailyClinicalDetections = 0;
 	public ArrayList<DischargedPatient> dischargedPatients = new ArrayList<DischargedPatient>();
 	private Context<Object> context;
+	private double admissionsIntraEventTime = 21.1199 / 75.0;
+	private int[] facilitySize = { 75 };
+	private int[] facilityType = { 0 };
+	private double[] meanLOS = { 27.1199026 };
+	private int numDiseases = 1;
+	private int[] diseaseList = { 1 };
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		this.context = context;
@@ -77,7 +83,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		scheduleEvents();
 
 		// Oct 4, 2024 WRR:Start admissions process
-		Admission admit = new Admission(21.1199 / 75.0, facility);
+		Admission admit = new Admission(admissionsIntraEventTime, facility);
 		admit.start();
 
 		// Oct 4, 2024 WRR: schedule annotated methods on this builder class.
@@ -148,8 +154,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	public void setupAgents() {
 		// System.out.println("Setting up AGENTS");
 
-		int numDiseases = 1;
-		int[] diseaseList = { 1 }; // Generic disease type ID
+		 // Generic disease type ID
 		for (int i = 0; i < numDiseases; i++) {
 			Disease disease = new Disease();
 			disease.setSimIndex(i);
@@ -157,10 +162,6 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 			region.getDiseases().add(disease);
 			disease.setDiseaseName("CRE");
 		}
-
-		int[] facilitySize = { 75 };
-		int[] facilityType = { 0 };
-		double[] meanLOS = { 27.1199026 };
 
 		for (int i = 0; i < region.getFacilities().size(); i++) {
 			Facility f = region.getFacilities().get(i);
