@@ -9,6 +9,7 @@ import org.apache.commons.math3.distribution.GammaDistribution;
 import repast.simphony.engine.schedule.ISchedulableAction;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.random.RandomHelper;
 import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
@@ -37,8 +38,6 @@ public class Facility extends AgentContainer{
 	private int numDaysTallied = 0;
 	private double patientDays;
 	private int numAdmissions = 0;
-	private double admissionSurveillanceAdherence = 0.911;
-	private double midstaySurveillanceAdherence = 0.954;
 	private ExponentialDistribution distro;
 	private ISchedule schedule;
 	private ISchedulableAction nextAction;
@@ -52,11 +51,13 @@ public class Facility extends AgentContainer{
 	private int totalImports;
 	private PrintWriter admissionsWriter;
 	public boolean importation;
+	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 	
 	// Constructor
 	public Facility() {
 		super();
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
+		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		region = new Region(this);
 		try {
 			if(!SingleFacilityBuilder.isBatchRun) {
@@ -76,6 +77,7 @@ public class Facility extends AgentContainer{
 	}
 	
 	public void admitPatient(Person p){
+		double admissionSurveillanceAdherence = params.getDouble("admissionSurveillanceAdherence");
 		region.importToFacilityNew(this,p);
 	    
 		logPatientAdmission(schedule.getTickCount(), p.hashCode(), (boolean) p.getProperty("importation"));
@@ -256,11 +258,9 @@ public class Facility extends AgentContainer{
 	}
 
 	public double getMidstaySurveillanceAdherence() {
+		double  midstaySurveillanceAdherence = params.getDouble("midstaySurveillanceAdherence");
+		
 	    return midstaySurveillanceAdherence;
-	}
-
-	public void setMidstaySurveillanceAdherence(double midstaySurveillanceAdherence) {
-	    this.midstaySurveillanceAdherence = midstaySurveillanceAdherence;
 	}
 
 	public void setType(int type) {
