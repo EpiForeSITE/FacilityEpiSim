@@ -1,0 +1,193 @@
+---
+title: "Model Overview"
+---
+
+## Disease Transmission Dynamics
+
+The model simulates disease transmission using a **modified SIS (Susceptible-Infected-Susceptible) framework**:
+
+### Disease States
+
+Each patient has an associated `PersonDisease` object that tracks:
+
+- **Susceptible**: Patient is not colonized
+- **Colonized**: Patient is asymptomatic carrier of the disease
+- **Clinically Infected**: Patient shows symptoms (detected or not)
+
+### State Transitions
+
+```
+Susceptible
+    ↓ (transmission event)
+Colonized
+    ├→ Clinically Detected (surveillance or symptoms)
+    └→ Decolonized (natural clearance)
+        ↓
+Susceptible
+```
+
+## Disease Importation
+
+### Admission-Based Importation
+
+When a new patient is admitted:
+
+1. **Importation probability** (`importationRate`, default: 0.206) determines if they arrive colonized
+2. If colonized, they immediately enter the **Colonized** state
+3. They begin shedding and can transmit to other patients
+
+### Configuration
+
+```xml
+<parameter name="importationRate" value="0.206"/>
+<!-- Probability (0-1) that new admits arrive colonized -->
+```
+
+## Transmission
+
+### Beta-Based Transmission
+
+Disease transmission within the facility follows a **contact transmission model**:
+
+- **Beta coefficient** (`longTermAcuteCareBeta`, default: 0.0615)
+  - Probability of transmission per unit time between colonized and susceptible patient
+  - Accounts for contact rates, pathogen viability, and inoculum size
+
+- **Transmission rate** is updated when:
+  - Patient is admitted
+  - Patient is discharged
+  - Isolation status changes
+  - Surveillance testing changes
+
+### Isolation Effectiveness
+
+When a patient is isolated:
+
+- **Isolation effectiveness** (`isolationEffectiveness`, default: 0.5)
+  - Multiplier applied to beta when patient is isolated
+  - 0.5 = 50% reduction in transmission probability
+  - Represents practice like hand hygiene, PPE, contact precautions
+
+## Surveillance & Detection
+
+### Active Surveillance Testing
+
+#### Admission Surveillance
+- **Triggered**: When patient admitted (if `onActiveSurveillance = true`)
+- **Probability**: `probSurveillanceDetection` per disease
+- **Adherence**: `admissionSurveillanceAdherence` (default: 0.911)
+- **Outcome**: If positive, patient is isolated
+
+#### Periodic Surveillance
+- **Interval**: `daysBetweenMidstaySurveillanceTests` (default: 14 days)
+- **Adherence**: `midstaySurveillanceAdherence` (default: 0.954)
+- **Scheduling**: Starts when patient is admitted
+
+### Clinical Detection
+
+- **Natural detection**: Colonized patients may develop symptoms and be detected
+- **Detection rate**: Exponentially-distributed with mean `avgTimeToClinicDetection`
+- **Isolation**: Clinically detected patients are immediately isolated
+
+## Decolonization
+
+### Spontaneous Clearance
+
+- **Duration**: Exponentially-distributed with mean `avgDecolonizationTime` (default: 387 days)
+- **Outcome**: Patient transitions from Colonized → Susceptible
+- **No intervention**: Does not require treatment in the baseline model
+
+## Population Dynamics
+
+### Patient Flow
+
+1. **Admission**
+   - Continuous process with rate `newPatientAdmissionRate`
+   - Length of stay (LOS) sampled from facility-specific distribution
+
+2. **Length of Stay**
+   - Type 0 (LTAC): Mixture of two gamma distributions
+     - 62.5% probability: Gamma(shape=7.6, scale=3.4) days
+     - 37.5% probability: Gamma(shape=1.2, scale=23.5) days
+
+3. **Discharge**
+   - Patient is removed when LOS expires
+   - Transmission contribution is updated
+   - Patient statistics (patient-days) are recorded
+
+## Simulation Timeline
+
+### Burn-In Period (10 years)
+
+- Allows system to reach equilibrium
+- No statistics collected
+- No patient tracking
+- Sets up realistic initial conditions
+
+### Measurement Period (5 years)
+
+- All statistics are collected
+- Event logs are recorded
+- Output files are generated
+
+### Key Time Representations
+
+- **1.0 tick** = 1 day
+- **1.5 tick** = midday (0.5 × 24 hours into the day)
+- **Total duration** = 5475 ticks = 15 years (10 burn-in + 5 measurement)
+
+## Facility Types
+
+Currently supports one facility type:
+
+### Type 0: Long-Term Acute Care (LTAC)
+
+- High prevalence of comorbidities
+- Longer stays than acute care
+- Higher disease transmission risk
+- Default for single-facility model
+
+## Output Statistics
+
+### Summary Statistics
+- Total admissions and patient-days
+- Prevalence of colonization
+- Incidence of disease
+- Detection rates
+- Transmission events
+
+### Time Series Data
+- Daily population size
+- Daily prevalence
+- Daily incidence
+- Cumulative outcomes
+
+### Event Logs
+- Each admission with importation status
+- Each transmission event
+- Each clinical/surveillance detection
+- Each decolonization event
+
+## Key Assumptions
+
+1. **Homogeneous mixing**: All patients have equal contact probability (modified by isolation)
+2. **Independent diseases**: Multiple diseases tracked independently
+3. **Perfect detection**: Detected patients are immediately and perfectly isolated
+4. **No treatment**: Decolonization only through natural clearance
+5. **No reinfection**: Once decolonized, patients are not immediately re-infected
+6. **Exponential distributions**: Natural processes follow exponential distributions
+
+## Model Limitations
+
+- Single facility (no multi-facility transmission)
+- No spatial structure (everyone can contact everyone)
+- No seasonality effects
+- No staff agents (only patient populations)
+- Simplified detection and isolation mechanics
+- No cost/economic considerations
+
+## Next Steps
+
+- See [Parameters](parameters.qmd) for detailed configuration options
+- Review [Getting Started](getting-started.qmd) to run your first simulation
+- Check [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd) for practical examples

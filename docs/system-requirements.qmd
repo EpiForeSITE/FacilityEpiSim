@@ -1,0 +1,161 @@
+---
+title: "System Requirements"
+---
+
+## Java Development Kit (JDK)
+
+### Required Version
+- **Java 11** (specified in Makefile)
+- Java 17+ is supported but requires recompilation with Java 11 for consistency
+
+### Installation
+
+#### Windows
+1. Download [OpenJDK 11](https://adoptopenjdk.net/) (or your preferred distribution)
+2. Extract to a known location (e.g., `C:\jdk-11`)
+3. Add to system PATH or use in Makefile
+
+#### macOS
+```bash
+brew install openjdk@11
+```
+
+#### Linux
+```bash
+sudo apt-get install openjdk-11-jdk
+```
+
+## Repast Simphony 2.11.0
+
+### Installation
+
+1. **Download** from [Repast Homepage](https://repast.github.io/)
+2. **Extract** to a known location (e.g., `C:\repastSimphony-2.11.0`)
+3. **Update Makefile** with `REPAST_HOME` path if different from default
+
+### Eclipse Plugin
+
+1. Open Eclipse
+2. Help → Install New Software
+3. Add repository: `https://repast.github.io/updates/`
+4. Select Repast Simphony 2.11.0
+5. Install and restart Eclipse
+
+## Development Tools
+
+### Eclipse IDE
+- **Recommended**: Eclipse 2021-12 or later
+- Install Repast Simphony plugin (see above)
+- Install Java Development Tools (usually pre-installed)
+
+### Git
+```bash
+# Windows
+choco install git
+
+# macOS
+brew install git
+
+# Linux
+sudo apt-get install git
+```
+
+### Make (Build Automation)
+- **Windows**: Install [GNU Make](http://gnuwin32.sourceforge.net/packages/make.htm)
+- **macOS**: `brew install make` (usually pre-installed)
+- **Linux**: `sudo apt-get install make` (usually pre-installed)
+
+## Optional: Analysis & Visualization
+
+### R & RStudio
+For analyzing simulation outputs:
+
+1. **Install R**: https://www.r-project.org/
+2. **Install RStudio**: https://www.rstudio.com/
+3. **Install packages**:
+   ```r
+   install.packages(c("tidyverse", "ggplot2", "dplyr", "readr"))
+   ```
+
+### Quarto
+For building documentation:
+
+```bash
+# Install from https://quarto.org/docs/get-started/
+# Then verify:
+quarto --version
+```
+
+## Verifying Your Installation
+
+### Check Java
+```bash
+java -version
+# Should output: openjdk version "11.0.x"
+```
+
+### Check Repast
+```bash
+# Should be able to open Eclipse with Repast plugin
+# File → New → Other → Repast Simphony Project
+```
+
+### Check Make
+```bash
+make --version
+# Should output: GNU Make x.x.x
+```
+
+### Check Quarto
+```bash
+quarto --version
+# Should output: 1.x.x or later
+```
+
+## Environment Variables
+
+### Recommended Setup (Windows)
+
+Add to your system environment:
+
+```
+JAVA_HOME=C:\path\to\jdk-11
+REPAST_HOME=C:\path\to\repastSimphony-2.11.0
+```
+
+Verify:
+```bash
+echo %JAVA_HOME%
+echo %REPAST_HOME%
+```
+
+### Update Makefile (if needed)
+
+If your paths differ from defaults, update:
+
+```makefile
+JAVA_HOME_11 = C:/path/to/jdk-11
+REPAST_HOME = C:/path/to/repastSimphony-2.11.0
+```
+
+## Troubleshooting
+
+### "JAVA_HOME not set" error
+- Install Java 11 (see above)
+- Set `JAVA_HOME` environment variable
+- Restart terminal/IDE
+
+### "Repast plugins not found"
+- Verify `REPAST_HOME` points to correct installation
+- Ensure Repast was properly extracted
+- Update path in Makefile if needed
+
+### "Make command not found"
+- Install GNU Make
+- Verify it's in your system PATH
+- Use `make --version` to confirm
+
+### Eclipse won't open Repast projects
+- Ensure Repast Simphony plugin is installed
+- Restart Eclipse
+- Check Help → About to see installed features

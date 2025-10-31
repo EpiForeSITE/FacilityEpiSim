@@ -1,0 +1,290 @@
+---
+title: "Disease Transmission Mechanisms"
+---
+
+## Overview
+
+Disease transmission in this model is governed by a **contact-based, rate-driven approach** using exponential distributions and probability-based state transitions.
+
+## Mathematical Framework
+
+### Transmission Rate
+
+The force of infection (lambda) at any time is calculated as:
+
+$$\lambda(t) = \beta \times S(t) \times I(t)$$
+
+Where:
+- **β** = transmission coefficient (adjusted for isolation)
+- **S(t)** = number of susceptible patients
+- **I(t)** = number of infectious/colonized patients
+
+### Isolation Adjustment
+
+When a patient is isolated:
+
+$$\beta_{isolated} = \beta \times (1 - \text{isolationEffectiveness})$$
+
+Example: With `isolationEffectiveness = 0.5`:
+- Original β = 0.0615
+- Isolated β = 0.0615 × (1 - 0.5) = 0.03075
+- Transmission risk is cut in half
+
+### Time to Next Event
+
+The time until the next transmission event follows an exponential distribution:
+
+$$P(T \leq t) = 1 - e^{-\lambda t}$$
+
+The inter-event time is sampled as:
+
+$$t_{event} = -\frac{\ln(U)}{\lambda}$$
+
+Where U is a uniform random variable on [0, 1).
+
+## Implementation in Code
+
+### FacilityOutbreak.updateTransmissionRate()
+
+This method recalculates β dynamically:
+
+```java
+public void updateTransmissionRate(Region region) {
+    // Count susceptible and infected patients
+    int susceptible = 0;
+    int infected = 0;
+
+    for (Person p : region.getPeople()) {
+        if (p.getDiseases().get(diseaseIndex).isColonized()) {
+            infected++;
+
+            // Adjust for isolation
+            if (p.isIsolated()) {
+                infectedAdjusted += (1 - isolationEffectiveness);
+            } else {
+                infectedAdjusted += 1.0;
+            }
+        } else {
+            susceptible++;
+        }
+    }
+
+    // Update lambda
+    double lambda = baseBeta * susceptible * infectedAdjusted;
+    scheduleNextTransmissionEvent(lambda);
+}
+```
+
+## Transmission Events
+
+### Event Scheduling
+
+1. **Calculate current force of infection** based on population state
+2. **Sample time to next event** from exponential distribution
+3. **Schedule transmission event** at calculated time
+4. **At event time**:
+   - Select random susceptible patient
+   - Select random infected patient
+   - Transmit disease (susceptible → colonized)
+   - Recalculate transmission rate
+   - Schedule next event
+
+### Population Changes
+
+When population changes (admission/discharge):
+
+1. **Transmission rate is recalculated**
+2. **Previous scheduled event is cancelled**
+3. **New event is scheduled**
+4. This ensures dynamics respond immediately to population shifts
+
+## Disease States & Transitions
+
+### State Diagram
+
+```
+┌─────────────┐
+│ Susceptible │
+└──────┬──────┘
+       │
+       │ (transmission)
+       ▼
+┌──────────────┐
+│  Colonized   │
+└──────┬───────┘
+       │
+       ├─ (detected) ──→ Isolated
+       │
+       └─ (decolonization) ──→ Susceptible
+```
+
+### Colonized → Detected
+
+**Pathways**:
+
+1. **Surveillance Testing** (if active)
+   - Probability: `probSurveillanceDetection`
+   - Adherence: `admissionSurveillanceAdherence` or `midstaySurveillanceAdherence`
+   - Result: Immediate isolation if detected
+
+2. **Clinical Detection** (spontaneous)
+   - Rate: Exponential with mean `avgTimeToClinicDetection`
+   - Occurs regardless of surveillance
+   - Result: Immediate isolation if detected
+
+**Code**:
+```java
+// Surveillance detection
+if (onActiveSurveillance && uniform() < probSurveillanceDetection * adherence) {
+    pd.setDetected(true);
+    p.isolate();
+}
+
+// Clinical detection timer
+if (pd.isColonized()) {
+    pd.startClinicalDetectionTimer();  // Scheduled
+}
+```
+
+### Colonized → Decolonized
+
+**Mechanism**: Spontaneous natural clearance (no treatment required)
+
+**Rate**: Exponential with mean `avgDecolonizationTime` (default: 387 days)
+
+**Code**:
+```java
+double decolonizationTime = exponential(1.0 / avgDecolonizationTime);
+pd.startDecolonizationTimer();  // Scheduled
+```
+
+## Importation Mechanism
+
+### Admission-Based Importation
+
+When a new patient is admitted:
+
+```java
+boolean isImported = (uniform() < importationRate);
+if (isImported) {
+    // Patient arrives colonized
+    newPatient.getPersonDisease(disease).setColonized(true);
+}
+```
+
+**Effect**:
+- Probability `importationRate` that new admits are colonized
+- Immediately contributes to transmission force
+- Can trigger surveillance detection if active
+
+## Surveillance Detection
+
+### Admission Testing
+
+**When**: Upon admission (if active surveillance enabled)
+
+**Probability**:
+```
+P(detection) = probSurveillanceDetection × admissionSurveillanceAdherence
+```
+
+**Default values**:
+- `probSurveillanceDetection` = ~0.95 (per test)
+- `admissionSurveillanceAdherence` = 0.911
+
+**Expected outcome**: ~87% of colonized admits detected
+
+### Periodic Testing
+
+**Interval**: Every `daysBetweenTests` days (default: 14)
+
+**Probability**:
+```
+P(detection) = probSurveillanceDetection × midstaySurveillanceAdherence
+```
+
+**Default values**:
+- `midstaySurveillanceAdherence` = 0.954
+
+**Effect**: ~91% of tests performed detect colonization
+
+## Isolation Effectiveness
+
+### Model Implementation
+
+Isolation works by **reducing transmission risk**:
+
+1. When detected, patient is isolated
+2. Isolation multiplier = `1 - isolationEffectiveness`
+3. This reduces transmission from that patient by the isolation factor
+
+### Example Scenarios
+
+**No isolation** (`isolationEffectiveness = 0`):
+- Detected patients still transmit at full rate β
+
+**Partial isolation** (`isolationEffectiveness = 0.5`):
+- Detected patients transmit at β/2
+- Represents contact precautions, PPE, hand hygiene
+
+**Perfect isolation** (`isolationEffectiveness = 1.0`):
+- Detected patients do not transmit (β = 0)
+- Unrealistic but useful for theoretical analysis
+
+### Code
+```java
+double betaAdjusted = beta;
+if (patient.isIsolated()) {
+    betaAdjusted = beta * (1 - isolationEffectiveness);
+}
+```
+
+## Key Simplifications
+
+1. **Homogeneous mixing**: All patients have equal contact probability (ignoring actual spatial/social structure)
+2. **No strain variation**: All disease copies are identical
+3. **Instant isolation**: Detected patients are immediately isolated
+4. **Perfect adherence**: If isolated, patient truly maintains isolation
+5. **No superinfection**: Colonized patients cannot be re-colonized
+6. **No recovery to immunity**: Decolonized patients return to susceptible state
+
+## Parameter Sensitivity
+
+### High Impact on Transmission
+- `longTermAcuteCareBeta` - Direct multiplier on force of infection
+- `importationRate` - Seeding of disease
+- `isolationEffectiveness` - Reduces transmission from detected cases
+
+### Medium Impact
+- `avgDecolonizationTime` - Affects colonized prevalence
+- `daysBetweenTests` - Affects detection timing
+
+### Lower Impact
+- `probClinicalDetection` - Natural detection pathway
+- Detection adherence rates - Affects who gets tested
+
+## Validation Approaches
+
+### Analytical Comparison
+- Compare against SIS model solutions
+- Check R₀ calculations
+
+### Sensitivity Analysis
+- Vary β, importation rate
+- Verify outputs scale predictably
+
+### Boundary Conditions
+- β = 0: No transmission
+- importationRate = 0: Eventually disease-free
+- isolationEffectiveness = 1: Elimination when all detected
+
+### Empirical Validation
+- Run with known parameters
+- Compare outputs to published studies
+- See [Parameter Sensitivity Vignette](../vignettes/03-parameter-sensitivity.qmd)
+
+## Next Steps
+
+- See [Model Overview](model-overview.qmd) for broader context
+- Review [Parameters](parameters.qmd) for tuning transmission
+- Explore [Parameter Sensitivity Vignette](../vignettes/03-parameter-sensitivity.qmd) for empirical results

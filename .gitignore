@@ -46,7 +46,7 @@ new_analysis/.quarto/
 new_analysis/_freeze/RHome/*
 
 /.quarto/
-/docs/
+
 /.claude/
 /CLAUDE.md
 _site/*
