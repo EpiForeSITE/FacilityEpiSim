@@ -15,6 +15,7 @@ import repast.simphony.context.Context;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.util.ContextUtils;
 import utils.TimeUtils;
+import utils.MixedGamma;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -53,7 +54,16 @@ public class Facility extends AgentContainer{
 	public boolean importation;
 	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 	
-	// Constructor
+	// LOS distribution parameters (set by builder to avoid re-reading Parameters here)
+	private double shape1;
+	private double scale1;
+	private double shape2;
+	private double scale2;
+	private double prob1;
+	// Mixed LOS distribution
+	private MixedGamma losDistro;
+    
+    // Constructor
 	public Facility() {
 		super();
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
@@ -139,15 +149,10 @@ public class Facility extends AgentContainer{
 
 	public double getRandomLOS(){
 		if(getType()==0){
-
-			double shape1 = 7.6019666;
-			double scale1 = 3.4195217;
-			double shape2 = 1.2327910;
-			double scale2 = 23.5214724;
-			double prob1 = 0.6253084;
-
-			if(uniform() < prob1) return gamma(shape1,scale1);
-			else return gamma(shape2,scale2);
+			if (losDistro == null) {
+				losDistro = new MixedGamma(shape1, scale1, shape2, scale2, prob1);
+			}
+			return losDistro.sample();
 		}
 		else{
 			return -1.0;
@@ -245,6 +250,27 @@ public class Facility extends AgentContainer{
 	public void setIsolationEffectiveness(double isolationEffectiveness) {
 		this.isolationEffectiveness = isolationEffectiveness;
 	}
+
+    public void setShape1(double shape1) { this.shape1 = shape1; }
+    public void setScale1(double scale1) { this.scale1 = scale1; }
+    public void setShape2(double shape2) { this.shape2 = shape2; }
+    public void setScale2(double scale2) { this.scale2 = scale2; }
+    public void setProb1(double prob1) { this.prob1 = prob1; }
+    // Convenience: set all LOS parameters at once and rebuild distribution
+    public void setLOSParams(double shape1, double scale1, double shape2, double scale2, double prob1) {
+        this.shape1 = shape1;
+        this.scale1 = scale1;
+        this.shape2 = shape2;
+        this.scale2 = scale2;
+        this.prob1 = prob1;
+        this.losDistro = new MixedGamma(shape1, scale1, shape2, scale2, prob1);
+    }
+    public double getShape1() { return shape1; }
+    public double getScale1() { return scale1; }
+    public double getShape2() { return shape2; }
+    public double getScale2() { return scale2; }
+    public double getProb1() { return prob1; }
+
 	public int getPopulationSize() {
 		return getCurrentPatients().size();
 	}

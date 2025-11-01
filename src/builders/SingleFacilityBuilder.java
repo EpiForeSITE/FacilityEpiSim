@@ -63,6 +63,11 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private double[] meanLOS = { 27.1199026 };
 	private int numDiseases = 1;
 	private int[] diseaseList = { 1 };
+	private double shape1;
+	private double scale1;
+	private double shape2;
+	private double scale2;
+	private double prob1;
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		this.context = context;
@@ -70,12 +75,28 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+
+		shape1 = params.getDouble("shape1");
+		scale1 = params.getDouble("scale1");
+		shape2 = params.getDouble("shape2");
+		scale2 = params.getDouble("scale2");
+		prob1 = params.getDouble("prob1");
+
 		isolationEffectiveness = params.getDouble("isolationEffectiveness");
 		doActiveSurveillanceAfterBurnIn = params.getBoolean("doActiveSurveillanceAfterBurnIn");
 		daysBetweenTests = params.getDouble("daysBetweenTests");
 		isBatchRun = params.getBoolean("isBatchRun");
 
 		facility = new Facility();
+		facility.setShape1(shape1);
+		facility.setScale1(scale1);
+		facility.setShape2(shape2);
+		facility.setScale2(scale2);
+		facility.setProb1(prob1);
+		facility.setMeanLOS((shape1 * scale1 * prob1) + (shape2 * scale2 * (1 - prob1)));
+		meanLOS = new double[] { facility.getMeanLOS() };
+		System.out.println("Facility LOS distribution parameters: shape1=" + shape1 + ", scale1=" + scale1
+				+ ", shape2=" + shape2 + ", scale2=" + scale2 + ", prob1=" + prob1+"meanLOS="+facility.getMeanLOS());
 		this.region = new Region(facility);
 		facility.setRegion(region);
 		setupAgents();
@@ -251,7 +272,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 				writer.println(patient.toString());
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+		 e.printStackTrace();
 		}
 	}
 

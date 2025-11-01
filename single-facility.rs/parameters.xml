@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <parameters>
-					<parameter name="extraIteration" displayName="Extra Iterations" type="int" 
-						defaultValue="1" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="nursingHomeBetaReduction" displayName="Nursing Home Beta Reduction Factor" type="double" 
-						defaultValue="10.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="allowImportationsDuringBurnIn" displayName="Allow Importations During Burn In" type="boolean" 
+					<parameter name="allowImportationsDuringBurnIn" displayName="Allow Importations During Burn In" type="boolean" 
 						defaultValue="false" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
@@ -25,23 +15,68 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="midstaySurveillanceAdherence" displayName="Midstay Surveillance Adherence" type="double" 
-						defaultValue="0.954" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
 				<parameter name="doActiveSurveillanceAfterBurnIn" displayName="doActiveSurveillanceAfterBurnIn" type="boolean" 
 						defaultValue="true" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="daysBetweenTests" displayName="daysBetweenTests" type="double" 
-						defaultValue="14.0" 
+				<parameter name="isolationEffectiveness" displayName="isolationEffectiveness" type="double" 
+						defaultValue="0.5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="isolationEffectiveness" displayName="isolationEffectiveness" type="double" 
-						defaultValue="0.5" 
+				<parameter name="diseaseName" displayName="Disease Name" type="java.lang.String" 
+						defaultValue="CRE" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
+											/>
+				<parameter name="shape1" displayName="Shape 1 Gamma" type="double" 
+						defaultValue="7.60197" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="shape2" displayName="Shape 2 Gamma" type="double" 
+						defaultValue="1.23279" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="importationRate" displayName="Importation Rate" type="double" 
+						defaultValue="0.206" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="acuteCareMeanDetectionTime" displayName="Acute Care Mean Detection Time" type="double" 
+						defaultValue="122.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="isActiveSurveillanceAgent" displayName="Is Active Surveillance Agent" type="boolean" 
+						defaultValue="true" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
+											/>
+				<parameter name="extraIteration" displayName="Extra Iterations" type="int" 
+						defaultValue="1" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
+				<parameter name="nursingHomeBetaReduction" displayName="Nursing Home Beta Reduction Factor" type="double" 
+						defaultValue="10.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="prob1" displayName="Probability 1 Gamma" type="double" 
+						defaultValue="0.62531" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="midstaySurveillanceAdherence" displayName="Midstay Surveillance Adherence" type="double" 
+						defaultValue="0.954" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="daysBetweenTests" displayName="daysBetweenTests" type="double" 
+						defaultValue="14.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
@@ -49,11 +84,6 @@
 						defaultValue="__NULL__"
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="diseaseName" displayName="Disease Name" type="java.lang.String" 
-						defaultValue="CRE" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
 											/>
 				<parameter name="longTermAcuteCareBeta" displayName="Long Term AcuteCareBeta" type="double" 
 						defaultValue="0.0615" 
@@ -80,13 +110,13 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="importationRate" displayName="Importation Rate" type="double" 
-						defaultValue="0.206" 
+				<parameter name="scale2" displayName="Scale 2 Gamma" type="double" 
+						defaultValue="23.52147" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="acuteCareMeanDetectionTime" displayName="Acute Care Mean Detection Time" type="double" 
-						defaultValue="122.0" 
+				<parameter name="scale1" displayName="Scale 1 Gamma" type="double" 
+						defaultValue="3.41952" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
@@ -99,11 +129,6 @@
 						defaultValue="0.8" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="isActiveSurveillanceAgent" displayName="Is Active Surveillance Agent" type="boolean" 
-						defaultValue="true" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
 		</parameters>
 
