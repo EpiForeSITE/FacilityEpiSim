@@ -95,8 +95,6 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		facility.setProb1(prob1);
 		facility.setMeanLOS((shape1 * scale1 * prob1) + (shape2 * scale2 * (1 - prob1)));
 		meanLOS = new double[] { facility.getMeanLOS() };
-		System.out.println("Facility LOS distribution parameters: shape1=" + shape1 + ", scale1=" + scale1
-				+ ", shape2=" + shape2 + ", scale2=" + scale2 + ", prob1=" + prob1+"meanLOS="+facility.getMeanLOS());
 		this.region = new Region(facility);
 		facility.setRegion(region);
 		setupAgents();
