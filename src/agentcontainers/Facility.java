@@ -256,7 +256,6 @@ public class Facility extends AgentContainer{
     public void setShape2(double shape2) { this.shape2 = shape2; }
     public void setScale2(double scale2) { this.scale2 = scale2; }
     public void setProb1(double prob1) { this.prob1 = prob1; }
-    // Convenience: set all LOS parameters at once and rebuild distribution
     public void setLOSParams(double shape1, double scale1, double shape2, double scale2, double prob1) {
         this.shape1 = shape1;
         this.scale1 = scale1;

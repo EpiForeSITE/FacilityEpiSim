@@ -53,8 +53,6 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private PrintWriter simulationOutputFile;
 	public static boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
-	private int sumDailyInfected = 0;
-	private int sumDailyClinicalDetections = 0;
 	public ArrayList<DischargedPatient> dischargedPatients = new ArrayList<DischargedPatient>();
 	private Context<Object> context;
 	private double admissionsIntraEventTime = 21.1199 / 75.0;
@@ -289,8 +287,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 				"surveillance_after_burn_in, isolation_effectiveness, days_between_tests, clinical_detections, mean_daily_prevalence, mean_discharge_prevalence, importation_prevalence, number_of_transmissions, sum_daily_infected, sum_daily_clinical_detections"
 		);
 		simulationOutputFile.println(doActiveSurveillanceAfterBurnIn + "," + isolationEffectiveness + ","
-				+ daysBetweenTests + "," + getClinicalDetections() + "," + getMeanDailyPrevalence() + "," + getMeanDischargePrevalence() + "," + getImportationPrevalence() + "," + getNumberOfTransmissions()
-				+ "," + sumDailyInfected + "," + sumDailyClinicalDetections + "\n");
+				+ daysBetweenTests + "," + getClinicalDetections() + "," + getMeanDailyPrevalence() + "," + getMeanDischargePrevalence() + "," + getImportationPrevalence() + "," + getNumberOfTransmissions());
 		simulationOutputFile.flush();
 		simulationOutputFile.close();
 		if (dailyStatsWriter != null) {
