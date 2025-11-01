@@ -15,6 +15,7 @@ import agentcontainers.Facility;
 import agentcontainers.Region;
 import agents.DischargedPatient;
 import agents.Person;
+import utils.MixedGamma;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -91,8 +92,10 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		facility.setShape2(shape2);
 		facility.setScale2(scale2);
 		facility.setProb1(prob1);
-		facility.setMeanLOS((shape1 * scale1 * prob1) + (shape2 * scale2 * (1 - prob1)));
+		MixedGamma mixedGamma = new MixedGamma(shape1, scale1, shape2, scale2, prob1);
+		facility.setMeanLOS(mixedGamma.getNumericalMean());
 		meanLOS = new double[] { facility.getMeanLOS() };
+		System.out.println("Mean LOS set to: " + facility.getMeanLOS());
 		this.region = new Region(facility);
 		facility.setRegion(region);
 		setupAgents();
