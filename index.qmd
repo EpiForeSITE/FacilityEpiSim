@@ -35,9 +35,9 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 ### Quick Start
 1. **Install Requirements**: Java 11 + Repast Simphony 2.11.0
 2. **Clone Repository**: Get the source code
-3. **Configure Parameters**: Edit `single-facility.rs/parameters.xml`
-4. **Run Simulation**: Launch through Eclipse or command line
-5. **Analyze Results**: Use R scripts in `new_analysis/`
+3. **Configure Parameters**: Via the Repast Model Runner
+4. **Run Simulation**: Via the Repast Model Runner
+5. **Analyze Results**: Use R scripts in `analysis/`
 
 👉 [Get Started →](docs/getting-started.qmd)
 
@@ -68,13 +68,26 @@ Explore the model through practical examples:
 If you use this model in research, please cite:
 
 ```bibtex
-@software{damon2024,
+@software{toth2024,
   title = {Single-Facility Disease Transmission Model},
-  author = {[Author Names]},
+  author = {Toth, Damon},
   year = {2024},
-  url = {https://github.com/anthropics/damon-single-facility}
+  url = {https://github.com/EpiForeSITE/single-facility},
+  orcid = {0000-0001-7393-4814}
 }
 ```
+
+### Authors & Maintainers
+
+**Authors:**
+- Damon Toth (damon.toth@hsc.utah.edu) — [ORCID: 0000-0001-7393-4814](https://orcid.org/0000-0001-7393-4814)
+
+**Maintainer:**
+- Willy Ray (william.ray@hsc.utah.edu)
+
+### Funding
+
+This project was supported by the **Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics** under Cooperative Agreement CDC-RFA-FT-23-0069.
 
 ## Resources
 

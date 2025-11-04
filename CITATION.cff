@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "Single-Facility Disease Transmission Model"
+message: "If you use this software, please cite it as below."
+type: software
+
+authors:
+  - family-names: "Toth"
+    given-names: "Damon"
+    email: "damon.toth@hsc.utah.edu"
+    orcid: "https://orcid.org/0000-0001-7393-4814"
+    affiliation: "University of Utah"
+
+maintainers:
+  - family-names: "Ray"
+    given-names: "Willy"
+    email: "william.ray@hsc.utah.edu"
+    affiliation: "University of Utah"
+
+contributors:
+  - family-names: "Toth"
+    given-names: "Damon"
+  - family-names: "Ray"
+    given-names: "Willy"
+
+funders:
+  - name: "Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics"
+    website: "https://www.cdc.gov/forecasting/index.html"
+    note: "Cooperative agreement CDC-RFA-FT-23-0069"
+
+repository-code: "https://github.com/EpiForeSITE/single-facility"
+url: "https://epiforesite.github.io/single-facility/"
+
+license: MIT
+keywords:
+  - disease-transmission
+  - agent-based-model
+  - healthcare-facility
+  - repast-simphony
+  - simulation
