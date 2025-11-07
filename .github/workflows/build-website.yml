@@ -50,11 +50,6 @@ jobs:
         run: |
           Rscript -e "install.packages(c('ggplot2','dplyr','knitr','readr','tidyr','rmarkdown'), repos='https://cloud.r-project.org/')"
 
-      - name: Compile Java sources
-        run: |
-          mkdir -p bin
-          find src -name "*.java" -exec javac -cp "lib/*" -d bin {} +
-        continue-on-error: true  # Continue even if some classes fail to compile
 
       - name: Generate Javadoc
         run: |
