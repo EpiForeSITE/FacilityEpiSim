@@ -1,0 +1,470 @@
+---
+title: "API Reference"
+---
+
+## Overview
+
+This page documents the public API of the Single-Facility Disease Transmission Model. For detailed source code documentation, see the [Javadoc](../docs/index.html).
+
+## Core Classes
+
+### `SingleFacilityBuilder`
+
+Main simulation controller.
+
+**Package**: `builders`
+
+**Key Methods**:
+
+```java
+public Context<Object> build(Context<Object> context)
+// Builds and initializes the simulation
+// Called automatically by Repast Simphony
+
+@ScheduledMethod(start = 1.0, interval = 1)
+public void updateDailyStatistics()
+// Updates and writes daily output statistics
+// Called once per simulation day
+
+public Context<Object> getContext()
+// Returns the Repast context
+
+public ISchedule getSchedule()
+// Returns the simulation schedule
+```
+
+**Configuration**:
+- Implements `ContextBuilder<Object>` interface
+- Scheduled methods call Facility updates
+- Manages output file writing
+
+---
+
+### `Facility`
+
+Healthcare facility agent and primary simulation container.
+
+**Package**: `agentcontainers`
+
+**Constructor**:
+```java
+public Facility()
+// Creates a new facility, initializes region and output writer
+```
+
+**Patient Management**:
+```java
+public void admitNewPatient(ISchedule sched)
+// Creates and admits a new patient to the facility
+
+public void admitPatient(Person p)
+// Integrates an existing patient into facility operations
+// Starts discharge timer, schedules surveillance, updates transmission
+
+public void dischargePatient(Person p)
+// Discharges patient, records statistics, cleans up
+```
+
+**Transmission & Surveillance**:
+```java
+public void updateTransmissionRate()
+// Recalculates transmission rates for all disease outbreaks
+// Called when population changes
+
+public void startActiveSurveillance()
+// Activates active surveillance testing
+// Typically called at end of burn-in period
+
+public void updatePopulationTally()
+// Records daily population statistics
+
+public void updateAdmissionTally(Person p)
+// Records admission for a patient
+
+public void updateStayTally(Person p)
+// Records length of stay for discharged patient
+```
+
+**Accessors**:
+```java
+public int getPopulationSize()
+// Returns current number of patients
+
+public LinkedList<Person> getCurrentPatients()
+// Returns list of active patients
+
+public ArrayList<FacilityOutbreak> getOutbreaks()
+// Returns list of disease outbreaks
+
+public Region getRegion()
+// Returns the facility's region
+
+public double getMeanLOS()
+public void setMeanLOS(double meanLOS)
+// Get/set mean length of stay
+
+public double getBetaIsolationReduction()
+public void setBetaIsolationReduction(double beta)
+// Get/set isolation effectiveness
+```
+
+**Utility Methods**:
+```java
+public double getRandomLOS()
+// Samples random length of stay from facility-specific distribution
+
+public double uniform()
+// Returns random double [0, 1)
+
+public double gamma(double shape, double scale)
+// Samples from gamma distribution
+
+public double exponential(double rate)
+// Samples from exponential distribution
+```
+
+---
+
+### `Person`
+
+Individual patient agent.
+
+**Package**: `agents`
+
+**Constructor**:
+```java
+public Person(Facility facility)
+// Creates new patient, initializes diseases, schedules events
+```
+
+**Facility Interaction**:
+```java
+public void admitToFacility(Facility facility)
+// Associates patient with facility
+
+public void isolate()
+// Puts patient in isolation
+
+public boolean isIsolated()
+// Checks isolation status
+```
+
+**Length of Stay**:
+```java
+public void startDischargeTimer(double los)
+// Schedules discharge after specified length of stay
+
+public double getCurrentLOS()
+// Returns time spent in facility
+```
+
+**Disease & Surveillance**:
+```java
+public ArrayList<PersonDisease> getDiseases()
+// Returns list of PersonDisease objects
+
+public void doSurveillanceTest()
+// Performs surveillance test on all diseases
+
+public void startNextPeriodicSurveillanceTimer()
+// Schedules next periodic surveillance test
+```
+
+**Accessors**:
+```java
+public Object getProperty(String key)
+public void setProperty(String key, Object value)
+// Get/set custom properties
+
+public int hashCode()
+// Returns unique patient identifier
+```
+
+---
+
+### `PersonDisease`
+
+Disease state tracking for an individual patient.
+
+**Package**: `disease`
+
+**Constructor**:
+```java
+public PersonDisease(Disease disease)
+// Creates disease state for a patient
+```
+
+**Status Queries**:
+```java
+public boolean isColonized()
+// Returns true if patient is colonized
+
+public boolean isDetected()
+// Returns true if disease has been detected
+
+public boolean isIsolated()
+// Returns true if patient is isolated due to this disease
+```
+
+**State Changes**:
+```java
+public void setDetected(boolean detected)
+// Marks disease as detected
+
+public void setDetectedBySurveillance()
+// Records surveillance-based detection
+
+public void startClinicalDetectionTimer()
+// Schedules spontaneous clinical detection
+
+public void startDecolonizationTimer()
+// Schedules natural decolonization
+
+public void decolonize()
+// Removes colonization immediately
+```
+
+**Accessors**:
+```java
+public Disease getDisease()
+// Returns associated Disease object
+
+public double getTimeToDetection()
+public void setTimeToDetection(double time)
+
+public double getTimeToDecolonization()
+public void setTimeToDecolonization(double time)
+```
+
+---
+
+### `FacilityOutbreak`
+
+Disease transmission management for a facility.
+
+**Package**: `disease`
+
+**Constructor**:
+```java
+public FacilityOutbreak(double meanIntraEventTime, Disease disease)
+// Creates outbreak tracker for a disease type
+```
+
+**Transmission**:
+```java
+public void updateTransmissionRate(Region region)
+// Recalculates transmission rate based on current population
+
+public void scheduleTransmissionEvent()
+// Schedules next transmission event
+```
+
+**Statistics**:
+```java
+public void updatePrevalenceTally()
+// Records daily prevalence
+
+public void updateAdmissionTally(PersonDisease pd)
+// Records admission statistics
+
+public void updateStayTally(PersonDisease pd)
+// Records patient-day statistics
+```
+
+**Accessors**:
+```java
+public Disease getDisease()
+public void setDisease(Disease disease)
+
+public Facility getFacility()
+public void setFacility(Facility facility)
+
+public double getCurrentBeta()
+// Returns current transmission rate
+```
+
+---
+
+### `Disease`
+
+Disease type definition and parameters.
+
+**Package**: `disease`
+
+**Key Methods**:
+```java
+public double getNextEventTime()
+// Samples time to next transmission event
+
+public boolean isActiveSurveillanceAgent()
+// Returns true if surveillance is available for this disease
+
+public double getProbSurveillanceDetection()
+// Returns detection probability per surveillance test
+
+public boolean isolatePatientWhenDetected()
+// Returns true if isolation is required upon detection
+```
+
+**Accessors**:
+```java
+public String getName()
+public void setName(String name)
+
+public double getMeanIntraEventTime()
+public void setMeanIntraEventTime(double meanTime)
+
+public double getProbClinicalDetection()
+public void setProbClinicalDetection(double prob)
+```
+
+---
+
+## Utility Classes
+
+### `TimeUtils`
+
+Time conversion utilities.
+
+**Package**: `utils`
+
+**Constants**:
+```java
+public static final double DAY = 1.0
+public static final double HOUR = DAY / 24.0
+public static final double MINUTE = HOUR / 60.0
+public static final double SECOND = MINUTE / 60.0
+```
+
+**Methods**:
+```java
+public static String tickToTime(double tick)
+// Converts tick to "Day X,H:MM" format
+
+public static ISchedule getSchedule()
+// Returns current Repast schedule
+```
+
+---
+
+### `Chooser`
+
+Random selection utilities.
+
+**Package**: `utils`
+
+**Methods**:
+```java
+public static Object choose(List<?> options, List<? extends Number> density)
+// Selects option with weighted probability
+// Example: choose([A, B], [0.3, 0.7]) → 30% returns A, 70% returns B
+
+public static Object chooseOne(List<?> options)
+// Selects option uniformly at random
+
+public static boolean coinFlip()
+// Returns true or false with equal probability
+
+public static boolean randomTrue(Double probability)
+// Returns true with given probability (0-1)
+// Throws IllegalArgumentException if probability outside [0, 1]
+```
+
+---
+
+## Common Usage Patterns
+
+### Creating a Simulation Run
+
+```java
+// In SingleFacilityBuilder.build()
+Facility facility = new Facility();
+facility.setMeanLOS(25.0);
+facility.setBetaIsolationReduction(0.5);
+
+Person patient = new Person(facility);
+facility.admitPatient(patient);
+```
+
+### Sampling Random Values
+
+```java
+// Uniform random [0, 1)
+double r = facility.uniform();
+
+// Exponential with mean 10
+double exponentialValue = facility.exponential(0.1);
+
+// Gamma distribution
+double gammaValue = facility.gamma(7.6, 3.4);
+
+// Weighted choice
+Object choice = Chooser.choose(
+    Arrays.asList("Option A", "Option B"),
+    Arrays.asList(0.3, 0.7)
+);
+```
+
+### Checking Disease Status
+
+```java
+Person patient = /* ... */;
+for (PersonDisease pd : patient.getDiseases()) {
+    if (pd.isColonized() && !pd.isDetected()) {
+        // Patient is undetected carrier
+    }
+}
+```
+
+### Time Conversion
+
+```java
+double tick = 100.5;
+String timeString = TimeUtils.tickToTime(tick);
+// Result: "Day 100,12:00"
+```
+
+---
+
+## Exceptions
+
+### `IllegalArgumentException`
+Thrown by:
+- `Chooser.randomTrue()` if probability outside [0, 1]
+- Various validation methods
+
+### `FileNotFoundException`
+Thrown by:
+- `Facility` constructor if output files cannot be created
+
+---
+
+## Threads & Concurrency
+
+The model is **not thread-safe**. Repast Simphony runs sequentially:
+- Do not modify agents from external threads
+- All event handling is sequential
+- Simulations can be run in parallel, but each is single-threaded
+
+---
+
+## Performance Notes
+
+### Large Population Runs
+- 1000+ patients: ~30+ minutes per run
+- Consider batch mode for multiple runs
+- Tune population target (`avgPopTarget`)
+
+### Transmission Rate Calculation
+- O(n) where n = colonized patients
+- Called on each admission/discharge
+- Can be optimized with caching
+
+---
+
+## For More Information
+
+- **Source Code**: See [Javadoc](../docs/index.html)
+- **Architecture**: See [Architecture & Design](architecture.qmd)
+- **Example Usage**: See [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd)
+- **Model Details**: See [Model Overview](model-overview.qmd)

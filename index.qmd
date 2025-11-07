@@ -1,0 +1,100 @@
+---
+title: "Single-Facility Disease Transmission Model"
+subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
+---
+
+## Overview
+
+This is an **agent-based model (ABM)** built with **Repast Simphony 2.11.0** for simulating disease transmission in healthcare facilities.
+
+The model simulates patient flow through a inpatient over approximately **15 years** (10-year burn-in + 5-year measurement period), tracking:
+
+- 🏥 Patient admissions, lengths of stay, and discharges
+- 🦠 Disease importation and transmission dynamics
+- 🔍 Clinical detection and active surveillance testing
+- 💊 Decolonization outcomes and isolation effectiveness
+- 📊 Epidemiological statistics and trends
+
+## Key Features
+
+### Model Dynamics
+- **Modified SIS Model**: Susceptible → Infected/Colonized → Susceptible transmission dynamics
+- **Importation**: Probability-based disease introduction via new patient admissions
+- **Transmission**: Beta coefficient-based contact transmission between patients
+- **Surveillance**: Active surveillance testing with configurable adherence rates
+- **Isolation**: Transmission reduction for detected/isolated patients
+
+### Output & Analysis
+- Comprehensive CSV outputs for time series analysis
+- Event logs for admissions, transmissions, detections, and decolonization
+- Batch running capabilities for parameter sweeps
+- Integration with R/Quarto for statistical analysis and visualization
+
+## Getting Started
+
+### Quick Start
+1. **Install Requirements**: Java 11 + Repast Simphony 2.11.0
+2. **Clone Repository**: Get the source code
+3. **Configure Parameters**: Via the Repast Model Runner
+4. **Run Simulation**: Via the Repast Model Runner
+5. **Analyze Results**: Use R scripts in `analysis/`
+
+👉 [Get Started →](docs/getting-started.qmd)
+
+## Documentation
+
+- **[Model Overview](docs/model-overview.qmd)** - Detailed model description and mechanisms
+- **[Parameters](docs/parameters.qmd)** - Configuration options and defaults
+- **[Architecture](docs/architecture.qmd)** - Code structure and design patterns
+- **[API Reference](docs/api-docs.qmd)** - Javadoc documentation
+
+## Vignettes & Examples
+
+Explore the model through practical examples:
+
+- **[Basic Simulation](vignettes/01-basic-simulation.qmd)** - Run your first simulation and interpret outputs
+- **[Surveillance Strategies](vignettes/02-surveillance-comparison.qmd)** - Compare different surveillance approaches
+- **[Parameter Sensitivity](vignettes/03-parameter-sensitivity.qmd)** - Analyze model sensitivity to key parameters
+
+## Time Representation
+
+**Important**: Time in this model is continuous floating-point in **days**:
+- `1.0` = Start of day 1
+- `1.5` = Midday of day 1
+- Default total: **5475 ticks** = 15 years
+
+## Citation
+
+If you use this model in research, please cite:
+
+```bibtex
+@software{toth2024,
+  title = {Single-Facility Disease Transmission Model},
+  author = {Toth, Damon},
+  year = {2024},
+  url = {https://github.com/EpiForeSITE/single-facility},
+  orcid = {0000-0001-7393-4814}
+}
+```
+
+### Authors & Maintainers
+
+**Authors:**
+- Damon Toth (damon.toth@hsc.utah.edu) — [ORCID: 0000-0001-7393-4814](https://orcid.org/0000-0001-7393-4814)
+
+**Maintainer:**
+- Willy Ray (william.ray@hsc.utah.edu)
+
+### Funding
+
+This project was supported by the **Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics** under Cooperative Agreement CDC-RFA-FT-23-0069.
+
+## Resources
+
+- [Repast Simphony Documentation](https://repast.github.io/docs/)
+- [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
+- [Quarto Documentation](https://quarto.org/docs/guide/)
+
+---
+
+**Last Updated**: {{< meta date-modified >}}

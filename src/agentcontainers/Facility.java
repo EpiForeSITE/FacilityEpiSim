@@ -21,6 +21,34 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * Represents a healthcare facility agent in the disease transmission simulation.
+ * <p>
+ * {@code Facility} is the primary container for managing patient agents, disease outbreaks,
+ * and healthcare operations. It tracks patient admissions, discharges, disease transmission,
+ * and surveillance testing within a single facility. The facility operates within a {@link Region}
+ * that coordinates multi-facility interactions if needed.
+ * Key responsibilities include:
+ * </p>
+ * <ul>
+ *   <li>Managing patient admission and discharge lifecycle</li>
+ *   <li>Maintaining disease outbreak tracking via {@link FacilityOutbreak} agents</li>
+ *   <li>Updating transmission rates based on current patient population</li>
+ *   <li>Recording surveillance testing and clinical detection events</li>
+ *   <li>Tracking statistics (patient days, admissions, population averages)</li>
+ * </ul>
+ * <p>
+ * The facility is configured with parameters including isolation effectiveness, surveillance
+ * adherence rates, and mean length of stay distributions specific to facility type.
+ * </p>
+ *
+ * @author [Project Team]
+ * @version 1.0
+ * @see Region
+ * @see FacilityOutbreak
+ * @see Person
+ * @see Disease
+ */
 public class Facility extends AgentContainer{
 
 
@@ -53,7 +81,15 @@ public class Facility extends AgentContainer{
 	public boolean importation;
 	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 	
-	// Constructor
+	/**
+	 * Constructs a new {@code Facility} agent.
+	 * Initializes the facility by:
+	 * <ul>
+	 *   <li>Getting the current simulation schedule from Repast Simphony</li>
+	 *   <li>Creating a new {@link Region} to manage this facility</li>
+	 *   <li>Opening an admissions log file (if not in batch mode)</li>
+	 * </ul>
+	 */
 	public Facility() {
 		super();
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
@@ -63,19 +99,41 @@ public class Facility extends AgentContainer{
 			if(!SingleFacilityBuilder.isBatchRun) {
             admissionsWriter = new PrintWriter("admissions.txt");
 			}
-        } 
+        }
 	 catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 	}
 
+	/**
+	 * Creates and admits a new patient to this facility.
+	 * Generates a new {@link Person} agent with diseases and calls {@link #admitPatient(Person)}
+	 * to integrate the patient into the facility. Increments the total admission counter.
+	 *
+	 * @param sched the simulation schedule (currently unused but retained for API compatibility)
+	 */
 	public void admitNewPatient(ISchedule sched) {
-		
+
 		Person newPatient = new Person(this);
 		admitPatient(newPatient);
 		totalAdmissions++;
 	}
-	
+
+	/**
+	 * Admits an existing patient to this facility.
+	 * Integrates a patient into facility operations by:
+	 * <ul>
+	 *   <li>Adding the patient to the facility's region and patient list</li>
+	 *   <li>Starting a discharge timer based on random length of stay</li>
+	 *   <li>Testing for colonized diseases via surveillance (if active surveillance enabled)</li>
+	 *   <li>Starting clinical detection timers for any colonized diseases</li>
+	 *   <li>Scheduling periodic surveillance tests (if enabled)</li>
+	 *   <li>Updating transmission rate contributions</li>
+	 *   <li>Recording admission statistics (if in measurement period)</li>
+	 * </ul>
+	 *
+	 * @param p the patient to admit
+	 */
 	public void admitPatient(Person p){
 		double admissionSurveillanceAdherence = params.getDouble("admissionSurveillanceAdherence");
 		region.importToFacilityNew(this,p);
@@ -113,10 +171,25 @@ public class Facility extends AgentContainer{
 
 		if(!getRegion().isInBurnInPeriod()) updateAdmissionTally(p);
 	}
+	/**
+	 * Discharges a patient from this facility.
+	 * Removes a patient from active operations by:
+	 * <ul>
+	 *   <li>Removing the patient from the facility's region and patient list</li>
+	 *   <li>Recording the discharge time</li>
+	 *   <li>Creating a {@link agents.DischargedPatient} record (if in measurement period)</li>
+	 *   <li>Updating stay statistics for tracking patient-days (if in measurement period)</li>
+	 *   <li>Canceling all scheduled events for the patient</li>
+	 *   <li>Removing the patient from the Repast context for garbage collection</li>
+	 *   <li>Updating transmission rates across all disease outbreaks</li>
+	 * </ul>
+	 *
+	 * @param p the patient to discharge
+	 */
 	public void dischargePatient(Person p){
 		region.people.remove(p);
-		
-		
+
+
 		getCurrentPatients().remove(p);
 		updateTransmissionRate();
 		SingleFacilityBuilder builder = getSimulationBuilder();
@@ -133,10 +206,27 @@ public class Facility extends AgentContainer{
 		p.setNoMoreEvents(true);
 	}
 
+	/**
+	 * Updates the transmission rate for all disease outbreaks in this facility.
+	 * <p>
+	 * Recalculates transmission rates across all tracked {@link FacilityOutbreak} agents
+	 * based on the current patient population and disease states. Called when the patient
+	 * population changes (admission or discharge).
+	 * </p>
+	 */
 	public void updateTransmissionRate(){
 		for(FacilityOutbreak fo : outbreaks) fo.updateTransmissionRate(region);
 	}
 
+	/**
+	 * Generates a random length of stay (LOS) for a patient based on facility type.
+	 * <p>
+	 * For type 0 facilities (long-term acute care), uses a mixture of two gamma distributions
+	 * to model realistic LOS patterns. Other facility types return -1.0.
+	 * </p>
+	 *
+	 * @return the random length of stay in days, or -1.0 if facility type is not recognized
+	 */
 	public double getRandomLOS(){
 		if(getType()==0){
 
@@ -154,6 +244,17 @@ public class Facility extends AgentContainer{
 		}
 	}
 
+	/**
+	 * Admits an initial patient during the facility setup phase (burn-in period).
+	 * <p>
+	 * Similar to {@link #admitPatient(Person)} but without surveillance testing or
+	 * admission statistics tracking, as these patients are used to establish a stable
+	 * population during the burn-in period. The patient's discharge is scheduled based
+	 * on the facility's mean length of stay.
+	 * </p>
+	 *
+	 * @param p the initial patient to admit
+	 */
 	public void admitInitialPatient(Person p){
 		p.admitToFacility(this);
 		p.startDischargeTimer(exponential(1.0/getMeanLOS()));
@@ -173,6 +274,13 @@ public class Facility extends AgentContainer{
 		p.updateAllTransmissionRateContributions();
 	}
 
+	/**
+	 * Updates the daily population statistics for this facility.
+	 * <p>
+	 * Calculates the running average population size and updates prevalence tallies
+	 * for each disease outbreak. Called once per simulation day.
+	 * </p>
+	 */
 	public void updatePopulationTally(){
 		avgPopulation = (avgPopulation * numDaysTallied + region.people.size() / (numDaysTallied + 1));
 		numDaysTallied++;
@@ -180,13 +288,22 @@ public class Facility extends AgentContainer{
 		for(FacilityOutbreak fo : outbreaks) {
 			fo.updatePrevalenceTally();
 		}
-			
+
 	}
 
+	/**
+	 * Updates statistics tracking patient-days for a discharged patient.
+	 * <p>
+	 * Increments the total patient-days counter and updates outbreak-specific
+	 * stay statistics for each disease tracked by the facility.
+	 * </p>
+	 *
+	 * @param p the discharged patient
+	 */
 	public void updateStayTally(Person p){
 		setPatientDays(getPatientDays() + p.getCurrentLOS());
-		
-		
+
+
 		if(!outbreaks.isEmpty()&&!p.personDiseases.isEmpty()) {
 		for(int i=0; i<outbreaks.size(); i++) {
 			outbreaks.get(i).updateStayTally(p.personDiseases.get(i));
@@ -194,13 +311,23 @@ public class Facility extends AgentContainer{
 		}
 	}
 
+	/**
+	 * Updates statistics tracking admissions and disease states.
+	 * <p>
+	 * Increments the admission counter and updates outbreak-specific admission tallies
+	 * for each disease tracked by the facility. Admission statistics are used to
+	 * calculate disease importation rates and endemic transmission patterns.
+	 * </p>
+	 *
+	 * @param p the admitted patient
+	 */
 	public void updateAdmissionTally(Person p){
 	    // Jan 10, 2025 WRR: it's appropriate to count the number of admissions in an int...
-	    // because it's a total count of all the admissions EVER, and most of them have been 
+	    // because it's a total count of all the admissions EVER, and most of them have been
 	    // discharged.  Things like current population size, or percentage of patients colonized
 	    // should wherever possible be calculated from the relevant collection of "live" patients
 		numAdmissions++;
-		
+
 		if(!outbreaks.isEmpty()&&!p.personDiseases.isEmpty()) {
 			for(int i=0; i<outbreaks.size(); i++) {
 				outbreaks.get(i).updateAdmissionTally(p.personDiseases.get(i));
@@ -208,20 +335,59 @@ public class Facility extends AgentContainer{
 		}
 	}
 
+	/**
+	 * Activates active surveillance testing in this facility.
+	 * <p>
+	 * Sets the flag to enable surveillance-based disease detection for all patients
+	 * after the burn-in period ends.
+	 * </p>
+	 */
 	public void startActiveSurveillance(){
 		onActiveSurveillance = true;
 	}
+
+	/**
+	 * Generates a uniform random number between 0 and 1.
+	 *
+	 * @return a random double in the range [0, 1)
+	 */
 	public double uniform() {
 		return Math.random();
 	}
+
+	/**
+	 * Samples from a gamma distribution with the specified shape and scale parameters.
+	 *
+	 * @param shape the shape parameter (k)
+	 * @param scale the scale parameter (θ)
+	 * @return a random sample from the gamma distribution
+	 */
 	public double gamma(double shape, double scale) {
 		GammaDistribution gammaDistribution = new GammaDistribution(shape, scale);
 		return gammaDistribution.sample();
 	}
+
+	/**
+	 * Samples from an exponential distribution with the specified rate parameter.
+	 *
+	 * @param rate the rate parameter (λ), where mean = 1/λ
+	 * @return a random sample from the exponential distribution
+	 */
 	public double exponential(double rate) {
 		ExponentialDistribution exponentialDistribution = new ExponentialDistribution(rate);
 		return exponentialDistribution.sample();
 	}
+
+	/**
+	 * Creates and registers a new disease outbreak for this facility.
+	 * <p>
+	 * Instantiates a {@link FacilityOutbreak} agent for tracking disease transmission
+	 * dynamics for a specific disease type.
+	 * </p>
+	 *
+	 * @param d the disease to track
+	 * @return the new FacilityOutbreak agent
+	 */
 	public FacilityOutbreak addOutbreaks(Disease d) {
 		FacilityOutbreak newOutbreak = new FacilityOutbreak(meanIntraEventTime, d);
 		newOutbreak.setFacility(this);

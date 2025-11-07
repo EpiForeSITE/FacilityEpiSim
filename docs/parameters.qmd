@@ -1,0 +1,211 @@
+---
+title: "Parameters Reference"
+---
+
+## Location
+
+All parameters are defined in: **`single-facility.rs/parameters.xml`**
+
+## Disease Parameters
+
+### Transmission
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `longTermAcuteCareBeta` | 0.0615 | 0.0 - 1.0 | Transmission rate coefficient per contact |
+| `isolationEffectiveness` | 0.5 | 0.0 - 1.0 | Multiplier for beta when patient isolated (0.5 = 50% reduction) |
+
+### Importation
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `importationRate` | 0.206 | 0.0 - 1.0 | Probability new admits arrive colonized |
+
+### Decolonization
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `avgDecolonizationTime` | 387 | > 0 | Mean time (days) for spontaneous clearance |
+
+### Clinical Detection
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `avgTimeToClinicDetection` | varies | > 0 | Mean time (days) to clinical detection |
+
+## Surveillance Parameters
+
+### Testing Intervals
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `daysBetweenTests` | 14 | > 0 | Interval (days) for periodic surveillance tests |
+
+### Adherence Rates
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `admissionSurveillanceAdherence` | 0.911 | 0.0 - 1.0 | Compliance rate for admission testing |
+| `midstaySurveillanceAdherence` | 0.954 | 0.0 - 1.0 | Compliance rate for periodic testing |
+
+### Activation
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `doActiveSurveillanceAfterBurnIn` | true | true/false | Enable surveillance after burn-in period |
+
+## Facility Parameters
+
+### Admission
+
+| Parameter | Default | Range | Description |
+|-----------|---------|-------|-------------|
+| `newPatientAdmissionRate` | (calculated) | > 0 | Admission rate (patients/time unit) |
+| `avgPopTarget` | (facility-specific) | > 0 | Target average daily census |
+
+### Length of Stay (LOS)
+
+For Type 0 (LTAC) facilities, LOS uses a mixture distribution:
+
+```
+60% of admissions:
+  - Shape: 7.6019666
+  - Scale: 3.4195217
+
+40% of admissions:
+  - Shape: 1.2327910
+  - Scale: 23.5214724
+```
+
+These parameters are hardcoded in `Facility.getRandomLOS()`
+
+## Simulation Control
+
+### Timing
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| Burn-in duration | 3650 ticks | 10 years without measurement |
+| Measurement period | 1825 ticks | 5 years with full output |
+| Total duration | 5475 ticks | 15 years total |
+
+### Batch Mode
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `isBatchRun` | false | true = suppress individual outputs, false = create CSV files |
+
+## Output Control
+
+### Individual Run Outputs
+
+When `isBatchRun = false`, generates:
+
+- `simulation_results.txt` - Summary statistics
+- `daily_population_stats.txt` - Time series data
+- `admissions.txt` - Admission events
+- `transmissions.txt` - Transmission events
+- `clinicalDetection.txt` - Detection events
+- `decolonization.txt` - Decolonization events
+- `surveillance.txt` - Surveillance test results
+
+### Batch Run Outputs
+
+When `isBatchRun = true`, generates:
+
+- Minimal output focused on summary statistics
+- Parameter mappings for sweep identification
+- Faster execution
+
+## Example Configuration
+
+### Default (Realistic Baseline)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Parameters>
+    <!-- Disease -->
+    <parameter name="longTermAcuteCareBeta" value="0.0615"/>
+    <parameter name="importationRate" value="0.206"/>
+    <parameter name="avgDecolonizationTime" value="387"/>
+    <parameter name="isolationEffectiveness" value="0.5"/>
+
+    <!-- Surveillance -->
+    <parameter name="daysBetweenTests" value="14"/>
+    <parameter name="admissionSurveillanceAdherence" value="0.911"/>
+    <parameter name="midstaySurveillanceAdherence" value="0.954"/>
+    <parameter name="doActiveSurveillanceAfterBurnIn" value="true"/>
+
+    <!-- Facility -->
+    <parameter name="avgPopTarget" value="300"/>
+    <parameter name="newPatientAdmissionRate" value="1.0"/>
+
+    <!-- Simulation -->
+    <parameter name="isBatchRun" value="false"/>
+</Parameters>
+```
+
+### High Transmission Scenario
+
+```xml
+<parameter name="longTermAcuteCareBeta" value="0.15"/>    <!-- 2.4x default -->
+<parameter name="isolationEffectiveness" value="0.2"/>    <!-- Less effective isolation -->
+<parameter name="avgDecolonizationTime" value="500"/>     <!-- Longer duration -->
+```
+
+### Intensive Surveillance Scenario
+
+```xml
+<parameter name="daysBetweenTests" value="7"/>            <!-- Weekly testing -->
+<parameter name="admissionSurveillanceAdherence" value="0.99"/>
+<parameter name="midstaySurveillanceAdherence" value="0.99"/>
+<parameter name="doActiveSurveillanceAfterBurnIn" value="true"/>
+```
+
+### No Intervention Baseline
+
+```xml
+<parameter name="doActiveSurveillanceAfterBurnIn" value="false"/>
+<parameter name="isolationEffectiveness" value="0"/>  <!-- No isolation benefit -->
+<parameter name="avgDecolonizationTime" value="387"/> <!-- Natural only -->
+```
+
+## Batch Parameter Sweeps
+
+For batch runs, use `single-facility.rs/batch_params.xml`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<batch>
+    <parameter name="longTermAcuteCareBeta" type="range" from="0.03" to="0.15" step="0.03"/>
+    <parameter name="importationRate" type="list">0.1, 0.206, 0.3</parameter>
+    <parameter name="doActiveSurveillanceAfterBurnIn" type="list">true, false</parameter>
+
+    <parameter name="isBatchRun" value="true"/>
+</batch>
+```
+
+## Parameter Sensitivity
+
+Key parameters for sensitivity analysis:
+
+1. **High sensitivity**: `longTermAcuteCareBeta`, `importationRate`
+2. **Medium sensitivity**: `daysBetweenTests`, `isolationEffectiveness`
+3. **Lower sensitivity**: `avgDecolonizationTime`, adherence rates
+
+See [Parameter Sensitivity Vignette](../vignettes/03-parameter-sensitivity.qmd) for empirical results.
+
+## Units & Scales
+
+All time-based parameters use **days**:
+
+- `avgDecolonizationTime = 387` → 387 days = 1.06 years
+- `daysBetweenTests = 14` → 14 days = 2 weeks
+- `avgPopTarget = 300` → 300 patients (absolute count)
+
+## Getting Started
+
+1. Use default parameters in `single-facility.rs/parameters.xml`
+2. Run [Basic Simulation](../vignettes/01-basic-simulation.qmd)
+3. Explore changes to specific parameters
+4. See [Parameter Sensitivity](../vignettes/03-parameter-sensitivity.qmd) for recommendations

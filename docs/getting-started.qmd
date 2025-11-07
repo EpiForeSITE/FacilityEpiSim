@@ -1,0 +1,167 @@
+---
+title: "Getting Started"
+---
+
+## Installation & Setup
+
+### System Requirements
+
+- **Java 11** (or later)
+- **Repast Simphony 2.11.0**
+- **Eclipse IDE** (recommended for development)
+- **R 4.0+** (for analysis scripts)
+- **Quarto 1.0+** (for building documentation)
+
+See [System Requirements](system-requirements.qmd) for detailed setup instructions.
+
+### Project Structure
+
+```
+damon-single-facility/
+├── src/                          # Java source code
+│   ├── agents/                   # Agent classes (Person, DischargedPatient)
+│   ├── agentcontainers/          # Container classes (Facility, Region)
+│   ├── builders/                 # Simulation builder (SingleFacilityBuilder)
+│   ├── disease/                  # Disease logic (Disease, FacilityOutbreak, PersonDisease)
+│   ├── processes/                # Process definitions (Admission)
+│   ├── data/                     # Data classes (PatientData)
+│   └── utils/                    # Utility classes (TimeUtils, Chooser)
+│
+├── single-facility.rs/           # Repast Simphony configuration
+│   ├── parameters.xml            # Parameter defaults
+│   ├── batch_params.xml          # Batch run configuration
+│   └── scenario.xml              # Scenario definition
+│
+├── launchers/                    # Eclipse launch configurations
+│   └── single-facility Model.launch
+│
+├── bin/                          # Compiled classes
+├── docs/                         # API documentation (Javadoc)
+├── new_analysis/                 # R analysis scripts
+└── Makefile                      # Build targets
+```
+
+## Running Your First Simulation
+
+### Option 1: Eclipse (Recommended)
+
+1. **Import Project**
+   - File → Import → General → Existing Projects into Workspace
+   - Select the project directory
+   - Click Finish
+
+2. **Configure Run**
+   - Right-click project → Run As → Java Application
+   - Select `SingleFacilityBuilder` as main class
+   - Use launcher: `launchers/single-facility Model.launch`
+
+3. **Run**
+   - Click the green Run button
+   - Monitor progress in the console
+
+### Option 2: Command Line
+
+```bash
+# Compile the project
+make validate
+
+# Run individual simulation
+make run-batch
+
+# Or use Eclipse headless mode
+```
+
+## Configuration
+
+### Parameters File
+
+Edit `single-facility.rs/parameters.xml` to configure:
+
+```xml
+<!-- Disease transmission -->
+<parameter name="longTermAcuteCareBeta" value="0.0615"/>
+
+<!-- Importation probability -->
+<parameter name="importationRate" value="0.206"/>
+
+<!-- Decolonization timing -->
+<parameter name="avgDecolonizationTime" value="387"/>
+
+<!-- Surveillance -->
+<parameter name="daysBetweenTests" value="14"/>
+<parameter name="admissionSurveillanceAdherence" value="0.911"/>
+<parameter name="midstaySurveillanceAdherence" value="0.954"/>
+
+<!-- Isolation effectiveness -->
+<parameter name="isolationEffectiveness" value="0.5"/>
+```
+
+See [Parameters](parameters.qmd) for complete documentation.
+
+## Understanding Output
+
+After running a simulation, check:
+
+- **`simulation_results.txt`** - Summary statistics and aggregates
+- **`daily_population_stats.txt`** - Time series data (one row per day)
+- **`admissions.txt`** - Patient admission events
+- **`transmissions.txt`** - Transmission events (if enabled)
+- **`clinicalDetection.txt`** - Clinical detection events
+- **`decolonization.txt`** - Decolonization outcomes
+- **`surveillance.txt`** - Surveillance test results
+
+Example output:
+```
+Time: 100.50, Patient ID: 12345, Importation: true
+Time: 102.75, Patient ID: 12346, Importation: false
+```
+
+## Building & Documentation
+
+### Generate Javadoc
+```bash
+make javadoc
+# Output: ./docs/index.html
+```
+
+### Build Website
+```bash
+quarto render
+# Output: ./_site/index.html
+```
+
+### Compile Code
+```bash
+make compile
+```
+
+## Next Steps
+
+- **Explore the Model**: Read [Model Overview](model-overview.qmd)
+- **Try a Vignette**: Start with [Basic Simulation](../vignettes/01-basic-simulation.qmd)
+- **Understand Parameters**: See [Parameters](parameters.qmd) guide
+- **Dive into Architecture**: Review [Architecture](architecture.qmd)
+
+## Troubleshooting
+
+### "Cannot find symbol" errors
+- Ensure Java 11 is being used: `java -version`
+- Check classpath includes Repast Simphony JARs
+- Run `make clean && make compile`
+
+### Simulation crashes on startup
+- Check `parameters.xml` for invalid values
+- Ensure output directory is writable
+- Review console output for specific errors
+
+### R analysis scripts fail
+- Install required packages: `install.packages(c("tidyverse", "ggplot2"))`
+- Check file paths in scripts
+- Ensure simulation output files exist
+
+## Resources
+
+- [Model Overview](model-overview.qmd)
+- [System Requirements](system-requirements.qmd)
+- [API Documentation](api-docs.qmd)
+- [Repast Simphony Guide](https://repast.github.io/docs/RepastReference/RepastReference.html)

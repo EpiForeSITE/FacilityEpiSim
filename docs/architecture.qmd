@@ -1,0 +1,331 @@
+---
+title: "Architecture & Design"
+---
+
+## Overview
+
+The model follows a standard **agent-based modeling architecture** using Repast Simphony:
+
+```
+SingleFacilityBuilder (Simulation Controller)
+    ├── Region (Multi-facility Container)
+    │   └── Facility (Healthcare Facility Agent)
+    │       ├── LinkedList<Person> currentPatients
+    │       ├── ArrayList<FacilityOutbreak> outbreaks
+    │       └── [Disease logic]
+    │
+    └── Context<Object> (Repast context graph)
+        ├── Facility agents
+        ├── Person agents
+        └── DischargedPatient records
+```
+
+## Core Classes
+
+### `SingleFacilityBuilder` (`builders/`)
+**Role**: Main simulation controller and Repast builder
+
+**Key Methods**:
+- `build(Context<Object>)` - Initializes simulation
+- `updateDailyStatistics()` - Called each day to update outputs
+- `doAdmit()` - Scheduled admission process
+- `saveDischargedPatients()` - Records discharged patients
+
+**Responsibilities**:
+- Creates Facility agent
+- Manages simulation schedule
+- Writes output files (when not in batch mode)
+- Handles burn-in vs. measurement period logic
+
+### `Facility` (`agentcontainers/`)
+**Role**: Healthcare facility container and primary agent
+
+**Key Attributes**:
+- `currentPatients` - LinkedList of active patients
+- `outbreaks` - ArrayList of disease FacilityOutbreak agents
+- `avgPopulation` - Running average daily census
+
+**Key Methods**:
+- `admitNewPatient()` / `admitPatient()` - Intake process
+- `dischargePatient()` - Discharge and cleanup
+- `updateTransmissionRate()` - Recalculate beta for all diseases
+- `getRandomLOS()` - Sample length of stay
+
+**Responsibilities**:
+- Patient management (admission/discharge)
+- Transmission rate updates
+- Surveillance scheduling
+- Statistics tracking
+
+### `Person` (`agents/`)
+**Role**: Individual patient agent
+
+**Key Attributes**:
+- `personDiseases` - ArrayList of PersonDisease (one per disease type)
+- `currentFacility` - Reference to containing Facility
+- `currentLOS` - Length of stay counter
+- `isIsolated` - Isolation status
+
+**Key Methods**:
+- `admitToFacility()` - Initialize facility reference
+- `startDischargeTimer()` - Schedule discharge event
+- `isolate()` - Enter isolation
+- `doSurveillanceTest()` - Respond to surveillance
+- `updateAllTransmissionRateContributions()` - Update facility beta
+
+**Responsibilities**:
+- Disease state tracking
+- Event scheduling
+- Isolation status management
+
+### `PersonDisease` (`disease/`)
+**Role**: Disease state for a single person
+
+**Key Attributes**:
+- `colonizationStatus` - Susceptible / Colonized / Clinically infected
+- `detectionStatus` - Detected vs. undetected
+- `disease` - Reference to Disease object
+
+**Key Methods**:
+- `isColonized()` - Query infection status
+- `setDetected()` - Mark as diagnosed
+- `startClinicalDetectionTimer()` - Schedule spontaneous detection
+- `startDecolonizationTimer()` - Schedule natural clearance
+
+**Responsibilities**:
+- Individual disease state
+- Detection scheduling
+- Decolonization scheduling
+
+### `FacilityOutbreak` (`disease/`)
+**Role**: Disease transmission management for facility
+
+**Key Attributes**:
+- `facility` - Reference to containing Facility
+- `disease` - Reference to Disease type
+- `meanIntraEventTime` - Average time between transmission events
+
+**Key Methods**:
+- `updateTransmissionRate()` - Calculate new beta based on population
+- `updatePrevalenceTally()` - Record daily prevalence
+- `updateAdmissionTally()` - Record admission statistics
+- `updateStayTally()` - Record patient-day statistics
+
+**Responsibilities**:
+- Transmission event scheduling
+- Prevalence tracking
+- Statistics aggregation
+
+### `Disease` (`disease/`)
+**Role**: Disease type definition
+
+**Key Attributes**:
+- `probSurveillanceDetection` - Detection probability per test
+- `probClinicalDetection` - Rate of spontaneous detection
+- `isolatePatientWhenDetected` - Isolation protocol
+
+**Key Methods**:
+- `getNextEventTime()` - Sample inter-event interval
+
+**Responsibilities**:
+- Disease-specific parameters
+- Detection probability
+- Isolation policies
+
+## Design Patterns
+
+### Scheduled Methods
+
+Uses Repast Simphony's `@ScheduledMethod` annotation:
+
+```java
+@ScheduledMethod(start = 1.0, interval = 1)
+public void dailyUpdate() {
+    // Called every day starting from tick 1.0
+}
+```
+
+**Key scheduled methods**:
+- `SingleFacilityBuilder.updateDailyStatistics()` - Every day
+- `Facility.updatePopulationTally()` - Every day
+- `Person.startDischargeTimer()` - Scheduled per patient
+
+### Dependency Injection
+
+Agents receive references to container objects:
+
+```java
+Person p = new Person(facility);  // Person knows its Facility
+FacilityOutbreak fo = new FacilityOutbreak(meanTime, disease);
+fo.setFacility(facility);  // Outbreak knows its Facility
+```
+
+### Event-Driven Simulation
+
+Key events:
+
+1. **Admission** - New patient enters facility
+2. **Discharge** - Patient leaves facility
+3. **Transmission** - Susceptible → Colonized
+4. **Detection** - Clinical or surveillance
+5. **Decolonization** - Colonized → Susceptible
+6. **Surveillance Test** - Periodic testing
+
+## Data Flow
+
+### Simulation Initialization
+
+```
+1. SingleFacilityBuilder.build() called
+2. Create Facility agent
+3. Create initial patients (burn-in)
+4. For each patient:
+   - Create PersonDisease for each disease
+   - Create FacilityOutbreak for disease tracking
+   - Schedule admission, discharge, detection events
+5. Simulation clock starts
+```
+
+### Daily Tick
+
+```
+1. RunEnvironment fires scheduled methods
+2. Facility.updatePopulationTally() records daily stats
+3. SingleFacilityBuilder.updateDailyStatistics() writes outputs
+4. Any scheduled events fire (admissions, discharges, detections)
+5. Transmission rates updated if needed
+6. Clock advances to next tick
+```
+
+### Patient Discharge
+
+```
+1. Discharge timer fires
+2. Facility.dischargePatient(person) called
+3. Remove from patient list
+4. Record patient-days and statistics
+5. Create DischargedPatient record
+6. Remove from Repast context (garbage collection)
+```
+
+## Class Hierarchy
+
+```
+AgentContainer (extends ArrayList)
+    └── Facility
+        └── [Contains: LinkedList<Person>, ArrayList<FacilityOutbreak>]
+
+Person (Agent)
+    └── [Contains: ArrayList<PersonDisease>]
+
+PersonDisease (State object)
+    └── [Contains: Reference to Disease]
+
+FacilityOutbreak (Agent)
+    └── [Contains: Reference to Disease and Facility]
+
+Process (Abstract base class)
+    └── Admission, SimpleProcess
+
+TimeUtils (Utility class)
+    └── static methods for time conversion
+
+Chooser (Utility class)
+    └── static methods for weighted random selection
+```
+
+## Statistics & Output
+
+### Output Files (Non-Batch)
+
+**`simulation_results.txt`**
+```
+Total Admissions: 1000
+Total Patient Days: 250000
+Mean LOS: 25.0 days
+Prevalence: 0.15
+...
+```
+
+**`daily_population_stats.txt`**
+```
+Tick,Population,Colonized,Isolated,...
+1.0,298,45,10
+2.0,299,46,11
+...
+```
+
+**Event logs** (admissions.txt, transmissions.txt, etc.)
+```
+Time: 100.50, Patient ID: 12345, Status: [event-specific data]
+```
+
+### Batch Mode Output
+
+Minimal output focused on summary statistics for parameter sweeps.
+
+## Extension Points
+
+### Adding a New Disease Type
+
+1. Create new Disease subclass
+2. Define disease-specific parameters in `parameters.xml`
+3. Add detection/transmission logic in Disease class
+4. Create in `SingleFacilityBuilder.build()`
+
+### Modifying Transmission Logic
+
+1. Edit `FacilityOutbreak.updateTransmissionRate()`
+2. Modify beta calculation based on population state
+3. Adjust contact model assumptions
+
+### Adding Surveillance Strategies
+
+1. Create custom surveillance logic in Facility or Person
+2. Schedule surveillance events differently
+3. Modify detection probabilities
+
+### Multi-Facility Networks
+
+1. Create Region with multiple Facility agents
+2. Add inter-facility transmission logic
+3. Coordinate disease spread across facilities
+
+## Testing & Validation
+
+### Unit Testing
+- Test individual class methods (Person, Disease, etc.)
+- Verify probability distributions
+
+### Integration Testing
+- Run small simulations (short duration, small population)
+- Verify output file formats
+- Check transmission rate calculations
+
+### Validation
+- Compare against analytical predictions
+- Sensitivity analysis (see vignettes)
+- Output consistency checks
+
+## Performance Considerations
+
+### Typical Runtime
+- 5-15 minutes for standard run (15 years, 300 patients)
+- Scales linearly with population size
+- Scales logarithmically with simulation duration
+
+### Memory Usage
+- ~1-2 GB for typical parameters
+- Discharged patients are dereferenced immediately
+- Repast context handles garbage collection
+
+### Optimization Opportunities
+- Cache transmission rates
+- Use spatial indices for large populations
+- Batch random number generation
+
+## Next Steps
+
+- See [API Documentation](api-docs.qmd) for detailed method references
+- Review source code with [Javadoc](../docs/index.html)
+- Try [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd)

@@ -1,3 +1,0 @@
-surveillance_after_burn_in, isolation_effectiveness, days_between_tests, clinical_detections, mean_daily_prevalence, mean_discharge_prevalence, importation_prevalence, number_of_transmissions, sum_daily_infected, sum_daily_clinical_detections
-true,0.5,14.0,1462,0.395327201433218,0.39666919000757,0.2090523766273085,13230,0,0
-
