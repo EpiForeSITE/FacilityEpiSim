@@ -15,6 +15,7 @@ import agentcontainers.Facility;
 import agentcontainers.Region;
 import agents.DischargedPatient;
 import agents.Person;
+import utils.MixedGamma;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -53,10 +54,19 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private PrintWriter simulationOutputFile;
 	public static boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
-	private int sumDailyInfected = 0;
-	private int sumDailyClinicalDetections = 0;
 	public ArrayList<DischargedPatient> dischargedPatients = new ArrayList<DischargedPatient>();
 	private Context<Object> context;
+	private double admissionsIntraEventTime = 21.1199 / 75.0;
+	private int[] facilitySize = { 75 };
+	private int[] facilityType = { 0 };
+	private double[] meanLOS = { 27.1199026 };
+	private int numDiseases = 1;
+	private int[] diseaseList = { 1 };
+	private double shape1;
+	private double scale1;
+	private double shape2;
+	private double scale2;
+	private double prob1;
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		this.context = context;
@@ -64,12 +74,28 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+
+		shape1 = params.getDouble("shape1");
+		scale1 = params.getDouble("scale1");
+		shape2 = params.getDouble("shape2");
+		scale2 = params.getDouble("scale2");
+		prob1 = params.getDouble("prob1");
+
 		isolationEffectiveness = params.getDouble("isolationEffectiveness");
 		doActiveSurveillanceAfterBurnIn = params.getBoolean("doActiveSurveillanceAfterBurnIn");
 		daysBetweenTests = params.getDouble("daysBetweenTests");
 		isBatchRun = params.getBoolean("isBatchRun");
 
 		facility = new Facility();
+		facility.setShape1(shape1);
+		facility.setScale1(scale1);
+		facility.setShape2(shape2);
+		facility.setScale2(scale2);
+		facility.setProb1(prob1);
+		MixedGamma mixedGamma = new MixedGamma(shape1, scale1, shape2, scale2, prob1);
+		facility.setMeanLOS(mixedGamma.getNumericalMean());
+		meanLOS = new double[] { facility.getMeanLOS() };
+		System.out.println("Mean LOS set to: " + facility.getMeanLOS());
 		this.region = new Region(facility);
 		facility.setRegion(region);
 		setupAgents();
@@ -77,7 +103,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		scheduleEvents();
 
 		// Oct 4, 2024 WRR:Start admissions process
-		Admission admit = new Admission(21.1199 / 75.0, facility);
+		Admission admit = new Admission(admissionsIntraEventTime, facility);
 		admit.start();
 
 		// Oct 4, 2024 WRR: schedule annotated methods on this builder class.
@@ -148,8 +174,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	public void setupAgents() {
 		// System.out.println("Setting up AGENTS");
 
-		int numDiseases = 1;
-		int[] diseaseList = { 1 }; // Generic disease type ID
+		 // Generic disease type ID
 		for (int i = 0; i < numDiseases; i++) {
 			Disease disease = new Disease();
 			disease.setSimIndex(i);
@@ -157,10 +182,6 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 			region.getDiseases().add(disease);
 			disease.setDiseaseName("CRE");
 		}
-
-		int[] facilitySize = { 75 };
-		int[] facilityType = { 0 };
-		double[] meanLOS = { 27.1199026 };
 
 		for (int i = 0; i < region.getFacilities().size(); i++) {
 			Facility f = region.getFacilities().get(i);
@@ -250,7 +271,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 				writer.println(patient.toString());
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+		 e.printStackTrace();
 		}
 	}
 
@@ -269,8 +290,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 				"surveillance_after_burn_in, isolation_effectiveness, days_between_tests, clinical_detections, mean_daily_prevalence, mean_discharge_prevalence, importation_prevalence, number_of_transmissions, sum_daily_infected, sum_daily_clinical_detections"
 		);
 		simulationOutputFile.println(doActiveSurveillanceAfterBurnIn + "," + isolationEffectiveness + ","
-				+ daysBetweenTests + "," + getClinicalDetections() + "," + getMeanDailyPrevalence() + "," + getMeanDischargePrevalence() + "," + getImportationPrevalence() + "," + getNumberOfTransmissions()
-				+ "," + sumDailyInfected + "," + sumDailyClinicalDetections + "\n");
+				+ daysBetweenTests + "," + getClinicalDetections() + "," + getMeanDailyPrevalence() + "," + getMeanDischargePrevalence() + "," + getImportationPrevalence() + "," + getNumberOfTransmissions());
 		simulationOutputFile.flush();
 		simulationOutputFile.close();
 		if (dailyStatsWriter != null) {
