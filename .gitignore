@@ -52,3 +52,5 @@ new_analysis/_freeze/RHome/*
 _site/*
 _freeze/*
 .vscode/*
+*.txt
+*.csv
