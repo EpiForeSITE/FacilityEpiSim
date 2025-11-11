@@ -1,10 +1,10 @@
-name: Deploy Website to GitHub Pages
+# Minimal workflow: upload the local _site directory and deploy with the official Pages action.
+# Place this file at .github/workflows/pages.yml
+name: Publish Pages
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
@@ -12,29 +12,20 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: https://epiforesite.github.io/single-facility/
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      # If you generate _site locally and commit it to the repo before pushing, skip build steps.
+      # If you build in the workflow instead, add your build steps before the upload.
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Upload Pages asset
+        uses: actions/upload-pages-asset@v1
         with:
-          path: './_site'
+          path: _site
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v2
