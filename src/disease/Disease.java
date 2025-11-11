@@ -15,7 +15,7 @@ public class Disease {
 	public double getBaselineBetaValue(int facilityType){
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		
-		double longTermAcuteCareBeta = params.getDouble("longTermAcuteCareBeta");
+		double longTermAcuteCareBeta = params.getDouble("beta");
 		double acuteCareBeta = longTermAcuteCareBeta;
 		double betaReduction = (Double) params.getValue("betaReduction");
 		double nursingHomeBeta = acuteCareBeta / betaReduction;
@@ -24,7 +24,7 @@ public class Disease {
 
 		if(facilityType == 0) betaVal = longTermAcuteCareBeta;
 		else if(facilityType == 1) betaVal = acuteCareBeta;
-		else if(facilityType == 2) betaVal = nursingHomeBeta;
+		//else if(facilityType == 2) betaVal = nursingHomeBeta;
 
 		return betaVal;
 	}
@@ -33,14 +33,14 @@ public class Disease {
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 
 		double acuteCareMean = (Double) params.getValue("meanDetectionTime");
-		double nhChangeFactor = (Double) params.getValue("nursingHomeDetectionTimeFactor");
-		double nursingHomeMean = acuteCareMean * nhChangeFactor;
+		//double nhChangeFactor = (Double) params.getValue("nursingHomeDetectionTimeFactor");
+		//double nursingHomeMean = acuteCareMean * nhChangeFactor;
 
 		double t = 0.0;
 
 		if(facilityType == 0) t = acuteCareMean;
 		else if(facilityType == 1) t = acuteCareMean;
-		else if(facilityType == 2) t = nursingHomeMean;
+		//else if(facilityType == 2) t = nursingHomeMean;
 
 		return t;
 	}

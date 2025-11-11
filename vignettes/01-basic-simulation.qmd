@@ -44,54 +44,10 @@ Decolonization:
 3. **Click** the green Run button
 4. **Wait** for "Simulation completed" message (typically 5-15 minutes)
 
-### Command Line Method
-
-```bash
-make compile  # If not already done
-make run-batch
-```
-
-### Monitoring Progress
-
-Watch the console output:
-
-```
-Simulation starting...
-Building simulation...
-Simulation initialized
-Tick: 1.0
-Tick: 100.0
-Tick: 200.0
-...
-Tick: 5475.0 (End of simulation)
-Simulation completed
-```
-
-## Output Files
 
 After completion, you'll have these files in your project root:
 
-### `simulation_results.txt`
 
-Summary statistics from the entire run:
-
-```
-Total Admissions: 12,500
-Total Patient-Days: 3,250,000
-Mean LOS: 26.0 days
-Average Daily Census: 297.8
-
-Measurement Period Results:
-  Admissions (5-year): 4,250
-  Patient-Days (5-year): 1,085,000
-
-Disease Prevalence (5-year average): 12.3%
-Disease Incidence: 8.7 per 100 admissions
-
-Detected Cases: 567
-Surveillance Detections: 423
-Clinical Detections: 144
-```
 
 ### `daily_population_stats.txt`
 

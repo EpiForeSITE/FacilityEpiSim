@@ -30,12 +30,12 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$StringStringConverter"
 											/>
-				<parameter name="shape1" displayName="Shape 1 Gamma" type="double" 
+				<parameter name="shape1" displayName="LOS mixed gamma shape 1" type="double" 
 						defaultValue="7.60197" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="shape2" displayName="Shape 2 Gamma" type="double" 
+				<parameter name="shape2" displayName="LOS mixed gamma shape 2" type="double" 
 						defaultValue="1.23279" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -65,7 +65,7 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="prob1" displayName="Probability 1 Gamma" type="double" 
+				<parameter name="prob1" displayName="LOS Mixed gamma probability 1" type="double" 
 						defaultValue="0.62531" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -85,7 +85,7 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
-				<parameter name="beta" displayName="beta" type="double" 
+				<parameter name="beta" displayName="Transmission rate (beta) per day" type="double" 
 						defaultValue="0.0615" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -95,34 +95,38 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="batchRun" displayName="Batch Run" type="boolean" 
-						defaultValue="false" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
-											/>
-				<parameter name="avgDecolonizationTime" displayName="Average Decolonization Time" type="double" 
+				
+				<parameter name="avgDecolonizationTime" displayName="average days to decolonization" type="double" 
 						defaultValue="387.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="scale2" displayName="Scale 2 Gamma" type="double" 
+				<parameter name="scale2" displayName="Mixed gamma scale 2" type="double" 
 						defaultValue="23.52147" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="scale1" displayName="Scale 1 Gamma" type="double" 
+				<parameter name="scale1" displayName="Mixed gamma scale 1" type="double" 
 						defaultValue="3.41952" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+			
 											/>
-				<parameter name="nursingHomeDetectionTimeFactor" displayName="Nursing Home Detection Time Factor" type="double" 
-						defaultValue="8.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="probSurveillanceDetection" displayName="Probability of Surveillance Detection" type="double" 
+				<parameter name="probSurveillanceDetection" displayName="Surveillance test sensitivity" type="double" 
 						defaultValue="0.8" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
+											
+				<parameter name="burnInPeriod" displayName="Burn In Period (days)" type="int" 
+                        defaultValue="3650" 
+                        isReadOnly="false" 
+                        converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+                                            />
+                                    
+                 <parameter name="simulationDurationAfterBurnIn" displayName="Total Simulation time (including burn-in)" type="int" 
+                        defaultValue="5475"
+                        isReadOnly="false" 
+                        converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+                                            />
 		</parameters>
