@@ -101,12 +101,12 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="scale2" displayName="Mixed gamma scale 2" type="double" 
+				<parameter name="scale2" displayName="LOS Mixed gamma scale 2" type="double" 
 						defaultValue="23.52147" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="scale1" displayName="Mixed gamma scale 1" type="double" 
+				<parameter name="scale1" displayName="LOS Mixed gamma scale 1" type="double" 
 						defaultValue="3.41952" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
