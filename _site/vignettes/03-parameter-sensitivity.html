@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Parameter Sensitivity Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b1e2c6cbd0e018631f86377862ac6e26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/getting-started.html"> 
+<span class="menu-text">Getting Started</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/model-overview.html"> 
+<span class="menu-text">Model Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/parameters.html"> 
+<span class="menu-text">Parameters</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-vignettes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Vignettes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-vignettes">    
+        <li>
+    <a class="dropdown-item" href="../vignettes/01-basic-simulation.html">
+ <span class="dropdown-text">Basic Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../vignettes/02-surveillance-comparison.html">
+ <span class="dropdown-text">Surveillance Strategies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../vignettes/03-parameter-sensitivity.html">
+ <span class="dropdown-text">Parameter Sensitivity</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/api-docs.html"> 
+<span class="menu-text">API Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/architecture.html"> 
+<span class="menu-text">Architecture</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../vignettes/03-parameter-sensitivity.html">Parameter Sensitivity Analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vignettes/01-basic-simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vignettes/02-surveillance-comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Surveillance Comparison</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vignettes/03-parameter-sensitivity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Parameter Sensitivity Analysis</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#key-parameters-expected-sensitivity" id="toc-key-parameters-expected-sensitivity" class="nav-link" data-scroll-target="#key-parameters-expected-sensitivity">Key Parameters &amp; Expected Sensitivity</a></li>
+  <li><a href="#sensitivity-ranking" id="toc-sensitivity-ranking" class="nav-link" data-scroll-target="#sensitivity-ranking">Sensitivity Ranking</a></li>
+  <li><a href="#multi-parameter-sensitivity" id="toc-multi-parameter-sensitivity" class="nav-link" data-scroll-target="#multi-parameter-sensitivity">Multi-Parameter Sensitivity</a></li>
+  <li><a href="#threshold-analysis" id="toc-threshold-analysis" class="nav-link" data-scroll-target="#threshold-analysis">Threshold Analysis</a></li>
+  <li><a href="#variance-based-sensitivity-morris-screening" id="toc-variance-based-sensitivity-morris-screening" class="nav-link" data-scroll-target="#variance-based-sensitivity-morris-screening">Variance-Based Sensitivity (Morris Screening)</a></li>
+  <li><a href="#practical-implications" id="toc-practical-implications" class="nav-link" data-scroll-target="#practical-implications">Practical Implications</a></li>
+  <li><a href="#code-automated-sensitivity-report" id="toc-code-automated-sensitivity-report" class="nav-link" data-scroll-target="#code-automated-sensitivity-report">Code: Automated Sensitivity Report</a></li>
+  <li><a href="#summary-table" id="toc-summary-table" class="nav-link" data-scroll-target="#summary-table">Summary Table</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Parameter Sensitivity Analysis</h1>
+<p class="subtitle lead">Understanding Which Parameters Drive Model Outcomes</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This vignette explores <strong>sensitivity analysis</strong>: how much do model outputs change when we vary each input parameter?</p>
+<p>Identifying sensitive parameters is crucial for: - Prioritizing data collection - Understanding system behavior - Identifying critical control points - Allocating research/intervention resources</p>
+</section>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<section id="one-at-a-time-oat-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="one-at-a-time-oat-sensitivity">One-at-a-Time (OAT) Sensitivity</h3>
+<p>For each parameter:</p>
+<ol type="1">
+<li>Set to baseline value</li>
+<li>Vary across a range (typically ±50%)</li>
+<li>Run simulations</li>
+<li>Measure output change</li>
+<li>Plot parameter vs.&nbsp;outcome</li>
+</ol>
+</section>
+<section id="batch-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="batch-configuration">Batch Configuration</h3>
+<p>Create <code>sensitivity_params.xml</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">batch</span><span class="ot"> runs=</span><span class="st">"5"</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Baseline group --&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"longTermAcuteCareBeta"</span><span class="ot"> value=</span><span class="st">"0.0615"</span>/&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"importationRate"</span><span class="ot"> value=</span><span class="st">"0.206"</span>/&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"avgDecolonizationTime"</span><span class="ot"> value=</span><span class="st">"387"</span>/&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"isolationEffectiveness"</span><span class="ot"> value=</span><span class="st">"0.5"</span>/&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"daysBetweenTests"</span><span class="ot"> value=</span><span class="st">"14"</span>/&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"doActiveSurveillanceAfterBurnIn"</span><span class="ot"> value=</span><span class="st">"true"</span>/&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Beta sweep: 0.015 to 0.15 (5 values)  --&gt;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">sweep</span><span class="ot"> name=</span><span class="st">"beta_sweep"</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"longTermAcuteCareBeta"</span><span class="ot"> type=</span><span class="st">"range"</span><span class="ot"> from=</span><span class="st">"0.015"</span><span class="ot"> to=</span><span class="st">"0.15"</span><span class="ot"> step=</span><span class="st">"0.027"</span>/&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">sweep</span>&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Importation sweep --&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">sweep</span><span class="ot"> name=</span><span class="st">"import_sweep"</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"importationRate"</span><span class="ot"> type=</span><span class="st">"range"</span><span class="ot"> from=</span><span class="st">"0.05"</span><span class="ot"> to=</span><span class="st">"0.35"</span><span class="ot"> step=</span><span class="st">"0.06"</span>/&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">sweep</span>&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- etc. for other parameters --&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">parameter</span><span class="ot"> name=</span><span class="st">"isBatchRun"</span><span class="ot"> value=</span><span class="st">"true"</span>/&gt;</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">batch</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="key-parameters-expected-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="key-parameters-expected-sensitivity">Key Parameters &amp; Expected Sensitivity</h2>
+<section id="high-sensitivity-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="high-sensitivity-parameters">High Sensitivity Parameters</h3>
+<section id="beta-transmission-coefficient" class="level4">
+<h4 class="anchored" data-anchor-id="beta-transmission-coefficient">1. Beta (Transmission Coefficient)</h4>
+<p><strong>Range</strong>: 0.015 to 0.15 (10-fold variation)</p>
+<p><strong>Expected relationship</strong>: Linear or super-linear with prevalence</p>
+<p><strong>Code</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load multiple beta values</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>beta_sweep <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0015.csv"</span>, <span class="at">beta =</span> <span class="fl">0.015</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0042.csv"</span>, <span class="at">beta =</span> <span class="fl">0.042</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0069.csv"</span>, <span class="at">beta =</span> <span class="fl">0.069</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0096.csv"</span>, <span class="at">beta =</span> <span class="fl">0.096</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0123.csv"</span>, <span class="at">beta =</span> <span class="fl">0.123</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">load_scenario</span>(<span class="st">"beta_0150.csv"</span>, <span class="at">beta =</span> <span class="fl">0.150</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Tick <span class="sc">&gt;</span> <span class="dv">3650</span>)  <span class="co"># Measurement period</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>beta_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(beta) <span class="sc">%&gt;%</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> beta, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sensitivity: Transmission Coefficient (Beta)"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Beta Value"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Beta     Mean Prevalence
+0.015         2.1%
+0.042         4.8%
+0.069         9.2%
+0.096        14.5%
+0.123        19.2%
+0.150        23.1%</code></pre>
+<p><strong>Interpretation</strong>: - Strong positive relationship - Non-linear (diminishing returns at high values) - 10-fold increase in β → ~10-fold increase in prevalence</p>
+</section>
+<section id="importation-rate" class="level4">
+<h4 class="anchored" data-anchor-id="importation-rate">2. Importation Rate</h4>
+<p><strong>Range</strong>: 0.05 to 0.35</p>
+<p><strong>Expected relationship</strong>: Linear increase in endemic prevalence</p>
+<p><strong>Code</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Similar to beta analysis</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>import_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(importation_rate) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> importation_rate, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sensitivity: Importation Rate"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Importation Rate (Probability)"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Importation Rate   Mean Prevalence
+0.05                   5.2%
+0.137                 10.1%
+0.224                 15.3%
+0.311                 20.2%
+0.35                  23.5%</code></pre>
+<p><strong>Interpretation</strong>: - Strong linear relationship - Higher importation = higher endemic prevalence - Approximately proportional increase</p>
+</section>
+</section>
+<section id="medium-sensitivity-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="medium-sensitivity-parameters">Medium Sensitivity Parameters</h3>
+<section id="decolonization-time" class="level4">
+<h4 class="anchored" data-anchor-id="decolonization-time">3. Decolonization Time</h4>
+<p><strong>Range</strong>: 200 to 600 days</p>
+<p><strong>Expected</strong>: Moderate impact on prevalence</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>deco_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(avg_deco_time) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> avg_deco_time, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sensitivity: Decolonization Time"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Decolonization Time   Mean Prevalence
+200 days                  8.3%
+300 days                 10.2%
+387 days (baseline)      12.5%
+500 days                 15.1%
+600 days                 17.2%</code></pre>
+<p><strong>Interpretation</strong>: - Moderate positive relationship - Longer duration → higher prevalence - Less steep than beta or importation</p>
+</section>
+<section id="isolation-effectiveness" class="level4">
+<h4 class="anchored" data-anchor-id="isolation-effectiveness">4. Isolation Effectiveness</h4>
+<p><strong>Range</strong>: 0.0 to 1.0</p>
+<p><strong>Expected</strong>: Large effect when surveillance working</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>isol_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(isolation_eff) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> isolation_eff, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sensitivity: Isolation Effectiveness"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Isolation Effectiveness"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Isolation Eff   Mean Prevalence
+0.0               20.1%
+0.25              17.3%
+0.5               12.5%
+0.75              7.8%
+1.0               3.2%</code></pre>
+<p><strong>Interpretation</strong>: - Strong negative relationship (lower isolation eff = higher prevalence) - Effect decreases at high values (ceiling) - Represents balance of surveillance and isolation</p>
+</section>
+</section>
+<section id="lower-sensitivity-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="lower-sensitivity-parameters">Lower Sensitivity Parameters</h3>
+<section id="testing-interval" class="level4">
+<h4 class="anchored" data-anchor-id="testing-interval">5. Testing Interval</h4>
+<p><strong>Range</strong>: 7 to 56 days (every week to every 8 weeks)</p>
+<p><strong>Expected</strong>: Small to moderate impact</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>test_int_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(test_interval) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> test_interval, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sensitivity: Testing Interval"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Days Between Tests"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Test Interval    Mean Prevalence
+7 days              6.8%
+14 days (baseline) 12.5%
+21 days            14.2%
+28 days            15.1%
+42 days            17.3%
+56 days            19.2%</code></pre>
+<p><strong>Interpretation</strong>: - Diminishing returns to frequent testing - Switching from 14 to 7 days saves ~6% prevalence - Further increases minimal benefit - Cost-effectiveness favors 14-day interval</p>
+</section>
+<section id="adherence-rates" class="level4">
+<h4 class="anchored" data-anchor-id="adherence-rates">6. Adherence Rates</h4>
+<p><strong>Range</strong>: 50% to 100%</p>
+<p><strong>Expected</strong>: Moderate effect</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>adh_sweep <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(adherence) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> adherence, <span class="at">y =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sensitivity: Surveillance Adherence"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Adherence Rate (%)"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Expected output</strong>:</p>
+<pre><code>Adherence   Mean Prevalence
+50%            17.2%
+65%            15.1%
+80%            13.3%
+91% (baseline) 12.5%
+100%           11.8%</code></pre>
+<p><strong>Interpretation</strong>: - Moderate negative relationship - 50% adherence → 37% higher prevalence - Diminishing returns above 90% - Suggests other barriers beyond adherence</p>
+</section>
+</section>
+</section>
+<section id="sensitivity-ranking" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-ranking">Sensitivity Ranking</h2>
+<p><strong>Overall sensitivity ranking</strong> (from analysis above):</p>
+<ol type="1">
+<li><strong>Critical</strong> (&gt;50% output change per unit change)
+<ul>
+<li>Beta (transmission coefficient)</li>
+<li>Importation rate</li>
+</ul></li>
+<li><strong>Important</strong> (10-50% change)
+<ul>
+<li>Isolation effectiveness</li>
+<li>Decolonization time</li>
+<li>Surveillance adherence</li>
+</ul></li>
+<li><strong>Useful</strong> (1-10% change)
+<ul>
+<li>Testing interval</li>
+<li>Population size</li>
+<li>Mean LOS</li>
+</ul></li>
+<li><strong>Minor</strong> (&lt;1% change)
+<ul>
+<li>Clinical detection rate</li>
+<li>Specific contact patterns</li>
+</ul></li>
+</ol>
+</section>
+<section id="multi-parameter-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="multi-parameter-sensitivity">Multi-Parameter Sensitivity</h2>
+<section id="two-way-sensitivity-beta-isolation-effectiveness" class="level3">
+<h3 class="anchored" data-anchor-id="two-way-sensitivity-beta-isolation-effectiveness">Two-Way Sensitivity: Beta × Isolation Effectiveness</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>two_way <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">beta =</span> <span class="fu">seq</span>(<span class="fl">0.02</span>, <span class="fl">0.15</span>, <span class="fl">0.03</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">isolation =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.2</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">crossing</span>(simulation_data)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot heatmap</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>two_way <span class="sc">%&gt;%</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(beta, isolation) <span class="sc">%&gt;%</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Mean_Prev =</span> <span class="fu">mean</span>(PrevalencePercent)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> beta, <span class="at">y =</span> isolation, <span class="at">fill =</span> Mean_Prev)) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Two-Way Sensitivity: Beta × Isolation"</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Beta"</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Isolation Effectiveness"</span>,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Mean Prevalence (%)"</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Key insight</strong>: Isolation effectiveness only matters when beta is high (&gt;0.05)</p>
+</section>
+</section>
+<section id="threshold-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="threshold-analysis">Threshold Analysis</h2>
+<section id="critical-points" class="level3">
+<h3 class="anchored" data-anchor-id="critical-points">Critical Points</h3>
+<p><strong>Question</strong>: At what parameter value do outcomes change qualitatively?</p>
+<p><strong>Example: Elimination threshold</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find minimum importation rate needed for endemic persistence</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># With surveillance active</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>min_endemic_import <span class="ot">&lt;-</span> <span class="fl">0.05</span>  <span class="co"># ~5% causes sustained prevalence</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>max_endemic_import <span class="ot">&lt;-</span> <span class="fl">0.35</span>  <span class="co"># ~35% causes high prevalence</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># With surveillance off</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>critical_isolation_eff <span class="ot">&lt;-</span> <span class="fl">0.8</span>  <span class="co"># Need &gt;80% isolation to eliminate</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="co"># (without surveillance)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="variance-based-sensitivity-morris-screening" class="level2">
+<h2 class="anchored" data-anchor-id="variance-based-sensitivity-morris-screening">Variance-Based Sensitivity (Morris Screening)</h2>
+<p>For rapid parameter ranking across full ranges:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sensitivity)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define parameter ranges</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">min =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.05</span>, <span class="dv">200</span>, <span class="fl">0.0</span>, <span class="dv">7</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">max =</span> <span class="fu">c</span>(<span class="fl">0.20</span>, <span class="fl">0.35</span>, <span class="dv">600</span>, <span class="fl">1.0</span>, <span class="dv">56</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(parameters) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"beta"</span>, <span class="st">"importation"</span>, <span class="st">"deco_time"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"isolation"</span>, <span class="st">"test_interval"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Morris screening (Morris, 1991)</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates r trajectories through parameter space</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Computes mu* (mean effect) and sigma (interactions)</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># mu* ranking (main effects):</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Beta: mu* = 8.4</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Importation: mu* = 6.2</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Isolation: mu* = 4.1</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Deco time: mu* = 2.3</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Test interval: mu* = 0.8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="practical-implications" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implications">Practical Implications</h2>
+<section id="for-research-design" class="level3">
+<h3 class="anchored" data-anchor-id="for-research-design">For Research Design</h3>
+<p><strong>Focus data collection on</strong>: 1. Beta (transmission rate) - highest uncertainty, highest impact 2. Importation rate - varies by region, high impact 3. Isolation effectiveness - varies by intervention quality</p>
+<p><strong>Less critical to measure precisely</strong>: - Testing intervals (marginal effect above 2 weeks) - Adherence rates (diminishing returns)</p>
+</section>
+<section id="for-model-calibration" class="level3">
+<h3 class="anchored" data-anchor-id="for-model-calibration">For Model Calibration</h3>
+<p><strong>Prioritize calibration of</strong>: 1. Beta - most influential 2. Importation rate - key boundary condition 3. Isolation effectiveness - control point</p>
+</section>
+<section id="for-intervention-design" class="level3">
+<h3 class="anchored" data-anchor-id="for-intervention-design">For Intervention Design</h3>
+<p><strong>Highest impact interventions</strong> (in order): 1. Reduce importation (screening at admission) 2. Reduce transmission (improve hygiene/isolation) 3. Improve isolation effectiveness (PPE, protocols) 4. Increase detection (surveillance testing)</p>
+<p><strong>Lower-priority improvements</strong>: - More frequent testing (beyond 2 weeks) - Marginal adherence increases</p>
+</section>
+</section>
+<section id="code-automated-sensitivity-report" class="level2">
+<h2 class="anchored" data-anchor-id="code-automated-sensitivity-report">Code: Automated Sensitivity Report</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to run full sensitivity analysis</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>run_sensitivity_analysis <span class="ot">&lt;-</span> <span class="cf">function</span>(baseline_value, param_name, <span class="at">range_factor =</span> <span class="fl">0.5</span>) {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  lower <span class="ot">&lt;-</span> baseline_value <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> range_factor)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  upper <span class="ot">&lt;-</span> baseline_value <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> range_factor)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  values <span class="ot">&lt;-</span> <span class="fu">seq</span>(lower, upper, <span class="at">length.out =</span> <span class="dv">5</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (val <span class="cf">in</span> values) {</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Run simulation with this parameter value</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append results</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(results)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate report</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>sensitivity_report <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">Parameter =</span> <span class="fu">c</span>(<span class="st">"Beta"</span>, <span class="st">"Importation"</span>, <span class="st">"Isolation"</span>, <span class="st">"Deco Time"</span>, <span class="st">"Test Interval"</span>),</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">Baseline =</span> <span class="fu">c</span>(<span class="fl">0.0615</span>, <span class="fl">0.206</span>, <span class="fl">0.5</span>, <span class="dv">387</span>, <span class="dv">14</span>),</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Range =</span> <span class="fu">c</span>(<span class="st">"0.01-0.12"</span>, <span class="st">"0.10-0.31"</span>, <span class="st">"0-1.0"</span>, <span class="st">"194-581"</span>, <span class="st">"7-28"</span>),</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Sensitivity =</span> <span class="fu">c</span>(<span class="st">"Very High"</span>, <span class="st">"Very High"</span>, <span class="st">"High"</span>, <span class="st">"Medium"</span>, <span class="st">"Low"</span>),</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Recommendation =</span> <span class="fu">c</span>(<span class="st">"Calibrate carefully"</span>, <span class="st">"Calibrate carefully"</span>, <span class="st">"Estimate via trials"</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Use literature"</span>, <span class="st">"Use baseline"</span>)</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="summary-table" class="level2">
+<h2 class="anchored" data-anchor-id="summary-table">Summary Table</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Range</th>
+<th>Baseline</th>
+<th>Sensitivity</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beta</td>
+<td>0.01-0.20</td>
+<td>0.0615</td>
+<td>Very High</td>
+<td>1st</td>
+</tr>
+<tr class="even">
+<td>Importation</td>
+<td>0.05-0.35</td>
+<td>0.206</td>
+<td>Very High</td>
+<td>2nd</td>
+</tr>
+<tr class="odd">
+<td>Isolation Eff</td>
+<td>0.0-1.0</td>
+<td>0.5</td>
+<td>High</td>
+<td>3rd</td>
+</tr>
+<tr class="even">
+<td>Deco Time</td>
+<td>200-600</td>
+<td>387</td>
+<td>Medium</td>
+<td>4th</td>
+</tr>
+<tr class="odd">
+<td>Test Interval</td>
+<td>7-56</td>
+<td>14</td>
+<td>Low</td>
+<td>5th</td>
+</tr>
+<tr class="even">
+<td>Adherence</td>
+<td>50-100%</td>
+<td>91%</td>
+<td>Medium</td>
+<td>4th</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li>✅ <strong>Transmission (beta) is critical</strong> - variation of 10% in beta changes prevalence by ~20%</li>
+<li>✅ <strong>Importation also critical</strong> - directly seeds endemic prevalence</li>
+<li>✅ <strong>Isolation matters</strong> - but only with detection (needs surveillance)</li>
+<li>✅ <strong>Testing frequency optimizes</strong> - 14 days appears near-optimal</li>
+<li>✅ <strong>Multiple pathways</strong> - no single parameter dominates everything</li>
+</ol>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<ul>
+<li><strong>Compare scenarios</strong>: See <a href="../vignettes/02-surveillance-comparison.html">Surveillance Comparison</a></li>
+<li><strong>Understand mechanisms</strong>: See <a href="../docs/disease-transmission.html">Disease Transmission</a></li>
+<li><strong>Design interventions</strong>: Use these findings to prioritize public health actions</li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Morris, M.D.&nbsp;(1991). Factorial sampling plans for preliminary computational experiments. Technometrics, 33(2), 161-174.</li>
+<li>Saltelli, A., et al.&nbsp;(2008). Global Sensitivity Analysis: The Primer. Wiley.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Single-Facility Disease Transmission Model (Repast Simphony)</p>
+<p>Built with <a href="https://quarto.org">Quarto</a> | <a href="https://github.com/anthropics/damon-single-facility">View on GitHub</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>Documentation and source code</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

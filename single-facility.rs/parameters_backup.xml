@@ -90,11 +90,6 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="longTermAcuteCareMeanDetectionTime" displayName="Long Term Acute Care Mean Detection Time" type="double" 
-						defaultValue="106.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
 				<parameter name="admissionSurveillanceAdherence" displayName="Admission Surveillance Adherence" type="double" 
 						defaultValue="0.911" 
 						isReadOnly="false" 

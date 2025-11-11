@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>quick_start</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-b1e2c6cbd0e018631f86377862ac6e26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./docs/getting-started.html"> 
+<span class="menu-text">Getting Started</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./docs/model-overview.html"> 
+<span class="menu-text">Model Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./docs/parameters.html"> 
+<span class="menu-text">Parameters</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-vignettes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Vignettes</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-vignettes">    
+        <li>
+    <a class="dropdown-item" href="./vignettes/01-basic-simulation.html">
+ <span class="dropdown-text">Basic Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./vignettes/02-surveillance-comparison.html">
+ <span class="dropdown-text">Surveillance Strategies</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./vignettes/03-parameter-sensitivity.html">
+ <span class="dropdown-text">Parameter Sensitivity</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./docs/api-docs.html"> 
+<span class="menu-text">API Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./docs/architecture.html"> 
+<span class="menu-text">Architecture</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#quick-start-guide" id="toc-quick-start-guide" class="nav-link active" data-scroll-target="#quick-start-guide">Quick Start Guide</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#running-your-first-simulation" id="toc-running-your-first-simulation" class="nav-link" data-scroll-target="#running-your-first-simulation">Running Your First Simulation</a></li>
+  <li><a href="#common-first-run-scenarios" id="toc-common-first-run-scenarios" class="nav-link" data-scroll-target="#common-first-run-scenarios">Common First-Run Scenarios</a></li>
+  <li><a href="#typical-runtime" id="toc-typical-runtime" class="nav-link" data-scroll-target="#typical-runtime">Typical Runtime</a></li>
+  <li><a href="#quick-troubleshooting" id="toc-quick-troubleshooting" class="nav-link" data-scroll-target="#quick-troubleshooting">Quick Troubleshooting</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s Next?</a></li>
+  <li><a href="#example-analysis-questions" id="toc-example-analysis-questions" class="nav-link" data-scroll-target="#example-analysis-questions">Example Analysis Questions</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+
+
+<section id="quick-start-guide" class="level1">
+<h1>Quick Start Guide</h1>
+<p>This guide will help you run your first simulation in under 10 minutes.</p>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Java 8 or higher installed on your system</li>
+<li>Basic familiarity with running Java applications</li>
+</ul>
+</section>
+<section id="running-your-first-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="running-your-first-simulation">Running Your First Simulation</h2>
+<section id="step-1-download-and-launch" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-download-and-launch">Step 1: Download and Launch</h3>
+<ol type="1">
+<li><strong>If you have the pre-built model archive:</strong>
+<ul>
+<li>Extract the archive to a folder</li>
+<li>Windows: Double-click <code>start_model.bat</code></li>
+<li>Mac/Linux: Double-click <code>start_model.command</code></li>
+</ul></li>
+<li><strong>If you have the source code:</strong>
+<ul>
+<li>Open in Eclipse with Repast Simphony</li>
+<li>Right-click the project → Run As → Java Application</li>
+<li>Select <code>SingleFacilityBuilder</code> as the main class</li>
+</ul></li>
+</ol>
+</section>
+<section id="step-2-configure-basic-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-configure-basic-parameters">Step 2: Configure Basic Parameters</h3>
+<p>When the Repast GUI opens, you’ll see a parameters panel. For your first run, you can use the defaults, but here are the key settings:</p>
+<p><strong>Essential Parameters:</strong> - <code>longTermAcuteCareBeta</code>: 0.0615 (transmission rate) - <code>importationRate</code>: 0.206 (probability patients arrive infected) - <code>isolationEffectiveness</code>: 0.5 (50% reduction in transmission when isolated) - <code>isBatchRun</code>: false (enables detailed output files)</p>
+</section>
+<section id="step-3-initialize-and-run" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-initialize-and-run">Step 3: Initialize and Run</h3>
+<ol type="1">
+<li>Click <strong>“Initialize”</strong> button</li>
+<li>Wait for initialization to complete (should take a few seconds)</li>
+<li>Click <strong>“Start”</strong> button to begin simulation</li>
+<li>The simulation will run automatically</li>
+</ol>
+</section>
+<section id="step-4-monitor-progress" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-monitor-progress">Step 4: Monitor Progress</h3>
+<ul>
+<li>Watch the console output for progress messages</li>
+<li>The simulation runs for 15 years by default (10 year burn-in + 5 year measurement)</li>
+<li>Each tick represents one day</li>
+<li>You’ll see messages like “Current tick: 3651” showing daily progress</li>
+</ul>
+</section>
+<section id="step-5-review-results" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-review-results">Step 5: Review Results</h3>
+<p>After completion, check these output files in your project directory:</p>
+<p><strong>Key Files to Examine:</strong> - <code>simulation_results.txt</code>: Summary statistics - <code>daily_population_stats.txt</code>: Daily counts over time - <code>transmissions.txt</code>: Individual transmission events - <code>clinicalDetection.txt</code>: Detection events</p>
+<p><strong>Example Results Interpretation:</strong></p>
+<pre><code>simulation_results.txt shows:
+- clinical_detections: 94526 (total cases detected)
+- mean_daily_prevalence: 0.383 (38% of patients colonized on average)
+- number_of_transmissions: 12598 (facility-acquired infections)</code></pre>
+</section>
+</section>
+<section id="common-first-run-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="common-first-run-scenarios">Common First-Run Scenarios</h2>
+<section id="scenario-1-no-surveillance-testing" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-1-no-surveillance-testing">Scenario 1: No Surveillance Testing</h3>
+<ul>
+<li>Set <code>doActiveSurveillanceAfterBurnIn</code>: false</li>
+<li>Compare transmission rates without active case finding</li>
+</ul>
+</section>
+<section id="scenario-2-more-effective-isolation" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-2-more-effective-isolation">Scenario 2: More Effective Isolation</h3>
+<ul>
+<li>Set <code>isolationEffectiveness</code>: 0.9</li>
+<li>See how better isolation reduces transmission</li>
+</ul>
+</section>
+<section id="scenario-3-batch-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-3-batch-analysis">Scenario 3: Batch Analysis</h3>
+<ul>
+<li>Set <code>isBatchRun</code>: true</li>
+<li>Run multiple times to get statistical confidence</li>
+</ul>
+</section>
+</section>
+<section id="typical-runtime" class="level2">
+<h2 class="anchored" data-anchor-id="typical-runtime">Typical Runtime</h2>
+<ul>
+<li><strong>Development machine</strong>: 5-15 minutes for full simulation</li>
+<li><strong>Batch runs</strong>: 2-5 minutes per run (no detailed output)</li>
+<li><strong>Large populations</strong>: May take 30+ minutes</li>
+</ul>
+</section>
+<section id="quick-troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="quick-troubleshooting">Quick Troubleshooting</h2>
+<p><strong>Simulation won’t start:</strong> - Check Java is installed: <code>java -version</code> in command line - Verify all required files are present</p>
+<p><strong>Results look strange:</strong> - Check that burn-in completed (messages at tick 3650) - Verify parameters are in expected ranges - Ensure <code>isBatchRun</code> is false for detailed output</p>
+<p><strong>Performance is slow:</strong> - Close unnecessary applications - Increase Java heap size if needed - Consider shorter simulation periods for testing</p>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s Next?</h2>
+<p>After your first successful run:</p>
+<ol type="1">
+<li><strong>Experiment with parameters</strong> - Try different transmission rates and intervention strategies</li>
+<li><strong>Analyze outputs</strong> - Use Excel, R, or Python to analyze the time series data</li>
+<li><strong>Read the full documentation</strong> - See <code>README.md</code> for detailed explanations</li>
+<li><strong>Explore batch runs</strong> - Set up parameter sweeps for systematic analysis</li>
+</ol>
+</section>
+<section id="example-analysis-questions" class="level2">
+<h2 class="anchored" data-anchor-id="example-analysis-questions">Example Analysis Questions</h2>
+<p>With your first results, you can explore: - How does surveillance frequency affect detection rates? - What isolation effectiveness is needed to control transmission? - How do importation rates impact facility outbreak risk? - What are the trade-offs between different intervention strategies?</p>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<ul>
+<li><strong>Technical issues</strong>: Check <code>TECHNICAL_DOCS.md</code></li>
+<li><strong>Model questions</strong>: Review code comments and <code>todo.txt</code></li>
+<li><strong>Repast Simphony help</strong>: Visit https://repast.github.io/docs/</li>
+</ul>
+<p>Happy modeling!</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Single-Facility Disease Transmission Model (Repast Simphony)</p>
+<p>Built with <a href="https://quarto.org">Quarto</a> | <a href="https://github.com/anthropics/damon-single-facility">View on GitHub</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>Documentation and source code</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

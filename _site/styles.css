@@ -1,0 +1,277 @@
+/* Custom styles for Quarto website */
+
+/* Color scheme */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+}
+
+/* Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.2em;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 1.2em;
+}
+
+/* Code styling */
+code {
+  background-color: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border-left: 3px solid var(--secondary-color);
+  padding: 1em;
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Links */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75em;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Lists */
+ul, ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--secondary-color);
+  margin-left: 0;
+  padding-left: 1.5em;
+  color: #666;
+  font-style: italic;
+}
+
+/* Callout boxes */
+.callout {
+  border-left: 4px solid #ddd;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.callout.note {
+  border-left-color: var(--secondary-color);
+  background-color: #e8f4f8;
+}
+
+.callout.warning {
+  border-left-color: var(--warning-color);
+  background-color: #fef8e7;
+}
+
+.callout.important {
+  border-left-color: var(--accent-color);
+  background-color: #fadbd8;
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/* Sidebar */
+#quarto-sidebar {
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-item a {
+  color: var(--primary-color);
+}
+
+.sidebar-item a.active {
+  border-left: 3px solid var(--secondary-color);
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* TOC */
+#toc {
+  border-left: 1px solid #ddd;
+  padding-left: 1.5em;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid #ddd;
+  padding: 2em 0;
+  margin-top: 3em;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  border-radius: 4px;
+  transition: all 0.2s;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #c0392b;
+  text-decoration: none;
+}
+
+/* Alerts / admonitions */
+.alert {
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 4px;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  background-color: #e8f4f8;
+  border-color: var(--secondary-color);
+  color: #333;
+}
+
+.alert-warning {
+  background-color: #fef8e7;
+  border-color: var(--warning-color);
+  color: #333;
+}
+
+.alert-danger {
+  background-color: #fadbd8;
+  border-color: var(--accent-color);
+  color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  body {
+    font-size: 0.95em;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 0.5em;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar, .sidebar, #toc {
+    display: none !important;
+  }
+
+  body {
+    color: black;
+    background-color: white;
+  }
+
+  a {
+    color: black;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}

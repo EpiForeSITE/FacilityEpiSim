@@ -31,15 +31,14 @@ public class Disease {
 
 	public double getMeanTimeToClinicalDetection(int facilityType){
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
-		
+
 		double acuteCareMean = (Double) params.getValue("meanDetectionTime");
-		double longTermAcuteCareMean = (Double) params.getValue("longTermAcuteCareMeanDetectionTime");
 		double nhChangeFactor = (Double) params.getValue("nursingHomeDetectionTimeFactor");
 		double nursingHomeMean = acuteCareMean * nhChangeFactor;
 
 		double t = 0.0;
 
-		if(facilityType == 0) t = longTermAcuteCareMean;
+		if(facilityType == 0) t = acuteCareMean;
 		else if(facilityType == 1) t = acuteCareMean;
 		else if(facilityType == 2) t = nursingHomeMean;
 

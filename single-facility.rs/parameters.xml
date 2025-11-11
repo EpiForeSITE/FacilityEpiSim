@@ -85,13 +85,8 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
-				<parameter name="longTermAcuteCareBeta" displayName="Long Term AcuteCareBeta" type="double" 
+				<parameter name="beta" displayName="beta" type="double" 
 						defaultValue="0.0615" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
-				<parameter name="longTermAcuteCareMeanDetectionTime" displayName="Long Term Acute Care Mean Detection Time" type="double" 
-						defaultValue="106.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
