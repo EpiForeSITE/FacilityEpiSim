@@ -9,7 +9,7 @@ format:
     embed-resources: true
 editor: visual
 params:
-  patient_id: 13094
+  patient_id: 17834
 ---
 
 ```{r setup, include=FALSE}
@@ -21,14 +21,12 @@ library(ggplot2)
 
 # Patient Timeline Analysis
 
-::: {.callout-tip}
+::: callout-tip
 ## How to Change Patient
+
 To analyze a different patient, change the `patient_id` parameter in the YAML header above and re-render the document.
 
-**Quick Patient Selection Guide:**
-- **High Activity Patients**: See the top 20 table below
-- **Random Selection**: Any ID from the discharged patients list
-- **Current Patient**: `r params$patient_id`
+**Quick Patient Selection Guide:** - **High Activity Patients**: See the top 20 table below - **Random Selection**: Any ID from the discharged patients list - **Current Patient**: `r params$patient_id`
 :::
 
 This report provides a comprehensive timeline of all events for a specific patient across all simulation data files.
