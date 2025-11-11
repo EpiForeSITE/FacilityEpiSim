@@ -1,6 +1,6 @@
-# Minimal workflow: upload the local _site directory and deploy with the official Pages action.
-# Place this file at .github/workflows/pages.yml
-name: Publish Pages
+# Publish _site using the official upload-pages-asset + deploy-pages actions.
+# Triggers on pushes to master (your default branch) or manual dispatch.
+name: Publish Pages (official actions)
 
 on:
   push:
@@ -19,8 +19,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # If you generate _site locally and commit it to the repo before pushing, skip build steps.
-      # If you build in the workflow instead, add your build steps before the upload.
+      - name: Debug info
+        run: |
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+          echo "Listing _site:"
+          ls -la _site || true
 
       - name: Upload Pages asset
         uses: actions/upload-pages-asset@v1
