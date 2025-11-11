@@ -41,10 +41,10 @@
 <span class="sourceLineNo">032</span><a id="line.32">        public double getMeanTimeToClinicalDetection(int facilityType){</a>
 <span class="sourceLineNo">033</span><a id="line.33">                params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();</a>
 <span class="sourceLineNo">034</span><a id="line.34">                </a>
-<span class="sourceLineNo">035</span><a id="line.35">                double acuteCareMean = (Double) params.getValue("acuteCareMeanDetectionTime");</a>
+<span class="sourceLineNo">035</span><a id="line.35">                double acuteCareMean = (Double) params.getValue("meanDetectionTime");</a>
 <span class="sourceLineNo">036</span><a id="line.36">                double longTermAcuteCareMean = (Double) params.getValue("longTermAcuteCareMeanDetectionTime");</a>
 <span class="sourceLineNo">037</span><a id="line.37">                double nhChangeFactor = (Double) params.getValue("nursingHomeDetectionTimeFactor");</a>
-<span class="sourceLineNo">038</span><a id="line.38">                double nursingHomeMean = acuteCareMean * nhChangeFactor;</a>
+<span class="sourceLineNo">038</a><a id="line.38">                double nursingHomeMean = acuteCareMean * nhChangeFactor;</a>
 <span class="sourceLineNo">039</span><a id="line.39"></a>
 <span class="sourceLineNo">040</span><a id="line.40">                double t = 0.0;</a>
 <span class="sourceLineNo">041</span><a id="line.41"></a>

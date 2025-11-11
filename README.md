@@ -92,7 +92,7 @@ The simulation behavior is controlled through parameters defined in `single-faci
 - **`importationRate`** (default: 0.206): Probability of arriving colonized
 
 #### Detection Parameters  
-- **`acuteCareMeanDetectionTime`** (default: 122.0 days): Average time to clinical detection
+- **`meanDetectionTime`** (default: 122.0 days): Average time to clinical detection
 - **`probSurveillanceDetection`** (default: 0.8): Probability of detection by surveillance testing
 
 #### Intervention Parameters

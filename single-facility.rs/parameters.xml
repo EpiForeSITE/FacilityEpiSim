@@ -45,7 +45,7 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="acuteCareMeanDetectionTime" displayName="Acute Care Mean Detection Time" type="double" 
+				<parameter name="meanDetectionTime" displayName="Mean Detection Time" type="double" 
 						defaultValue="122.0" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
