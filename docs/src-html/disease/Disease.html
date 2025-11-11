@@ -26,8 +26,8 @@
 <span class="sourceLineNo">017</span><a id="line.17">                </a>
 <span class="sourceLineNo">018</span><a id="line.18">                double longTermAcuteCareBeta = params.getDouble("longTermAcuteCareBeta");</a>
 <span class="sourceLineNo">019</span><a id="line.19">                double acuteCareBeta = longTermAcuteCareBeta;</a>
-<span class="sourceLineNo">020</span><a id="line.20">                double nhReduction = (Double) params.getValue("nursingHomeBetaReduction");</a>
-<span class="sourceLineNo">021</span><a id="line.21">                double nursingHomeBeta = acuteCareBeta / nhReduction;</a>
+<span class="sourceLineNo">020</span><a id="line.20">                double betaReduction = (Double) params.getValue("betaReduction");</a>
+<span class="sourceLineNo">021</span><a id="line.21">                double nursingHomeBeta = acuteCareBeta / betaReduction;</a>
 <span class="sourceLineNo">022</span><a id="line.22"></a>
 <span class="sourceLineNo">023</span><a id="line.23">                double betaVal = 0.0;</a>
 <span class="sourceLineNo">024</span><a id="line.24"></a>

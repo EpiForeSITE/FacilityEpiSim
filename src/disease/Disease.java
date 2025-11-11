@@ -17,8 +17,8 @@ public class Disease {
 		
 		double longTermAcuteCareBeta = params.getDouble("longTermAcuteCareBeta");
 		double acuteCareBeta = longTermAcuteCareBeta;
-		double nhReduction = (Double) params.getValue("nursingHomeBetaReduction");
-		double nursingHomeBeta = acuteCareBeta / nhReduction;
+		double betaReduction = (Double) params.getValue("betaReduction");
+		double nursingHomeBeta = acuteCareBeta / betaReduction;
 
 		double betaVal = 0.0;
 
