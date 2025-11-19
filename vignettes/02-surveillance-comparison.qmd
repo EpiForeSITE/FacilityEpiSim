@@ -1,6 +1,8 @@
 ---
 title: "Surveillance Comparison"
 subtitle: "Comparing Different Testing and Isolation Strategies"
+execute:
+  eval: false
 ---
 
 ## Overview
