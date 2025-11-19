@@ -45,7 +45,6 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 
 - **[Model Overview](docs/model-overview.qmd)** - Detailed model description and mechanisms
 - **[Parameters](docs/parameters.qmd)** - Configuration options and defaults
-- **[Architecture](docs/architecture.qmd)** - Code structure and design patterns
 - **[API Reference](docs/api-docs.qmd)** - Javadoc documentation
 
 ## Vignettes & Examples
