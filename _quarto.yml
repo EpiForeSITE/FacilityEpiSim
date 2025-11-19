@@ -7,7 +7,7 @@ website:
     background: primary
     search: true
     left:
-      - href: index.qmd
+      - href: docs/index.qmd
         text: Home
       - href: docs/getting-started.qmd
         text: Getting Started
@@ -17,11 +17,11 @@ website:
         text: Parameters
       - text: Vignettes
         menu:
-          - href: vignettes/01-basic-simulation.qmd
+          - href: docs/vignettes/01-basic-simulation.qmd
             text: Basic Simulation
-          - href: vignettes/02-surveillance-comparison.qmd
+          - href: docs/vignettes/02-surveillance-comparison.qmd
             text: Surveillance Strategies
-          - href: vignettes/03-parameter-sensitivity.qmd
+          - href: docs/vignettes/03-parameter-sensitivity.qmd
             text: Parameter Sensitivity
       - href: docs/api-docs.qmd
         text: API Reference
@@ -43,9 +43,9 @@ website:
     - id: analysis
       title: Analysis & Vignettes
       contents:
-        - vignettes/01-basic-simulation.qmd
-        - vignettes/02-surveillance-comparison.qmd
-        - vignettes/03-parameter-sensitivity.qmd
+        - docs/vignettes/01-basic-simulation.qmd
+        - docs/vignettes/02-surveillance-comparison.qmd
+        - docs/vignettes/03-parameter-sensitivity.qmd
 
   page-footer:
     left: |

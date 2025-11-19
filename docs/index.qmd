@@ -39,13 +39,13 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 4. **Run Simulation**: Via the Repast Model Runner
 5. **Analyze Results**: Use R scripts in `analysis/`
 
-👉 [Get Started →](docs/getting-started.qmd)
+👉 [Get Started →](getting-started.qmd)
 
 ## Documentation
 
-- **[Model Overview](docs/model-overview.qmd)** - Detailed model description and mechanisms
-- **[Parameters](docs/parameters.qmd)** - Configuration options and defaults
-- **[API Reference](docs/api-docs.qmd)** - Javadoc documentation
+- **[Model Overview](model-overview.qmd)** - Detailed model description and mechanisms
+- **[Parameters](parameters.qmd)** - Configuration options and defaults
+- **[API Reference](api-docs.qmd)** - Javadoc documentation
 
 ## Vignettes & Examples
 
