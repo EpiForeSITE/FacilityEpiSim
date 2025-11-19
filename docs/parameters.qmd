@@ -101,13 +101,13 @@ These parameters are hardcoded in `Facility.getRandomLOS()`
 
 When `isBatchRun = false`, generates:
 
-- `simulation_results.txt` - Summary statistics
-- `daily_population_stats.txt` - Time series data
-- `admissions.txt` - Admission events
-- `transmissions.txt` - Transmission events
-- `clinicalDetection.txt` - Detection events
-- `decolonization.txt` - Decolonization events
-- `surveillance.txt` - Surveillance test results
+- `simulation_results.demo.txt` - Summary statistics
+- `daily_population_stats.demo.txt` - Time series data
+- `admissions.demo.txt` - Admission events
+- `transmissions.demo.txt` - Transmission events
+- `clinicalDetection.demo.txt` - Detection events
+- `decolonization.demo.txt` - Decolonization events
+- `surveillance.demo.txt` - Surveillance test results
 
 ### Batch Run Outputs
 

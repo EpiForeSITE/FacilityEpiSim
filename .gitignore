@@ -25,17 +25,17 @@ build_model_archive.log
 /new_analysis/
 
 # Ignore data output files
-admissions.txt
-clinicalDetection.txt
-daily_population_stats.txt
-daily_prevalence.txt
-daily_stats.txt
-decolonization.txt
-detection_verification.txt
-facilityPrevalenceData.txt
-simulation_results.txt
-transmissions.txt
-surveillance.txt
+./admissions.txt
+./clinicalDetection.txt
+./daily_population_stats.txt
+./daily_prevalence.txt
+./daily_stats.txt
+./decolonization.txt
+./detection_verification.txt
+./facilityPrevalenceData.txt
+./simulation_results.txt
+./transmissions.txt
+./surveillance.txt
 sim_modeloutputs*.txt
 
 # Ignore output directory
@@ -52,4 +52,5 @@ new_analysis/_freeze/RHome/*
 _freeze/*
 .vscode/*
 *.txt
+!*.demo.txt
 *.csv

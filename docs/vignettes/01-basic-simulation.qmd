@@ -49,7 +49,7 @@ After completion, you'll have these files in your project root:
 
 
 
-### `daily_population_stats.txt`
+### `daily_population_stats.demo.txt`
 
 Time series data, one row per day:
 
@@ -63,32 +63,32 @@ Tick,Population,Colonized,Isolated,IncidenceCount,PrevalencePercent
 
 ### Event Log Files
 
-#### `admissions.txt`
+#### `admissions.demo.txt`
 ```
 Time: 3651.50, Patient ID: 1024, Importation: true
 Time: 3652.25, Patient ID: 1025, Importation: false
 Time: 3653.75, Patient ID: 1026, Importation: true
 ```
 
-#### `clinicalDetection.txt`
+#### `clinicalDetection.demo.txt`
 ```
 Time: 3660.33, Patient ID: 1002, Disease: CRE
 Time: 3671.50, Patient ID: 1015, Disease: CRE
 ```
 
-#### `surveillance.txt`
+#### `surveillance.demo.txt`
 ```
 Time: 3651.0, Patient ID: 1024, Disease: CRE, Result: Positive
 Time: 3651.0, Patient ID: 1025, Disease: CRE, Result: Negative
 ```
 
-#### `transmissions.txt` (if enabled)
+#### `transmissions.demo.txt` (if enabled)
 ```
 Time: 3660.75, Source: 988, Target: 1003, Disease: CRE
 Time: 3670.25, Source: 1015, Target: 1027, Disease: CRE
 ```
 
-#### `decolonization.txt`
+#### `decolonization.demo.txt`
 ```
 Time: 4001.50, Patient ID: 1002, Disease: CRE
 Time: 4015.33, Patient ID: 1008, Disease: CRE
@@ -143,7 +143,7 @@ library(tidyverse)
 library(ggplot2)
 
 # Load daily statistics
-daily_stats <- read_csv("daily_population_stats.txt")
+daily_stats <- read_csv("../data/daily_population_stats.demo.txt")
 
 # Plot population over time
 daily_stats %>%
@@ -174,10 +174,10 @@ daily_stats %>%
 
 ```r
 # Load admissions
-admissions <- read.csv("admissions.txt", sep = ",")
+admissions <- read.csv("../data/admissions.demo.txt", sep = ",")
 
 # Count imported vs. acquired cases
-admitted <- read.table("admissions.txt", sep = ",", header = FALSE)
+admitted <- read.table("../data/admissions.demo.txt", sep = ",", header = FALSE)
 colnames(admitted) <- c("Label1", "Time", "Label2", "PatientID", "Label3", "Importation")
 
 import_count <- sum(admitted$Importation == "true")

@@ -238,7 +238,7 @@ Chooser (Utility class)
 
 ### Output Files (Non-Batch)
 
-**`simulation_results.txt`**
+**`simulation_results.demo.txt`**
 ```
 Total Admissions: 1000
 Total Patient Days: 250000
@@ -247,7 +247,7 @@ Prevalence: 0.15
 ...
 ```
 
-**`daily_population_stats.txt`**
+**`daily_population_stats.demo.txt`**
 ```
 Tick,Population,Colonized,Isolated,...
 1.0,298,45,10
@@ -255,7 +255,7 @@ Tick,Population,Colonized,Isolated,...
 ...
 ```
 
-**Event logs** (admissions.txt, transmissions.txt, etc.)
+**Event logs** (admissions.demo.txt, transmissions.demo.txt, etc.)
 ```
 Time: 100.50, Patient ID: 12345, Status: [event-specific data]
 ```

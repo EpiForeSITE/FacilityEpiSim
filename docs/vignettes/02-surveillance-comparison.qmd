@@ -69,8 +69,8 @@ Run each scenario separately:
 Rename output files after each run to save results:
 
 ```bash
-cp simulation_results.txt baseline_results.txt
-cp daily_population_stats.txt baseline_daily.txt
+cp ../data/simulation_results.demo.txt baseline_results.txt
+cp ../data/daily_population_stats.demo.txt baseline_daily.txt
 # ... repeat for other scenarios
 ```
 
@@ -89,10 +89,10 @@ load_scenario <- function(filepath, scenario_name) {
 
 # Load all scenarios
 results <- bind_rows(
-  load_scenario("baseline_daily.txt", "Baseline"),
-  load_scenario("no_surveillance_daily.txt", "No Surveillance"),
-  load_scenario("intensive_daily.txt", "Intensive"),
-  load_scenario("perfect_isolation_daily.txt", "Perfect Isolation")
+  load_scenario("../data/daily_population_stats.demo.txt", "Baseline"),
+  load_scenario("../data/daily_population_stats.demo.txt", "No Surveillance"),
+  load_scenario("../data/daily_population_stats.demo.txt", "Intensive"),
+  load_scenario("../data/daily_population_stats.demo.txt", "Perfect Isolation")
 )
 ```
 
