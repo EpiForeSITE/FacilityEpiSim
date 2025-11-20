@@ -36,7 +36,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render Quarto site
-        run: quarto render
+        run: quarto render docs
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
