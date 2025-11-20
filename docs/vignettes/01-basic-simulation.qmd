@@ -143,7 +143,7 @@ library(tidyverse)
 library(ggplot2)
 
 # Load daily statistics
-daily_stats <- read_csv("../data/daily_population_stats.demo.txt")
+daily_stats <- read_csv("docs/data/daily_population_stats.demo.txt")
 
 # Plot population over time
 daily_stats %>%
@@ -174,10 +174,10 @@ daily_stats %>%
 
 ```r
 # Load admissions
-admissions <- read.csv("../data/admissions.demo.txt", sep = ",")
+admissions <- read.csv("docs/data/admissions.demo.txt", sep = ",")
 
 # Count imported vs. acquired cases
-admitted <- read.table("../data/admissions.demo.txt", sep = ",", header = FALSE)
+admitted <- read.table("docs/data/admissions.demo.txt", sep = ",", header = FALSE)
 colnames(admitted) <- c("Label1", "Time", "Label2", "PatientID", "Label3", "Importation")
 
 import_count <- sum(admitted$Importation == "true")
