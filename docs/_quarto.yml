@@ -1,0 +1,70 @@
+project:
+  type: website
+  output-dir: ../_site
+
+website:
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: getting-started.qmd
+        text: Getting Started
+      - href: model-overview.qmd
+        text: Model Documentation
+      - href: parameters.qmd
+        text: Parameters
+      - text: Vignettes
+        menu:
+          - href: vignettes/01-basic-simulation.qmd
+            text: Basic Simulation
+          - href: vignettes/02-surveillance-comparison.qmd
+            text: Surveillance Strategies
+          - href: vignettes/03-parameter-sensitivity.qmd
+            text: Parameter Sensitivity
+      - href: api-docs.qmd
+        text: API Reference
+      - href: architecture.qmd
+        text: Architecture
+
+  sidebar:
+    - id: getting-started
+      contents:
+        - getting-started.qmd
+        - system-requirements.qmd
+    - id: documentation
+      contents:
+        - model-overview.qmd
+        - parameters.qmd
+        - disease-transmission.qmd
+        - architecture.qmd
+        - api-docs.qmd
+    - id: analysis
+      title: Analysis & Vignettes
+      contents:
+        - vignettes/01-basic-simulation.qmd
+        - vignettes/02-surveillance-comparison.qmd
+        - vignettes/03-parameter-sensitivity.qmd
+
+  page-footer:
+    left: |
+      Single-Facility Disease Transmission Model (Repast Simphony)
+
+      Built with [Quarto](https://quarto.org) | [View on GitHub](https://github.com/anthropics/damon-single-facility)
+    center: |
+      Documentation and source code
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-summary: "Show code"
+    highlight-style: github
+    include-before-body: header.html
+
+execute:
+  freeze: auto
