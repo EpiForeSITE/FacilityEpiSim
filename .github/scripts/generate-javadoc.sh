@@ -136,13 +136,17 @@ EOF
 # Compile stub classes
 echo "Compiling stubs..."
 mkdir -p "$STUBS_DIR/bin"
-find "$STUBS_DIR/src" -name "*.java" -exec javac -d "$STUBS_DIR/bin" -sourcepath "$STUBS_DIR/src" {} +
+if ! find "$STUBS_DIR/src" -name "*.java" -exec javac -d "$STUBS_DIR/bin" -sourcepath "$STUBS_DIR/src" {} +; then
+    echo "ERROR: Failed to compile stub classes"
+    exit 1
+fi
 
 # Create JAR from stubs
 echo "Creating stubs JAR..."
-cd "$STUBS_DIR/bin"
-jar cf "$STUBS_DIR/repast-stubs.jar" .
-cd -
+(cd "$STUBS_DIR/bin" && jar cf "$STUBS_DIR/repast-stubs.jar" .) || {
+    echo "ERROR: Failed to create stubs JAR"
+    exit 1
+}
 
 # Generate Javadoc
 echo "Generating Javadoc..."
