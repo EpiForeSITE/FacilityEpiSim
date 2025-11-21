@@ -1,10 +1,33 @@
 ---
 title: "API Reference"
+format:
+  html:
+    include-in-header:
+      text: |
+        <meta http-equiv="refresh" content="0; url=javadoc/index.html">
 ---
 
-## Overview
+## API Documentation
 
-This page documents the public API of the Single-Facility Disease Transmission Model. For detailed source code documentation, see the [Javadoc](../docs/index.html).
+The complete API documentation is available in Javadoc format.
+
+**[View Full API Documentation (Javadoc)](javadoc/index.html){.btn .btn-primary}**
+
+---
+
+## Available Packages
+
+The Single-Facility Disease Transmission Model includes the following Java packages:
+
+- **`agents`** - Individual patient agents and discharged patient data
+- **`agentcontainers`** - Facility and region containers for managing agents  
+- **`builders`** - Simulation builder and initialization
+- **`data`** - Patient data structures
+- **`disease`** - Disease models, transmission, and outbreak tracking
+- **`processes`** - Admission and other simulation processes
+- **`utils`** - Utility classes for time conversion, random selection, and distributions
+
+[Browse the complete Javadoc documentation →](javadoc/index.html)
 
 ## Core Classes
 
