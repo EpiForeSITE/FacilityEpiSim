@@ -2,6 +2,10 @@
 title: "Getting Started"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Installation & Setup
 
 ### System Requirements

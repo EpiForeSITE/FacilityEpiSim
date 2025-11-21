@@ -2,6 +2,10 @@
 title: "API Reference"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 This page documents the public API of the Single-Facility Disease Transmission Model. For detailed source code documentation, see the [Javadoc](../docs/index.html).

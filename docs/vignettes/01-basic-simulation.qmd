@@ -3,6 +3,10 @@ title: "Basic Simulation"
 subtitle: "Running Your First Simulation and Interpreting Results"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 This vignette walks through running a single simulation with default parameters and interpreting the output.

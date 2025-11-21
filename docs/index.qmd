@@ -3,6 +3,10 @@ title: "Single-Facility Disease Transmission Model"
 subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 This is an **agent-based model (ABM)** built with **Repast Simphony 2.11.0** for simulating disease transmission in healthcare facilities.

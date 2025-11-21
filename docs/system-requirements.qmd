@@ -2,6 +2,10 @@
 title: "System Requirements"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Java Development Kit (JDK)
 
 ### Required Version

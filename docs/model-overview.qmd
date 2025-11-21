@@ -2,6 +2,10 @@
 title: "Model Overview"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Disease Transmission Dynamics
 
 The model simulates disease transmission using a **modified SIS (Susceptible-Infected-Susceptible) framework**:

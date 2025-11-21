@@ -3,6 +3,10 @@ title: "Parameter Sensitivity Analysis"
 subtitle: "Understanding Which Parameters Drive Model Outcomes"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 This vignette explores **sensitivity analysis**: how much do model outputs change when we vary each input parameter?

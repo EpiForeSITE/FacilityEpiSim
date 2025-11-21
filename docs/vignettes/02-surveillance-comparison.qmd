@@ -3,6 +3,10 @@ title: "Surveillance Comparison"
 subtitle: "Comparing Different Testing and Isolation Strategies"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 This vignette compares different surveillance and isolation strategies to understand their impact on disease prevalence and detection.

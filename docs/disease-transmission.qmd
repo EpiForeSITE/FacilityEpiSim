@@ -2,6 +2,10 @@
 title: "Disease Transmission Mechanisms"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 Disease transmission in this model is governed by a **contact-based, rate-driven approach** using exponential distributions and probability-based state transitions.

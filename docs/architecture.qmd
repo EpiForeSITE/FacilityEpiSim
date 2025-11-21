@@ -2,6 +2,10 @@
 title: "Architecture & Design"
 ---
 
+::: {.callout-note}
+**NOTE: AI Generated. Still to be verified by Willy.**
+:::
+
 ## Overview
 
 ```
