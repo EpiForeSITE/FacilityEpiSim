@@ -4,8 +4,6 @@ title: "Architecture & Design"
 
 ## Overview
 
-The model follows a standard **agent-based modeling architecture** using Repast Simphony:
-
 ```
 SingleFacilityBuilder (Simulation Controller)
     ├── Region (Multi-facility Container)
@@ -27,15 +25,10 @@ SingleFacilityBuilder (Simulation Controller)
 
 **Key Methods**:
 - `build(Context<Object>)` - Initializes simulation
-- `updateDailyStatistics()` - Called each day to update outputs
-- `doAdmit()` - Scheduled admission process
-- `saveDischargedPatients()` - Records discharged patients
 
 **Responsibilities**:
-- Creates Facility agent
-- Manages simulation schedule
-- Writes output files (when not in batch mode)
-- Handles burn-in vs. measurement period logic
+- Creates Facility region and facility containesrs
+- Creates all HCW and process agents
 
 ### `Facility` (`agentcontainers/`)
 **Role**: Healthcare facility container and primary agent
@@ -186,15 +179,13 @@ Key events:
 5. Simulation clock starts
 ```
 
-### Daily Tick
+### Daily (on the even tick [e.g. 45.0, 46.0, etc])
 
 ```
-1. RunEnvironment fires scheduled methods
-2. Facility.updatePopulationTally() records daily stats
-3. SingleFacilityBuilder.updateDailyStatistics() writes outputs
-4. Any scheduled events fire (admissions, discharges, detections)
-5. Transmission rates updated if needed
-6. Clock advances to next tick
+
+1. Facility.updatePopulationTally() records daily stats
+2. SingleFacilityBuilder.updateDailyStatistics() writes outputs
+
 ```
 
 ### Patient Discharge

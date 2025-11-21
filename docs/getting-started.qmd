@@ -10,14 +10,13 @@ title: "Getting Started"
 - **Repast Simphony 2.11.0**
 - **Eclipse IDE** (recommended for development)
 - **R 4.0+** (for analysis scripts)
-- **Quarto 1.0+** (for building documentation)
 
 See [System Requirements](system-requirements.qmd) for detailed setup instructions.
 
 ### Project Structure
 
 ```
-damon-single-facility/
+single-facility/
 ├── src/                          # Java source code
 │   ├── agents/                   # Agent classes (Person, DischargedPatient)
 │   ├── agentcontainers/          # Container classes (Facility, Region)
@@ -35,8 +34,6 @@ damon-single-facility/
 ├── launchers/                    # Eclipse launch configurations
 │   └── single-facility Model.launch
 │
-├── bin/                          # Compiled classes
-├── docs/                         # API documentation (Javadoc)
 ├── new_analysis/                 # R analysis scripts
 └── Makefile                      # Build targets
 ```
@@ -44,8 +41,8 @@ damon-single-facility/
 ## Running Your First Simulation
 
 ### Option 1: Eclipse (Recommended)
-
-1. **Import Project**
+# ~~NOT VERIFIED BY WILLY~~
+1. **Import Project** 
    - File → Import → General → Existing Projects into Workspace
    - Select the project directory
    - Click Finish
@@ -59,19 +56,10 @@ damon-single-facility/
    - Click the green Run button
    - Monitor progress in the console
 
-### Option 2: Command Line
-
-```bash
-# Compile the project
-make validate
-
-# Run individual simulation
-make run-batch
-
-# Or use Eclipse headless mode
-```
 
 ## Configuration
+
+Configure parameters through the Repast runtime or by manually editing the parameters file.
 
 ### Parameters File
 
@@ -102,38 +90,17 @@ See [Parameters](parameters.qmd) for complete documentation.
 
 After running a simulation, check:
 
-- **`simulation_results.demo.txt`** - Summary statistics and aggregates
-- **`daily_population_stats.demo.txt`** - Time series data (one row per day)
-- **`admissions.demo.txt`** - Patient admission events
-- **`transmissions.demo.txt`** - Transmission events (if enabled)
-- **`clinicalDetection.demo.txt`** - Clinical detection events
-- **`decolonization.demo.txt`** - Decolonization outcomes
-- **`surveillance.demo.txt`** - Surveillance test results
+- **Batch-run Mode**:
+   - **`simulation_results.demo.txt`** -  Summary statistics and aggregates - One row per iteration
+- **Single-run Mode**:
+   - **`daily_population_stats.demo.txt`**  Time series data (one row per day)
+   - **`admissions.demo.txt`** - Patient admission events
+   - **`transmissions.demo.txt`** - Transmission events (if enabled)
+   - **`clinicalDetection.demo.txt`** - Clinical detection events
+   - **`decolonization.demo.txt`** - Decolonization outcomes
+   - **`surveillance.demo.txt`** - Surveillance test results
 
-Example output:
-```
-Time: 100.50, Patient ID: 12345, Importation: true
-Time: 102.75, Patient ID: 12346, Importation: false
-```
 
-## Building & Documentation
-
-### Generate Javadoc
-```bash
-make javadoc
-# Output: ./docs/index.html
-```
-
-### Build Website
-```bash
-quarto render
-# Output: ./_site/index.html
-```
-
-### Compile Code
-```bash
-make compile
-```
 
 ## Next Steps
 
@@ -144,20 +111,9 @@ make compile
 
 ## Troubleshooting
 
-### "Cannot find symbol" errors
-- Ensure Java 11 is being used: `java -version`
-- Check classpath includes Repast Simphony JARs
-- Run `make clean && make compile`
-
-### Simulation crashes on startup
-- Check `parameters.xml` for invalid values
-- Ensure output directory is writable
-- Review console output for specific errors
-
-### R analysis scripts fail
-- Install required packages: `install.packages(c("tidyverse", "ggplot2"))`
-- Check file paths in scripts
-- Ensure simulation output files exist
+### No Launchers Availble in Repast IDE
+- make sure the name of the local project is the same as the name of the scenario folder, without the .rs.  
+- find the appropriate launcher in the launchers folder.  Right click and "run as.."
 
 ## Resources
 

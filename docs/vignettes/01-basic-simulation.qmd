@@ -13,7 +13,6 @@ This vignette walks through running a single simulation with default parameters 
 
 - Java 11 installed
 - Repast Simphony 2.11.0 configured
-- Project compiled (`make compile`)
 
 ### Default Parameters
 
@@ -42,7 +41,8 @@ Decolonization:
 1. **Right-click project** → Run As → Java Application
 2. **Select** `SingleFacilityBuilder`
 3. **Click** the green Run button
-4. **Wait** for "Simulation completed" message (typically 5-15 minutes)
+4. **Wait** for the simulation to finish
+5. **Find** the output files in the root folder of the project
 
 
 After completion, you'll have these files in your project root:
@@ -82,7 +82,7 @@ Time: 3651.0, Patient ID: 1024, Disease: CRE, Result: Positive
 Time: 3651.0, Patient ID: 1025, Disease: CRE, Result: Negative
 ```
 
-#### `transmissions.demo.txt` (if enabled)
+#### `transmissions.demo.txt` 
 ```
 Time: 3660.75, Source: 988, Target: 1003, Disease: CRE
 Time: 3670.25, Source: 1015, Target: 1027, Disease: CRE
@@ -118,25 +118,15 @@ Time: 4015.33, Patient ID: 1008, Disease: CRE
 - Surveillance detections: Should capture ~90% of colonized admissions
 - Clinical detections: Should be low (only undetected cases developing symptoms)
 
-### Stability Indicators
 
-**Good simulation characteristics:**
 
-1. ✅ Population stabilizes around target (after burn-in)
-2. ✅ Prevalence oscillates within expected range (no trends)
-3. ✅ Detection ratio matches surveillance adherence
-4. ✅ Event logs show continuous admission/discharge pattern
 
-**Warning signs:**
-
-1. ⚠️ Population declining → Admission rate too low
-2. ⚠️ Prevalence trending upward → Increasing transmission
-3. ⚠️ Few detection events → Check surveillance settings
-4. ⚠️ Few transmission events → Beta too low
 
 ## Analysis in R
 
 ### Load and Plot Results
+
+~~Make sure this works~~
 
 ```r
 library(tidyverse)
@@ -170,7 +160,7 @@ daily_stats %>%
   theme_minimal()
 ```
 
-### Load Event Data
+### Load Admkissions Data
 
 ```r
 # Load admissions

@@ -1,3 +1,8 @@
+# Ignore Quarto and site output
+_site/
+docs/.quarto/
+# Ignore Quarto and site output
+_site/
 bin/*
 /bin/
 /populationTally.*
@@ -54,3 +59,4 @@ _freeze/*
 *.txt
 !*.demo.txt
 *.csv
+_site/*.*

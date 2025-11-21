@@ -9,11 +9,11 @@ This is an **agent-based model (ABM)** built with **Repast Simphony 2.11.0** for
 
 The model simulates patient flow through a inpatient over approximately **15 years** (10-year burn-in + 5-year measurement period), tracking:
 
-- 🏥 Patient admissions, lengths of stay, and discharges
-- 🦠 Disease importation and transmission dynamics
-- 🔍 Clinical detection and active surveillance testing
-- 💊 Decolonization outcomes and isolation effectiveness
-- 📊 Epidemiological statistics and trends
+- Patient admissions, lengths of stay, and discharges
+- Disease importation and transmission dynamics
+- Clinical detection and active surveillance testing
+- Decolonization outcomes and isolation effectiveness
+
 
 ## Key Features
 
@@ -25,10 +25,11 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 - **Isolation**: Transmission reduction for detected/isolated patients
 
 ### Output & Analysis
-- Comprehensive CSV outputs for time series analysis
-- Event logs for admissions, transmissions, detections, and decolonization
+
+- CSV outputs for time series analysis in single-run mode
+- Event logs for admissions, transmissions, detections, etc.
 - Batch running capabilities for parameter sweeps
-- Integration with R/Quarto for statistical analysis and visualization
+- R scripts for verifying model behaviors and sensitivity analyses
 
 ## Getting Started
 
@@ -57,10 +58,10 @@ Explore the model through practical examples:
 
 ## Time Representation
 
-**Important**: Time in this model is continuous floating-point in **days**:
+**NOTE**: Time in this model is continuous floating-point in **days**:
 - `1.0` = Start of day 1
-- `1.5` = Midday of day 1
-- Default total: **5475 ticks** = 15 years
+- `1.5` = Middle of day 1
+- Default total: **5475 ticks** = 15 years with or without a 10-year burn-in
 
 ## Citation
 
