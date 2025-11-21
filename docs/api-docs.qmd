@@ -4,7 +4,7 @@ format:
   html:
     include-in-header:
       text: |
-        <meta http-equiv="refresh" content="0; url=javadoc/index.html">
+        <meta http-equiv="refresh" content="3; url=javadoc/index.html">
 ---
 
 ## API Documentation

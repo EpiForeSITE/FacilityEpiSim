@@ -13,6 +13,8 @@ mkdir -p "$LIBS_DIR"
 mkdir -p "$JAVADOC_OUTPUT"
 
 # Download Apache Commons Math (required dependency)
+# Note: Downloading from Maven Central which is the standard trusted repository for Java dependencies
+# This is a specific version (3.6.1) of a well-known library used only for javadoc compilation
 echo "Downloading Apache Commons Math..."
 wget -q https://repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar -O "$LIBS_DIR/commons-math3-3.6.1.jar"
 
@@ -144,7 +146,7 @@ cd -
 
 # Generate Javadoc
 echo "Generating Javadoc..."
-javadoc \
+if javadoc \
     -d "$JAVADOC_OUTPUT" \
     -sourcepath src \
     -subpackages agents:agentcontainers:builders:data:disease:processes:utils \
@@ -156,7 +158,10 @@ javadoc \
     -use \
     -version \
     -author \
-    -quiet
-
-echo "Javadoc generation complete!"
-echo "Output directory: $JAVADOC_OUTPUT"
+    -quiet; then
+    echo "Javadoc generation complete!"
+    echo "Output directory: $JAVADOC_OUTPUT"
+else
+    echo "ERROR: Javadoc generation failed!"
+    exit 1
+fi
