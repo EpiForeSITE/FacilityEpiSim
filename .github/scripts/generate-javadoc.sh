@@ -136,7 +136,7 @@ EOF
 # Compile stub classes
 echo "Compiling stubs..."
 mkdir -p "$STUBS_DIR/bin"
-javac -d "$STUBS_DIR/bin" -sourcepath "$STUBS_DIR/src" $(find "$STUBS_DIR/src" -name "*.java")
+find "$STUBS_DIR/src" -name "*.java" -exec javac -d "$STUBS_DIR/bin" -sourcepath "$STUBS_DIR/src" {} +
 
 # Create JAR from stubs
 echo "Creating stubs JAR..."
