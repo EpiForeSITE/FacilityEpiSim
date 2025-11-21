@@ -31,8 +31,8 @@ jobs:
         run: |
           install.packages(c("rmarkdown", "ggplot2", "dplyr", "knitr", "readr", "tidyr"))
         shell: Rscript {0}
-
-           - name: Set up Quarto
+        
+      - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render Quarto site
