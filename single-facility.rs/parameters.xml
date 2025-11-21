@@ -5,12 +5,12 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="isBatchRun" displayName="isBatchRun" type="boolean" 
+				<parameter name="isBatchRun" displayName="(Batch Runner Only) Batch Run" type="boolean" 
 						defaultValue="false" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="isolatePatientWhenDetected" displayName="Isolate Patient When Detected" type="boolean" 
+				<parameter name="isolatePatientWhenDetected" displayName="001. Isolate Patient When Detected" type="boolean" 
 						defaultValue="true" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
@@ -20,7 +20,7 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="isolationEffectiveness" displayName="isolationEffectiveness" type="double" 
+				<parameter name="isolationEffectiveness" displayName="002. isolationEffectiveness" type="double" 
 						defaultValue="0.5" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
@@ -45,25 +45,20 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				<parameter name="meanDetectionTime" displayName="Mean Detection Time" type="double" 
-						defaultValue="122.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-											/>
 				<parameter name="isActiveSurveillanceAgent" displayName="Is Active Surveillance Agent" type="boolean" 
 						defaultValue="true" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="extraIteration" displayName="Extra Iterations" type="int" 
+				<parameter name="beta" displayName="Transmission rate (beta) per day" type="double" 
+						defaultValue="0.0615" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
+				<parameter name="extraIteration" displayName="(Batch Run Only) Extra Iterations at each parameter combination" type="int" 
 						defaultValue="1" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="betaReduction" displayName="Beta Reduction Factor" type="double" 
-						defaultValue="10.0" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
 				<parameter name="prob1" displayName="LOS Mixed gamma probability 1" type="double" 
 						defaultValue="0.62531" 
@@ -80,22 +75,26 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
+				<parameter name="simulationDurationAfterBurnIn" displayName="Total Simulation time (including burn-in)" type="int" 
+						defaultValue="5475" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
 				<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
 						defaultValue="__NULL__"
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-											/>
-				<parameter name="beta" displayName="Transmission rate (beta) per day" type="double" 
-						defaultValue="0.0615" 
-						isReadOnly="false" 
-						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
 				<parameter name="admissionSurveillanceAdherence" displayName="Admission Surveillance Adherence" type="double" 
 						defaultValue="0.911" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-				
+				<parameter name="meanDetectionTime" displayName="Mean Detection Time" type="double" 
+						defaultValue="122.0" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+											/>
 				<parameter name="avgDecolonizationTime" displayName="average days to decolonization" type="double" 
 						defaultValue="387.0" 
 						isReadOnly="false" 
@@ -110,23 +109,17 @@
 						defaultValue="3.41952" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
-			
 											/>
 				<parameter name="probSurveillanceDetection" displayName="Surveillance test sensitivity" type="double" 
 						defaultValue="0.8" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
-											
 				<parameter name="burnInPeriod" displayName="Burn In Period (days)" type="int" 
-                        defaultValue="3650" 
-                        isReadOnly="false" 
-                        converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-                                            />
-                                    
-                 <parameter name="simulationDurationAfterBurnIn" displayName="Total Simulation time (including burn-in)" type="int" 
-                        defaultValue="5475"
-                        isReadOnly="false" 
-                        converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
-                                            />
+						defaultValue="3650" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+											/>
 		</parameters>
+
+
