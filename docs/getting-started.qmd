@@ -2,9 +2,7 @@
 title: "Getting Started"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
+
 
 ## Installation & Setup
 
@@ -44,24 +42,22 @@ single-facility/
 
 ## Running Your First Simulation
 
-### Option 1: Eclipse (Recommended)
-# ~~NOT VERIFIED BY WILLY~~
+### Eclipse
 1. **Import Project** 
    - File → Import → General → Existing Projects into Workspace
    - Select the project directory
    - Click Finish
 
-2. **Configure Run**
-   - Right-click project → Run As → Java Application
-   - Select `SingleFacilityBuilder` as main class
-   - Use launcher: `launchers/single-facility Model.launch`
+2. **Launch and Run**
+   - Use the green run button with the drop-down to select the single-run version of the launcher
+   - Configure the parameters in the parameters tab, initialize the simulation and run it
+   - Look in the root folder for the txt files 
 
-3. **Run**
-   - Click the green Run button
-   - Monitor progress in the console
+::: {.callout-note}
+**TODO: make a animated gif example of running the single-run**
+:::
 
-
-## Configuration
+## Manual Parameter Configuration
 
 Configure parameters through the Repast runtime or by manually editing the parameters file.
 
