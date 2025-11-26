@@ -16,6 +16,7 @@ authors:
   - name: Om Sanghvi
     affiliation: 3
   - name: Karim Khader
+  	orcid: 0000-0002-7206-8077
     affiliation: "1, 2"
 affiliations:
  - name: University of Utah, United States
