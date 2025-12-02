@@ -6,18 +6,9 @@ title: "API Reference"
 **NOTE: AI Generated. Still to be verified by Willy.**
 :::
 
-## Overview
-
-
-format:
-  html:
-    include-in-header:
-      text: |
-        <meta http-equiv="refresh" content="5; url=javadoc/index.html">
----
 
 ## API Documentation
----
+
 
 ## Available Packages
 

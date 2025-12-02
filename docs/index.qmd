@@ -3,9 +3,7 @@ title: "Single-Facility Disease Transmission Model"
 subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
+
 
 ## Overview
 
@@ -26,11 +24,13 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 - **Importation**: Probability-based disease introduction via new patient admissions
 - **Transmission**: Beta coefficient-based contact transmission between patients
 - **Surveillance**: Active surveillance testing with configurable adherence rates
+- **Clinical Detection** Symptom detection
 - **Isolation**: Transmission reduction for detected/isolated patients
 
 ### Output & Analysis
 
 - CSV outputs for time series analysis in single-run mode
+- CSV outputs that agregate outcomes for batch runs
 - Event logs for admissions, transmissions, detections, etc.
 - Batch running capabilities for parameter sweeps
 - R scripts for verifying model behaviors and sensitivity analyses
@@ -51,14 +51,6 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 - **[Model Overview](model-overview.qmd)** - Detailed model description and mechanisms
 - **[Parameters](parameters.qmd)** - Configuration options and defaults
 - **[API Reference](api-docs.qmd)** - Javadoc documentation
-
-## Vignettes & Examples
-
-Explore the model through practical examples:
-
-- **[Basic Simulation](vignettes/01-basic-simulation.qmd)** - Run your first simulation and interpret outputs
-- **[Surveillance Strategies](vignettes/02-surveillance-comparison.qmd)** - Compare different surveillance approaches
-- **[Parameter Sensitivity](vignettes/03-parameter-sensitivity.qmd)** - Analyze model sensitivity to key parameters
 
 ## Time Representation
 
@@ -101,4 +93,3 @@ This project was supported by the **Centers for Disease Control and Prevention's
 
 ---
 
-**Last Updated**: {{< meta date-modified >}}
