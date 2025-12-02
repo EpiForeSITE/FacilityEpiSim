@@ -57,8 +57,7 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+  # theme removed (no theme)
     toc: true
     toc-depth: 2
     code-fold: false

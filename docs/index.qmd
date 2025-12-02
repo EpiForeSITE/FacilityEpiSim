@@ -93,4 +93,3 @@ This project was supported by the **Centers for Disease Control and Prevention's
 
 ---
 
-**Last Updated**: {{< meta date-modified >}}
