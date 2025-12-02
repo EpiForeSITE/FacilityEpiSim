@@ -76,7 +76,7 @@ for public health.
 
 While several open source software packages exist for general infectious disease outbreak simulation
 (e.g., @Jenness2013EpiModel, @Gozzi2025Epydemix, @Lorton2019CMS, @Grefenstette2013FRED, @Gallagher2024epiabm, 
-Meyer2023epiworldR), none of these provide settings specific to healthcare facility epidemiological scenarios
+@Meyer2023epiworldR), none of these provide settings specific to healthcare facility epidemiological scenarios
 without significant customization efforts by the user. We found one public repository, H-outbreak, for
 spatial-temporal simulation for hospital infection spread (@Kim2023HOutbreak), which emphasizes modeling
 spatial hospital layout and staffing rather than transmission dynamics and surveillance. Furthermore, to our
