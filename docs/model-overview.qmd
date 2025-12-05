@@ -195,6 +195,3 @@ Currently supports one facility type:
 
 ## Next Steps
 
-- See [Parameters](parameters.qmd) for detailed configuration options
-- Review [Getting Started](getting-started.qmd) to run your first simulation
-- Check [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd) for practical examples

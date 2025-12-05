@@ -15,18 +15,19 @@ website:
         text: Model Documentation
       - href: parameters.qmd
         text: Parameters
-      - text: Vignettes
+      - text: Articles
         menu:
-          - href: vignettes/01-basic-simulation.qmd
-            text: Basic Simulation
-          - href: vignettes/02-surveillance-comparison.qmd
-            text: Surveillance Strategies
-          - href: vignettes/03-parameter-sensitivity.qmd
-            text: Parameter Sensitivity
+          - href: vignettes/run-a-single-iteration.qmd
+            text: Run a single iteration of the model
+          - href: vignettes/run-a-batch-of-iterations.qmd
+            text: Run a batch of iterations of the model
+          - href: vignettes/single-iteration-data-analysis.qmd
+            text: Single Iteration Data Analysis
+          - href: vignettes/batch-iteration-data-analysis.qmd
+            text: Batch Iteration Data Analysis
       - href: api-docs.qmd
         text: API Reference
-      - href: architecture.qmd
-        text: Architecture
+
 
   sidebar:
     - id: getting-started
@@ -43,9 +44,10 @@ website:
     - id: analysis
       title: Analysis & Vignettes
       contents:
-        - vignettes/01-basic-simulation.qmd
-        - vignettes/02-surveillance-comparison.qmd
-        - vignettes/03-parameter-sensitivity.qmd
+        - vignettes/run-a-single-iteration.qmd
+        - vignettes/run-a-batch-of-iterations.qmd
+        - vignettes/single-iteration-data-analysis.qmd
+        - vignettes/batch-iteration-data-analysis.qmd
 
   page-footer:
     left: |

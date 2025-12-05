@@ -267,28 +267,9 @@ if (patient.isIsolated()) {
 - `probClinicalDetection` - Natural detection pathway
 - Detection adherence rates - Affects who gets tested
 
-## Validation Approaches
-
-### Analytical Comparison
-- Compare against SIS model solutions
-- Check R₀ calculations
-
-### Sensitivity Analysis
-- Vary β, importation rate
-- Verify outputs scale predictably
-
-### Boundary Conditions
-- β = 0: No transmission
-- importationRate = 0: Eventually disease-free
-- isolationEffectiveness = 1: Elimination when all detected
 
 ### Empirical Validation
 - Run with known parameters
 - Compare outputs to published studies
-- See [Parameter Sensitivity Vignette](../vignettes/03-parameter-sensitivity.qmd)
 
-## Next Steps
 
-- See [Model Overview](model-overview.qmd) for broader context
-- Review [Parameters](parameters.qmd) for tuning transmission
-- Explore [Parameter Sensitivity Vignette](../vignettes/03-parameter-sensitivity.qmd) for empirical results

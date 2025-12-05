@@ -299,7 +299,6 @@ Minimal output focused on summary statistics for parameter sweeps.
 
 ### Validation
 - Compare against analytical predictions
-- Sensitivity analysis (see vignettes)
 - Output consistency checks
 
 ## Performance Considerations
@@ -323,4 +322,3 @@ Minimal output focused on summary statistics for parameter sweeps.
 
 - See [API Documentation](api-docs.qmd) for detailed method references
 - Review source code with [Javadoc](../docs/index.html)
-- Try [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd)

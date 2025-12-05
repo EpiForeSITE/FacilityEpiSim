@@ -482,7 +482,3 @@ The model is **not thread-safe**. Repast Simphony runs sequentially:
 
 ## For More Information
 
-- **Source Code**: See [Javadoc](../docs/index.html)
-- **Architecture**: See [Architecture & Design](architecture.qmd)
-- **Example Usage**: See [Basic Simulation Vignette](../vignettes/01-basic-simulation.qmd)
-- **Model Details**: See [Model Overview](model-overview.qmd)

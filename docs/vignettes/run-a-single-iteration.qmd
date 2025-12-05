@@ -1,0 +1,35 @@
+---
+title: "Run a Single Iteration of the Model"
+---
+
+## Prerequisites
+- a functioning installation of Repast Simphony
+- a project in Repast that is a clone of the facilityepisim project
+
+## Run the model one time
+Single runs of the model are useful primarily for verifying that the 
+model is built correctly and that the distribution of various outputs
+conforms to expectations.  
+
+
+### Step by step
+
+1. Find the green triangle run button.
+
+2. Pull down the drop-down menu and click single-facility model.
+
+	![](images/run-pull-down-button-01.jpg)
+
+3. Wait an indeterminate amount of time (up to 2 minutes).
+
+4. You will see the Repast Simphony single-run interface.
+
+	![](images/single-run-interface-01.jpg)
+
+5. To change the parameters for this run, find the Parameters tab at the bottom of the frame on the left.
+
+	![](images/parameters-tab.jpg)
+
+6. Update parameters as necessary.  
+
+    ![](images/parameters-panel.JPG)
