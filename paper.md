@@ -14,7 +14,7 @@ authors:
   - name: Willy Ray
     affiliation: "1, 2"
   - name: Om Sanghvi
-    affiliation: 3
+    affiliation: "3"
   - name: Karim Khader
     orcid: 0000-0002-7206-8077
     affiliation: "1, 2"
@@ -84,7 +84,7 @@ knowledge all these existing simulation models use discrete time steps rather th
 event-based framework implemented in our model, which obviates the need for choosing a time step frequency that
 could unintentionally affect simulation dynamics.
 
-![Parameters Panel Image][./docs/vignettes/images/parameters-panel.JPG]
+![Parameters Panel Image](./docs/vignettes/images/parameters-panel.JPG)
 
 # Acknowledgements
 
