@@ -1,3 +1,97 @@
 ---
 title: "Single Iteration Data Analysis"
 ---
+
+::: {.callout-note}
+## Note:
+The data in this example in files named <real_file_name>.demo.txt.  Your own analysis should omit the .demo.  
+:::
+
+## Admissions Data Overview
+
+Admissions data shows all the admission to the facility in the entire run, as well as whether or not the patient admitted imported the disease. 
+
+::: {.callout-warning}
+## Warning:
+After some iterations of the simulation, the last row of data in this file is not complete.  If you see errors when you read in the data, check the .txt file and, if necessary, delete the last record.
+:::
+
+```{r admissions}
+# Read admissions.txt and show descriptive info and stats
+
+# Read admissions.txt
+admissions_df <- read.table('../data/admissions.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+# Show structure 
+cat('Admissions data:')
+head(admissions_df)
+```
+
+## Clinical Detection Data Overview
+
+This dataset shows the time and patient id of a detection via the clinical (symptoms-base) route.  DetectionCount is a check column.  In some edge cases a patient may be detected, treated, recovered and **detected again**, in which case detection count for that patient would be >1.
+```{r clinical_detections}
+#read clinical_detections and give descriptive stats.
+
+clinical_detections_df <- read.table('../data/clinicalDetection.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+#show sample of rows:
+head(clinical_detections_df)
+#show descriptive stats
+summary(clinical_detections_df)
+```
+
+## Daily Population Counts
+
+The output file daily_population_stats.txt shows the total number of patients in the facility on a given day, the number of those who are colonized, detected and isolation.  By default, it starts at the end of the burn-in period.  There is another sanity check embedded in this file; it should always be the case that detected == isolated.  We isolate detected patients, and we don't isolate anybody else.
+
+```{r}
+
+# Read daily_population_stats.txt (comma-delimited)
+daily_pop_df <- read.table('../data/daily_population_stats.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+# Show structure and summary
+cat('Daily population stats:')
+head(daily_pop_df)
+cat('\nSummary statistics:')
+summary(daily_pop_df)
+```
+### Daily Population Time Series
+
+```{r}
+# Time-series plot: population, colonized, detected vs time
+library(ggplot2)
+
+# Assume columns: time, Total Population, Colonized, Detected
+ggplot(daily_pop_df, aes(x = time)) +
+	geom_line(aes(y = `total_population`, color = 'Population')) +
+	geom_line(aes(y = colonized, color = 'Colonized')) +
+	geom_line(aes(y = detected, color = 'Detected')) +
+	labs(title = 'Daily Population Time Series', x = 'Time', y = 'Count', color = 'Legend') +
+	theme_minimal()
+```
+
+### Distribution of Daily Population Values
+
+These are the distribution of daily samples of the total population of the sim, the colonized and detected counts.
+
+```{r}
+# Histogram of Total Population
+ggplot(daily_pop_df, aes(x = total_population)) +
+	geom_histogram(binwidth = 1, fill = 'skyblue', color = 'black') +
+	labs(title = 'Histogram of Total Population', x = 'total_population', y = 'Frequency') +
+	theme_minimal()
+
+# Histogram of Colonized
+ggplot(daily_pop_df, aes(x = colonized)) +
+	geom_histogram(binwidth = 1, fill = 'orange', color = 'black') +
+	labs(title = 'Histogram of Colonized', x = 'colonized', y = 'Frequency') +
+	theme_minimal()
+
+# Histogram of Detected
+ggplot(daily_pop_df, aes(x = detected)) +
+	geom_histogram(binwidth = 1, fill = 'purple', color = 'black') +
+	labs(title = 'Histogram of Detected', x = 'detected', y = 'Frequency') +
+	theme_minimal()
+```
+
