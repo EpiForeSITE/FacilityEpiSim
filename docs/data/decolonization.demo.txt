@@ -1,1638 +1,1912 @@
-Time: 32.61, Decolonized Patient: 122
-Time: 38.25, Decolonized Patient: 164
-Time: 38.52, Decolonized Patient: 170
-Time: 38.53, Decolonized Patient: 76
-Time: 40.18, Decolonized Patient: 148
-Time: 40.62, Decolonized Patient: 137
-Time: 45.86, Decolonized Patient: 150
-Time: 53.09, Decolonized Patient: 229
-Time: 53.57, Decolonized Patient: 221
-Time: 56.24, Decolonized Patient: 177
-Time: 66.66, Decolonized Patient: 148
-Time: 70.18, Decolonized Patient: 283
-Time: 71.89, Decolonized Patient: 152
-Time: 81.04, Decolonized Patient: 246
-Time: 84.09, Decolonized Patient: 292
-Time: 95.16, Decolonized Patient: 303
-Time: 96.88, Decolonized Patient: 250
-Time: 97.94, Decolonized Patient: 326
-Time: 102.78, Decolonized Patient: 365
-Time: 103.07, Decolonized Patient: 328
-Time: 103.36, Decolonized Patient: 326
-Time: 106.15, Decolonized Patient: 287
-Time: 107.14, Decolonized Patient: 417
-Time: 112.42, Decolonized Patient: 397
-Time: 112.67, Decolonized Patient: 281
-Time: 114.01, Decolonized Patient: 315
-Time: 117.41, Decolonized Patient: 479
-Time: 119.75, Decolonized Patient: 486
-Time: 120.68, Decolonized Patient: 449
-Time: 120.81, Decolonized Patient: 408
-Time: 122.86, Decolonized Patient: 493
-Time: 129.00, Decolonized Patient: 480
-Time: 131.39, Decolonized Patient: 482
-Time: 132.91, Decolonized Patient: 281
-Time: 136.03, Decolonized Patient: 467
-Time: 136.09, Decolonized Patient: 482
-Time: 138.76, Decolonized Patient: 483
-Time: 142.71, Decolonized Patient: 505
-Time: 145.50, Decolonized Patient: 566
-Time: 147.85, Decolonized Patient: 406
-Time: 147.96, Decolonized Patient: 530
-Time: 149.09, Decolonized Patient: 550
-Time: 152.27, Decolonized Patient: 528
-Time: 155.20, Decolonized Patient: 575
-Time: 156.39, Decolonized Patient: 476
-Time: 160.89, Decolonized Patient: 574
-Time: 160.96, Decolonized Patient: 451
-Time: 161.94, Decolonized Patient: 490
-Time: 164.00, Decolonized Patient: 553
-Time: 170.59, Decolonized Patient: 609
-Time: 170.78, Decolonized Patient: 526
-Time: 172.49, Decolonized Patient: 609
-Time: 175.98, Decolonized Patient: 558
-Time: 186.61, Decolonized Patient: 562
-Time: 186.65, Decolonized Patient: 637
-Time: 196.19, Decolonized Patient: 685
-Time: 197.31, Decolonized Patient: 619
-Time: 198.90, Decolonized Patient: 666
-Time: 199.58, Decolonized Patient: 526
-Time: 204.58, Decolonized Patient: 612
-Time: 210.19, Decolonized Patient: 771
-Time: 210.92, Decolonized Patient: 736
-Time: 212.86, Decolonized Patient: 747
-Time: 213.26, Decolonized Patient: 693
-Time: 213.35, Decolonized Patient: 526
-Time: 216.63, Decolonized Patient: 666
-Time: 222.14, Decolonized Patient: 772
-Time: 229.98, Decolonized Patient: 776
-Time: 232.79, Decolonized Patient: 801
-Time: 234.33, Decolonized Patient: 807
-Time: 237.34, Decolonized Patient: 784
-Time: 245.20, Decolonized Patient: 881
-Time: 246.11, Decolonized Patient: 733
-Time: 246.46, Decolonized Patient: 848
-Time: 247.08, Decolonized Patient: 782
-Time: 253.71, Decolonized Patient: 925
-Time: 254.97, Decolonized Patient: 909
-Time: 262.12, Decolonized Patient: 871
-Time: 262.29, Decolonized Patient: 765
-Time: 262.79, Decolonized Patient: 916
-Time: 264.00, Decolonized Patient: 980
-Time: 264.21, Decolonized Patient: 925
-Time: 267.78, Decolonized Patient: 871
-Time: 268.50, Decolonized Patient: 958
-Time: 273.02, Decolonized Patient: 964
-Time: 273.14, Decolonized Patient: 881
-Time: 275.45, Decolonized Patient: 1002
-Time: 275.84, Decolonized Patient: 823
-Time: 278.56, Decolonized Patient: 871
-Time: 278.95, Decolonized Patient: 1024
-Time: 279.68, Decolonized Patient: 930
-Time: 288.47, Decolonized Patient: 974
-Time: 290.18, Decolonized Patient: 992
-Time: 296.60, Decolonized Patient: 1076
-Time: 301.49, Decolonized Patient: 917
-Time: 303.23, Decolonized Patient: 1075
-Time: 303.80, Decolonized Patient: 871
-Time: 309.11, Decolonized Patient: 1022
-Time: 312.55, Decolonized Patient: 1122
-Time: 315.08, Decolonized Patient: 1013
-Time: 328.72, Decolonized Patient: 1140
-Time: 335.68, Decolonized Patient: 1140
-Time: 336.39, Decolonized Patient: 1063
-Time: 337.79, Decolonized Patient: 1166
-Time: 338.00, Decolonized Patient: 1218
-Time: 338.38, Decolonized Patient: 1119
-Time: 340.01, Decolonized Patient: 1205
-Time: 341.43, Decolonized Patient: 1143
-Time: 343.89, Decolonized Patient: 1025
-Time: 347.13, Decolonized Patient: 1185
-Time: 353.49, Decolonized Patient: 1258
-Time: 355.36, Decolonized Patient: 1245
-Time: 360.50, Decolonized Patient: 1185
-Time: 361.73, Decolonized Patient: 1344
-Time: 363.78, Decolonized Patient: 1294
-Time: 369.99, Decolonized Patient: 1247
-Time: 372.44, Decolonized Patient: 1271
-Time: 373.77, Decolonized Patient: 1294
-Time: 376.04, Decolonized Patient: 1359
-Time: 377.92, Decolonized Patient: 1271
-Time: 378.39, Decolonized Patient: 1197
-Time: 379.47, Decolonized Patient: 1332
-Time: 380.13, Decolonized Patient: 1396
-Time: 383.88, Decolonized Patient: 1359
-Time: 384.25, Decolonized Patient: 1292
-Time: 387.08, Decolonized Patient: 1435
-Time: 390.55, Decolonized Patient: 1321
-Time: 396.39, Decolonized Patient: 1380
-Time: 396.69, Decolonized Patient: 1321
-Time: 400.33, Decolonized Patient: 1508
-Time: 401.40, Decolonized Patient: 1481
-Time: 403.44, Decolonized Patient: 1423
-Time: 406.64, Decolonized Patient: 1370
-Time: 407.12, Decolonized Patient: 1521
-Time: 410.02, Decolonized Patient: 1410
-Time: 410.59, Decolonized Patient: 1454
-Time: 410.78, Decolonized Patient: 1359
-Time: 410.91, Decolonized Patient: 1397
-Time: 416.92, Decolonized Patient: 1397
-Time: 417.16, Decolonized Patient: 1423
-Time: 418.98, Decolonized Patient: 1452
-Time: 420.89, Decolonized Patient: 1440
-Time: 423.22, Decolonized Patient: 1463
-Time: 423.62, Decolonized Patient: 1530
-Time: 424.49, Decolonized Patient: 1370
-Time: 430.59, Decolonized Patient: 1560
-Time: 431.28, Decolonized Patient: 1505
-Time: 440.31, Decolonized Patient: 1577
-Time: 442.18, Decolonized Patient: 1562
-Time: 444.09, Decolonized Patient: 1600
-Time: 444.11, Decolonized Patient: 1431
-Time: 445.03, Decolonized Patient: 1359
-Time: 448.39, Decolonized Patient: 1543
-Time: 448.43, Decolonized Patient: 1577
-Time: 451.97, Decolonized Patient: 1618
-Time: 456.03, Decolonized Patient: 1638
-Time: 458.10, Decolonized Patient: 1644
-Time: 458.67, Decolonized Patient: 1691
-Time: 464.01, Decolonized Patient: 1648
-Time: 465.29, Decolonized Patient: 1717
-Time: 466.76, Decolonized Patient: 1687
-Time: 469.67, Decolonized Patient: 1756
-Time: 470.41, Decolonized Patient: 1651
-Time: 471.39, Decolonized Patient: 1658
-Time: 471.83, Decolonized Patient: 1670
-Time: 472.33, Decolonized Patient: 1746
-Time: 472.84, Decolonized Patient: 1718
-Time: 473.91, Decolonized Patient: 1688
-Time: 476.24, Decolonized Patient: 1683
-Time: 476.40, Decolonized Patient: 1732
-Time: 476.81, Decolonized Patient: 1706
-Time: 477.94, Decolonized Patient: 1572
-Time: 478.38, Decolonized Patient: 1691
-Time: 480.77, Decolonized Patient: 1714
-Time: 483.71, Decolonized Patient: 1742
-Time: 485.82, Decolonized Patient: 1692
-Time: 486.03, Decolonized Patient: 1423
-Time: 487.00, Decolonized Patient: 1670
-Time: 488.08, Decolonized Patient: 1670
-Time: 488.19, Decolonized Patient: 1706
-Time: 488.85, Decolonized Patient: 1750
-Time: 490.40, Decolonized Patient: 1658
-Time: 494.07, Decolonized Patient: 1688
-Time: 499.61, Decolonized Patient: 1658
-Time: 502.80, Decolonized Patient: 1780
-Time: 506.03, Decolonized Patient: 1756
-Time: 506.49, Decolonized Patient: 1706
-Time: 514.16, Decolonized Patient: 1762
-Time: 515.62, Decolonized Patient: 1879
-Time: 519.93, Decolonized Patient: 1604
-Time: 520.81, Decolonized Patient: 1937
-Time: 521.17, Decolonized Patient: 1891
-Time: 524.31, Decolonized Patient: 1762
-Time: 526.59, Decolonized Patient: 1888
-Time: 527.64, Decolonized Patient: 1852
-Time: 528.07, Decolonized Patient: 1844
-Time: 528.35, Decolonized Patient: 1706
-Time: 540.17, Decolonized Patient: 1706
-Time: 542.67, Decolonized Patient: 1894
-Time: 543.03, Decolonized Patient: 1903
-Time: 543.81, Decolonized Patient: 1688
-Time: 543.90, Decolonized Patient: 1762
-Time: 549.98, Decolonized Patient: 1706
-Time: 553.27, Decolonized Patient: 1999
-Time: 553.71, Decolonized Patient: 1873
-Time: 559.69, Decolonized Patient: 2002
-Time: 562.93, Decolonized Patient: 1982
-Time: 563.37, Decolonized Patient: 2013
-Time: 563.63, Decolonized Patient: 1871
-Time: 567.95, Decolonized Patient: 2085
-Time: 568.18, Decolonized Patient: 1688
-Time: 569.02, Decolonized Patient: 2056
-Time: 570.20, Decolonized Patient: 2054
-Time: 571.51, Decolonized Patient: 1706
-Time: 571.73, Decolonized Patient: 1841
-Time: 571.84, Decolonized Patient: 2063
-Time: 571.91, Decolonized Patient: 2072
-Time: 573.39, Decolonized Patient: 2044
-Time: 575.42, Decolonized Patient: 2053
-Time: 578.77, Decolonized Patient: 2071
-Time: 579.88, Decolonized Patient: 2049
-Time: 581.02, Decolonized Patient: 1929
-Time: 583.65, Decolonized Patient: 2057
-Time: 583.65, Decolonized Patient: 1852
-Time: 583.95, Decolonized Patient: 2059
-Time: 584.88, Decolonized Patient: 2049
-Time: 585.72, Decolonized Patient: 2100
-Time: 586.47, Decolonized Patient: 2088
-Time: 588.10, Decolonized Patient: 2071
-Time: 588.72, Decolonized Patient: 2058
-Time: 589.48, Decolonized Patient: 2125
-Time: 594.69, Decolonized Patient: 2071
-Time: 597.87, Decolonized Patient: 2086
-Time: 598.41, Decolonized Patient: 1688
-Time: 598.76, Decolonized Patient: 2059
-Time: 599.10, Decolonized Patient: 2117
-Time: 601.35, Decolonized Patient: 2084
-Time: 604.31, Decolonized Patient: 2085
-Time: 606.55, Decolonized Patient: 2059
-Time: 606.96, Decolonized Patient: 2085
-Time: 607.25, Decolonized Patient: 2058
-Time: 611.83, Decolonized Patient: 2137
-Time: 617.05, Decolonized Patient: 2037
-Time: 624.15, Decolonized Patient: 2274
-Time: 624.61, Decolonized Patient: 2217
-Time: 631.61, Decolonized Patient: 2249
-Time: 633.27, Decolonized Patient: 2236
-Time: 637.64, Decolonized Patient: 2236
-Time: 637.78, Decolonized Patient: 2273
-Time: 645.31, Decolonized Patient: 2273
-Time: 645.82, Decolonized Patient: 2298
-Time: 647.12, Decolonized Patient: 2275
-Time: 649.09, Decolonized Patient: 2344
-Time: 651.51, Decolonized Patient: 2247
-Time: 656.15, Decolonized Patient: 2298
-Time: 656.51, Decolonized Patient: 2303
-Time: 658.58, Decolonized Patient: 2351
-Time: 660.42, Decolonized Patient: 2292
-Time: 662.98, Decolonized Patient: 2278
-Time: 663.30, Decolonized Patient: 2344
-Time: 664.33, Decolonized Patient: 2324
-Time: 665.32, Decolonized Patient: 2275
-Time: 667.38, Decolonized Patient: 2396
-Time: 668.89, Decolonized Patient: 2269
-Time: 669.04, Decolonized Patient: 2338
-Time: 669.77, Decolonized Patient: 2409
-Time: 670.33, Decolonized Patient: 2372
-Time: 671.80, Decolonized Patient: 2324
-Time: 674.79, Decolonized Patient: 2274
-Time: 677.55, Decolonized Patient: 2344
-Time: 679.80, Decolonized Patient: 2439
-Time: 681.67, Decolonized Patient: 2274
-Time: 681.81, Decolonized Patient: 2449
-Time: 681.81, Decolonized Patient: 2375
-Time: 682.69, Decolonized Patient: 2278
-Time: 685.90, Decolonized Patient: 2274
-Time: 686.32, Decolonized Patient: 2434
-Time: 689.36, Decolonized Patient: 2361
-Time: 705.46, Decolonized Patient: 2504
-Time: 707.25, Decolonized Patient: 2558
-Time: 710.58, Decolonized Patient: 2278
-Time: 711.89, Decolonized Patient: 2483
-Time: 716.46, Decolonized Patient: 2496
-Time: 717.21, Decolonized Patient: 2496
-Time: 718.02, Decolonized Patient: 2523
-Time: 721.19, Decolonized Patient: 2516
-Time: 722.29, Decolonized Patient: 2372
-Time: 724.17, Decolonized Patient: 2592
-Time: 725.76, Decolonized Patient: 2509
-Time: 726.98, Decolonized Patient: 2555
-Time: 728.13, Decolonized Patient: 2455
-Time: 731.96, Decolonized Patient: 2652
-Time: 734.12, Decolonized Patient: 2488
-Time: 736.71, Decolonized Patient: 2516
-Time: 736.80, Decolonized Patient: 2623
-Time: 737.26, Decolonized Patient: 2633
-Time: 739.01, Decolonized Patient: 2675
-Time: 739.82, Decolonized Patient: 2670
-Time: 740.73, Decolonized Patient: 2604
-Time: 741.53, Decolonized Patient: 2721
-Time: 742.53, Decolonized Patient: 2557
-Time: 742.88, Decolonized Patient: 2434
-Time: 742.92, Decolonized Patient: 2372
-Time: 745.64, Decolonized Patient: 2669
-Time: 748.50, Decolonized Patient: 2730
-Time: 750.53, Decolonized Patient: 2372
-Time: 750.76, Decolonized Patient: 2706
-Time: 753.44, Decolonized Patient: 2736
-Time: 753.79, Decolonized Patient: 2555
-Time: 754.10, Decolonized Patient: 2622
-Time: 757.22, Decolonized Patient: 2738
-Time: 758.21, Decolonized Patient: 2716
-Time: 758.82, Decolonized Patient: 2372
-Time: 760.32, Decolonized Patient: 2604
-Time: 762.91, Decolonized Patient: 2694
-Time: 763.60, Decolonized Patient: 2721
-Time: 765.43, Decolonized Patient: 2773
-Time: 765.65, Decolonized Patient: 2660
-Time: 765.89, Decolonized Patient: 2790
-Time: 768.94, Decolonized Patient: 2732
-Time: 772.13, Decolonized Patient: 2633
-Time: 772.90, Decolonized Patient: 2757
-Time: 773.44, Decolonized Patient: 2646
-Time: 774.20, Decolonized Patient: 2398
-Time: 778.28, Decolonized Patient: 2732
-Time: 781.73, Decolonized Patient: 2760
-Time: 781.73, Decolonized Patient: 2784
-Time: 782.47, Decolonized Patient: 2509
-Time: 782.91, Decolonized Patient: 2622
-Time: 785.11, Decolonized Patient: 2757
-Time: 797.49, Decolonized Patient: 2663
-Time: 798.53, Decolonized Patient: 2890
-Time: 800.09, Decolonized Patient: 2863
-Time: 800.43, Decolonized Patient: 2792
-Time: 802.71, Decolonized Patient: 2846
-Time: 804.25, Decolonized Patient: 2795
-Time: 804.82, Decolonized Patient: 2878
-Time: 807.63, Decolonized Patient: 2922
-Time: 809.54, Decolonized Patient: 2974
-Time: 812.34, Decolonized Patient: 2731
-Time: 814.43, Decolonized Patient: 2973
-Time: 816.91, Decolonized Patient: 2782
-Time: 823.14, Decolonized Patient: 2604
-Time: 825.72, Decolonized Patient: 2978
-Time: 828.72, Decolonized Patient: 2926
-Time: 843.37, Decolonized Patient: 2604
-Time: 846.32, Decolonized Patient: 2604
-Time: 856.36, Decolonized Patient: 3020
-Time: 857.26, Decolonized Patient: 3083
-Time: 860.15, Decolonized Patient: 3041
-Time: 860.70, Decolonized Patient: 3021
-Time: 865.45, Decolonized Patient: 2782
-Time: 869.83, Decolonized Patient: 3088
-Time: 871.88, Decolonized Patient: 2669
-Time: 873.99, Decolonized Patient: 3155
-Time: 877.79, Decolonized Patient: 3107
-Time: 878.98, Decolonized Patient: 3118
-Time: 880.46, Decolonized Patient: 3103
-Time: 886.25, Decolonized Patient: 3140
-Time: 889.27, Decolonized Patient: 2669
-Time: 891.14, Decolonized Patient: 3132
-Time: 893.90, Decolonized Patient: 3178
-Time: 899.23, Decolonized Patient: 2922
-Time: 899.53, Decolonized Patient: 3208
-Time: 904.50, Decolonized Patient: 3170
-Time: 904.92, Decolonized Patient: 3244
-Time: 907.87, Decolonized Patient: 3107
-Time: 909.01, Decolonized Patient: 3157
-Time: 911.34, Decolonized Patient: 2669
-Time: 911.69, Decolonized Patient: 3234
-Time: 913.18, Decolonized Patient: 3239
-Time: 917.96, Decolonized Patient: 3124
-Time: 919.38, Decolonized Patient: 3235
-Time: 921.11, Decolonized Patient: 2922
-Time: 926.31, Decolonized Patient: 3322
-Time: 934.24, Decolonized Patient: 3232
-Time: 940.53, Decolonized Patient: 3324
-Time: 948.91, Decolonized Patient: 3422
-Time: 954.39, Decolonized Patient: 3422
-Time: 955.54, Decolonized Patient: 3401
-Time: 962.42, Decolonized Patient: 3271
-Time: 970.35, Decolonized Patient: 3451
-Time: 970.55, Decolonized Patient: 3396
-Time: 971.52, Decolonized Patient: 3419
-Time: 975.99, Decolonized Patient: 3482
-Time: 978.47, Decolonized Patient: 3457
-Time: 978.94, Decolonized Patient: 3272
-Time: 980.98, Decolonized Patient: 3479
-Time: 981.01, Decolonized Patient: 3430
-Time: 983.71, Decolonized Patient: 3530
-Time: 985.53, Decolonized Patient: 3453
-Time: 985.78, Decolonized Patient: 3271
-Time: 989.83, Decolonized Patient: 3534
-Time: 990.60, Decolonized Patient: 3566
-Time: 992.75, Decolonized Patient: 3271
-Time: 1003.98, Decolonized Patient: 3439
-Time: 1005.34, Decolonized Patient: 3419
-Time: 1010.36, Decolonized Patient: 3572
-Time: 1015.86, Decolonized Patient: 3606
-Time: 1017.02, Decolonized Patient: 3419
-Time: 1018.36, Decolonized Patient: 3591
-Time: 1018.67, Decolonized Patient: 3625
-Time: 1024.34, Decolonized Patient: 3605
-Time: 1024.60, Decolonized Patient: 3606
-Time: 1026.08, Decolonized Patient: 3606
-Time: 1027.30, Decolonized Patient: 3628
-Time: 1032.71, Decolonized Patient: 3636
-Time: 1036.40, Decolonized Patient: 3419
-Time: 1039.15, Decolonized Patient: 3676
-Time: 1044.88, Decolonized Patient: 3713
-Time: 1054.81, Decolonized Patient: 3634
-Time: 1058.34, Decolonized Patient: 3751
-Time: 1059.43, Decolonized Patient: 3679
-Time: 1060.38, Decolonized Patient: 3745
-Time: 1062.88, Decolonized Patient: 3634
-Time: 1077.97, Decolonized Patient: 3796
-Time: 1079.33, Decolonized Patient: 3727
-Time: 1079.66, Decolonized Patient: 3803
-Time: 1080.81, Decolonized Patient: 3748
-Time: 1083.05, Decolonized Patient: 3832
-Time: 1087.21, Decolonized Patient: 3771
-Time: 1088.25, Decolonized Patient: 3727
-Time: 1091.24, Decolonized Patient: 3669
-Time: 1094.32, Decolonized Patient: 3834
-Time: 1098.37, Decolonized Patient: 3912
-Time: 1100.02, Decolonized Patient: 3634
-Time: 1102.52, Decolonized Patient: 3908
-Time: 1102.62, Decolonized Patient: 3771
-Time: 1103.80, Decolonized Patient: 3875
-Time: 1105.62, Decolonized Patient: 3669
-Time: 1106.84, Decolonized Patient: 3828
-Time: 1107.23, Decolonized Patient: 3829
-Time: 1110.71, Decolonized Patient: 3858
-Time: 1111.31, Decolonized Patient: 3874
-Time: 1115.75, Decolonized Patient: 3828
-Time: 1115.80, Decolonized Patient: 3634
-Time: 1119.77, Decolonized Patient: 3951
-Time: 1123.30, Decolonized Patient: 3816
-Time: 1128.70, Decolonized Patient: 3938
-Time: 1130.73, Decolonized Patient: 3972
-Time: 1133.48, Decolonized Patient: 3974
-Time: 1140.09, Decolonized Patient: 3979
-Time: 1141.76, Decolonized Patient: 4059
-Time: 1142.56, Decolonized Patient: 4023
-Time: 1146.15, Decolonized Patient: 3771
-Time: 1148.59, Decolonized Patient: 4011
-Time: 1153.09, Decolonized Patient: 3951
-Time: 1159.59, Decolonized Patient: 4105
-Time: 1161.42, Decolonized Patient: 3999
-Time: 1165.14, Decolonized Patient: 4099
-Time: 1165.92, Decolonized Patient: 4126
-Time: 1171.09, Decolonized Patient: 4175
-Time: 1172.16, Decolonized Patient: 4034
-Time: 1172.68, Decolonized Patient: 4130
-Time: 1174.22, Decolonized Patient: 4145
-Time: 1176.57, Decolonized Patient: 4168
-Time: 1176.66, Decolonized Patient: 4139
-Time: 1178.55, Decolonized Patient: 4154
-Time: 1178.73, Decolonized Patient: 4109
-Time: 1186.45, Decolonized Patient: 4130
-Time: 1190.31, Decolonized Patient: 3986
-Time: 1192.98, Decolonized Patient: 4034
-Time: 1193.53, Decolonized Patient: 4187
-Time: 1202.47, Decolonized Patient: 4226
-Time: 1204.23, Decolonized Patient: 4313
-Time: 1204.51, Decolonized Patient: 4271
-Time: 1205.68, Decolonized Patient: 4237
-Time: 1213.36, Decolonized Patient: 4165
-Time: 1213.71, Decolonized Patient: 4270
-Time: 1218.14, Decolonized Patient: 4276
-Time: 1219.14, Decolonized Patient: 4282
-Time: 1220.94, Decolonized Patient: 4344
-Time: 1222.36, Decolonized Patient: 4294
-Time: 1224.54, Decolonized Patient: 4225
-Time: 1224.73, Decolonized Patient: 4271
-Time: 1225.03, Decolonized Patient: 4270
-Time: 1226.23, Decolonized Patient: 4282
-Time: 1227.23, Decolonized Patient: 3986
-Time: 1228.72, Decolonized Patient: 4237
-Time: 1232.21, Decolonized Patient: 4308
-Time: 1234.16, Decolonized Patient: 4357
-Time: 1235.24, Decolonized Patient: 4293
-Time: 1235.52, Decolonized Patient: 4302
-Time: 1237.63, Decolonized Patient: 4357
-Time: 1237.91, Decolonized Patient: 4173
-Time: 1238.59, Decolonized Patient: 4393
-Time: 1240.30, Decolonized Patient: 4404
-Time: 1243.62, Decolonized Patient: 4367
-Time: 1247.39, Decolonized Patient: 4414
-Time: 1252.96, Decolonized Patient: 4427
-Time: 1253.26, Decolonized Patient: 4495
-Time: 1262.26, Decolonized Patient: 4471
-Time: 1265.12, Decolonized Patient: 4521
-Time: 1268.10, Decolonized Patient: 4415
-Time: 1272.16, Decolonized Patient: 4475
-Time: 1278.84, Decolonized Patient: 4521
-Time: 1278.94, Decolonized Patient: 4489
-Time: 1279.45, Decolonized Patient: 4468
-Time: 1281.12, Decolonized Patient: 4543
-Time: 1285.55, Decolonized Patient: 4574
-Time: 1287.08, Decolonized Patient: 4521
-Time: 1288.01, Decolonized Patient: 4493
-Time: 1291.51, Decolonized Patient: 4584
-Time: 1293.22, Decolonized Patient: 4614
-Time: 1299.04, Decolonized Patient: 4431
-Time: 1299.64, Decolonized Patient: 4684
-Time: 1302.96, Decolonized Patient: 4503
-Time: 1305.35, Decolonized Patient: 4442
-Time: 1310.52, Decolonized Patient: 4442
-Time: 1312.01, Decolonized Patient: 4700
-Time: 1315.58, Decolonized Patient: 4650
-Time: 1316.16, Decolonized Patient: 4684
-Time: 1317.38, Decolonized Patient: 4442
-Time: 1320.94, Decolonized Patient: 4712
-Time: 1328.72, Decolonized Patient: 4669
-Time: 1328.98, Decolonized Patient: 4566
-Time: 1335.00, Decolonized Patient: 4442
-Time: 1336.63, Decolonized Patient: 4754
-Time: 1339.03, Decolonized Patient: 4707
-Time: 1342.69, Decolonized Patient: 4566
-Time: 1345.56, Decolonized Patient: 4795
-Time: 1349.26, Decolonized Patient: 4736
-Time: 1349.97, Decolonized Patient: 4837
-Time: 1351.29, Decolonized Patient: 4712
-Time: 1351.89, Decolonized Patient: 4771
-Time: 1353.56, Decolonized Patient: 4791
-Time: 1354.75, Decolonized Patient: 4827
-Time: 1357.99, Decolonized Patient: 4791
-Time: 1359.60, Decolonized Patient: 4769
-Time: 1360.35, Decolonized Patient: 4566
-Time: 1364.50, Decolonized Patient: 4876
-Time: 1365.98, Decolonized Patient: 4865
-Time: 1370.47, Decolonized Patient: 4768
-Time: 1375.01, Decolonized Patient: 4818
-Time: 1376.11, Decolonized Patient: 4835
-Time: 1376.15, Decolonized Patient: 4868
-Time: 1382.78, Decolonized Patient: 4910
-Time: 1387.43, Decolonized Patient: 4768
-Time: 1391.48, Decolonized Patient: 4967
-Time: 1398.40, Decolonized Patient: 4859
-Time: 1398.71, Decolonized Patient: 4919
-Time: 1399.69, Decolonized Patient: 4924
-Time: 1402.20, Decolonized Patient: 4927
-Time: 1403.04, Decolonized Patient: 4983
-Time: 1417.01, Decolonized Patient: 4979
-Time: 1426.46, Decolonized Patient: 5052
-Time: 1435.63, Decolonized Patient: 5027
-Time: 1442.85, Decolonized Patient: 5034
-Time: 1446.96, Decolonized Patient: 5183
-Time: 1447.48, Decolonized Patient: 5203
-Time: 1447.50, Decolonized Patient: 5152
-Time: 1449.19, Decolonized Patient: 5194
-Time: 1453.37, Decolonized Patient: 5171
-Time: 1461.49, Decolonized Patient: 5148
-Time: 1468.12, Decolonized Patient: 5190
-Time: 1469.60, Decolonized Patient: 5209
-Time: 1470.39, Decolonized Patient: 5186
-Time: 1482.06, Decolonized Patient: 5264
-Time: 1482.14, Decolonized Patient: 5181
-Time: 1486.81, Decolonized Patient: 5201
-Time: 1486.88, Decolonized Patient: 5242
-Time: 1487.62, Decolonized Patient: 5117
-Time: 1487.64, Decolonized Patient: 4831
-Time: 1488.76, Decolonized Patient: 5263
-Time: 1493.56, Decolonized Patient: 5263
-Time: 1494.11, Decolonized Patient: 5190
-Time: 1498.83, Decolonized Patient: 5190
-Time: 1500.36, Decolonized Patient: 5305
-Time: 1505.18, Decolonized Patient: 5329
-Time: 1506.96, Decolonized Patient: 5333
-Time: 1507.29, Decolonized Patient: 5339
-Time: 1515.80, Decolonized Patient: 5377
-Time: 1520.62, Decolonized Patient: 5333
-Time: 1521.71, Decolonized Patient: 5337
-Time: 1521.95, Decolonized Patient: 5078
-Time: 1524.09, Decolonized Patient: 5389
-Time: 1524.80, Decolonized Patient: 5365
-Time: 1525.84, Decolonized Patient: 5352
-Time: 1533.48, Decolonized Patient: 5434
-Time: 1534.74, Decolonized Patient: 5453
-Time: 1538.89, Decolonized Patient: 5427
-Time: 1545.73, Decolonized Patient: 5352
-Time: 1557.33, Decolonized Patient: 5545
-Time: 1559.12, Decolonized Patient: 5597
-Time: 1560.06, Decolonized Patient: 5454
-Time: 1560.51, Decolonized Patient: 5337
-Time: 1561.83, Decolonized Patient: 5476
-Time: 1564.10, Decolonized Patient: 5556
-Time: 1572.87, Decolonized Patient: 5364
-Time: 1573.34, Decolonized Patient: 5553
-Time: 1573.61, Decolonized Patient: 5592
-Time: 1575.06, Decolonized Patient: 5544
-Time: 1578.51, Decolonized Patient: 5364
-Time: 1582.76, Decolonized Patient: 5608
-Time: 1583.19, Decolonized Patient: 5602
-Time: 1583.98, Decolonized Patient: 5454
-Time: 1586.87, Decolonized Patient: 5490
-Time: 1587.00, Decolonized Patient: 5553
-Time: 1588.05, Decolonized Patient: 5561
-Time: 1590.31, Decolonized Patient: 5493
-Time: 1603.06, Decolonized Patient: 5561
-Time: 1603.63, Decolonized Patient: 5698
-Time: 1607.12, Decolonized Patient: 5733
-Time: 1611.29, Decolonized Patient: 5621
-Time: 1624.41, Decolonized Patient: 5847
-Time: 1624.42, Decolonized Patient: 5689
-Time: 1626.32, Decolonized Patient: 5744
-Time: 1626.33, Decolonized Patient: 5735
-Time: 1626.44, Decolonized Patient: 5728
-Time: 1631.25, Decolonized Patient: 5537
-Time: 1631.41, Decolonized Patient: 5657
-Time: 1631.56, Decolonized Patient: 5789
-Time: 1632.65, Decolonized Patient: 5764
-Time: 1633.63, Decolonized Patient: 5799
-Time: 1637.24, Decolonized Patient: 5809
-Time: 1646.28, Decolonized Patient: 5925
-Time: 1646.29, Decolonized Patient: 5537
-Time: 1652.36, Decolonized Patient: 5904
-Time: 1652.45, Decolonized Patient: 5814
-Time: 1655.24, Decolonized Patient: 5906
-Time: 1656.82, Decolonized Patient: 5764
-Time: 1657.97, Decolonized Patient: 5984
-Time: 1658.27, Decolonized Patient: 5879
-Time: 1658.97, Decolonized Patient: 5929
-Time: 1660.76, Decolonized Patient: 5871
-Time: 1661.73, Decolonized Patient: 5882
-Time: 1661.98, Decolonized Patient: 5537
-Time: 1663.58, Decolonized Patient: 5879
-Time: 1665.87, Decolonized Patient: 5915
-Time: 1666.53, Decolonized Patient: 5941
-Time: 1668.85, Decolonized Patient: 5864
-Time: 1671.12, Decolonized Patient: 5936
-Time: 1676.32, Decolonized Patient: 5906
-Time: 1676.85, Decolonized Patient: 5934
-Time: 1679.69, Decolonized Patient: 5537
-Time: 1681.13, Decolonized Patient: 5984
-Time: 1683.07, Decolonized Patient: 5965
-Time: 1685.44, Decolonized Patient: 5958
-Time: 1686.24, Decolonized Patient: 6059
-Time: 1694.46, Decolonized Patient: 6053
-Time: 1699.37, Decolonized Patient: 6040
-Time: 1700.93, Decolonized Patient: 6076
-Time: 1709.32, Decolonized Patient: 6040
-Time: 1711.04, Decolonized Patient: 6047
-Time: 1711.18, Decolonized Patient: 6055
-Time: 1713.99, Decolonized Patient: 6016
-Time: 1714.33, Decolonized Patient: 5949
-Time: 1716.48, Decolonized Patient: 6114
-Time: 1716.76, Decolonized Patient: 6119
-Time: 1717.62, Decolonized Patient: 6085
-Time: 1719.24, Decolonized Patient: 6179
-Time: 1727.02, Decolonized Patient: 5949
-Time: 1733.86, Decolonized Patient: 6175
-Time: 1735.25, Decolonized Patient: 6249
-Time: 1735.78, Decolonized Patient: 6135
-Time: 1736.23, Decolonized Patient: 6228
-Time: 1737.77, Decolonized Patient: 6175
-Time: 1738.62, Decolonized Patient: 6172
-Time: 1747.05, Decolonized Patient: 6104
-Time: 1748.24, Decolonized Patient: 6189
-Time: 1748.34, Decolonized Patient: 6277
-Time: 1748.47, Decolonized Patient: 6233
-Time: 1751.08, Decolonized Patient: 6104
-Time: 1756.61, Decolonized Patient: 6256
-Time: 1758.33, Decolonized Patient: 6104
-Time: 1759.93, Decolonized Patient: 6262
-Time: 1762.43, Decolonized Patient: 6303
-Time: 1763.80, Decolonized Patient: 6074
-Time: 1764.01, Decolonized Patient: 6313
-Time: 1766.49, Decolonized Patient: 6292
-Time: 1768.53, Decolonized Patient: 6280
-Time: 1768.64, Decolonized Patient: 6121
-Time: 1768.99, Decolonized Patient: 6314
-Time: 1769.18, Decolonized Patient: 6350
-Time: 1769.45, Decolonized Patient: 6252
-Time: 1771.36, Decolonized Patient: 6325
-Time: 1775.53, Decolonized Patient: 6292
-Time: 1777.33, Decolonized Patient: 6374
-Time: 1778.23, Decolonized Patient: 6314
-Time: 1778.40, Decolonized Patient: 6362
-Time: 1782.51, Decolonized Patient: 6104
-Time: 1785.82, Decolonized Patient: 6291
-Time: 1786.65, Decolonized Patient: 6067
-Time: 1788.02, Decolonized Patient: 6270
-Time: 1792.08, Decolonized Patient: 6479
-Time: 1793.29, Decolonized Patient: 6292
-Time: 1797.05, Decolonized Patient: 6390
-Time: 1798.93, Decolonized Patient: 6303
-Time: 1802.72, Decolonized Patient: 6367
-Time: 1802.78, Decolonized Patient: 6262
-Time: 1805.23, Decolonized Patient: 6442
-Time: 1806.20, Decolonized Patient: 6316
-Time: 1807.10, Decolonized Patient: 6442
-Time: 1807.55, Decolonized Patient: 6469
-Time: 1808.57, Decolonized Patient: 6280
-Time: 1810.18, Decolonized Patient: 6316
-Time: 1811.10, Decolonized Patient: 6457
-Time: 1815.97, Decolonized Patient: 6476
-Time: 1820.32, Decolonized Patient: 6514
-Time: 1823.36, Decolonized Patient: 6526
-Time: 1825.13, Decolonized Patient: 6469
-Time: 1825.38, Decolonized Patient: 6258
-Time: 1825.66, Decolonized Patient: 6483
-Time: 1827.39, Decolonized Patient: 6303
-Time: 1828.57, Decolonized Patient: 6445
-Time: 1830.19, Decolonized Patient: 6563
-Time: 1831.17, Decolonized Patient: 6519
-Time: 1831.25, Decolonized Patient: 6582
-Time: 1835.66, Decolonized Patient: 6539
-Time: 1836.52, Decolonized Patient: 6572
-Time: 1837.06, Decolonized Patient: 6553
-Time: 1838.92, Decolonized Patient: 6540
-Time: 1845.10, Decolonized Patient: 6362
-Time: 1849.16, Decolonized Patient: 6303
-Time: 1850.88, Decolonized Patient: 6467
-Time: 1851.77, Decolonized Patient: 6654
-Time: 1853.69, Decolonized Patient: 6587
-Time: 1854.68, Decolonized Patient: 6467
-Time: 1858.52, Decolonized Patient: 6598
-Time: 1860.83, Decolonized Patient: 6642
-Time: 1866.68, Decolonized Patient: 6362
-Time: 1869.47, Decolonized Patient: 6699
-Time: 1872.08, Decolonized Patient: 6694
-Time: 1873.02, Decolonized Patient: 6631
-Time: 1875.71, Decolonized Patient: 6747
-Time: 1880.53, Decolonized Patient: 6708
-Time: 1880.80, Decolonized Patient: 6714
-Time: 1881.08, Decolonized Patient: 6769
-Time: 1887.35, Decolonized Patient: 6679
-Time: 1888.95, Decolonized Patient: 6445
-Time: 1889.29, Decolonized Patient: 6756
-Time: 1890.17, Decolonized Patient: 6467
-Time: 1892.77, Decolonized Patient: 6714
-Time: 1898.05, Decolonized Patient: 6445
-Time: 1899.75, Decolonized Patient: 6445
-Time: 1900.54, Decolonized Patient: 6787
-Time: 1901.58, Decolonized Patient: 6753
-Time: 1905.69, Decolonized Patient: 6694
-Time: 1909.14, Decolonized Patient: 6631
-Time: 1909.42, Decolonized Patient: 6714
-Time: 1909.50, Decolonized Patient: 6642
-Time: 1910.10, Decolonized Patient: 6708
-Time: 1914.74, Decolonized Patient: 6837
-Time: 1919.89, Decolonized Patient: 6832
-Time: 1927.51, Decolonized Patient: 6850
-Time: 1927.91, Decolonized Patient: 6828
-Time: 1931.53, Decolonized Patient: 6914
-Time: 1931.87, Decolonized Patient: 6718
-Time: 1933.00, Decolonized Patient: 6819
-Time: 1934.29, Decolonized Patient: 6878
-Time: 1934.34, Decolonized Patient: 6884
-Time: 1934.66, Decolonized Patient: 6863
-Time: 1934.91, Decolonized Patient: 6901
-Time: 1936.63, Decolonized Patient: 6906
-Time: 1946.95, Decolonized Patient: 6863
-Time: 1953.62, Decolonized Patient: 6972
-Time: 1953.73, Decolonized Patient: 6884
-Time: 1955.64, Decolonized Patient: 6932
-Time: 1956.14, Decolonized Patient: 7006
-Time: 1957.37, Decolonized Patient: 6964
-Time: 1958.53, Decolonized Patient: 6950
-Time: 1958.84, Decolonized Patient: 6935
-Time: 1959.96, Decolonized Patient: 6832
-Time: 1960.00, Decolonized Patient: 6823
-Time: 1963.51, Decolonized Patient: 7040
-Time: 1964.08, Decolonized Patient: 6964
-Time: 1967.29, Decolonized Patient: 7023
-Time: 1969.98, Decolonized Patient: 6832
-Time: 1974.30, Decolonized Patient: 6884
-Time: 1978.66, Decolonized Patient: 6994
-Time: 1979.61, Decolonized Patient: 6935
-Time: 1979.95, Decolonized Patient: 7098
-Time: 1981.28, Decolonized Patient: 7098
-Time: 1985.07, Decolonized Patient: 7025
-Time: 1986.40, Decolonized Patient: 6925
-Time: 1990.00, Decolonized Patient: 7052
-Time: 2003.55, Decolonized Patient: 7197
-Time: 2007.79, Decolonized Patient: 7180
-Time: 2008.57, Decolonized Patient: 7149
-Time: 2013.30, Decolonized Patient: 7183
-Time: 2014.37, Decolonized Patient: 7045
-Time: 2015.60, Decolonized Patient: 7220
-Time: 2017.25, Decolonized Patient: 7248
-Time: 2026.19, Decolonized Patient: 7240
-Time: 2026.63, Decolonized Patient: 7219
-Time: 2027.07, Decolonized Patient: 7180
-Time: 2027.95, Decolonized Patient: 7267
-Time: 2030.19, Decolonized Patient: 7312
-Time: 2033.24, Decolonized Patient: 7161
-Time: 2048.40, Decolonized Patient: 7254
-Time: 2051.96, Decolonized Patient: 7343
-Time: 2052.27, Decolonized Patient: 7199
-Time: 2055.41, Decolonized Patient: 7278
-Time: 2055.59, Decolonized Patient: 7298
-Time: 2056.25, Decolonized Patient: 6878
-Time: 2058.83, Decolonized Patient: 7392
-Time: 2064.89, Decolonized Patient: 7222
-Time: 2066.62, Decolonized Patient: 7161
-Time: 2068.97, Decolonized Patient: 7371
-Time: 2077.29, Decolonized Patient: 7321
-Time: 2086.62, Decolonized Patient: 7368
-Time: 2094.19, Decolonized Patient: 7481
-Time: 2095.66, Decolonized Patient: 7478
-Time: 2098.01, Decolonized Patient: 7368
-Time: 2105.09, Decolonized Patient: 7434
-Time: 2111.47, Decolonized Patient: 7479
-Time: 2121.77, Decolonized Patient: 7631
-Time: 2141.96, Decolonized Patient: 7600
-Time: 2142.53, Decolonized Patient: 7690
-Time: 2142.73, Decolonized Patient: 7624
-Time: 2157.55, Decolonized Patient: 7759
-Time: 2158.39, Decolonized Patient: 7600
-Time: 2162.71, Decolonized Patient: 7680
-Time: 2162.99, Decolonized Patient: 7696
-Time: 2166.85, Decolonized Patient: 7692
-Time: 2170.34, Decolonized Patient: 7749
-Time: 2174.27, Decolonized Patient: 7776
-Time: 2174.36, Decolonized Patient: 7745
-Time: 2174.69, Decolonized Patient: 7805
-Time: 2176.09, Decolonized Patient: 7791
-Time: 2181.54, Decolonized Patient: 7780
-Time: 2182.00, Decolonized Patient: 7788
-Time: 2182.15, Decolonized Patient: 7769
-Time: 2185.71, Decolonized Patient: 7742
-Time: 2188.50, Decolonized Patient: 7823
-Time: 2190.92, Decolonized Patient: 7781
-Time: 2196.18, Decolonized Patient: 7780
-Time: 2198.87, Decolonized Patient: 7885
-Time: 2203.89, Decolonized Patient: 7403
-Time: 2205.33, Decolonized Patient: 7883
-Time: 2205.78, Decolonized Patient: 7900
-Time: 2212.94, Decolonized Patient: 7810
-Time: 2214.70, Decolonized Patient: 7780
-Time: 2214.86, Decolonized Patient: 7939
-Time: 2216.78, Decolonized Patient: 7780
-Time: 2220.56, Decolonized Patient: 7780
-Time: 2220.74, Decolonized Patient: 7742
-Time: 2224.60, Decolonized Patient: 7922
-Time: 2227.66, Decolonized Patient: 7865
-Time: 2229.48, Decolonized Patient: 7896
-Time: 2231.23, Decolonized Patient: 7939
-Time: 2231.44, Decolonized Patient: 7919
-Time: 2232.22, Decolonized Patient: 7877
-Time: 2233.42, Decolonized Patient: 7851
-Time: 2234.53, Decolonized Patient: 7982
-Time: 2236.31, Decolonized Patient: 7829
-Time: 2236.93, Decolonized Patient: 7780
-Time: 2238.62, Decolonized Patient: 7911
-Time: 2240.45, Decolonized Patient: 8003
-Time: 2244.47, Decolonized Patient: 8057
-Time: 2244.59, Decolonized Patient: 8014
-Time: 2246.15, Decolonized Patient: 8040
-Time: 2247.64, Decolonized Patient: 7911
-Time: 2251.06, Decolonized Patient: 7913
-Time: 2253.71, Decolonized Patient: 7961
-Time: 2254.13, Decolonized Patient: 7919
-Time: 2254.17, Decolonized Patient: 8025
-Time: 2256.84, Decolonized Patient: 7911
-Time: 2259.83, Decolonized Patient: 7823
-Time: 2260.94, Decolonized Patient: 8078
-Time: 2269.04, Decolonized Patient: 7823
-Time: 2269.58, Decolonized Patient: 7911
-Time: 2270.15, Decolonized Patient: 8162
-Time: 2270.96, Decolonized Patient: 7865
-Time: 2271.37, Decolonized Patient: 8086
-Time: 2272.42, Decolonized Patient: 8113
-Time: 2273.06, Decolonized Patient: 8130
-Time: 2274.66, Decolonized Patient: 7919
-Time: 2279.84, Decolonized Patient: 8152
-Time: 2280.34, Decolonized Patient: 7780
-Time: 2282.57, Decolonized Patient: 8130
-Time: 2285.66, Decolonized Patient: 7911
-Time: 2287.15, Decolonized Patient: 7865
-Time: 2290.06, Decolonized Patient: 8179
-Time: 2291.82, Decolonized Patient: 8212
-Time: 2294.28, Decolonized Patient: 8192
-Time: 2297.01, Decolonized Patient: 8157
-Time: 2301.29, Decolonized Patient: 7865
-Time: 2303.70, Decolonized Patient: 8199
-Time: 2303.83, Decolonized Patient: 8025
-Time: 2305.78, Decolonized Patient: 8187
-Time: 2307.60, Decolonized Patient: 8264
-Time: 2312.62, Decolonized Patient: 8224
-Time: 2317.58, Decolonized Patient: 8151
-Time: 2322.43, Decolonized Patient: 7829
-Time: 2332.20, Decolonized Patient: 8287
-Time: 2334.26, Decolonized Patient: 8216
-Time: 2334.56, Decolonized Patient: 8325
-Time: 2340.09, Decolonized Patient: 8341
-Time: 2344.45, Decolonized Patient: 8303
-Time: 2344.54, Decolonized Patient: 7829
-Time: 2355.02, Decolonized Patient: 8383
-Time: 2360.27, Decolonized Patient: 8439
-Time: 2367.84, Decolonized Patient: 8415
-Time: 2374.39, Decolonized Patient: 8441
-Time: 2377.61, Decolonized Patient: 8478
-Time: 2392.28, Decolonized Patient: 8439
-Time: 2396.46, Decolonized Patient: 8605
-Time: 2397.92, Decolonized Patient: 8512
-Time: 2398.16, Decolonized Patient: 8479
-Time: 2400.07, Decolonized Patient: 8577
-Time: 2401.56, Decolonized Patient: 8497
-Time: 2401.82, Decolonized Patient: 8534
-Time: 2402.54, Decolonized Patient: 8492
-Time: 2406.93, Decolonized Patient: 8531
-Time: 2407.65, Decolonized Patient: 8644
-Time: 2414.03, Decolonized Patient: 8554
-Time: 2416.62, Decolonized Patient: 8597
-Time: 2416.83, Decolonized Patient: 8635
-Time: 2417.23, Decolonized Patient: 8664
-Time: 2419.22, Decolonized Patient: 8582
-Time: 2419.67, Decolonized Patient: 8533
-Time: 2421.91, Decolonized Patient: 8691
-Time: 2422.44, Decolonized Patient: 8675
-Time: 2424.84, Decolonized Patient: 8631
-Time: 2427.30, Decolonized Patient: 8534
-Time: 2430.31, Decolonized Patient: 8533
-Time: 2432.62, Decolonized Patient: 8661
-Time: 2446.58, Decolonized Patient: 8686
-Time: 2447.70, Decolonized Patient: 8773
-Time: 2448.16, Decolonized Patient: 8659
-Time: 2454.08, Decolonized Patient: 8756
-Time: 2457.51, Decolonized Patient: 8741
-Time: 2458.93, Decolonized Patient: 8692
-Time: 2461.31, Decolonized Patient: 8789
-Time: 2461.32, Decolonized Patient: 8709
-Time: 2461.56, Decolonized Patient: 8804
-Time: 2465.62, Decolonized Patient: 8679
-Time: 2466.92, Decolonized Patient: 8697
-Time: 2472.64, Decolonized Patient: 8791
-Time: 2473.62, Decolonized Patient: 8789
-Time: 2473.89, Decolonized Patient: 8803
-Time: 2477.32, Decolonized Patient: 8769
-Time: 2478.06, Decolonized Patient: 8672
-Time: 2480.35, Decolonized Patient: 8742
-Time: 2484.16, Decolonized Patient: 8890
-Time: 2484.44, Decolonized Patient: 8857
-Time: 2486.99, Decolonized Patient: 8848
-Time: 2487.89, Decolonized Patient: 8804
-Time: 2493.52, Decolonized Patient: 8791
-Time: 2498.84, Decolonized Patient: 8888
-Time: 2499.31, Decolonized Patient: 8769
-Time: 2502.24, Decolonized Patient: 8969
-Time: 2504.25, Decolonized Patient: 8804
-Time: 2507.21, Decolonized Patient: 8935
-Time: 2509.47, Decolonized Patient: 8742
-Time: 2513.86, Decolonized Patient: 8929
-Time: 2519.38, Decolonized Patient: 8923
-Time: 2522.47, Decolonized Patient: 8968
-Time: 2525.85, Decolonized Patient: 9036
-Time: 2534.42, Decolonized Patient: 8791
-Time: 2545.40, Decolonized Patient: 9069
-Time: 2547.84, Decolonized Patient: 9044
-Time: 2547.87, Decolonized Patient: 9029
-Time: 2549.73, Decolonized Patient: 8791
-Time: 2552.34, Decolonized Patient: 9078
-Time: 2554.63, Decolonized Patient: 9050
-Time: 2558.08, Decolonized Patient: 9100
-Time: 2559.23, Decolonized Patient: 9027
-Time: 2564.40, Decolonized Patient: 9078
-Time: 2569.87, Decolonized Patient: 9145
-Time: 2570.18, Decolonized Patient: 9128
-Time: 2570.93, Decolonized Patient: 9171
-Time: 2572.21, Decolonized Patient: 9027
-Time: 2572.58, Decolonized Patient: 9106
-Time: 2575.14, Decolonized Patient: 9219
-Time: 2576.58, Decolonized Patient: 9120
-Time: 2581.79, Decolonized Patient: 9027
-Time: 2583.42, Decolonized Patient: 9199
-Time: 2599.11, Decolonized Patient: 9191
-Time: 2599.18, Decolonized Patient: 9006
-Time: 2603.55, Decolonized Patient: 9126
-Time: 2607.66, Decolonized Patient: 9027
-Time: 2608.81, Decolonized Patient: 9295
-Time: 2611.11, Decolonized Patient: 9298
-Time: 2616.00, Decolonized Patient: 9250
-Time: 2622.27, Decolonized Patient: 9027
-Time: 2627.41, Decolonized Patient: 9320
-Time: 2633.46, Decolonized Patient: 9315
-Time: 2638.39, Decolonized Patient: 9363
-Time: 2640.22, Decolonized Patient: 9378
-Time: 2640.43, Decolonized Patient: 9288
-Time: 2641.30, Decolonized Patient: 9342
-Time: 2643.61, Decolonized Patient: 9315
-Time: 2644.28, Decolonized Patient: 9358
-Time: 2646.08, Decolonized Patient: 9370
-Time: 2646.48, Decolonized Patient: 9315
-Time: 2649.10, Decolonized Patient: 9236
-Time: 2650.74, Decolonized Patient: 9472
-Time: 2655.37, Decolonized Patient: 9391
-Time: 2657.03, Decolonized Patient: 9378
-Time: 2659.01, Decolonized Patient: 9342
-Time: 2659.68, Decolonized Patient: 9394
-Time: 2661.90, Decolonized Patient: 9420
-Time: 2662.44, Decolonized Patient: 9527
-Time: 2669.65, Decolonized Patient: 9411
-Time: 2670.83, Decolonized Patient: 9450
-Time: 2673.48, Decolonized Patient: 9458
-Time: 2673.81, Decolonized Patient: 9489
-Time: 2675.04, Decolonized Patient: 9529
-Time: 2675.17, Decolonized Patient: 9411
-Time: 2678.17, Decolonized Patient: 9533
-Time: 2683.27, Decolonized Patient: 9549
-Time: 2683.28, Decolonized Patient: 9544
-Time: 2683.43, Decolonized Patient: 9489
-Time: 2706.26, Decolonized Patient: 9664
-Time: 2707.98, Decolonized Patient: 9655
-Time: 2709.29, Decolonized Patient: 9529
-Time: 2714.32, Decolonized Patient: 9742
-Time: 2717.30, Decolonized Patient: 9670
-Time: 2724.84, Decolonized Patient: 9705
-Time: 2727.56, Decolonized Patient: 9740
-Time: 2730.59, Decolonized Patient: 9708
-Time: 2737.50, Decolonized Patient: 9660
-Time: 2738.46, Decolonized Patient: 9724
-Time: 2748.66, Decolonized Patient: 9706
-Time: 2752.36, Decolonized Patient: 9696
-Time: 2755.41, Decolonized Patient: 9820
-Time: 2761.16, Decolonized Patient: 9823
-Time: 2765.46, Decolonized Patient: 9832
-Time: 2768.40, Decolonized Patient: 9892
-Time: 2775.34, Decolonized Patient: 9809
-Time: 2777.85, Decolonized Patient: 9883
-Time: 2780.91, Decolonized Patient: 9819
-Time: 2782.73, Decolonized Patient: 9871
-Time: 2789.00, Decolonized Patient: 9705
-Time: 2794.44, Decolonized Patient: 9893
-Time: 2803.64, Decolonized Patient: 9819
-Time: 2807.41, Decolonized Patient: 9705
-Time: 2816.85, Decolonized Patient: 9809
-Time: 2823.40, Decolonized Patient: 10021
-Time: 2825.44, Decolonized Patient: 10113
-Time: 2834.66, Decolonized Patient: 10114
-Time: 2838.30, Decolonized Patient: 10023
-Time: 2839.13, Decolonized Patient: 10021
-Time: 2843.78, Decolonized Patient: 10100
-Time: 2844.45, Decolonized Patient: 10064
-Time: 2844.64, Decolonized Patient: 10081
-Time: 2844.74, Decolonized Patient: 10092
-Time: 2847.19, Decolonized Patient: 9809
-Time: 2855.11, Decolonized Patient: 10131
-Time: 2857.78, Decolonized Patient: 10124
-Time: 2865.13, Decolonized Patient: 10177
-Time: 2867.06, Decolonized Patient: 9809
-Time: 2867.93, Decolonized Patient: 10196
-Time: 2868.09, Decolonized Patient: 10269
-Time: 2868.34, Decolonized Patient: 10242
-Time: 2877.73, Decolonized Patient: 10265
-Time: 2878.91, Decolonized Patient: 10140
-Time: 2880.27, Decolonized Patient: 10240
-Time: 2885.26, Decolonized Patient: 10252
-Time: 2887.91, Decolonized Patient: 10240
-Time: 2888.18, Decolonized Patient: 10303
-Time: 2888.37, Decolonized Patient: 10012
-Time: 2893.98, Decolonized Patient: 10283
-Time: 2901.89, Decolonized Patient: 10301
-Time: 2902.25, Decolonized Patient: 10368
-Time: 2909.54, Decolonized Patient: 10372
-Time: 2910.29, Decolonized Patient: 10376
-Time: 2910.70, Decolonized Patient: 10365
-Time: 2913.74, Decolonized Patient: 10253
-Time: 2920.36, Decolonized Patient: 10390
-Time: 2924.83, Decolonized Patient: 10395
-Time: 2927.71, Decolonized Patient: 10301
-Time: 2940.72, Decolonized Patient: 10421
-Time: 2942.65, Decolonized Patient: 10408
-Time: 2944.27, Decolonized Patient: 10064
-Time: 2947.98, Decolonized Patient: 10395
-Time: 2948.75, Decolonized Patient: 10444
-Time: 2965.20, Decolonized Patient: 10566
-Time: 2974.31, Decolonized Patient: 10421
-Time: 2977.69, Decolonized Patient: 10539
-Time: 2978.04, Decolonized Patient: 10516
-Time: 2981.11, Decolonized Patient: 10572
-Time: 2992.69, Decolonized Patient: 10525
-Time: 2997.57, Decolonized Patient: 10064
-Time: 3001.48, Decolonized Patient: 10421
-Time: 3003.82, Decolonized Patient: 10654
-Time: 3004.57, Decolonized Patient: 10672
-Time: 3007.54, Decolonized Patient: 10658
-Time: 3011.58, Decolonized Patient: 10693
-Time: 3011.92, Decolonized Patient: 10648
-Time: 3014.30, Decolonized Patient: 10609
-Time: 3016.89, Decolonized Patient: 10744
-Time: 3030.05, Decolonized Patient: 10801
-Time: 3033.50, Decolonized Patient: 10762
-Time: 3037.55, Decolonized Patient: 10823
-Time: 3038.09, Decolonized Patient: 10796
-Time: 3038.65, Decolonized Patient: 10833
-Time: 3043.97, Decolonized Patient: 10793
-Time: 3044.25, Decolonized Patient: 10809
-Time: 3046.46, Decolonized Patient: 10875
-Time: 3049.73, Decolonized Patient: 10754
-Time: 3051.22, Decolonized Patient: 10770
-Time: 3053.99, Decolonized Patient: 10769
-Time: 3056.12, Decolonized Patient: 10848
-Time: 3063.39, Decolonized Patient: 10801
-Time: 3071.47, Decolonized Patient: 10897
-Time: 3071.59, Decolonized Patient: 10938
-Time: 3072.35, Decolonized Patient: 10843
-Time: 3077.66, Decolonized Patient: 10843
-Time: 3078.54, Decolonized Patient: 10933
-Time: 3080.72, Decolonized Patient: 10754
-Time: 3080.75, Decolonized Patient: 10766
-Time: 3083.48, Decolonized Patient: 10972
-Time: 3083.56, Decolonized Patient: 10962
-Time: 3093.91, Decolonized Patient: 10962
-Time: 3095.20, Decolonized Patient: 10929
-Time: 3095.72, Decolonized Patient: 10962
-Time: 3096.10, Decolonized Patient: 10844
-Time: 3097.41, Decolonized Patient: 10843
-Time: 3100.20, Decolonized Patient: 10956
-Time: 3107.34, Decolonized Patient: 10771
-Time: 3111.61, Decolonized Patient: 10754
-Time: 3112.89, Decolonized Patient: 11049
-Time: 3116.06, Decolonized Patient: 10843
-Time: 3116.33, Decolonized Patient: 11052
-Time: 3117.06, Decolonized Patient: 11032
-Time: 3120.97, Decolonized Patient: 11049
-Time: 3121.30, Decolonized Patient: 10968
-Time: 3124.57, Decolonized Patient: 11060
-Time: 3129.54, Decolonized Patient: 10968
-Time: 3130.97, Decolonized Patient: 11152
-Time: 3133.08, Decolonized Patient: 11209
-Time: 3133.78, Decolonized Patient: 11123
-Time: 3136.31, Decolonized Patient: 11176
-Time: 3139.36, Decolonized Patient: 10968
-Time: 3140.42, Decolonized Patient: 11206
-Time: 3145.91, Decolonized Patient: 11217
-Time: 3147.04, Decolonized Patient: 11154
-Time: 3150.71, Decolonized Patient: 11161
-Time: 3153.48, Decolonized Patient: 11178
-Time: 3155.07, Decolonized Patient: 10968
-Time: 3156.87, Decolonized Patient: 11223
-Time: 3157.93, Decolonized Patient: 11263
-Time: 3162.34, Decolonized Patient: 11245
-Time: 3162.55, Decolonized Patient: 11206
-Time: 3162.96, Decolonized Patient: 11320
-Time: 3164.53, Decolonized Patient: 11279
-Time: 3165.04, Decolonized Patient: 11286
-Time: 3166.06, Decolonized Patient: 11114
-Time: 3167.61, Decolonized Patient: 11278
-Time: 3171.27, Decolonized Patient: 11279
-Time: 3171.73, Decolonized Patient: 11225
-Time: 3187.48, Decolonized Patient: 11411
-Time: 3188.73, Decolonized Patient: 11324
-Time: 3192.25, Decolonized Patient: 11206
-Time: 3196.57, Decolonized Patient: 10968
-Time: 3202.31, Decolonized Patient: 11419
-Time: 3202.64, Decolonized Patient: 11425
-Time: 3205.06, Decolonized Patient: 11252
-Time: 3205.19, Decolonized Patient: 11323
-Time: 3205.82, Decolonized Patient: 10968
-Time: 3207.40, Decolonized Patient: 11336
-Time: 3212.96, Decolonized Patient: 11303
-Time: 3213.37, Decolonized Patient: 11401
-Time: 3214.39, Decolonized Patient: 11339
-Time: 3219.22, Decolonized Patient: 11501
-Time: 3219.97, Decolonized Patient: 11423
-Time: 3222.91, Decolonized Patient: 11378
-Time: 3229.72, Decolonized Patient: 11482
-Time: 3229.76, Decolonized Patient: 11324
-Time: 3232.98, Decolonized Patient: 10968
-Time: 3250.05, Decolonized Patient: 11476
-Time: 3252.81, Decolonized Patient: 11581
-Time: 3253.17, Decolonized Patient: 11597
-Time: 3261.77, Decolonized Patient: 11572
-Time: 3263.95, Decolonized Patient: 11655
-Time: 3265.04, Decolonized Patient: 11577
-Time: 3266.20, Decolonized Patient: 11536
-Time: 3267.59, Decolonized Patient: 11538
-Time: 3268.87, Decolonized Patient: 11572
-Time: 3269.24, Decolonized Patient: 11562
-Time: 3270.45, Decolonized Patient: 11538
-Time: 3271.99, Decolonized Patient: 11536
-Time: 3274.94, Decolonized Patient: 11672
-Time: 3275.18, Decolonized Patient: 11538
-Time: 3278.98, Decolonized Patient: 11613
-Time: 3280.15, Decolonized Patient: 11592
-Time: 3281.97, Decolonized Patient: 11691
-Time: 3282.65, Decolonized Patient: 11536
-Time: 3283.16, Decolonized Patient: 11718
-Time: 3286.06, Decolonized Patient: 11655
-Time: 3296.09, Decolonized Patient: 11658
-Time: 3297.13, Decolonized Patient: 11731
-Time: 3298.42, Decolonized Patient: 11703
-Time: 3300.89, Decolonized Patient: 11534
-Time: 3302.79, Decolonized Patient: 11686
-Time: 3304.65, Decolonized Patient: 11725
-Time: 3305.24, Decolonized Patient: 11724
-Time: 3305.59, Decolonized Patient: 11784
-Time: 3306.28, Decolonized Patient: 11534
-Time: 3306.32, Decolonized Patient: 11787
-Time: 3306.98, Decolonized Patient: 11706
-Time: 3311.98, Decolonized Patient: 11792
-Time: 3313.13, Decolonized Patient: 11836
-Time: 3319.62, Decolonized Patient: 11821
-Time: 3325.91, Decolonized Patient: 11810
-Time: 3328.82, Decolonized Patient: 11593
-Time: 3331.73, Decolonized Patient: 11862
-Time: 3335.61, Decolonized Patient: 11864
-Time: 3345.33, Decolonized Patient: 11593
-Time: 3348.57, Decolonized Patient: 11876
-Time: 3350.16, Decolonized Patient: 11918
-Time: 3351.11, Decolonized Patient: 11862
-Time: 3352.48, Decolonized Patient: 11906
-Time: 3353.13, Decolonized Patient: 11933
-Time: 3353.70, Decolonized Patient: 11864
-Time: 3356.85, Decolonized Patient: 11959
-Time: 3357.03, Decolonized Patient: 11888
-Time: 3360.29, Decolonized Patient: 12040
-Time: 3361.22, Decolonized Patient: 11926
-Time: 3362.43, Decolonized Patient: 11959
-Time: 3362.54, Decolonized Patient: 12000
-Time: 3364.47, Decolonized Patient: 11911
-Time: 3367.12, Decolonized Patient: 11939
-Time: 3370.18, Decolonized Patient: 12031
-Time: 3370.86, Decolonized Patient: 11962
-Time: 3371.83, Decolonized Patient: 11975
-Time: 3375.38, Decolonized Patient: 11967
-Time: 3375.63, Decolonized Patient: 12036
-Time: 3377.11, Decolonized Patient: 12057
-Time: 3378.47, Decolonized Patient: 12031
-Time: 3382.35, Decolonized Patient: 12069
-Time: 3396.23, Decolonized Patient: 12122
-Time: 3400.91, Decolonized Patient: 12121
-Time: 3401.55, Decolonized Patient: 12140
-Time: 3416.44, Decolonized Patient: 12187
-Time: 3421.82, Decolonized Patient: 12116
-Time: 3428.79, Decolonized Patient: 12237
-Time: 3430.71, Decolonized Patient: 12142
-Time: 3432.15, Decolonized Patient: 12079
-Time: 3432.24, Decolonized Patient: 12017
-Time: 3436.68, Decolonized Patient: 11829
-Time: 3438.25, Decolonized Patient: 12094
-Time: 3440.29, Decolonized Patient: 12301
-Time: 3443.34, Decolonized Patient: 12314
-Time: 3446.03, Decolonized Patient: 12233
-Time: 3453.59, Decolonized Patient: 12279
-Time: 3454.13, Decolonized Patient: 12079
-Time: 3454.31, Decolonized Patient: 12116
-Time: 3458.03, Decolonized Patient: 12344
-Time: 3459.07, Decolonized Patient: 12347
-Time: 3460.47, Decolonized Patient: 12287
-Time: 3463.48, Decolonized Patient: 11897
-Time: 3466.97, Decolonized Patient: 12233
-Time: 3471.30, Decolonized Patient: 12374
-Time: 3471.42, Decolonized Patient: 12344
-Time: 3474.51, Decolonized Patient: 12237
-Time: 3475.38, Decolonized Patient: 12462
-Time: 3478.47, Decolonized Patient: 12384
-Time: 3479.45, Decolonized Patient: 12476
-Time: 3480.34, Decolonized Patient: 12287
-Time: 3481.88, Decolonized Patient: 12401
-Time: 3489.90, Decolonized Patient: 12233
-Time: 3493.38, Decolonized Patient: 12481
-Time: 3496.38, Decolonized Patient: 12523
-Time: 3498.37, Decolonized Patient: 12388
-Time: 3498.59, Decolonized Patient: 12515
-Time: 3501.73, Decolonized Patient: 12379
-Time: 3502.55, Decolonized Patient: 12460
-Time: 3503.00, Decolonized Patient: 12444
-Time: 3505.11, Decolonized Patient: 12233
-Time: 3507.56, Decolonized Patient: 12514
-Time: 3508.94, Decolonized Patient: 12490
-Time: 3510.74, Decolonized Patient: 12379
-Time: 3511.49, Decolonized Patient: 12516
-Time: 3517.96, Decolonized Patient: 12582
-Time: 3523.21, Decolonized Patient: 12581
-Time: 3523.81, Decolonized Patient: 12521
-Time: 3525.08, Decolonized Patient: 12564
-Time: 3526.59, Decolonized Patient: 12548
-Time: 3526.81, Decolonized Patient: 12541
-Time: 3530.18, Decolonized Patient: 12580
-Time: 3530.63, Decolonized Patient: 12581
-Time: 3531.08, Decolonized Patient: 12581
-Time: 3532.60, Decolonized Patient: 12581
-Time: 3532.97, Decolonized Patient: 12558
-Time: 3535.69, Decolonized Patient: 12569
-Time: 3543.13, Decolonized Patient: 12468
-Time: 3549.80, Decolonized Patient: 12600
-Time: 3556.78, Decolonized Patient: 12612
-Time: 3560.20, Decolonized Patient: 12379
-Time: 3568.37, Decolonized Patient: 12676
-Time: 3573.31, Decolonized Patient: 12651
-Time: 3576.80, Decolonized Patient: 12553
-Time: 3578.91, Decolonized Patient: 12717
-Time: 3581.51, Decolonized Patient: 12820
-Time: 3582.66, Decolonized Patient: 12802
-Time: 3586.80, Decolonized Patient: 12735
-Time: 3591.41, Decolonized Patient: 12791
-Time: 3591.96, Decolonized Patient: 12756
-Time: 3592.06, Decolonized Patient: 12796
-Time: 3595.96, Decolonized Patient: 12379
-Time: 3596.00, Decolonized Patient: 12798
-Time: 3597.01, Decolonized Patient: 12758
-Time: 3599.31, Decolonized Patient: 12793
-Time: 3601.60, Decolonized Patient: 12830
-Time: 3603.69, Decolonized Patient: 12813
-Time: 3604.61, Decolonized Patient: 12849
-Time: 3605.00, Decolonized Patient: 12869
-Time: 3605.84, Decolonized Patient: 12844
-Time: 3605.95, Decolonized Patient: 12681
-Time: 3609.62, Decolonized Patient: 12711
-Time: 3610.17, Decolonized Patient: 12775
-Time: 3610.46, Decolonized Patient: 12829
-Time: 3610.87, Decolonized Patient: 12857
-Time: 3615.53, Decolonized Patient: 12941
-Time: 3616.20, Decolonized Patient: 12774
-Time: 3616.70, Decolonized Patient: 12939
-Time: 3616.90, Decolonized Patient: 12945
-Time: 3619.60, Decolonized Patient: 12691
-Time: 3623.12, Decolonized Patient: 12691
-Time: 3625.09, Decolonized Patient: 12902
-Time: 3629.31, Decolonized Patient: 12774
-Time: 3629.92, Decolonized Patient: 12935
-Time: 3631.68, Decolonized Patient: 12873
-Time: 3631.99, Decolonized Patient: 12916
-Time: 3635.27, Decolonized Patient: 12825
-Time: 3639.74, Decolonized Patient: 12829
-Time: 3640.59, Decolonized Patient: 12932
-Time: 3647.29, Decolonized Patient: 13014
-Time: 3647.51, Decolonized Patient: 12971
-Time: 3648.98, Decolonized Patient: 12932
-Time: 3653.31, Decolonized Patient: 12988
-Time: 3653.37, Decolonized Patient: 12825
-Time: 3656.40, Decolonized Patient: 12970
-Time: 3656.41, Decolonized Patient: 12992
-Time: 3658.63, Decolonized Patient: 12955
-Time: 3660.77, Decolonized Patient: 12971
-Time: 3662.77, Decolonized Patient: 12992
-Time: 3664.49, Decolonized Patient: 13028
-Time: 3666.72, Decolonized Patient: 12970
-Time: 3671.22, Decolonized Patient: 13134
-Time: 3671.26, Decolonized Patient: 13052
-Time: 3671.74, Decolonized Patient: 12990
-Time: 3675.94, Decolonized Patient: 12960
-Time: 3677.52, Decolonized Patient: 12829
-Time: 3677.82, Decolonized Patient: 13127
-Time: 3685.20, Decolonized Patient: 13110
-Time: 3686.17, Decolonized Patient: 13009
-Time: 3688.76, Decolonized Patient: 12909
-Time: 3689.05, Decolonized Patient: 13144
-Time: 3689.88, Decolonized Patient: 13118
-Time: 3694.90, Decolonized Patient: 13233
-Time: 3697.85, Decolonized Patient: 13164
-Time: 3698.26, Decolonized Patient: 12909
-Time: 3699.36, Decolonized Patient: 13185
-Time: 3709.33, Decolonized Patient: 13216
-Time: 3713.75, Decolonized Patient: 13249
-Time: 3718.13, Decolonized Patient: 13172
-Time: 3719.66, Decolonized Patient: 13203
-Time: 3720.48, Decolonized Patient: 13253
-Time: 3722.76, Decolonized Patient: 13167
-Time: 3723.86, Decolonized Patient: 12988
-Time: 3726.20, Decolonized Patient: 13306
-Time: 3726.46, Decolonized Patient: 13172
-Time: 3732.35, Decolonized Patient: 13309
-Time: 3735.68, Decolonized Patient: 13293
-Time: 3735.77, Decolonized Patient: 12909
-Time: 3743.43, Decolonized Patient: 13438
-Time: 3744.12, Decolonized Patient: 13378
-Time: 3750.78, Decolonized Patient: 13323
-Time: 3750.99, Decolonized Patient: 13427
-Time: 3751.33, Decolonized Patient: 13404
-Time: 3754.49, Decolonized Patient: 13363
-Time: 3755.40, Decolonized Patient: 13093
-Time: 3755.62, Decolonized Patient: 13412
-Time: 3758.37, Decolonized Patient: 13376
-Time: 3759.97, Decolonized Patient: 13431
-Time: 3762.48, Decolonized Patient: 13404
-Time: 3765.51, Decolonized Patient: 13456
-Time: 3776.62, Decolonized Patient: 13517
-Time: 3777.50, Decolonized Patient: 13481
-Time: 3784.64, Decolonized Patient: 13427
-Time: 3785.07, Decolonized Patient: 13499
-Time: 3788.41, Decolonized Patient: 13464
-Time: 3789.11, Decolonized Patient: 13536
-Time: 3795.76, Decolonized Patient: 13461
-Time: 3795.95, Decolonized Patient: 13574
-Time: 3800.33, Decolonized Patient: 13551
-Time: 3801.30, Decolonized Patient: 13558
-Time: 3802.01, Decolonized Patient: 13376
-Time: 3803.17, Decolonized Patient: 13500
-Time: 3803.22, Decolonized Patient: 13461
-Time: 3805.28, Decolonized Patient: 13551
-Time: 3817.08, Decolonized Patient: 13534
-Time: 3817.75, Decolonized Patient: 13587
-Time: 3828.28, Decolonized Patient: 13705
-Time: 3830.23, Decolonized Patient: 13550
-Time: 3830.95, Decolonized Patient: 13605
-Time: 3835.92, Decolonized Patient: 13579
-Time: 3835.95, Decolonized Patient: 13726
-Time: 3836.03, Decolonized Patient: 13674
-Time: 3838.62, Decolonized Patient: 13710
-Time: 3840.94, Decolonized Patient: 13699
-Time: 3841.28, Decolonized Patient: 13697
-Time: 3848.10, Decolonized Patient: 13519
-Time: 3853.39, Decolonized Patient: 13697
-Time: 3857.17, Decolonized Patient: 13783
-Time: 3857.74, Decolonized Patient: 13694
-Time: 3858.32, Decolonized Patient: 13802
-Time: 3873.58, Decolonized Patient: 13759
-Time: 3881.76, Decolonized Patient: 13895
-Time: 3889.25, Decolonized Patient: 13905
-Time: 3890.04, Decolonized Patient: 13860
-Time: 3891.34, Decolonized Patient: 13703
-Time: 3893.44, Decolonized Patient: 13932
-Time: 3900.40, Decolonized Patient: 13703
-Time: 3902.02, Decolonized Patient: 13889
-Time: 3905.14, Decolonized Patient: 13943
-Time: 3905.84, Decolonized Patient: 13977
-Time: 3910.62, Decolonized Patient: 13961
-Time: 3910.82, Decolonized Patient: 13864
-Time: 3913.27, Decolonized Patient: 13938
-Time: 3913.33, Decolonized Patient: 13970
-Time: 3917.32, Decolonized Patient: 13973
-Time: 3919.42, Decolonized Patient: 13989
-Time: 3920.16, Decolonized Patient: 13997
-Time: 3920.64, Decolonized Patient: 14028
-Time: 3921.99, Decolonized Patient: 13939
-Time: 3923.38, Decolonized Patient: 14075
-Time: 3925.39, Decolonized Patient: 13926
-Time: 3926.37, Decolonized Patient: 13991
-Time: 3934.33, Decolonized Patient: 13962
-Time: 3936.80, Decolonized Patient: 13926
-Time: 3937.21, Decolonized Patient: 14030
-Time: 3939.46, Decolonized Patient: 14090
-Time: 3942.29, Decolonized Patient: 13889
-Time: 3943.88, Decolonized Patient: 13876
-Time: 3944.80, Decolonized Patient: 14132
-Time: 3945.92, Decolonized Patient: 14043
-Time: 3949.91, Decolonized Patient: 14138
-Time: 3954.99, Decolonized Patient: 14166
-Time: 3955.07, Decolonized Patient: 14078
-Time: 3955.30, Decolonized Patient: 14122
-Time: 3956.78, Decolonized Patient: 14175
-Time: 3959.83, Decolonized Patient: 14122
-Time: 3961.03, Decolonized Patient: 14124
-Time: 3962.94, Decolonized Patient: 14138
-Time: 3966.03, Decolonized Patient: 14199
-Time: 3966.05, Decolonized Patient: 14160
-Time: 3968.97, Decolonized Patient: 13945
-Time: 3973.00, Decolonized Patient: 13962
-Time: 3973.02, Decolonized Patient: 14175
-Time: 3984.88, Decolonized Patient: 14070
-Time: 3987.23, Decolonized Patient: 14247
-Time: 3989.12, Decolonized Patient: 14236
-Time: 3990.91, Decolonized Patient: 14212
-Time: 3994.17, Decolonized Patient: 14274
-Time: 3994.84, Decolonized Patient: 14081
-Time: 3995.14, Decolonized Patient: 14270
-Time: 3995.41, Decolonized Patient: 14192
-Time: 3997.63, Decolonized Patient: 14216
-Time: 3998.55, Decolonized Patient: 14171
-Time: 4001.19, Decolonized Patient: 14139
-Time: 4001.67, Decolonized Patient: 14347
-Time: 4004.19, Decolonized Patient: 14310
-Time: 4004.70, Decolonized Patient: 14339
-Time: 4007.22, Decolonized Patient: 14021
-Time: 4014.44, Decolonized Patient: 14245
-Time: 4014.56, Decolonized Patient: 14327
-Time: 4016.22, Decolonized Patient: 14323
-Time: 4029.13, Decolonized Patient: 14371
-Time: 4030.82, Decolonized Patient: 14288
-Time: 4034.79, Decolonized Patient: 14216
-Time: 4038.38, Decolonized Patient: 14413
-Time: 4039.47, Decolonized Patient: 14407
-Time: 4047.57, Decolonized Patient: 14453
-Time: 4056.05, Decolonized Patient: 14505
-Time: 4058.57, Decolonized Patient: 14492
-Time: 4058.79, Decolonized Patient: 14279
-Time: 4059.29, Decolonized Patient: 14477
-Time: 4059.38, Decolonized Patient: 14486
-Time: 4063.57, Decolonized Patient: 14406
-Time: 4064.97, Decolonized Patient: 14468
-Time: 4065.46, Decolonized Patient: 14383
-Time: 4068.04, Decolonized Patient: 14504
-Time: 4068.99, Decolonized Patient: 14523
-Time: 4071.20, Decolonized Patient: 14279
-Time: 4074.11, Decolonized Patient: 14504
-Time: 4079.48, Decolonized Patient: 14523
-Time: 4079.75, Decolonized Patient: 14331
-Time: 4081.18, Decolonized Patient: 14572
-Time: 4086.05, Decolonized Patient: 14499
-Time: 4086.11, Decolonized Patient: 14550
-Time: 4099.88, Decolonized Patient: 14436
-Time: 4102.50, Decolonized Patient: 14600
-Time: 4108.04, Decolonized Patient: 14691
-Time: 4118.81, Decolonized Patient: 14695
-Time: 4119.47, Decolonized Patient: 14685
-Time: 4125.32, Decolonized Patient: 14731
-Time: 4126.03, Decolonized Patient: 14658
-Time: 4130.72, Decolonized Patient: 14729
-Time: 4135.55, Decolonized Patient: 14720
-Time: 4135.99, Decolonized Patient: 14833
-Time: 4146.49, Decolonized Patient: 14752
-Time: 4146.97, Decolonized Patient: 14709
-Time: 4152.37, Decolonized Patient: 14756
-Time: 4154.20, Decolonized Patient: 14769
-Time: 4161.65, Decolonized Patient: 14844
-Time: 4161.89, Decolonized Patient: 14794
-Time: 4163.44, Decolonized Patient: 14832
-Time: 4170.84, Decolonized Patient: 14844
-Time: 4173.11, Decolonized Patient: 14912
-Time: 4174.92, Decolonized Patient: 14756
-Time: 4176.68, Decolonized Patient: 14964
-Time: 4177.14, Decolonized Patient: 14850
-Time: 4178.57, Decolonized Patient: 14550
-Time: 4180.24, Decolonized Patient: 14998
-Time: 4190.78, Decolonized Patient: 14974
-Time: 4193.68, Decolonized Patient: 14993
-Time: 4193.93, Decolonized Patient: 15012
-Time: 4194.59, Decolonized Patient: 15058
-Time: 4199.24, Decolonized Patient: 15042
-Time: 4199.70, Decolonized Patient: 14881
-Time: 4201.05, Decolonized Patient: 15004
-Time: 4205.81, Decolonized Patient: 14996
-Time: 4207.25, Decolonized Patient: 14894
-Time: 4209.08, Decolonized Patient: 15072
-Time: 4209.61, Decolonized Patient: 14996
-Time: 4212.74, Decolonized Patient: 15012
-Time: 4214.47, Decolonized Patient: 15056
-Time: 4215.08, Decolonized Patient: 15026
-Time: 4217.79, Decolonized Patient: 15091
-Time: 4217.88, Decolonized Patient: 15051
-Time: 4219.38, Decolonized Patient: 15058
-Time: 4219.81, Decolonized Patient: 15058
-Time: 4227.93, Decolonized Patient: 15104
-Time: 4229.10, Decolonized Patient: 15168
-Time: 4234.70, Decolonized Patient: 15147
-Time: 4237.61, Decolonized Patient: 15003
-Time: 4245.63, Decolonized Patient: 15091
-Time: 4254.57, Decolonized Patient: 15147
-Time: 4263.57, Decolonized Patient: 15204
-Time: 4269.69, Decolonized Patient: 15196
-Time: 4274.29, Decolonized Patient: 15280
-Time: 4277.46, Decolonized Patient: 15274
-Time: 4277.71, Decolonized Patient: 15282
-Time: 4283.61, Decolonized Patient: 15217
-Time: 4285.17, Decolonized Patient: 15245
-Time: 4285.95, Decolonized Patient: 15290
-Time: 4291.84, Decolonized Patient: 15364
-Time: 4292.23, Decolonized Patient: 15312
-Time: 4293.51, Decolonized Patient: 15274
-Time: 4294.03, Decolonized Patient: 15315
-Time: 4305.26, Decolonized Patient: 15274
-Time: 4307.23, Decolonized Patient: 15351
-Time: 4311.17, Decolonized Patient: 15368
-Time: 4312.57, Decolonized Patient: 15349
-Time: 4317.61, Decolonized Patient: 15440
-Time: 4321.20, Decolonized Patient: 15395
-Time: 4321.71, Decolonized Patient: 15384
-Time: 4330.57, Decolonized Patient: 15425
-Time: 4334.35, Decolonized Patient: 15419
-Time: 4334.46, Decolonized Patient: 15403
-Time: 4339.22, Decolonized Patient: 15420
-Time: 4340.24, Decolonized Patient: 15413
-Time: 4347.72, Decolonized Patient: 15511
-Time: 4349.49, Decolonized Patient: 15370
-Time: 4360.26, Decolonized Patient: 15587
-Time: 4365.66, Decolonized Patient: 15534
-Time: 4370.91, Decolonized Patient: 15507
-Time: 4372.98, Decolonized Patient: 15561
-Time: 4373.42, Decolonized Patient: 15648
-Time: 4379.61, Decolonized Patient: 15576
-Time: 4387.75, Decolonized Patient: 15699
-Time: 4389.45, Decolonized Patient: 15582
-Time: 4394.10, Decolonized Patient: 15525
-Time: 4396.49, Decolonized Patient: 15677
-Time: 4403.38, Decolonized Patient: 15709
-Time: 4403.88, Decolonized Patient: 15714
-Time: 4405.62, Decolonized Patient: 15716
-Time: 4406.95, Decolonized Patient: 15621
-Time: 4407.36, Decolonized Patient: 15659
-Time: 4407.58, Decolonized Patient: 15677
-Time: 4409.01, Decolonized Patient: 15676
-Time: 4413.46, Decolonized Patient: 15602
-Time: 4413.77, Decolonized Patient: 15707
-Time: 4414.96, Decolonized Patient: 15403
-Time: 4415.57, Decolonized Patient: 15768
-Time: 4416.03, Decolonized Patient: 15673
-Time: 4419.37, Decolonized Patient: 15403
-Time: 4419.59, Decolonized Patient: 15741
-Time: 4421.37, Decolonized Patient: 15816
-Time: 4421.74, Decolonized Patient: 15786
-Time: 4424.20, Decolonized Patient: 15576
-Time: 4425.04, Decolonized Patient: 15679
-Time: 4429.79, Decolonized Patient: 15789
-Time: 4435.15, Decolonized Patient: 15811
-Time: 4437.89, Decolonized Patient: 15819
-Time: 4441.35, Decolonized Patient: 15830
-Time: 4444.32, Decolonized Patient: 15807
-Time: 4444.57, Decolonized Patient: 15542
-Time: 4444.91, Decolonized Patient: 15862
-Time: 4451.00, Decolonized Patient: 15839
-Time: 4454.49, Decolonized Patient: 15902
-Time: 4461.51, Decolonized Patient: 15908
-Time: 4474.25, Decolonized Patient: 15920
-Time: 4474.50, Decolonized Patient: 15862
-Time: 4475.35, Decolonized Patient: 15907
-Time: 4476.97, Decolonized Patient: 15924
-Time: 4477.14, Decolonized Patient: 15907
-Time: 4480.06, Decolonized Patient: 15553
-Time: 4480.59, Decolonized Patient: 15977
-Time: 4484.74, Decolonized Patient: 15985
-Time: 4485.76, Decolonized Patient: 15907
-Time: 4488.09, Decolonized Patient: 15981
-Time: 4488.20, Decolonized Patient: 15918
-Time: 4488.39, Decolonized Patient: 15964
-Time: 4489.79, Decolonized Patient: 15980
-Time: 4494.02, Decolonized Patient: 16015
-Time: 4494.31, Decolonized Patient: 16056
-Time: 4498.97, Decolonized Patient: 15907
-Time: 4500.41, Decolonized Patient: 16042
-Time: 4503.08, Decolonized Patient: 16036
-Time: 4515.57, Decolonized Patient: 16060
-Time: 4533.91, Decolonized Patient: 16119
-Time: 4534.76, Decolonized Patient: 16116
-Time: 4534.88, Decolonized Patient: 16188
-Time: 4543.58, Decolonized Patient: 16175
-Time: 4547.89, Decolonized Patient: 16204
-Time: 4550.59, Decolonized Patient: 16251
-Time: 4550.65, Decolonized Patient: 16194
-Time: 4551.34, Decolonized Patient: 16143
-Time: 4556.79, Decolonized Patient: 16115
-Time: 4562.59, Decolonized Patient: 16254
-Time: 4566.77, Decolonized Patient: 16241
-Time: 4567.16, Decolonized Patient: 16179
-Time: 4567.24, Decolonized Patient: 16162
-Time: 4567.34, Decolonized Patient: 16135
-Time: 4573.20, Decolonized Patient: 16187
-Time: 4583.81, Decolonized Patient: 16307
-Time: 4585.15, Decolonized Patient: 16298
-Time: 4592.51, Decolonized Patient: 16326
-Time: 4600.38, Decolonized Patient: 16363
-Time: 4600.68, Decolonized Patient: 16336
-Time: 4601.68, Decolonized Patient: 16367
+time,decolonized_patient_id
+14.72,78
+23.87,112
+28.40,124
+30.08,110
+30.40,125
+45.75,100
+47.71,154
+51.56,161
+52.13,208
+54.46,229
+55.67,124
+59.50,150
+60.13,279
+65.93,250
+66.35,176
+70.26,270
+70.71,100
+77.15,100
+77.64,236
+78.22,257
+82.46,192
+85.52,249
+85.73,257
+93.34,378
+97.26,257
+97.92,249
+98.94,208
+101.03,249
+101.10,254
+101.45,417
+101.69,366
+102.38,344
+104.55,135
+114.84,249
+115.50,191
+117.75,406
+118.30,425
+118.34,254
+119.86,440
+119.92,399
+121.26,317
+121.41,455
+121.71,380
+122.00,364
+122.16,208
+128.51,317
+129.09,382
+130.46,509
+142.05,380
+144.80,479
+144.82,416
+148.30,426
+152.23,537
+152.67,588
+157.86,548
+158.25,544
+159.58,520
+159.90,479
+160.07,569
+161.99,565
+162.06,558
+163.28,519
+170.05,631
+171.08,590
+179.29,547
+180.89,588
+181.82,530
+184.48,606
+189.59,632
+193.70,671
+201.32,718
+206.84,616
+206.87,494
+209.95,707
+210.78,784
+213.06,686
+217.07,676
+221.32,766
+221.89,742
+227.91,793
+228.42,789
+229.38,811
+233.82,758
+235.53,811
+238.20,812
+239.55,874
+241.09,796
+242.10,715
+252.22,796
+252.65,905
+253.55,884
+263.79,878
+265.01,686
+265.93,447
+267.92,891
+273.27,924
+274.75,925
+278.02,917
+279.10,992
+286.15,991
+286.34,1022
+287.00,1002
+287.81,982
+288.94,946
+290.80,1012
+291.15,989
+293.59,965
+293.75,924
+298.55,924
+299.79,1006
+302.73,1132
+304.81,891
+304.89,924
+305.66,1088
+306.31,770
+307.17,1092
+311.93,1144
+313.42,1133
+314.26,1081
+316.58,1199
+321.39,1169
+326.61,989
+326.80,1092
+330.87,1200
+331.61,1088
+331.70,989
+333.99,1206
+334.75,1141
+335.01,1173
+336.68,1088
+344.91,1028
+346.16,1293
+346.92,1235
+348.28,1122
+349.75,1274
+351.93,1116
+353.85,1235
+356.79,1274
+361.57,1298
+367.79,1361
+367.92,1329
+368.58,1088
+370.48,1349
+372.70,1375
+373.84,1382
+383.67,1269
+387.83,1388
+388.90,1393
+393.63,1471
+393.85,1428
+394.50,1473
+397.43,1501
+398.53,1428
+398.75,1329
+399.00,1269
+400.72,1416
+408.40,1428
+408.67,1441
+408.68,1329
+411.12,1478
+418.16,1329
+424.54,1523
+425.96,1509
+432.71,1561
+436.37,1589
+436.43,1571
+448.19,1638
+450.35,1588
+450.79,1626
+451.19,1622
+451.21,1599
+454.41,1550
+465.69,1627
+466.67,1700
+470.20,1695
+476.00,1473
+476.18,1589
+478.12,1630
+481.32,1767
+484.53,1747
+486.10,1734
+486.14,1636
+488.63,1734
+492.20,1756
+494.18,1805
+498.42,1747
+501.15,1817
+503.79,1707
+503.91,1767
+504.39,1758
+504.41,1750
+504.54,1813
+506.12,1750
+509.67,1837
+511.23,1706
+511.80,1817
+512.54,1854
+513.80,1873
+513.81,1848
+519.11,1763
+520.47,1837
+521.95,1630
+522.72,1904
+522.93,1763
+524.56,1854
+525.58,1884
+526.11,1909
+527.64,1873
+534.13,1707
+535.08,1861
+539.96,1977
+540.08,1707
+541.31,1840
+543.76,1999
+544.03,1707
+544.22,1707
+545.65,1792
+548.08,1996
+556.29,1898
+557.21,1994
+560.74,1964
+563.28,1909
+567.25,2012
+568.07,1965
+569.44,1964
+569.50,2036
+580.10,1792
+582.02,2012
+582.20,2098
+587.13,1898
+588.68,2135
+594.51,2012
+596.27,2124
+611.74,2217
+615.31,2182
+618.15,2167
+619.82,2222
+625.62,2206
+626.47,2176
+627.57,2197
+631.49,2180
+631.55,2213
+633.29,2226
+635.72,2202
+637.86,2242
+638.86,2212
+644.21,2193
+648.40,2268
+649.02,2379
+649.27,2331
+651.58,2193
+652.11,2345
+653.61,2340
+654.00,2167
+657.56,2245
+658.00,2374
+662.87,2380
+668.47,2268
+671.11,2268
+671.46,2456
+674.47,2409
+675.47,2469
+676.65,2415
+684.02,2450
+687.32,2497
+688.07,2501
+692.40,2459
+699.97,2518
+702.46,2421
+705.62,2518
+709.02,2554
+712.77,2523
+717.26,2558
+722.83,2475
+725.01,2577
+733.66,2633
+739.02,2626
+743.18,2674
+743.94,2673
+743.95,2636
+745.23,2717
+746.20,2521
+746.39,2620
+749.23,2657
+750.08,2485
+751.73,2637
+752.30,2553
+752.90,2733
+756.81,2682
+758.88,2686
+771.36,2759
+771.66,2758
+773.26,2784
+781.26,2769
+784.22,2796
+784.57,2766
+786.60,2858
+788.35,2741
+789.09,2888
+790.51,2820
+790.85,2766
+795.10,2846
+798.41,2871
+798.95,2809
+801.64,2875
+804.01,2796
+806.13,2875
+807.94,2776
+814.16,2911
+816.55,2997
+819.43,2878
+821.54,2927
+822.70,2878
+829.42,2922
+839.93,2927
+845.39,3019
+851.94,2879
+863.04,3109
+863.34,2879
+863.75,3059
+864.14,3117
+864.27,3026
+866.23,2920
+866.85,3115
+869.54,3037
+872.04,3110
+872.19,3069
+874.29,3130
+876.18,3199
+877.58,2920
+877.61,3136
+879.50,3076
+880.35,3033
+882.09,3136
+887.19,3172
+887.98,3110
+890.20,3236
+894.66,2989
+897.62,3235
+898.81,3214
+899.64,3103
+900.61,3097
+905.73,3136
+906.78,3147
+909.09,3219
+909.74,3136
+913.80,3197
+913.98,2806
+915.13,3245
+916.44,3201
+916.80,3258
+917.76,3136
+921.07,3332
+923.43,3258
+923.91,3321
+927.15,3288
+929.85,3347
+930.84,3201
+931.34,3308
+933.24,3294
+934.23,2806
+941.93,3385
+947.11,3407
+949.68,3194
+957.07,3361
+962.29,3358
+963.42,3361
+965.57,3413
+969.34,3346
+970.96,3407
+971.72,3479
+973.32,3427
+982.25,3376
+984.99,3383
+985.15,3507
+985.26,3437
+985.37,3471
+985.41,3407
+988.45,3408
+992.93,3507
+995.45,3573
+998.09,3499
+1002.37,3410
+1010.43,3653
+1023.15,3659
+1024.86,3712
+1027.83,3652
+1031.40,3638
+1033.88,3680
+1034.49,3541
+1034.78,3612
+1037.87,3656
+1039.88,3643
+1046.15,3680
+1047.13,3719
+1047.68,3712
+1049.61,3643
+1049.75,3666
+1050.44,3750
+1052.40,3705
+1056.84,3663
+1058.67,3750
+1059.36,3784
+1063.71,3712
+1066.29,3757
+1070.11,3794
+1073.24,3798
+1078.14,3757
+1080.55,3841
+1087.21,3846
+1103.97,3957
+1110.45,3881
+1114.96,3845
+1115.37,3927
+1115.86,3963
+1120.62,3956
+1122.10,3799
+1129.78,3989
+1134.35,3799
+1137.38,4001
+1141.21,3981
+1143.10,4006
+1147.44,3926
+1149.55,4073
+1150.56,4004
+1150.74,4047
+1152.96,4026
+1153.17,4103
+1154.70,4021
+1159.02,4096
+1159.21,4114
+1160.90,4002
+1161.59,4101
+1169.99,4133
+1173.98,4205
+1174.36,4167
+1179.01,4141
+1182.03,4147
+1185.03,3995
+1185.37,4159
+1186.49,4160
+1189.54,4223
+1189.88,4225
+1193.10,4270
+1200.14,4099
+1205.52,4170
+1206.73,4260
+1207.96,4298
+1215.82,4305
+1219.37,4340
+1219.61,4228
+1220.14,4293
+1221.32,4328
+1222.89,4293
+1228.41,4292
+1228.42,4324
+1228.62,4334
+1231.06,4336
+1232.15,4194
+1232.53,4228
+1236.86,4391
+1237.86,4360
+1238.42,4324
+1240.89,4395
+1243.99,4299
+1244.04,4329
+1244.73,4358
+1245.05,4400
+1249.41,4414
+1250.95,4478
+1264.03,4451
+1273.31,4470
+1273.73,4530
+1296.62,4522
+1296.66,4570
+1300.19,4580
+1303.66,4630
+1306.53,4592
+1307.48,4515
+1307.78,4529
+1309.02,4644
+1314.03,4662
+1314.45,4451
+1315.12,4616
+1316.10,4662
+1316.70,4651
+1316.94,4658
+1317.63,4653
+1321.59,4651
+1321.74,4451
+1323.08,4451
+1323.95,4651
+1327.95,4657
+1328.15,4725
+1329.92,4604
+1330.20,4677
+1331.72,4680
+1336.03,4651
+1340.56,4534
+1344.22,4604
+1344.47,4702
+1348.11,4702
+1352.49,4775
+1354.08,4777
+1354.83,4837
+1360.67,4737
+1360.93,4751
+1361.02,4896
+1361.21,4733
+1364.86,4776
+1365.79,4799
+1373.79,4886
+1376.00,4823
+1379.69,4832
+1379.83,4737
+1382.56,4969
+1383.97,4916
+1385.32,4604
+1393.82,4955
+1395.27,4904
+1396.03,4877
+1405.21,4604
+1405.66,5026
+1417.01,4990
+1418.51,5004
+1426.48,5064
+1429.61,5110
+1431.90,5144
+1436.19,5013
+1439.97,4973
+1440.78,5071
+1441.57,5161
+1441.69,4973
+1442.40,5031
+1442.43,5094
+1442.59,5033
+1443.51,5106
+1444.19,5151
+1445.15,5173
+1449.52,5145
+1455.09,5126
+1462.34,5138
+1463.13,5190
+1466.46,4604
+1469.71,5252
+1477.54,5226
+1479.82,4604
+1490.11,5251
+1491.45,5263
+1493.02,5257
+1506.69,5092
+1507.92,5296
+1520.87,5296
+1526.03,5361
+1529.34,5473
+1529.77,5393
+1531.47,5397
+1534.00,5391
+1534.37,5483
+1534.79,5257
+1535.94,5465
+1540.56,5436
+1540.74,5452
+1541.14,5482
+1541.26,5391
+1543.70,5398
+1544.99,5515
+1547.29,5457
+1548.51,5495
+1549.67,5487
+1551.95,5513
+1552.95,5494
+1555.54,5487
+1555.76,5519
+1555.90,5409
+1562.17,5500
+1564.99,5512
+1566.15,5505
+1570.25,5409
+1571.87,5567
+1581.79,5592
+1583.73,5602
+1585.48,5561
+1594.33,5664
+1594.47,5594
+1594.62,5689
+1594.99,5622
+1595.00,5660
+1596.50,5667
+1598.36,5661
+1599.25,5677
+1603.06,5660
+1603.94,5656
+1604.64,5688
+1612.32,5628
+1612.36,5712
+1618.54,5664
+1618.91,5637
+1619.07,5687
+1622.48,5749
+1625.36,5742
+1625.74,5712
+1626.38,5735
+1636.40,5757
+1636.42,5742
+1636.80,5755
+1644.01,5840
+1651.81,5784
+1652.84,5781
+1653.80,5772
+1654.69,5838
+1654.81,5745
+1655.37,5873
+1661.44,5893
+1663.01,5854
+1666.94,5681
+1676.23,5936
+1677.05,5917
+1678.97,5987
+1686.67,5597
+1687.87,5902
+1688.67,5981
+1689.39,6002
+1700.40,5981
+1705.50,6041
+1705.92,5772
+1707.63,6050
+1710.69,6023
+1714.74,6023
+1717.69,5865
+1718.02,6041
+1719.74,5772
+1722.43,6098
+1724.64,5772
+1737.22,6085
+1749.31,6050
+1750.02,6142
+1759.88,6164
+1760.35,6190
+1760.49,5772
+1761.15,6167
+1762.40,6168
+1762.98,5772
+1769.45,5772
+1770.25,6146
+1774.80,6209
+1775.73,5772
+1779.40,6235
+1780.13,6269
+1780.14,6240
+1782.05,6249
+1787.21,6255
+1795.69,6172
+1802.24,6221
+1804.75,6373
+1807.30,6346
+1808.19,6355
+1809.65,6167
+1810.46,6396
+1810.80,6354
+1812.45,6426
+1813.21,6332
+1815.08,6302
+1818.19,6379
+1819.46,6405
+1821.28,6418
+1826.41,6459
+1835.31,6432
+1846.13,6551
+1849.14,6443
+1849.62,6375
+1852.26,6452
+1855.19,6417
+1857.35,6512
+1859.04,6506
+1859.33,6531
+1860.53,6452
+1862.79,6581
+1867.10,6588
+1873.85,6633
+1874.19,6643
+1881.60,6704
+1881.78,6598
+1882.22,6713
+1882.30,6586
+1882.86,6620
+1883.56,6652
+1885.55,6605
+1888.14,6617
+1888.79,6586
+1888.86,6643
+1889.78,6662
+1894.88,6738
+1896.70,6700
+1898.83,6691
+1899.41,6670
+1901.06,6614
+1902.66,6685
+1903.57,6761
+1906.53,6767
+1906.67,6584
+1909.14,6684
+1912.27,6715
+1915.92,6801
+1916.59,6724
+1917.40,6614
+1919.84,6773
+1923.81,6816
+1926.42,6663
+1931.17,6799
+1931.99,6785
+1933.13,6778
+1933.69,6810
+1934.40,6663
+1935.52,6796
+1936.43,6843
+1941.07,6813
+1946.44,6843
+1947.58,6866
+1955.53,6842
+1962.33,6867
+1962.79,6945
+1963.16,6716
+1965.79,6955
+1971.21,6899
+1973.01,6897
+1977.39,6879
+1977.43,6929
+1978.07,6962
+1980.38,6946
+1980.84,7021
+1981.35,7007
+1983.16,7008
+1984.26,7020
+1990.25,6994
+1994.27,6991
+1995.38,7098
+1999.63,6904
+2004.16,6797
+2004.99,6959
+2006.72,7009
+2008.56,7159
+2012.40,7086
+2015.98,7069
+2023.50,7192
+2023.97,7155
+2023.98,6904
+2025.65,7164
+2026.22,7169
+2029.47,7149
+2029.64,7164
+2030.62,7144
+2032.00,6797
+2036.42,7237
+2042.31,7189
+2044.20,7208
+2047.48,7294
+2047.75,7189
+2049.88,7321
+2053.14,7306
+2054.06,7182
+2055.68,7334
+2060.93,7366
+2062.14,7288
+2079.43,7354
+2083.31,7347
+2086.76,7395
+2089.01,7281
+2089.25,7418
+2092.13,7449
+2105.61,7415
+2106.17,7417
+2118.96,7542
+2124.32,7503
+2127.81,7606
+2137.39,7609
+2140.58,7559
+2153.90,7593
+2158.13,7679
+2165.07,7668
+2168.24,7665
+2169.52,7691
+2175.22,7668
+2179.64,7709
+2179.67,7705
+2181.52,7651
+2182.70,7703
+2186.34,7716
+2186.40,7821
+2186.52,7737
+2199.91,7598
+2204.45,7887
+2215.87,7840
+2218.34,7421
+2232.55,7919
+2236.74,7891
+2239.54,7935
+2243.05,7852
+2244.51,7938
+2249.18,7981
+2266.05,8052
+2272.46,8033
+2277.81,8075
+2278.12,8046
+2279.96,7883
+2282.95,8124
+2283.52,8034
+2291.76,8095
+2292.43,8141
+2295.13,8095
+2297.73,8091
+2300.08,8114
+2300.14,8146
+2303.53,8075
+2313.48,8146
+2313.76,8184
+2314.58,8103
+2315.31,8145
+2316.23,8089
+2316.81,8152
+2320.13,8089
+2320.91,8148
+2328.35,8218
+2331.85,8152
+2339.59,8230
+2340.25,8212
+2347.90,8295
+2348.37,8293
+2348.97,8323
+2351.37,8302
+2351.89,8350
+2353.25,8268
+2355.08,8244
+2357.03,8260
+2357.37,8252
+2357.62,8280
+2358.39,8235
+2363.03,8252
+2367.59,8387
+2373.69,8323
+2383.63,8387
+2389.85,8482
+2392.04,8352
+2397.53,8418
+2399.69,8370
+2399.78,8461
+2402.50,8535
+2412.94,8321
+2414.30,8466
+2422.45,8513
+2424.05,8496
+2424.60,8480
+2433.37,8589
+2435.30,8559
+2439.97,8562
+2443.13,8639
+2447.87,8549
+2451.30,8633
+2454.73,8670
+2455.63,8662
+2457.33,8601
+2458.25,8597
+2458.40,8410
+2459.13,8604
+2460.47,8635
+2466.57,8761
+2472.88,8663
+2475.54,8423
+2476.85,8714
+2477.83,8726
+2481.81,8729
+2489.79,8762
+2491.19,8749
+2492.77,8714
+2500.33,8769
+2501.15,8714
+2504.87,8815
+2505.27,8786
+2505.37,8714
+2505.96,8826
+2507.60,8714
+2507.85,8822
+2509.88,8823
+2516.59,8846
+2518.20,8739
+2518.42,8946
+2523.78,8786
+2525.46,8933
+2528.90,9000
+2531.85,8943
+2533.47,8970
+2534.18,8902
+2536.94,8895
+2537.49,8878
+2537.54,8714
+2542.04,8923
+2542.62,9001
+2545.48,8997
+2546.17,9017
+2548.43,8977
+2548.91,9015
+2554.85,8714
+2556.63,8994
+2557.12,9060
+2557.64,8815
+2558.96,9031
+2560.49,9023
+2560.85,9016
+2564.24,9127
+2570.90,8878
+2570.99,9075
+2575.38,9023
+2575.55,9140
+2575.59,9107
+2581.41,9131
+2581.43,8878
+2581.85,9148
+2586.83,9163
+2586.83,9097
+2587.56,9110
+2587.91,9162
+2588.25,9031
+2591.22,9150
+2593.82,9221
+2596.20,9162
+2598.74,9199
+2599.29,9216
+2600.56,9099
+2601.63,9055
+2602.66,9076
+2603.78,8914
+2604.82,8914
+2606.78,9193
+2609.99,9248
+2611.57,9202
+2613.63,9110
+2620.65,9162
+2621.42,9270
+2622.75,9076
+2628.30,9183
+2628.78,9193
+2636.39,9270
+2640.32,9099
+2642.27,9339
+2645.59,9396
+2649.65,9332
+2652.95,9183
+2654.31,9377
+2658.32,9408
+2665.23,9449
+2673.35,9369
+2681.49,9512
+2685.56,9417
+2691.24,9494
+2694.72,9512
+2695.80,9586
+2696.47,9418
+2697.73,9473
+2699.03,9516
+2699.13,9482
+2703.07,9418
+2705.94,9606
+2707.69,9628
+2710.84,9476
+2713.20,9581
+2715.07,9467
+2715.99,9482
+2721.42,9670
+2723.05,9482
+2725.99,9619
+2727.67,9633
+2729.27,9678
+2735.51,9677
+2736.34,9630
+2736.49,9689
+2738.97,9709
+2748.80,9762
+2750.96,9685
+2753.37,9580
+2755.44,9735
+2758.04,9685
+2758.79,9670
+2759.64,9551
+2761.72,9815
+2768.90,9670
+2771.09,9836
+2773.96,9688
+2773.98,9687
+2780.26,9666
+2782.81,9734
+2784.78,9891
+2787.81,9688
+2788.01,9783
+2788.60,9476
+2791.65,9876
+2792.86,9874
+2793.13,9850
+2800.56,9941
+2800.57,9869
+2804.68,9900
+2820.24,10000
+2821.34,10005
+2821.79,10007
+2822.08,9936
+2829.58,10004
+2830.95,9984
+2831.02,10038
+2834.15,10002
+2838.07,10004
+2839.64,9999
+2840.78,9889
+2841.37,10062
+2843.19,10005
+2845.34,10055
+2847.98,10059
+2856.32,10121
+2863.40,10145
+2863.50,10104
+2864.95,10185
+2867.53,10123
+2868.49,10168
+2870.11,10158
+2870.61,10238
+2873.14,10184
+2873.52,10174
+2873.96,10135
+2879.24,10212
+2882.25,10227
+2886.79,10304
+2897.37,10312
+2897.80,10254
+2900.74,10346
+2902.71,10348
+2906.30,10297
+2908.58,10248
+2911.90,10356
+2918.84,10369
+2920.03,10394
+2920.51,10329
+2930.95,10491
+2933.29,10408
+2934.52,10376
+2938.84,10219
+2945.64,10481
+2948.09,10433
+2948.45,10349
+2953.30,10254
+2954.36,10473
+2954.68,10478
+2965.32,10494
+2966.14,10510
+2967.53,10510
+2968.25,10503
+2969.98,10609
+2975.58,10561
+2975.72,10565
+2975.90,10376
+2983.32,10609
+2989.09,10597
+2990.45,10494
+2990.80,10557
+2991.59,10597
+2993.71,10637
+2994.70,10620
+2995.26,10613
+2996.13,10614
+2997.52,10673
+2999.11,10668
+3000.57,10472
+3003.94,10622
+3004.80,10637
+3013.59,10704
+3019.50,10494
+3022.40,10472
+3023.52,10709
+3027.86,10778
+3029.36,10729
+3030.72,10683
+3032.36,10721
+3033.41,10759
+3038.41,10613
+3038.80,10790
+3046.04,10867
+3047.00,10833
+3047.51,10721
+3047.88,10896
+3050.83,10774
+3050.85,10871
+3055.75,10854
+3056.11,10841
+3057.64,10833
+3059.82,10833
+3060.37,10864
+3064.45,10904
+3064.59,10882
+3069.57,10864
+3070.27,10785
+3075.67,10944
+3076.58,10958
+3080.19,10914
+3080.97,10807
+3084.99,10948
+3085.26,10980
+3085.36,10986
+3086.85,10898
+3088.13,10983
+3089.31,10954
+3090.20,10974
+3092.38,10672
+3094.12,11019
+3097.10,10954
+3098.36,11052
+3098.60,10943
+3102.34,10990
+3102.60,10974
+3102.79,11036
+3105.41,11064
+3105.47,11044
+3105.74,11006
+3109.61,11096
+3113.56,11051
+3119.19,11052
+3119.60,10790
+3120.32,11115
+3123.50,11163
+3123.67,11066
+3124.18,11115
+3125.00,11147
+3126.40,11086
+3129.42,11192
+3133.02,11108
+3135.57,11047
+3139.43,11047
+3147.10,11194
+3149.14,11223
+3152.18,11224
+3156.38,11161
+3158.13,10790
+3160.20,11207
+3161.14,11121
+3162.41,11319
+3166.08,11265
+3166.56,11264
+3166.98,11241
+3167.68,11273
+3168.82,11299
+3169.87,11330
+3172.21,11299
+3175.81,11301
+3177.87,11272
+3182.53,11332
+3186.74,11179
+3187.85,11107
+3190.30,11273
+3191.15,11363
+3192.03,11342
+3192.37,11326
+3195.50,11337
+3196.48,11242
+3199.01,11447
+3200.55,11227
+3203.31,11246
+3204.96,11470
+3207.29,11433
+3207.75,11410
+3209.42,11425
+3209.96,11478
+3210.86,11464
+3211.60,11404
+3214.74,11411
+3221.76,11506
+3222.09,11449
+3222.15,11433
+3222.56,11454
+3226.64,11463
+3233.71,11533
+3240.71,11474
+3241.29,11485
+3242.88,11363
+3245.31,11596
+3248.38,11516
+3249.96,11554
+3252.63,11659
+3256.68,11566
+3258.20,11641
+3261.60,11575
+3261.60,11578
+3263.02,11577
+3263.18,11590
+3263.63,11634
+3267.86,11701
+3268.46,11654
+3280.89,11630
+3281.92,11730
+3283.99,11711
+3293.02,11630
+3296.01,11751
+3301.65,11630
+3302.46,11711
+3303.02,11522
+3307.28,11821
+3307.95,11714
+3308.05,11867
+3309.21,11724
+3309.74,11522
+3309.94,11643
+3311.34,11797
+3313.31,11761
+3320.18,11863
+3324.22,11897
+3324.87,11942
+3326.00,11816
+3327.87,11522
+3343.31,11594
+3343.83,11954
+3343.97,11719
+3344.14,11993
+3346.37,11884
+3347.75,11973
+3355.99,11845
+3356.72,11998
+3358.56,11845
+3359.86,11954
+3365.46,11901
+3367.57,12035
+3371.92,11845
+3373.59,12001
+3373.75,12048
+3376.84,12009
+3379.54,12073
+3382.04,11845
+3382.79,12152
+3383.01,12124
+3396.87,12212
+3398.74,12153
+3399.00,12196
+3399.74,12219
+3401.32,12122
+3401.97,12181
+3404.37,12151
+3404.82,12214
+3406.13,12164
+3408.34,12067
+3409.10,12151
+3410.97,12122
+3411.46,12230
+3412.42,12229
+3412.80,12226
+3416.39,12153
+3418.13,12224
+3434.23,12067
+3435.07,12117
+3437.94,12277
+3439.95,12253
+3440.28,12117
+3440.44,12290
+3442.80,12290
+3443.84,12247
+3446.43,12287
+3451.17,12117
+3451.42,12337
+3451.80,12361
+3458.27,12369
+3460.07,12117
+3460.80,12377
+3460.99,12339
+3464.96,12389
+3471.05,12422
+3474.26,12422
+3487.93,12524
+3489.49,12419
+3491.61,12294
+3498.34,12508
+3498.61,12510
+3501.87,12495
+3503.97,12422
+3504.55,12526
+3507.32,12475
+3508.79,12424
+3519.88,12619
+3522.14,12534
+3523.52,12560
+3530.87,12632
+3531.98,12628
+3533.59,12443
+3534.29,12452
+3538.03,12640
+3538.82,12612
+3541.95,12688
+3550.58,12692
+3551.20,12731
+3555.50,12492
+3556.54,12632
+3561.35,12675
+3562.95,12731
+3565.83,12492
+3567.94,12789
+3578.29,12838
+3580.38,12865
+3584.67,12859
+3589.34,12632
+3592.02,12792
+3594.74,12873
+3596.02,12829
+3603.13,12853
+3604.74,12857
+3605.58,12901
+3608.15,12919
+3608.60,12876
+3609.01,12906
+3610.04,12908
+3615.19,12937
+3617.52,12919
+3618.54,12835
+3623.98,12908
+3624.21,12842
+3626.61,12920
+3626.86,12961
+3627.86,13026
+3631.56,12914
+3631.70,12937
+3632.78,13025
+3633.51,12899
+3637.74,12971
+3640.56,13096
+3641.19,13005
+3641.50,13022
+3641.51,12835
+3643.87,13009
+3645.24,13049
+3646.29,13029
+3648.03,13044
+3651.44,13081
+3653.29,13054
+3653.72,13072
+3654.88,13109
+3655.29,12842
+3658.49,12940
+3659.10,13017
+3661.54,13086
+3663.05,13114
+3669.57,13013
+3676.12,13049
+3684.65,13029
+3687.76,13197
+3691.45,13198
+3700.30,13043
+3701.05,13179
+3706.83,13274
+3708.17,13220
+3709.99,13303
+3710.75,13279
+3711.10,13282
+3716.64,13265
+3718.74,13266
+3719.84,13371
+3722.63,13364
+3728.63,13257
+3728.88,13106
+3734.86,13355
+3735.50,13380
+3735.89,13346
+3741.34,13387
+3741.96,13401
+3745.37,13391
+3751.18,13127
+3752.11,13106
+3754.71,13297
+3754.90,13106
+3757.41,13449
+3757.55,13452
+3759.82,13463
+3761.17,13449
+3768.61,13346
+3773.70,13391
+3774.43,13426
+3774.49,13336
+3775.67,13509
+3776.51,13547
+3779.21,13371
+3781.93,13106
+3782.34,13512
+3785.62,13426
+3789.34,13522
+3800.11,13607
+3802.18,13557
+3802.71,13589
+3802.95,13558
+3804.26,13567
+3804.77,13106
+3807.48,13573
+3811.62,13558
+3813.11,13516
+3814.14,13639
+3814.81,13641
+3818.27,13632
+3819.63,13659
+3824.84,13720
+3826.01,13684
+3827.69,13639
+3830.24,13654
+3831.11,13687
+3832.61,13552
+3833.10,13776
+3845.24,13771
+3845.77,13714
+3848.16,13724
+3849.52,13598
+3854.23,13823
+3854.49,13821
+3854.77,13639
+3855.18,13764
+3858.50,13773
+3859.49,13563
+3861.90,13854
+3864.13,13802
+3866.68,13821
+3868.60,13812
+3870.85,13712
+3872.40,13687
+3873.72,13712
+3873.86,13887
+3880.96,13846
+3888.26,13918
+3891.12,13931
+3891.72,13639
+3892.38,13922
+3895.02,13895
+3903.45,13904
+3906.41,13928
+3907.23,13897
+3911.49,13979
+3912.83,13899
+3913.93,13934
+3913.96,13940
+3916.17,13909
+3919.32,13909
+3922.20,14019
+3925.98,14052
+3926.55,13950
+3926.87,14014
+3929.68,13969
+3930.71,13962
+3932.83,14064
+3933.44,14084
+3934.30,14046
+3935.45,13855
+3936.24,14101
+3940.46,13989
+3941.31,14087
+3948.55,14096
+3951.40,14084
+3952.29,14082
+3954.87,14168
+3956.42,14122
+3969.92,14245
+3971.69,14190
+3972.11,14119
+3972.74,14227
+3974.62,14242
+3981.38,14115
+3981.78,14291
+3988.10,14235
+4009.00,14352
+4014.82,14369
+4017.81,14355
+4019.53,14325
+4020.83,14417
+4022.70,14253
+4022.79,14464
+4025.71,14393
+4031.54,14385
+4035.03,14369
+4036.89,14383
+4037.93,14432
+4038.73,14442
+4042.83,14356
+4043.22,14418
+4043.35,14424
+4044.11,14384
+4044.99,14432
+4045.57,14363
+4049.01,14556
+4049.97,14383
+4050.13,14548
+4052.93,14429
+4063.04,14384
+4070.61,14384
+4073.88,14356
+4084.27,14638
+4092.39,14429
+4100.55,14676
+4103.89,14739
+4104.20,14726
+4108.07,14647
+4109.43,14727
+4109.50,14732
+4110.02,14691
+4111.26,14717
+4111.71,14729
+4112.27,14736
+4113.37,14675
+4116.36,14727
+4131.08,14705
+4132.03,14774
+4139.05,14767
+4141.78,14780
+4151.59,14834
+4152.48,14821
+4154.54,14806
+4155.25,14857
+4159.17,14835
+4160.25,14834
+4161.09,14882
+4167.01,14873
+4178.77,14929
+4180.63,14920
+4189.02,14929
+4193.55,15039
+4194.25,15003
+4201.26,14895
+4208.91,15085
+4211.16,15064
+4213.06,15081
+4215.86,14978
+4220.85,14935
+4230.96,15083
+4235.48,15180
+4240.79,14895
+4242.40,15139
+4249.61,15156
+4249.76,15089
+4265.23,15269
+4269.22,15284
+4271.27,14908
+4271.41,15256
+4274.91,15350
+4285.95,15039
+4290.20,15021
+4293.12,15370
+4297.07,15360
+4298.19,15347
+4302.98,15021
+4303.16,15039
+4305.68,15281
+4306.82,15350
+4309.85,15477
+4310.56,15436
+4311.38,15341
+4313.40,15431
+4314.84,15117
+4333.62,15530
+4336.81,15497
+4343.49,15546
+4347.96,15514
+4355.48,15553
+4361.74,15509
+4365.94,15595
+4367.31,15597
+4370.45,15655
+4376.14,15713
+4379.42,15702
+4381.02,15677
+4381.17,15509
+4384.13,15686
+4388.15,15736
+4391.18,15670
+4391.57,15695
+4396.46,15597
+4399.54,15654
+4401.46,15761
+4409.25,15821
+4412.58,15774
+4412.84,15821
+4414.41,15842
+4420.54,15798
+4421.89,15829
+4422.85,15820
+4424.45,15838
+4427.64,15882
+4431.04,15787
+4432.90,15865
+4435.82,15934
+4436.07,15922
+4439.33,15933
+4443.68,15838
+4444.98,15931
+4448.36,15918
+4451.27,15953
+4453.41,15848
+4454.98,15933
+4455.00,15909
+4455.36,15969
+4457.67,15933
+4462.17,16031
+4470.64,15920
+4471.49,16009
+4473.38,16017
+4475.34,15848
+4485.21,16092
+4485.26,16139
+4485.33,16061
+4485.44,15848
+4494.46,16150
+4496.79,16210
+4500.32,16122
+4504.22,16197
+4504.80,16107
+4513.89,16199
+4516.85,16191
+4520.31,16283
+4521.55,16122
+4529.98,16244
+4530.93,16156
+4537.19,16286
+4538.61,16334
+4541.13,16335
+4543.04,16341
+4548.29,16377
+4551.32,16301
+4553.04,16407
+4555.33,16287
+4557.93,16304
+4560.28,16360
+4563.90,16386
+4564.14,16392
+4566.74,16418
+4567.65,16256
+4569.44,16389
+4571.43,16348
+4574.13,16453
+4577.10,16377
+4579.18,16478
+4581.25,16371
+4581.32,16467
+4583.35,16390
+4587.11,16350
+4589.83,16421
+4590.33,16469
+4592.15,16520
+4592.36,16483
+4594.11,16453
+4594.84,16465
+4600.70,16564
+4600.72,16462
+4604.31,16514
+4607.98,16343
+4610.16,16478
+4613.35,16556
+4616.59,16593
+4627.43,16357
+4628.46,16682
+4629.85,16610
+4636.54,16666
+4643.03,16680
+4644.11,16697
+4645.26,16674
+4647.31,16686
+4649.75,16596
+4650.45,16756
+4650.53,16642
+4652.71,16668
+4653.77,16562
+4654.73,16699
+4656.18,16761
+4658.69,16751
+4660.03,16810
+4664.11,16804
+4668.05,16841
+4669.13,16762
+4672.02,16774
+4674.21,16716
+4675.01,16666
+4677.97,16752
+4678.64,16846
+4680.34,16837
+4688.50,16343
+4692.62,16865
+4692.92,16854
+4694.20,16853
+4697.25,16857
+4702.35,16806
+4702.45,16889
+4710.19,16947
+4712.78,16893
+4717.17,16964
+4717.58,16923
+4719.75,16943
+4723.93,16948
+4727.36,16948
+4735.44,17016
+4735.80,17015
+4744.27,17048
+4744.64,17011
+4749.36,17086
+4759.78,17112
+4760.28,17068
+4762.31,17038
+4764.77,17185
+4767.32,17077
+4769.94,17110
+4770.13,17155
+4770.44,17157
+4774.11,17164
+4774.57,17082
+4779.55,17209
+4782.36,17124
+4788.61,17223
+4789.63,17156
+4790.04,17169
+4797.14,17038
+4798.96,17089
+4800.63,17237
+4802.07,17284
+4810.95,17328
+4813.67,17283
+4822.61,17278
+4823.24,17352
+4825.39,17283
+4828.93,17362
+4836.84,17395
+4839.33,17289
+4843.40,17394
+4844.05,17399
+4846.09,17399
+4848.35,17391
+4850.27,17439
+4851.85,17222
+4852.02,17390
+4852.69,17289
+4853.69,17392
+4857.62,17375
+4862.13,17454
+4863.16,17474
+4863.61,17438
+4864.83,17265
+4867.18,17385
+4868.22,17347
+4868.93,17347
+4877.04,17521
+4878.66,17612
+4881.28,17575
+4884.14,17439
+4884.70,17532
+4896.24,17527
+4896.94,17612
+4904.36,17542
+4907.24,17696
+4909.94,17600
+4913.94,17629
+4916.53,17685
+4922.48,17674
+4932.79,17703
+4932.92,17674
+4933.87,17772
+4935.13,17653
+4939.43,17768
+4939.74,17747
+4940.12,17705
+4943.13,17812
+4947.06,17542
+4947.21,17756
+4948.17,17759
+4949.69,17720
+4950.54,17747
+4954.29,17827
+4962.63,17826
+4963.24,17816
+4964.02,17754
+4971.35,17903
+4974.28,17868
+4974.46,17816
+4981.20,17875
+4984.29,17910
+4986.93,18007
+4991.88,17956
+4992.15,17933
+4998.46,17982
+4999.13,18008
+5007.28,17964
+5009.08,17982
+5013.47,18071
+5014.99,18104
+5019.40,17999
+5020.51,18079
+5024.85,18075
+5029.44,18062
+5030.31,17982
+5037.37,18160
+5040.44,18075
+5048.89,18150
+5050.82,18119
+5068.03,18242
+5068.10,18214
+5073.49,18292
+5075.99,18270
+5077.37,18262
+5081.77,18288
+5084.51,18206
+5086.51,18191
+5090.45,18228
+5095.52,18305
+5106.24,18272
+5106.63,18250
+5117.63,18396
+5121.04,18405
+5124.99,18412
+5125.45,18388
+5131.61,18493
+5133.48,18388
+5141.10,18483
+5144.15,18357
+5144.43,18572
+5145.60,18439
+5146.41,18431
+5152.46,18533
+5158.76,18594
+5168.40,18636
+5186.99,18728
+5192.87,18708
+5198.40,18651
+5200.81,18612
+5204.40,18744
+5207.91,18719
+5208.14,18770
+5211.40,18612
+5216.37,18708
+5222.52,18660
+5222.58,18848
+5231.33,18612
+5243.53,18818
+5243.99,18812
+5248.34,18854
+5254.12,18612
+5254.56,18893
+5262.05,18888
+5266.74,18612
+5272.05,18839
+5273.15,18992
+5275.15,18902
+5279.42,18783
+5283.38,18902
+5285.42,18944
+5287.33,19020
+5290.00,18980
+5298.62,19031
+5301.16,19058
+5309.53,19032
+5313.41,19079
+5315.96,19077
+5318.24,19074
+5332.46,19165
+5335.16,19082
+5335.37,19181
+5336.31,19178
+5336.36,19121
+5338.43,19170
+5339.17,19155
+5341.60,19184
+5342.32,19267
+5342.59,19207
+5345.12,19082
+5346.39,19138
+5352.09,19156
+5353.22,19187
+5355.61,19135
+5356.16,19091
+5358.58,19254
+5362.39,19252
+5362.41,19187
+5362.79,19315
+5364.78,19068
+5374.81,19291
+5378.53,19286
+5379.71,19348
+5382.16,19324
+5383.79,19237
+5384.56,19286
+5389.52,19372
+5391.67,19407
+5392.85,19271
+5393.62,19387
+5393.70,19414
+5397.44,19430
+5398.02,19446
+5398.66,19370
+5399.86,19432
+5402.22,19271
+5403.79,19423
+5410.61,19451
+5411.60,19467
+5412.67,19479
+5414.84,19507
+5417.87,19517
+5419.01,19328
+5420.81,19328
+5421.79,19516
+5425.25,19471
+5428.26,19589
+5445.40,19624
+5449.05,19558
+5449.54,19414
+5449.58,19617
+5450.34,19621
+5452.42,19562
+5456.21,19565
+5458.27,19585
+5458.72,19620
+5460.01,19561
+5464.25,19614
+5465.38,19562

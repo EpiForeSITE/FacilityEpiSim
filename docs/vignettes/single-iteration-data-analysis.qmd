@@ -27,6 +27,7 @@ cat('Admissions data:')
 head(admissions_df)
 ```
 
+
 ## Clinical Detection Data Overview
 
 This dataset shows the time and patient id of a detection via the clinical (symptoms-base) route.  DetectionCount is a check column.  In some edge cases a patient may be detected, treated, recovered and **detected again**, in which case detection count for that patient would be >1.
@@ -95,3 +96,18 @@ ggplot(daily_pop_df, aes(x = detected)) +
 	theme_minimal()
 ```
 
+
+## Decolonization Events
+
+These represent patients who's colonization with the organism has ceased.
+
+```{r}
+# Read decolonization.demo.txt (comma-delimited)
+decolonization_df <- read.table('../data/decolonization.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+# Show structure and summary
+cat('Decolonization events:')
+head(decolonization_df)
+cat('\nSummary statistics:')
+summary(decolonization_df)
+```
