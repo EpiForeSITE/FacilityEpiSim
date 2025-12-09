@@ -43,6 +43,7 @@ public class PersonDisease {
 				clinicalWriter = new PrintWriter("clinicalDetection.txt");
 				clinicalWriter.println("Time,DetectedPatientID,DetectionCount");
 				verificationWriter = new PrintWriter("detection_verification.txt");
+				verificationWriter.println("time,patient_id,source,colonized,detection_count");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -114,7 +115,7 @@ public class PersonDisease {
 
 		// Verification log for detection source
 		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
-			verificationWriter.printf("Time: %.2f, Patient: %d, Source: CLINICAL, Colonized: %b, DetectionCount: %d%n",
+			verificationWriter.printf("%.2f,%d,CLINICAL,%b,%d%n",
 					currentTime, person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
 		}
@@ -143,7 +144,7 @@ public class PersonDisease {
 		// Verification log
 		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
 			verificationWriter.printf(
-					"Time: %.2f, Patient: %d, Source: SURVEILLANCE, Colonized: %b, DetectionCount: %d%n", currentTime,
+					"%.2f,%d,SURVEILLANCE,%b,%d%n", currentTime,
 					person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
 		}

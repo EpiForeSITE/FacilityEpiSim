@@ -1,3 +1,4 @@
+
 ---
 title: "Single Iteration Data Analysis"
 ---
@@ -111,3 +112,47 @@ head(decolonization_df)
 cat('\nSummary statistics:')
 summary(decolonization_df)
 ```
+
+
+
+## Detection Verification Events
+
+```{r}
+# Read detection_verification.demo.txt (comma-delimited)
+detection_verification_df <- read.table('../data/detection_verification.demo.txt', header=TRUE, sep=',', stringsAsFactors=TRUE)
+
+# Show structure and summary
+cat('Detection verification events:')
+head(detection_verification_df)
+cat('\nSummary statistics:')
+summary(detection_verification_df)
+```
+
+## Surveillance Events
+
+This is every surveillance test run after the end of the burn-in period.  
+
+```{r}
+# Read surveillance.demo.txt (comma-delimited)
+surveillance_df <- read.table('../data/surveillance.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+# Show structure and summary
+cat('Surveillance events:')
+head(surveillance_df)
+cat('\nSummary statistics:')
+summary(surveillance_df)
+```
+
+## Patient-to-Patient transmission
+
+```{r}
+# Read transmission.demo.txt (comma-delimited)
+transmission_df <- read.table('../data/transmissions.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+
+# Show structure and summary
+cat('Transmission events:')
+head(transmission_df)
+cat('\nSummary statistics:')
+summary(transmission_df)
+```
+

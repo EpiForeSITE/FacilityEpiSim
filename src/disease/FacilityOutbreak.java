@@ -59,6 +59,7 @@ public class FacilityOutbreak {
 		
 				
 			logWriter = new PrintWriter("transmissions.txt");
+			logWriter.println("time,from_patientID,to_patientID");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -115,7 +116,7 @@ public class FacilityOutbreak {
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
 			if(!SingleFacilityBuilder.isBatchRun) {
-			logWriter.printf("Time: %.2f, Patient1: %d, Patient2: %d%n", transmissionTime,
+			logWriter.printf("%.2f,%d,%d%n", transmissionTime,
 					pdC.hashCode(), pdS.hashCode());
 			}
 		}
