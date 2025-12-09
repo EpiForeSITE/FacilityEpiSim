@@ -1,1111 +1,1296 @@
-Time: 41.06, Detected Patient: 99, DetectionCount: 1
-Time: 49.97, Detected Patient: 172, DetectionCount: 1
-Time: 51.19, Detected Patient: 214, DetectionCount: 1
-Time: 57.59, Detected Patient: 208, DetectionCount: 1
-Time: 59.75, Detected Patient: 261, DetectionCount: 1
-Time: 60.24, Detected Patient: 252, DetectionCount: 1
-Time: 64.65, Detected Patient: 297, DetectionCount: 1
-Time: 67.76, Detected Patient: 152, DetectionCount: 1
-Time: 88.94, Detected Patient: 367, DetectionCount: 1
-Time: 89.81, Detected Patient: 357, DetectionCount: 1
-Time: 93.88, Detected Patient: 343, DetectionCount: 1
-Time: 99.88, Detected Patient: 352, DetectionCount: 1
-Time: 111.76, Detected Patient: 442, DetectionCount: 1
-Time: 114.39, Detected Patient: 456, DetectionCount: 1
-Time: 115.34, Detected Patient: 449, DetectionCount: 1
-Time: 118.53, Detected Patient: 485, DetectionCount: 1
-Time: 120.01, Detected Patient: 424, DetectionCount: 1
-Time: 129.71, Detected Patient: 411, DetectionCount: 1
-Time: 134.56, Detected Patient: 530, DetectionCount: 1
-Time: 136.45, Detected Patient: 384, DetectionCount: 1
-Time: 138.84, Detected Patient: 564, DetectionCount: 1
-Time: 142.08, Detected Patient: 472, DetectionCount: 1
-Time: 143.15, Detected Patient: 460, DetectionCount: 1
-Time: 143.70, Detected Patient: 524, DetectionCount: 1
-Time: 144.84, Detected Patient: 562, DetectionCount: 1
-Time: 151.22, Detected Patient: 560, DetectionCount: 1
-Time: 152.74, Detected Patient: 613, DetectionCount: 1
-Time: 153.70, Detected Patient: 476, DetectionCount: 1
-Time: 156.15, Detected Patient: 580, DetectionCount: 1
-Time: 156.19, Detected Patient: 567, DetectionCount: 1
-Time: 161.62, Detected Patient: 631, DetectionCount: 1
-Time: 162.14, Detected Patient: 510, DetectionCount: 1
-Time: 162.17, Detected Patient: 601, DetectionCount: 1
-Time: 168.80, Detected Patient: 572, DetectionCount: 1
-Time: 178.86, Detected Patient: 619, DetectionCount: 1
-Time: 197.23, Detected Patient: 698, DetectionCount: 1
-Time: 202.17, Detected Patient: 740, DetectionCount: 1
-Time: 204.02, Detected Patient: 761, DetectionCount: 1
-Time: 206.44, Detected Patient: 707, DetectionCount: 1
-Time: 207.41, Detected Patient: 742, DetectionCount: 1
-Time: 209.61, Detected Patient: 777, DetectionCount: 1
-Time: 214.48, Detected Patient: 759, DetectionCount: 1
-Time: 214.62, Detected Patient: 659, DetectionCount: 1
-Time: 219.22, Detected Patient: 774, DetectionCount: 1
-Time: 227.76, Detected Patient: 840, DetectionCount: 1
-Time: 230.61, Detected Patient: 785, DetectionCount: 1
-Time: 242.03, Detected Patient: 875, DetectionCount: 1
-Time: 244.33, Detected Patient: 884, DetectionCount: 1
-Time: 245.69, Detected Patient: 800, DetectionCount: 1
-Time: 246.57, Detected Patient: 911, DetectionCount: 1
-Time: 257.44, Detected Patient: 924, DetectionCount: 1
-Time: 258.81, Detected Patient: 890, DetectionCount: 1
-Time: 259.26, Detected Patient: 917, DetectionCount: 1
-Time: 260.37, Detected Patient: 845, DetectionCount: 1
-Time: 264.66, Detected Patient: 915, DetectionCount: 1
-Time: 267.74, Detected Patient: 963, DetectionCount: 1
-Time: 276.04, Detected Patient: 998, DetectionCount: 1
-Time: 276.64, Detected Patient: 1029, DetectionCount: 1
-Time: 295.72, Detected Patient: 1081, DetectionCount: 1
-Time: 298.07, Detected Patient: 1102, DetectionCount: 1
-Time: 299.24, Detected Patient: 923, DetectionCount: 1
-Time: 299.37, Detected Patient: 1085, DetectionCount: 1
-Time: 301.51, Detected Patient: 1066, DetectionCount: 1
-Time: 309.84, Detected Patient: 1121, DetectionCount: 1
-Time: 312.68, Detected Patient: 1176, DetectionCount: 1
-Time: 313.54, Detected Patient: 1083, DetectionCount: 1
-Time: 314.75, Detected Patient: 1146, DetectionCount: 1
-Time: 315.99, Detected Patient: 1124, DetectionCount: 1
-Time: 318.90, Detected Patient: 1198, DetectionCount: 1
-Time: 320.55, Detected Patient: 1044, DetectionCount: 1
-Time: 320.58, Detected Patient: 1101, DetectionCount: 1
-Time: 324.41, Detected Patient: 1177, DetectionCount: 1
-Time: 343.04, Detected Patient: 1173, DetectionCount: 1
-Time: 347.61, Detected Patient: 1239, DetectionCount: 1
-Time: 350.26, Detected Patient: 1264, DetectionCount: 1
-Time: 350.36, Detected Patient: 1273, DetectionCount: 1
-Time: 351.38, Detected Patient: 1159, DetectionCount: 1
-Time: 357.36, Detected Patient: 1333, DetectionCount: 1
-Time: 362.87, Detected Patient: 1289, DetectionCount: 1
-Time: 366.33, Detected Patient: 1352, DetectionCount: 1
-Time: 368.25, Detected Patient: 1387, DetectionCount: 1
-Time: 371.18, Detected Patient: 1335, DetectionCount: 1
-Time: 375.52, Detected Patient: 1366, DetectionCount: 1
-Time: 378.12, Detected Patient: 1353, DetectionCount: 1
-Time: 378.92, Detected Patient: 1332, DetectionCount: 1
-Time: 382.21, Detected Patient: 1316, DetectionCount: 1
-Time: 383.02, Detected Patient: 1260, DetectionCount: 1
-Time: 386.59, Detected Patient: 1172, DetectionCount: 1
-Time: 387.62, Detected Patient: 1436, DetectionCount: 1
-Time: 398.36, Detected Patient: 1398, DetectionCount: 1
-Time: 399.12, Detected Patient: 1197, DetectionCount: 1
-Time: 401.48, Detected Patient: 1275, DetectionCount: 1
-Time: 405.70, Detected Patient: 1447, DetectionCount: 1
-Time: 409.12, Detected Patient: 1411, DetectionCount: 1
-Time: 416.25, Detected Patient: 1414, DetectionCount: 1
-Time: 416.74, Detected Patient: 1566, DetectionCount: 1
-Time: 418.61, Detected Patient: 1544, DetectionCount: 1
-Time: 420.18, Detected Patient: 1551, DetectionCount: 1
-Time: 423.87, Detected Patient: 1490, DetectionCount: 1
-Time: 425.18, Detected Patient: 1575, DetectionCount: 1
-Time: 427.99, Detected Patient: 1499, DetectionCount: 1
-Time: 431.24, Detected Patient: 1615, DetectionCount: 1
-Time: 435.07, Detected Patient: 1598, DetectionCount: 1
-Time: 442.90, Detected Patient: 1613, DetectionCount: 1
-Time: 444.70, Detected Patient: 1620, DetectionCount: 1
-Time: 448.57, Detected Patient: 1612, DetectionCount: 1
-Time: 449.72, Detected Patient: 1680, DetectionCount: 1
-Time: 453.28, Detected Patient: 1607, DetectionCount: 1
-Time: 454.58, Detected Patient: 1703, DetectionCount: 1
-Time: 465.89, Detected Patient: 1713, DetectionCount: 1
-Time: 468.30, Detected Patient: 1734, DetectionCount: 1
-Time: 472.76, Detected Patient: 1770, DetectionCount: 1
-Time: 477.19, Detected Patient: 1786, DetectionCount: 1
-Time: 485.71, Detected Patient: 1820, DetectionCount: 1
-Time: 486.42, Detected Patient: 1781, DetectionCount: 1
-Time: 487.53, Detected Patient: 1763, DetectionCount: 1
-Time: 492.44, Detected Patient: 1676, DetectionCount: 1
-Time: 495.99, Detected Patient: 1741, DetectionCount: 1
-Time: 509.78, Detected Patient: 1884, DetectionCount: 1
-Time: 511.23, Detected Patient: 1883, DetectionCount: 1
-Time: 511.90, Detected Patient: 1837, DetectionCount: 1
-Time: 517.47, Detected Patient: 1833, DetectionCount: 1
-Time: 518.84, Detected Patient: 1739, DetectionCount: 1
-Time: 522.89, Detected Patient: 1947, DetectionCount: 1
-Time: 524.88, Detected Patient: 1840, DetectionCount: 1
-Time: 525.17, Detected Patient: 1852, DetectionCount: 1
-Time: 525.67, Detected Patient: 1934, DetectionCount: 1
-Time: 533.65, Detected Patient: 1919, DetectionCount: 1
-Time: 538.06, Detected Patient: 1981, DetectionCount: 1
-Time: 542.21, Detected Patient: 1929, DetectionCount: 1
-Time: 546.39, Detected Patient: 2011, DetectionCount: 1
-Time: 552.97, Detected Patient: 2044, DetectionCount: 1
-Time: 554.47, Detected Patient: 1961, DetectionCount: 1
-Time: 556.66, Detected Patient: 1891, DetectionCount: 1
-Time: 559.15, Detected Patient: 2005, DetectionCount: 1
-Time: 560.11, Detected Patient: 2039, DetectionCount: 1
-Time: 569.44, Detected Patient: 2074, DetectionCount: 1
-Time: 570.61, Detected Patient: 2053, DetectionCount: 1
-Time: 571.41, Detected Patient: 2006, DetectionCount: 1
-Time: 577.97, Detected Patient: 2105, DetectionCount: 1
-Time: 579.46, Detected Patient: 2031, DetectionCount: 1
-Time: 581.68, Detected Patient: 2066, DetectionCount: 1
-Time: 583.94, Detected Patient: 2128, DetectionCount: 1
-Time: 586.54, Detected Patient: 2081, DetectionCount: 1
-Time: 586.72, Detected Patient: 1804, DetectionCount: 1
-Time: 590.58, Detected Patient: 2146, DetectionCount: 1
-Time: 593.09, Detected Patient: 2185, DetectionCount: 1
-Time: 598.55, Detected Patient: 2164, DetectionCount: 1
-Time: 602.90, Detected Patient: 2191, DetectionCount: 1
-Time: 605.94, Detected Patient: 2058, DetectionCount: 1
-Time: 606.29, Detected Patient: 2199, DetectionCount: 1
-Time: 608.81, Detected Patient: 2234, DetectionCount: 1
-Time: 610.03, Detected Patient: 2190, DetectionCount: 1
-Time: 610.08, Detected Patient: 2029, DetectionCount: 1
-Time: 611.04, Detected Patient: 2258, DetectionCount: 1
-Time: 611.87, Detected Patient: 2143, DetectionCount: 1
-Time: 612.44, Detected Patient: 2200, DetectionCount: 1
-Time: 621.35, Detected Patient: 2132, DetectionCount: 1
-Time: 625.60, Detected Patient: 2288, DetectionCount: 1
-Time: 627.78, Detected Patient: 2267, DetectionCount: 1
-Time: 630.11, Detected Patient: 2315, DetectionCount: 1
-Time: 633.30, Detected Patient: 2161, DetectionCount: 1
-Time: 635.03, Detected Patient: 2247, DetectionCount: 1
-Time: 635.34, Detected Patient: 2309, DetectionCount: 1
-Time: 638.26, Detected Patient: 2277, DetectionCount: 1
-Time: 641.30, Detected Patient: 2353, DetectionCount: 1
-Time: 642.33, Detected Patient: 2168, DetectionCount: 1
-Time: 643.39, Detected Patient: 2360, DetectionCount: 1
-Time: 647.52, Detected Patient: 2369, DetectionCount: 1
-Time: 660.12, Detected Patient: 2424, DetectionCount: 1
-Time: 663.21, Detected Patient: 2414, DetectionCount: 1
-Time: 664.72, Detected Patient: 2434, DetectionCount: 1
-Time: 666.84, Detected Patient: 2393, DetectionCount: 1
-Time: 672.73, Detected Patient: 2361, DetectionCount: 1
-Time: 673.10, Detected Patient: 2408, DetectionCount: 1
-Time: 681.19, Detected Patient: 2422, DetectionCount: 1
-Time: 682.61, Detected Patient: 2461, DetectionCount: 1
-Time: 691.20, Detected Patient: 2342, DetectionCount: 1
-Time: 696.37, Detected Patient: 2499, DetectionCount: 1
-Time: 704.82, Detected Patient: 2588, DetectionCount: 1
-Time: 716.78, Detected Patient: 2509, DetectionCount: 1
-Time: 717.83, Detected Patient: 2583, DetectionCount: 1
-Time: 723.43, Detected Patient: 2631, DetectionCount: 1
-Time: 727.68, Detected Patient: 2614, DetectionCount: 1
-Time: 731.07, Detected Patient: 2626, DetectionCount: 1
-Time: 735.94, Detected Patient: 2702, DetectionCount: 1
-Time: 736.55, Detected Patient: 2662, DetectionCount: 1
-Time: 736.57, Detected Patient: 2675, DetectionCount: 1
-Time: 737.72, Detected Patient: 2698, DetectionCount: 1
-Time: 738.64, Detected Patient: 2643, DetectionCount: 1
-Time: 740.23, Detected Patient: 2681, DetectionCount: 1
-Time: 742.49, Detected Patient: 2704, DetectionCount: 1
-Time: 743.71, Detected Patient: 2638, DetectionCount: 1
-Time: 747.05, Detected Patient: 2709, DetectionCount: 1
-Time: 754.56, Detected Patient: 2694, DetectionCount: 1
-Time: 762.11, Detected Patient: 2722, DetectionCount: 1
-Time: 764.36, Detected Patient: 2756, DetectionCount: 1
-Time: 765.66, Detected Patient: 2745, DetectionCount: 1
-Time: 768.77, Detected Patient: 2611, DetectionCount: 1
-Time: 773.91, Detected Patient: 2767, DetectionCount: 1
-Time: 774.34, Detected Patient: 2729, DetectionCount: 1
-Time: 776.11, Detected Patient: 2822, DetectionCount: 1
-Time: 785.36, Detected Patient: 2829, DetectionCount: 1
-Time: 787.41, Detected Patient: 2772, DetectionCount: 1
-Time: 788.43, Detected Patient: 2871, DetectionCount: 1
-Time: 792.20, Detected Patient: 2839, DetectionCount: 1
-Time: 792.21, Detected Patient: 2864, DetectionCount: 1
-Time: 798.22, Detected Patient: 2884, DetectionCount: 1
-Time: 800.36, Detected Patient: 2857, DetectionCount: 1
-Time: 801.92, Detected Patient: 2868, DetectionCount: 1
-Time: 802.09, Detected Patient: 2933, DetectionCount: 1
-Time: 802.18, Detected Patient: 2835, DetectionCount: 1
-Time: 803.98, Detected Patient: 2876, DetectionCount: 1
-Time: 804.16, Detected Patient: 2860, DetectionCount: 1
-Time: 808.45, Detected Patient: 2827, DetectionCount: 1
-Time: 813.95, Detected Patient: 2892, DetectionCount: 1
-Time: 823.41, Detected Patient: 3007, DetectionCount: 1
-Time: 824.20, Detected Patient: 2782, DetectionCount: 1
-Time: 826.61, Detected Patient: 2962, DetectionCount: 1
-Time: 828.28, Detected Patient: 2996, DetectionCount: 1
-Time: 830.13, Detected Patient: 2948, DetectionCount: 1
-Time: 830.61, Detected Patient: 2965, DetectionCount: 1
-Time: 835.39, Detected Patient: 3019, DetectionCount: 1
-Time: 837.66, Detected Patient: 2999, DetectionCount: 1
-Time: 840.48, Detected Patient: 2961, DetectionCount: 1
-Time: 841.12, Detected Patient: 3025, DetectionCount: 1
-Time: 850.18, Detected Patient: 3062, DetectionCount: 1
-Time: 855.96, Detected Patient: 3070, DetectionCount: 1
-Time: 857.01, Detected Patient: 3102, DetectionCount: 1
-Time: 860.63, Detected Patient: 3103, DetectionCount: 1
-Time: 863.08, Detected Patient: 3100, DetectionCount: 1
-Time: 863.79, Detected Patient: 3120, DetectionCount: 1
-Time: 868.35, Detected Patient: 3123, DetectionCount: 1
-Time: 872.12, Detected Patient: 3092, DetectionCount: 1
-Time: 872.26, Detected Patient: 3104, DetectionCount: 1
-Time: 873.55, Detected Patient: 3173, DetectionCount: 1
-Time: 874.85, Detected Patient: 3153, DetectionCount: 1
-Time: 875.19, Detected Patient: 3107, DetectionCount: 1
-Time: 878.39, Detected Patient: 3190, DetectionCount: 1
-Time: 879.49, Detected Patient: 3058, DetectionCount: 1
-Time: 881.40, Detected Patient: 2905, DetectionCount: 1
-Time: 883.26, Detected Patient: 3195, DetectionCount: 1
-Time: 886.18, Detected Patient: 3156, DetectionCount: 1
-Time: 888.87, Detected Patient: 3192, DetectionCount: 1
-Time: 890.33, Detected Patient: 3128, DetectionCount: 1
-Time: 894.34, Detected Patient: 3188, DetectionCount: 1
-Time: 894.80, Detected Patient: 3148, DetectionCount: 1
-Time: 895.94, Detected Patient: 2992, DetectionCount: 1
-Time: 896.92, Detected Patient: 3242, DetectionCount: 1
-Time: 900.71, Detected Patient: 3235, DetectionCount: 1
-Time: 902.46, Detected Patient: 3282, DetectionCount: 1
-Time: 903.46, Detected Patient: 3268, DetectionCount: 1
-Time: 906.60, Detected Patient: 3184, DetectionCount: 1
-Time: 910.51, Detected Patient: 3276, DetectionCount: 1
-Time: 912.63, Detected Patient: 3205, DetectionCount: 1
-Time: 919.90, Detected Patient: 3332, DetectionCount: 1
-Time: 920.83, Detected Patient: 3308, DetectionCount: 1
-Time: 921.96, Detected Patient: 3217, DetectionCount: 1
-Time: 925.30, Detected Patient: 3353, DetectionCount: 1
-Time: 933.22, Detected Patient: 3345, DetectionCount: 1
-Time: 937.44, Detected Patient: 3236, DetectionCount: 1
-Time: 941.68, Detected Patient: 3378, DetectionCount: 1
-Time: 941.68, Detected Patient: 3384, DetectionCount: 1
-Time: 941.77, Detected Patient: 3418, DetectionCount: 1
-Time: 946.78, Detected Patient: 3411, DetectionCount: 1
-Time: 948.60, Detected Patient: 3433, DetectionCount: 1
-Time: 948.72, Detected Patient: 3361, DetectionCount: 1
-Time: 951.94, Detected Patient: 3412, DetectionCount: 1
-Time: 953.70, Detected Patient: 3421, DetectionCount: 1
-Time: 954.74, Detected Patient: 3377, DetectionCount: 1
-Time: 963.62, Detected Patient: 3426, DetectionCount: 1
-Time: 969.43, Detected Patient: 3484, DetectionCount: 1
-Time: 969.52, Detected Patient: 3481, DetectionCount: 1
-Time: 969.62, Detected Patient: 3460, DetectionCount: 1
-Time: 973.93, Detected Patient: 3434, DetectionCount: 1
-Time: 976.45, Detected Patient: 3531, DetectionCount: 1
-Time: 976.93, Detected Patient: 3490, DetectionCount: 1
-Time: 979.69, Detected Patient: 3492, DetectionCount: 1
-Time: 980.36, Detected Patient: 3475, DetectionCount: 1
-Time: 980.90, Detected Patient: 3463, DetectionCount: 1
-Time: 982.03, Detected Patient: 3509, DetectionCount: 1
-Time: 985.01, Detected Patient: 3525, DetectionCount: 1
-Time: 985.07, Detected Patient: 3518, DetectionCount: 1
-Time: 985.26, Detected Patient: 3441, DetectionCount: 1
-Time: 997.16, Detected Patient: 3574, DetectionCount: 1
-Time: 999.98, Detected Patient: 3578, DetectionCount: 1
-Time: 1004.56, Detected Patient: 3594, DetectionCount: 1
-Time: 1006.00, Detected Patient: 3617, DetectionCount: 1
-Time: 1008.02, Detected Patient: 3496, DetectionCount: 1
-Time: 1008.50, Detected Patient: 3572, DetectionCount: 1
-Time: 1014.18, Detected Patient: 3627, DetectionCount: 1
-Time: 1016.66, Detected Patient: 3536, DetectionCount: 1
-Time: 1018.47, Detected Patient: 3636, DetectionCount: 1
-Time: 1018.91, Detected Patient: 3632, DetectionCount: 1
-Time: 1026.51, Detected Patient: 3681, DetectionCount: 1
-Time: 1036.35, Detected Patient: 3702, DetectionCount: 1
-Time: 1038.30, Detected Patient: 3684, DetectionCount: 1
-Time: 1039.33, Detected Patient: 3682, DetectionCount: 1
-Time: 1052.32, Detected Patient: 3772, DetectionCount: 1
-Time: 1053.80, Detected Patient: 3695, DetectionCount: 1
-Time: 1055.44, Detected Patient: 3789, DetectionCount: 1
-Time: 1061.51, Detected Patient: 3790, DetectionCount: 1
-Time: 1064.36, Detected Patient: 3744, DetectionCount: 1
-Time: 1067.36, Detected Patient: 3704, DetectionCount: 1
-Time: 1072.50, Detected Patient: 3812, DetectionCount: 1
-Time: 1073.59, Detected Patient: 3846, DetectionCount: 1
-Time: 1078.84, Detected Patient: 3831, DetectionCount: 1
-Time: 1079.85, Detected Patient: 3761, DetectionCount: 1
-Time: 1080.47, Detected Patient: 3809, DetectionCount: 1
-Time: 1086.54, Detected Patient: 3838, DetectionCount: 1
-Time: 1097.52, Detected Patient: 3634, DetectionCount: 1
-Time: 1099.59, Detected Patient: 3874, DetectionCount: 1
-Time: 1113.16, Detected Patient: 3911, DetectionCount: 1
-Time: 1116.77, Detected Patient: 3928, DetectionCount: 1
-Time: 1121.35, Detected Patient: 4010, DetectionCount: 1
-Time: 1124.05, Detected Patient: 3965, DetectionCount: 1
-Time: 1125.76, Detected Patient: 4047, DetectionCount: 1
-Time: 1127.05, Detected Patient: 3968, DetectionCount: 1
-Time: 1133.13, Detected Patient: 3872, DetectionCount: 1
-Time: 1134.95, Detected Patient: 3983, DetectionCount: 1
-Time: 1138.49, Detected Patient: 3992, DetectionCount: 1
-Time: 1139.93, Detected Patient: 4062, DetectionCount: 1
-Time: 1141.57, Detected Patient: 4087, DetectionCount: 1
-Time: 1143.14, Detected Patient: 4081, DetectionCount: 1
-Time: 1146.04, Detected Patient: 4060, DetectionCount: 1
-Time: 1147.01, Detected Patient: 3580, DetectionCount: 1
-Time: 1148.10, Detected Patient: 4116, DetectionCount: 1
-Time: 1154.59, Detected Patient: 4147, DetectionCount: 1
-Time: 1158.62, Detected Patient: 4105, DetectionCount: 1
-Time: 1161.03, Detected Patient: 4048, DetectionCount: 1
-Time: 1177.33, Detected Patient: 4161, DetectionCount: 1
-Time: 1178.54, Detected Patient: 4173, DetectionCount: 1
-Time: 1182.98, Detected Patient: 4179, DetectionCount: 1
-Time: 1187.61, Detected Patient: 4125, DetectionCount: 1
-Time: 1190.58, Detected Patient: 4230, DetectionCount: 1
-Time: 1194.88, Detected Patient: 4250, DetectionCount: 1
-Time: 1217.24, Detected Patient: 4382, DetectionCount: 1
-Time: 1220.20, Detected Patient: 4193, DetectionCount: 1
-Time: 1231.72, Detected Patient: 4405, DetectionCount: 1
-Time: 1234.52, Detected Patient: 4370, DetectionCount: 1
-Time: 1241.25, Detected Patient: 4451, DetectionCount: 1
-Time: 1241.33, Detected Patient: 4361, DetectionCount: 1
-Time: 1241.89, Detected Patient: 4366, DetectionCount: 1
-Time: 1254.56, Detected Patient: 4493, DetectionCount: 1
-Time: 1257.78, Detected Patient: 4496, DetectionCount: 1
-Time: 1261.15, Detected Patient: 4492, DetectionCount: 1
-Time: 1262.14, Detected Patient: 4527, DetectionCount: 1
-Time: 1265.83, Detected Patient: 4238, DetectionCount: 1
-Time: 1268.89, Detected Patient: 4539, DetectionCount: 1
-Time: 1270.08, Detected Patient: 4479, DetectionCount: 1
-Time: 1270.37, Detected Patient: 4411, DetectionCount: 1
-Time: 1271.37, Detected Patient: 4499, DetectionCount: 1
-Time: 1272.76, Detected Patient: 4502, DetectionCount: 1
-Time: 1274.19, Detected Patient: 4543, DetectionCount: 1
-Time: 1277.40, Detected Patient: 4584, DetectionCount: 1
-Time: 1277.73, Detected Patient: 4557, DetectionCount: 1
-Time: 1285.59, Detected Patient: 4431, DetectionCount: 1
-Time: 1289.42, Detected Patient: 4595, DetectionCount: 1
-Time: 1293.76, Detected Patient: 4612, DetectionCount: 1
-Time: 1297.78, Detected Patient: 4661, DetectionCount: 1
-Time: 1298.62, Detected Patient: 4525, DetectionCount: 1
-Time: 1299.80, Detected Patient: 4629, DetectionCount: 1
-Time: 1302.26, Detected Patient: 4662, DetectionCount: 1
-Time: 1309.33, Detected Patient: 4624, DetectionCount: 1
-Time: 1312.40, Detected Patient: 4707, DetectionCount: 1
-Time: 1314.67, Detected Patient: 4706, DetectionCount: 1
-Time: 1328.65, Detected Patient: 4709, DetectionCount: 1
-Time: 1335.89, Detected Patient: 4782, DetectionCount: 1
-Time: 1340.01, Detected Patient: 4759, DetectionCount: 1
-Time: 1344.46, Detected Patient: 4821, DetectionCount: 1
-Time: 1347.42, Detected Patient: 4764, DetectionCount: 1
-Time: 1349.07, Detected Patient: 4737, DetectionCount: 1
-Time: 1352.62, Detected Patient: 4770, DetectionCount: 1
-Time: 1353.68, Detected Patient: 4808, DetectionCount: 1
-Time: 1356.58, Detected Patient: 4767, DetectionCount: 1
-Time: 1356.62, Detected Patient: 4841, DetectionCount: 1
-Time: 1359.41, Detected Patient: 4824, DetectionCount: 1
-Time: 1359.92, Detected Patient: 4876, DetectionCount: 1
-Time: 1362.15, Detected Patient: 4820, DetectionCount: 1
-Time: 1362.48, Detected Patient: 4773, DetectionCount: 1
-Time: 1374.30, Detected Patient: 4789, DetectionCount: 1
-Time: 1376.56, Detected Patient: 4768, DetectionCount: 1
-Time: 1386.01, Detected Patient: 4904, DetectionCount: 1
-Time: 1387.52, Detected Patient: 4938, DetectionCount: 1
-Time: 1401.75, Detected Patient: 4886, DetectionCount: 1
-Time: 1404.49, Detected Patient: 5028, DetectionCount: 1
-Time: 1406.31, Detected Patient: 4970, DetectionCount: 1
-Time: 1408.69, Detected Patient: 5035, DetectionCount: 1
-Time: 1411.95, Detected Patient: 4998, DetectionCount: 1
-Time: 1413.56, Detected Patient: 4986, DetectionCount: 1
-Time: 1417.41, Detected Patient: 4816, DetectionCount: 1
-Time: 1421.66, Detected Patient: 5082, DetectionCount: 1
-Time: 1423.92, Detected Patient: 5096, DetectionCount: 1
-Time: 1429.92, Detected Patient: 5137, DetectionCount: 1
-Time: 1432.40, Detected Patient: 5164, DetectionCount: 1
-Time: 1435.76, Detected Patient: 5057, DetectionCount: 1
-Time: 1436.93, Detected Patient: 5101, DetectionCount: 1
-Time: 1439.59, Detected Patient: 5078, DetectionCount: 1
-Time: 1441.55, Detected Patient: 5169, DetectionCount: 1
-Time: 1441.79, Detected Patient: 5163, DetectionCount: 1
-Time: 1445.44, Detected Patient: 5040, DetectionCount: 1
-Time: 1455.12, Detected Patient: 5188, DetectionCount: 1
-Time: 1466.97, Detected Patient: 5250, DetectionCount: 1
-Time: 1470.81, Detected Patient: 5252, DetectionCount: 1
-Time: 1475.29, Detected Patient: 5275, DetectionCount: 1
-Time: 1484.19, Detected Patient: 5307, DetectionCount: 1
-Time: 1487.78, Detected Patient: 5348, DetectionCount: 1
-Time: 1491.19, Detected Patient: 5346, DetectionCount: 1
-Time: 1492.33, Detected Patient: 5347, DetectionCount: 1
-Time: 1493.48, Detected Patient: 5325, DetectionCount: 1
-Time: 1501.15, Detected Patient: 5312, DetectionCount: 1
-Time: 1502.60, Detected Patient: 5327, DetectionCount: 1
-Time: 1505.03, Detected Patient: 5402, DetectionCount: 1
-Time: 1505.62, Detected Patient: 5426, DetectionCount: 1
-Time: 1515.75, Detected Patient: 5446, DetectionCount: 1
-Time: 1516.39, Detected Patient: 5380, DetectionCount: 1
-Time: 1523.99, Detected Patient: 5381, DetectionCount: 1
-Time: 1526.08, Detected Patient: 5411, DetectionCount: 1
-Time: 1526.54, Detected Patient: 5412, DetectionCount: 1
-Time: 1542.45, Detected Patient: 5538, DetectionCount: 1
-Time: 1543.21, Detected Patient: 5431, DetectionCount: 1
-Time: 1546.96, Detected Patient: 5392, DetectionCount: 1
-Time: 1547.73, Detected Patient: 5493, DetectionCount: 1
-Time: 1548.02, Detected Patient: 5508, DetectionCount: 1
-Time: 1552.93, Detected Patient: 5496, DetectionCount: 1
-Time: 1556.46, Detected Patient: 5557, DetectionCount: 1
-Time: 1556.58, Detected Patient: 5565, DetectionCount: 1
-Time: 1572.72, Detected Patient: 5571, DetectionCount: 1
-Time: 1572.93, Detected Patient: 5555, DetectionCount: 1
-Time: 1573.14, Detected Patient: 5610, DetectionCount: 1
-Time: 1574.76, Detected Patient: 5597, DetectionCount: 1
-Time: 1579.29, Detected Patient: 5578, DetectionCount: 1
-Time: 1583.52, Detected Patient: 5682, DetectionCount: 1
-Time: 1584.41, Detected Patient: 5692, DetectionCount: 1
-Time: 1586.79, Detected Patient: 5560, DetectionCount: 1
-Time: 1589.86, Detected Patient: 5670, DetectionCount: 1
-Time: 1604.41, Detected Patient: 5747, DetectionCount: 1
-Time: 1610.43, Detected Patient: 5563, DetectionCount: 1
-Time: 1618.64, Detected Patient: 5735, DetectionCount: 1
-Time: 1619.89, Detected Patient: 5797, DetectionCount: 1
-Time: 1619.99, Detected Patient: 5833, DetectionCount: 1
-Time: 1625.58, Detected Patient: 5821, DetectionCount: 1
-Time: 1625.82, Detected Patient: 5769, DetectionCount: 1
-Time: 1627.38, Detected Patient: 5743, DetectionCount: 1
-Time: 1631.71, Detected Patient: 5777, DetectionCount: 1
-Time: 1632.51, Detected Patient: 5831, DetectionCount: 1
-Time: 1633.28, Detected Patient: 5858, DetectionCount: 1
-Time: 1639.76, Detected Patient: 5862, DetectionCount: 1
-Time: 1642.08, Detected Patient: 5840, DetectionCount: 1
-Time: 1653.02, Detected Patient: 5824, DetectionCount: 1
-Time: 1655.89, Detected Patient: 5949, DetectionCount: 1
-Time: 1658.97, Detected Patient: 5889, DetectionCount: 1
-Time: 1660.09, Detected Patient: 5881, DetectionCount: 1
-Time: 1661.46, Detected Patient: 5915, DetectionCount: 1
-Time: 1663.24, Detected Patient: 5954, DetectionCount: 1
-Time: 1663.38, Detected Patient: 5946, DetectionCount: 1
-Time: 1665.08, Detected Patient: 5941, DetectionCount: 1
-Time: 1666.63, Detected Patient: 5991, DetectionCount: 1
-Time: 1673.58, Detected Patient: 5998, DetectionCount: 1
-Time: 1673.63, Detected Patient: 5934, DetectionCount: 1
-Time: 1683.09, Detected Patient: 5951, DetectionCount: 1
-Time: 1686.40, Detected Patient: 6046, DetectionCount: 1
-Time: 1686.78, Detected Patient: 6014, DetectionCount: 1
-Time: 1695.76, Detected Patient: 6011, DetectionCount: 1
-Time: 1707.39, Detected Patient: 6102, DetectionCount: 1
-Time: 1709.87, Detected Patient: 6089, DetectionCount: 1
-Time: 1716.95, Detected Patient: 6133, DetectionCount: 1
-Time: 1717.39, Detected Patient: 6162, DetectionCount: 1
-Time: 1725.64, Detected Patient: 6131, DetectionCount: 1
-Time: 1726.25, Detected Patient: 6176, DetectionCount: 1
-Time: 1731.14, Detected Patient: 6251, DetectionCount: 1
-Time: 1731.30, Detected Patient: 6255, DetectionCount: 1
-Time: 1749.41, Detected Patient: 6218, DetectionCount: 1
-Time: 1751.38, Detected Patient: 6207, DetectionCount: 1
-Time: 1752.20, Detected Patient: 6204, DetectionCount: 1
-Time: 1756.72, Detected Patient: 6340, DetectionCount: 1
-Time: 1757.26, Detected Patient: 6298, DetectionCount: 1
-Time: 1758.72, Detected Patient: 6121, DetectionCount: 1
-Time: 1768.96, Detected Patient: 6252, DetectionCount: 1
-Time: 1771.28, Detected Patient: 6318, DetectionCount: 1
-Time: 1775.62, Detected Patient: 6310, DetectionCount: 1
-Time: 1788.17, Detected Patient: 6373, DetectionCount: 1
-Time: 1791.99, Detected Patient: 6426, DetectionCount: 1
-Time: 1798.51, Detected Patient: 6468, DetectionCount: 1
-Time: 1801.94, Detected Patient: 6494, DetectionCount: 1
-Time: 1803.36, Detected Patient: 6440, DetectionCount: 1
-Time: 1817.48, Detected Patient: 6549, DetectionCount: 1
-Time: 1819.23, Detected Patient: 6514, DetectionCount: 1
-Time: 1820.91, Detected Patient: 6435, DetectionCount: 1
-Time: 1822.33, Detected Patient: 6563, DetectionCount: 1
-Time: 1822.49, Detected Patient: 6526, DetectionCount: 1
-Time: 1823.28, Detected Patient: 6364, DetectionCount: 1
-Time: 1825.14, Detected Patient: 6452, DetectionCount: 1
-Time: 1825.73, Detected Patient: 6529, DetectionCount: 1
-Time: 1826.07, Detected Patient: 6450, DetectionCount: 1
-Time: 1839.77, Detected Patient: 6579, DetectionCount: 1
-Time: 1840.76, Detected Patient: 6586, DetectionCount: 1
-Time: 1844.81, Detected Patient: 6600, DetectionCount: 1
-Time: 1845.16, Detected Patient: 6459, DetectionCount: 1
-Time: 1845.90, Detected Patient: 6670, DetectionCount: 1
-Time: 1848.25, Detected Patient: 6636, DetectionCount: 1
-Time: 1854.49, Detected Patient: 6646, DetectionCount: 1
-Time: 1860.26, Detected Patient: 6674, DetectionCount: 1
-Time: 1860.53, Detected Patient: 6634, DetectionCount: 1
-Time: 1862.31, Detected Patient: 6572, DetectionCount: 1
-Time: 1869.05, Detected Patient: 6717, DetectionCount: 1
-Time: 1871.71, Detected Patient: 6712, DetectionCount: 1
-Time: 1879.09, Detected Patient: 6767, DetectionCount: 1
-Time: 1881.67, Detected Patient: 6780, DetectionCount: 1
-Time: 1882.47, Detected Patient: 6722, DetectionCount: 1
-Time: 1883.47, Detected Patient: 6653, DetectionCount: 1
-Time: 1883.83, Detected Patient: 6732, DetectionCount: 1
-Time: 1884.51, Detected Patient: 6702, DetectionCount: 1
-Time: 1884.89, Detected Patient: 6640, DetectionCount: 1
-Time: 1886.20, Detected Patient: 6642, DetectionCount: 1
-Time: 1894.94, Detected Patient: 6698, DetectionCount: 1
-Time: 1897.38, Detected Patient: 6829, DetectionCount: 1
-Time: 1904.42, Detected Patient: 6815, DetectionCount: 1
-Time: 1912.24, Detected Patient: 6840, DetectionCount: 1
-Time: 1914.50, Detected Patient: 6798, DetectionCount: 1
-Time: 1927.15, Detected Patient: 6878, DetectionCount: 1
-Time: 1928.76, Detected Patient: 6898, DetectionCount: 1
-Time: 1930.23, Detected Patient: 6916, DetectionCount: 1
-Time: 1936.97, Detected Patient: 6880, DetectionCount: 1
-Time: 1943.71, Detected Patient: 6823, DetectionCount: 1
-Time: 1946.23, Detected Patient: 6973, DetectionCount: 1
-Time: 1946.30, Detected Patient: 6996, DetectionCount: 1
-Time: 1947.29, Detected Patient: 6879, DetectionCount: 1
-Time: 1949.67, Detected Patient: 6986, DetectionCount: 1
-Time: 1950.96, Detected Patient: 6993, DetectionCount: 1
-Time: 1956.14, Detected Patient: 7037, DetectionCount: 1
-Time: 1965.48, Detected Patient: 7060, DetectionCount: 1
-Time: 1967.88, Detected Patient: 6991, DetectionCount: 1
-Time: 1971.90, Detected Patient: 7043, DetectionCount: 1
-Time: 1983.53, Detected Patient: 7054, DetectionCount: 1
-Time: 2001.48, Detected Patient: 7122, DetectionCount: 1
-Time: 2001.70, Detected Patient: 7209, DetectionCount: 1
-Time: 2010.24, Detected Patient: 7045, DetectionCount: 1
-Time: 2025.17, Detected Patient: 7307, DetectionCount: 1
-Time: 2025.82, Detected Patient: 7266, DetectionCount: 1
-Time: 2036.56, Detected Patient: 7284, DetectionCount: 1
-Time: 2039.16, Detected Patient: 7282, DetectionCount: 1
-Time: 2041.47, Detected Patient: 7277, DetectionCount: 1
-Time: 2050.19, Detected Patient: 7331, DetectionCount: 1
-Time: 2063.46, Detected Patient: 7391, DetectionCount: 1
-Time: 2063.93, Detected Patient: 7421, DetectionCount: 1
-Time: 2067.40, Detected Patient: 7364, DetectionCount: 1
-Time: 2077.40, Detected Patient: 7407, DetectionCount: 1
-Time: 2086.72, Detected Patient: 7433, DetectionCount: 1
-Time: 2089.32, Detected Patient: 7441, DetectionCount: 1
-Time: 2094.79, Detected Patient: 7289, DetectionCount: 1
-Time: 2094.90, Detected Patient: 7480, DetectionCount: 1
-Time: 2097.29, Detected Patient: 7522, DetectionCount: 1
-Time: 2102.45, Detected Patient: 7509, DetectionCount: 1
-Time: 2103.20, Detected Patient: 7574, DetectionCount: 1
-Time: 2103.39, Detected Patient: 7479, DetectionCount: 1
-Time: 2104.97, Detected Patient: 7518, DetectionCount: 1
-Time: 2107.23, Detected Patient: 7401, DetectionCount: 1
-Time: 2107.90, Detected Patient: 7544, DetectionCount: 1
-Time: 2113.74, Detected Patient: 7581, DetectionCount: 1
-Time: 2113.97, Detected Patient: 7533, DetectionCount: 1
-Time: 2124.53, Detected Patient: 7563, DetectionCount: 1
-Time: 2126.37, Detected Patient: 7645, DetectionCount: 1
-Time: 2127.50, Detected Patient: 7596, DetectionCount: 1
-Time: 2129.94, Detected Patient: 7643, DetectionCount: 1
-Time: 2140.30, Detected Patient: 7620, DetectionCount: 1
-Time: 2140.76, Detected Patient: 7694, DetectionCount: 1
-Time: 2141.42, Detected Patient: 7605, DetectionCount: 1
-Time: 2150.72, Detected Patient: 7647, DetectionCount: 1
-Time: 2150.87, Detected Patient: 7695, DetectionCount: 1
-Time: 2151.34, Detected Patient: 7609, DetectionCount: 1
-Time: 2156.79, Detected Patient: 7729, DetectionCount: 1
-Time: 2157.27, Detected Patient: 7752, DetectionCount: 1
-Time: 2161.01, Detected Patient: 7600, DetectionCount: 1
-Time: 2171.02, Detected Patient: 7721, DetectionCount: 1
-Time: 2176.95, Detected Patient: 7825, DetectionCount: 1
-Time: 2181.36, Detected Patient: 7816, DetectionCount: 1
-Time: 2181.42, Detected Patient: 7829, DetectionCount: 1
-Time: 2186.00, Detected Patient: 7856, DetectionCount: 1
-Time: 2186.46, Detected Patient: 7858, DetectionCount: 1
-Time: 2188.81, Detected Patient: 7817, DetectionCount: 1
-Time: 2189.67, Detected Patient: 7802, DetectionCount: 1
-Time: 2190.61, Detected Patient: 7725, DetectionCount: 1
-Time: 2195.74, Detected Patient: 7837, DetectionCount: 1
-Time: 2197.15, Detected Patient: 7900, DetectionCount: 1
-Time: 2199.58, Detected Patient: 7843, DetectionCount: 1
-Time: 2201.49, Detected Patient: 7799, DetectionCount: 1
-Time: 2203.07, Detected Patient: 7902, DetectionCount: 1
-Time: 2203.20, Detected Patient: 7403, DetectionCount: 1
-Time: 2208.37, Detected Patient: 7954, DetectionCount: 1
-Time: 2216.97, Detected Patient: 7844, DetectionCount: 1
-Time: 2217.31, Detected Patient: 7875, DetectionCount: 1
-Time: 2217.55, Detected Patient: 7917, DetectionCount: 1
-Time: 2219.65, Detected Patient: 7722, DetectionCount: 1
-Time: 2221.02, Detected Patient: 7964, DetectionCount: 1
-Time: 2238.70, Detected Patient: 8022, DetectionCount: 1
-Time: 2238.80, Detected Patient: 8060, DetectionCount: 1
-Time: 2241.05, Detected Patient: 8051, DetectionCount: 1
-Time: 2242.09, Detected Patient: 8057, DetectionCount: 1
-Time: 2244.16, Detected Patient: 8015, DetectionCount: 1
-Time: 2245.81, Detected Patient: 8026, DetectionCount: 1
-Time: 2249.35, Detected Patient: 8014, DetectionCount: 1
-Time: 2251.26, Detected Patient: 8013, DetectionCount: 1
-Time: 2257.48, Detected Patient: 8044, DetectionCount: 1
-Time: 2259.28, Detected Patient: 7942, DetectionCount: 1
-Time: 2261.39, Detected Patient: 8054, DetectionCount: 1
-Time: 2270.19, Detected Patient: 8179, DetectionCount: 1
-Time: 2271.92, Detected Patient: 8005, DetectionCount: 1
-Time: 2273.22, Detected Patient: 7989, DetectionCount: 1
-Time: 2276.58, Detected Patient: 8185, DetectionCount: 1
-Time: 2276.82, Detected Patient: 8172, DetectionCount: 1
-Time: 2285.32, Detected Patient: 8145, DetectionCount: 1
-Time: 2301.60, Detected Patient: 8192, DetectionCount: 1
-Time: 2306.92, Detected Patient: 8271, DetectionCount: 1
-Time: 2306.96, Detected Patient: 8294, DetectionCount: 1
-Time: 2307.13, Detected Patient: 8231, DetectionCount: 1
-Time: 2317.56, Detected Patient: 8284, DetectionCount: 1
-Time: 2318.91, Detected Patient: 8118, DetectionCount: 1
-Time: 2320.81, Detected Patient: 8315, DetectionCount: 1
-Time: 2333.90, Detected Patient: 8225, DetectionCount: 1
-Time: 2334.14, Detected Patient: 8366, DetectionCount: 1
-Time: 2338.36, Detected Patient: 8307, DetectionCount: 1
-Time: 2338.68, Detected Patient: 8345, DetectionCount: 1
-Time: 2340.70, Detected Patient: 8336, DetectionCount: 1
-Time: 2346.60, Detected Patient: 8416, DetectionCount: 1
-Time: 2349.42, Detected Patient: 8260, DetectionCount: 1
-Time: 2349.83, Detected Patient: 8394, DetectionCount: 1
-Time: 2356.67, Detected Patient: 8419, DetectionCount: 1
-Time: 2368.09, Detected Patient: 8484, DetectionCount: 1
-Time: 2373.14, Detected Patient: 8516, DetectionCount: 1
-Time: 2373.74, Detected Patient: 8410, DetectionCount: 1
-Time: 2375.09, Detected Patient: 8460, DetectionCount: 1
-Time: 2376.48, Detected Patient: 8415, DetectionCount: 1
-Time: 2379.99, Detected Patient: 8489, DetectionCount: 1
-Time: 2385.67, Detected Patient: 8435, DetectionCount: 1
-Time: 2386.05, Detected Patient: 8539, DetectionCount: 1
-Time: 2386.78, Detected Patient: 8458, DetectionCount: 1
-Time: 2387.87, Detected Patient: 8564, DetectionCount: 1
-Time: 2388.86, Detected Patient: 8459, DetectionCount: 1
-Time: 2390.60, Detected Patient: 8270, DetectionCount: 1
-Time: 2391.65, Detected Patient: 8526, DetectionCount: 1
-Time: 2395.02, Detected Patient: 8529, DetectionCount: 1
-Time: 2396.00, Detected Patient: 8596, DetectionCount: 1
-Time: 2396.88, Detected Patient: 8479, DetectionCount: 1
-Time: 2397.26, Detected Patient: 8493, DetectionCount: 1
-Time: 2400.16, Detected Patient: 8522, DetectionCount: 1
-Time: 2402.48, Detected Patient: 8521, DetectionCount: 1
-Time: 2404.51, Detected Patient: 8629, DetectionCount: 1
-Time: 2408.72, Detected Patient: 8579, DetectionCount: 1
-Time: 2410.71, Detected Patient: 8639, DetectionCount: 1
-Time: 2411.19, Detected Patient: 8511, DetectionCount: 1
-Time: 2421.95, Detected Patient: 8651, DetectionCount: 1
-Time: 2422.28, Detected Patient: 8689, DetectionCount: 1
-Time: 2424.25, Detected Patient: 8671, DetectionCount: 1
-Time: 2425.99, Detected Patient: 8713, DetectionCount: 1
-Time: 2426.06, Detected Patient: 8650, DetectionCount: 1
-Time: 2437.30, Detected Patient: 8634, DetectionCount: 1
-Time: 2443.60, Detected Patient: 8547, DetectionCount: 1
-Time: 2444.58, Detected Patient: 8776, DetectionCount: 1
-Time: 2444.79, Detected Patient: 8708, DetectionCount: 1
-Time: 2450.02, Detected Patient: 8766, DetectionCount: 1
-Time: 2452.84, Detected Patient: 8692, DetectionCount: 1
-Time: 2457.81, Detected Patient: 8772, DetectionCount: 1
-Time: 2461.72, Detected Patient: 8840, DetectionCount: 1
-Time: 2462.26, Detected Patient: 8763, DetectionCount: 1
-Time: 2463.08, Detected Patient: 8773, DetectionCount: 1
-Time: 2466.25, Detected Patient: 8702, DetectionCount: 1
-Time: 2467.84, Detected Patient: 8757, DetectionCount: 1
-Time: 2471.13, Detected Patient: 8865, DetectionCount: 1
-Time: 2481.20, Detected Patient: 8843, DetectionCount: 1
-Time: 2487.85, Detected Patient: 8892, DetectionCount: 1
-Time: 2492.54, Detected Patient: 8834, DetectionCount: 1
-Time: 2494.98, Detected Patient: 8877, DetectionCount: 1
-Time: 2496.24, Detected Patient: 8769, DetectionCount: 1
-Time: 2496.94, Detected Patient: 8817, DetectionCount: 1
-Time: 2500.34, Detected Patient: 8930, DetectionCount: 1
-Time: 2506.87, Detected Patient: 8937, DetectionCount: 1
-Time: 2510.13, Detected Patient: 8866, DetectionCount: 1
-Time: 2518.52, Detected Patient: 9022, DetectionCount: 1
-Time: 2519.22, Detected Patient: 8922, DetectionCount: 1
-Time: 2521.12, Detected Patient: 9038, DetectionCount: 1
-Time: 2527.43, Detected Patient: 9070, DetectionCount: 1
-Time: 2535.96, Detected Patient: 9015, DetectionCount: 1
-Time: 2536.68, Detected Patient: 9036, DetectionCount: 1
-Time: 2536.80, Detected Patient: 8918, DetectionCount: 1
-Time: 2539.30, Detected Patient: 9018, DetectionCount: 1
-Time: 2539.75, Detected Patient: 9094, DetectionCount: 1
-Time: 2543.95, Detected Patient: 9041, DetectionCount: 1
-Time: 2549.35, Detected Patient: 9139, DetectionCount: 1
-Time: 2549.67, Detected Patient: 9090, DetectionCount: 1
-Time: 2556.81, Detected Patient: 9116, DetectionCount: 1
-Time: 2561.29, Detected Patient: 9080, DetectionCount: 1
-Time: 2563.12, Detected Patient: 9073, DetectionCount: 1
-Time: 2564.71, Detected Patient: 9148, DetectionCount: 1
-Time: 2570.19, Detected Patient: 9027, DetectionCount: 1
-Time: 2570.45, Detected Patient: 9149, DetectionCount: 1
-Time: 2570.70, Detected Patient: 9174, DetectionCount: 1
-Time: 2570.76, Detected Patient: 9198, DetectionCount: 1
-Time: 2572.21, Detected Patient: 9206, DetectionCount: 1
-Time: 2602.11, Detected Patient: 9097, DetectionCount: 1
-Time: 2610.24, Detected Patient: 9290, DetectionCount: 1
-Time: 2612.16, Detected Patient: 9264, DetectionCount: 1
-Time: 2613.76, Detected Patient: 9255, DetectionCount: 1
-Time: 2616.48, Detected Patient: 9001, DetectionCount: 1
-Time: 2618.64, Detected Patient: 9343, DetectionCount: 1
-Time: 2618.90, Detected Patient: 9308, DetectionCount: 1
-Time: 2621.32, Detected Patient: 9349, DetectionCount: 1
-Time: 2627.63, Detected Patient: 9316, DetectionCount: 1
-Time: 2634.69, Detected Patient: 9313, DetectionCount: 1
-Time: 2634.84, Detected Patient: 9392, DetectionCount: 1
-Time: 2639.23, Detected Patient: 9380, DetectionCount: 1
-Time: 2644.00, Detected Patient: 9449, DetectionCount: 1
-Time: 2644.49, Detected Patient: 9296, DetectionCount: 1
-Time: 2650.73, Detected Patient: 9456, DetectionCount: 1
-Time: 2660.31, Detected Patient: 9346, DetectionCount: 1
-Time: 2663.02, Detected Patient: 9422, DetectionCount: 1
-Time: 2663.49, Detected Patient: 9524, DetectionCount: 1
-Time: 2666.28, Detected Patient: 9430, DetectionCount: 1
-Time: 2666.95, Detected Patient: 9471, DetectionCount: 1
-Time: 2672.03, Detected Patient: 9566, DetectionCount: 1
-Time: 2672.30, Detected Patient: 9561, DetectionCount: 1
-Time: 2678.85, Detected Patient: 9531, DetectionCount: 1
-Time: 2679.81, Detected Patient: 9581, DetectionCount: 1
-Time: 2686.36, Detected Patient: 9515, DetectionCount: 1
-Time: 2693.77, Detected Patient: 9595, DetectionCount: 1
-Time: 2719.66, Detected Patient: 9752, DetectionCount: 1
-Time: 2719.86, Detected Patient: 9671, DetectionCount: 1
-Time: 2730.34, Detected Patient: 9744, DetectionCount: 1
-Time: 2734.38, Detected Patient: 9775, DetectionCount: 1
-Time: 2743.14, Detected Patient: 9749, DetectionCount: 1
-Time: 2743.29, Detected Patient: 9780, DetectionCount: 1
-Time: 2745.60, Detected Patient: 9699, DetectionCount: 1
-Time: 2760.88, Detected Patient: 9824, DetectionCount: 1
-Time: 2762.33, Detected Patient: 9869, DetectionCount: 1
-Time: 2769.44, Detected Patient: 9867, DetectionCount: 1
-Time: 2789.27, Detected Patient: 9940, DetectionCount: 1
-Time: 2799.13, Detected Patient: 9971, DetectionCount: 1
-Time: 2799.59, Detected Patient: 10018, DetectionCount: 1
-Time: 2803.00, Detected Patient: 9705, DetectionCount: 1
-Time: 2815.72, Detected Patient: 9809, DetectionCount: 1
-Time: 2816.51, Detected Patient: 10044, DetectionCount: 1
-Time: 2819.08, Detected Patient: 10082, DetectionCount: 1
-Time: 2819.70, Detected Patient: 9943, DetectionCount: 1
-Time: 2825.38, Detected Patient: 10062, DetectionCount: 1
-Time: 2831.78, Detected Patient: 10059, DetectionCount: 1
-Time: 2832.34, Detected Patient: 10077, DetectionCount: 1
-Time: 2838.59, Detected Patient: 10067, DetectionCount: 1
-Time: 2838.98, Detected Patient: 10163, DetectionCount: 1
-Time: 2858.87, Detected Patient: 10149, DetectionCount: 1
-Time: 2861.91, Detected Patient: 10206, DetectionCount: 1
-Time: 2869.03, Detected Patient: 10216, DetectionCount: 1
-Time: 2876.93, Detected Patient: 10298, DetectionCount: 1
-Time: 2881.84, Detected Patient: 10292, DetectionCount: 1
-Time: 2881.94, Detected Patient: 10051, DetectionCount: 1
-Time: 2884.17, Detected Patient: 10289, DetectionCount: 1
-Time: 2885.71, Detected Patient: 10231, DetectionCount: 1
-Time: 2891.94, Detected Patient: 10307, DetectionCount: 1
-Time: 2893.45, Detected Patient: 10272, DetectionCount: 1
-Time: 2894.69, Detected Patient: 10269, DetectionCount: 1
-Time: 2897.71, Detected Patient: 10317, DetectionCount: 1
-Time: 2900.64, Detected Patient: 10190, DetectionCount: 1
-Time: 2903.00, Detected Patient: 10372, DetectionCount: 1
-Time: 2906.88, Detected Patient: 10344, DetectionCount: 1
-Time: 2909.38, Detected Patient: 10362, DetectionCount: 1
-Time: 2912.49, Detected Patient: 10389, DetectionCount: 1
-Time: 2914.70, Detected Patient: 10340, DetectionCount: 1
-Time: 2917.99, Detected Patient: 10404, DetectionCount: 1
-Time: 2918.56, Detected Patient: 10391, DetectionCount: 1
-Time: 2919.94, Detected Patient: 10397, DetectionCount: 1
-Time: 2919.96, Detected Patient: 10361, DetectionCount: 1
-Time: 2924.40, Detected Patient: 10434, DetectionCount: 1
-Time: 2928.15, Detected Patient: 10425, DetectionCount: 1
-Time: 2932.89, Detected Patient: 10308, DetectionCount: 1
-Time: 2940.26, Detected Patient: 10405, DetectionCount: 1
-Time: 2944.13, Detected Patient: 10476, DetectionCount: 1
-Time: 2946.43, Detected Patient: 10442, DetectionCount: 1
-Time: 2952.86, Detected Patient: 10483, DetectionCount: 1
-Time: 2957.46, Detected Patient: 10523, DetectionCount: 1
-Time: 2957.78, Detected Patient: 10485, DetectionCount: 1
-Time: 2970.18, Detected Patient: 10514, DetectionCount: 1
-Time: 2975.29, Detected Patient: 10615, DetectionCount: 1
-Time: 2975.51, Detected Patient: 10578, DetectionCount: 1
-Time: 2978.83, Detected Patient: 10629, DetectionCount: 1
-Time: 2978.86, Detected Patient: 10617, DetectionCount: 1
-Time: 2979.51, Detected Patient: 10614, DetectionCount: 1
-Time: 2982.39, Detected Patient: 10636, DetectionCount: 1
-Time: 2983.20, Detected Patient: 10638, DetectionCount: 1
-Time: 2987.80, Detected Patient: 10562, DetectionCount: 1
-Time: 2990.62, Detected Patient: 10554, DetectionCount: 1
-Time: 3016.32, Detected Patient: 10729, DetectionCount: 1
-Time: 3027.46, Detected Patient: 10799, DetectionCount: 1
-Time: 3030.48, Detected Patient: 10796, DetectionCount: 1
-Time: 3032.36, Detected Patient: 10759, DetectionCount: 1
-Time: 3034.27, Detected Patient: 10813, DetectionCount: 1
-Time: 3035.37, Detected Patient: 10835, DetectionCount: 1
-Time: 3036.91, Detected Patient: 10867, DetectionCount: 1
-Time: 3042.82, Detected Patient: 10849, DetectionCount: 1
-Time: 3044.99, Detected Patient: 10836, DetectionCount: 1
-Time: 3053.52, Detected Patient: 10898, DetectionCount: 1
-Time: 3066.14, Detected Patient: 10954, DetectionCount: 1
-Time: 3069.51, Detected Patient: 10946, DetectionCount: 1
-Time: 3074.89, Detected Patient: 10969, DetectionCount: 1
-Time: 3075.99, Detected Patient: 11004, DetectionCount: 1
-Time: 3077.24, Detected Patient: 10972, DetectionCount: 1
-Time: 3078.18, Detected Patient: 10998, DetectionCount: 1
-Time: 3080.75, Detected Patient: 10854, DetectionCount: 1
-Time: 3081.70, Detected Patient: 11005, DetectionCount: 1
-Time: 3088.40, Detected Patient: 10948, DetectionCount: 1
-Time: 3089.50, Detected Patient: 10980, DetectionCount: 1
-Time: 3090.91, Detected Patient: 10978, DetectionCount: 1
-Time: 3094.85, Detected Patient: 11044, DetectionCount: 1
-Time: 3096.25, Detected Patient: 11008, DetectionCount: 1
-Time: 3097.21, Detected Patient: 10890, DetectionCount: 1
-Time: 3098.20, Detected Patient: 11065, DetectionCount: 1
-Time: 3101.37, Detected Patient: 10977, DetectionCount: 1
-Time: 3105.52, Detected Patient: 11055, DetectionCount: 1
-Time: 3108.81, Detected Patient: 11056, DetectionCount: 1
-Time: 3108.97, Detected Patient: 11097, DetectionCount: 1
-Time: 3110.00, Detected Patient: 11050, DetectionCount: 1
-Time: 3114.84, Detected Patient: 11109, DetectionCount: 1
-Time: 3118.57, Detected Patient: 10989, DetectionCount: 1
-Time: 3125.57, Detected Patient: 11092, DetectionCount: 1
-Time: 3128.55, Detected Patient: 11152, DetectionCount: 1
-Time: 3132.99, Detected Patient: 11123, DetectionCount: 1
-Time: 3138.00, Detected Patient: 11177, DetectionCount: 1
-Time: 3138.35, Detected Patient: 11168, DetectionCount: 1
-Time: 3139.85, Detected Patient: 11137, DetectionCount: 1
-Time: 3142.88, Detected Patient: 11191, DetectionCount: 1
-Time: 3143.34, Detected Patient: 11232, DetectionCount: 1
-Time: 3145.50, Detected Patient: 11182, DetectionCount: 1
-Time: 3145.66, Detected Patient: 11249, DetectionCount: 1
-Time: 3150.27, Detected Patient: 11277, DetectionCount: 1
-Time: 3150.47, Detected Patient: 11267, DetectionCount: 1
-Time: 3152.41, Detected Patient: 11269, DetectionCount: 1
-Time: 3154.49, Detected Patient: 11201, DetectionCount: 1
-Time: 3154.73, Detected Patient: 11235, DetectionCount: 1
-Time: 3164.20, Detected Patient: 11319, DetectionCount: 1
-Time: 3168.16, Detected Patient: 11271, DetectionCount: 1
-Time: 3169.39, Detected Patient: 11320, DetectionCount: 1
-Time: 3173.26, Detected Patient: 11341, DetectionCount: 1
-Time: 3180.83, Detected Patient: 11339, DetectionCount: 1
-Time: 3186.41, Detected Patient: 11359, DetectionCount: 1
-Time: 3190.68, Detected Patient: 11340, DetectionCount: 1
-Time: 3191.02, Detected Patient: 11231, DetectionCount: 1
-Time: 3192.80, Detected Patient: 11321, DetectionCount: 1
-Time: 3194.59, Detected Patient: 11396, DetectionCount: 1
-Time: 3197.83, Detected Patient: 11403, DetectionCount: 1
-Time: 3200.60, Detected Patient: 11413, DetectionCount: 1
-Time: 3214.98, Detected Patient: 11257, DetectionCount: 1
-Time: 3216.21, Detected Patient: 11206, DetectionCount: 1
-Time: 3226.32, Detected Patient: 11487, DetectionCount: 1
-Time: 3231.87, Detected Patient: 11550, DetectionCount: 1
-Time: 3233.27, Detected Patient: 11134, DetectionCount: 1
-Time: 3233.30, Detected Patient: 11374, DetectionCount: 1
-Time: 3238.68, Detected Patient: 11551, DetectionCount: 1
-Time: 3239.24, Detected Patient: 11494, DetectionCount: 1
-Time: 3239.75, Detected Patient: 11535, DetectionCount: 1
-Time: 3240.65, Detected Patient: 11490, DetectionCount: 1
-Time: 3245.08, Detected Patient: 11556, DetectionCount: 1
-Time: 3249.30, Detected Patient: 11554, DetectionCount: 1
-Time: 3250.96, Detected Patient: 11582, DetectionCount: 1
-Time: 3257.57, Detected Patient: 11586, DetectionCount: 1
-Time: 3263.39, Detected Patient: 11598, DetectionCount: 1
-Time: 3266.34, Detected Patient: 11476, DetectionCount: 1
-Time: 3269.36, Detected Patient: 11615, DetectionCount: 1
-Time: 3280.47, Detected Patient: 11624, DetectionCount: 1
-Time: 3287.42, Detected Patient: 11778, DetectionCount: 1
-Time: 3292.50, Detected Patient: 11700, DetectionCount: 1
-Time: 3292.69, Detected Patient: 11777, DetectionCount: 1
-Time: 3292.87, Detected Patient: 11671, DetectionCount: 1
-Time: 3295.31, Detected Patient: 11731, DetectionCount: 1
-Time: 3300.06, Detected Patient: 11795, DetectionCount: 1
-Time: 3305.45, Detected Patient: 11765, DetectionCount: 1
-Time: 3311.59, Detected Patient: 11815, DetectionCount: 1
-Time: 3314.38, Detected Patient: 11712, DetectionCount: 1
-Time: 3314.39, Detected Patient: 11809, DetectionCount: 1
-Time: 3315.69, Detected Patient: 11523, DetectionCount: 1
-Time: 3316.70, Detected Patient: 11855, DetectionCount: 1
-Time: 3316.92, Detected Patient: 11839, DetectionCount: 1
-Time: 3317.00, Detected Patient: 11840, DetectionCount: 1
-Time: 3320.16, Detected Patient: 11803, DetectionCount: 1
-Time: 3325.00, Detected Patient: 11829, DetectionCount: 1
-Time: 3327.09, Detected Patient: 11827, DetectionCount: 1
-Time: 3333.45, Detected Patient: 11879, DetectionCount: 1
-Time: 3333.51, Detected Patient: 11881, DetectionCount: 1
-Time: 3334.20, Detected Patient: 11822, DetectionCount: 1
-Time: 3343.20, Detected Patient: 11941, DetectionCount: 1
-Time: 3343.90, Detected Patient: 11887, DetectionCount: 1
-Time: 3352.05, Detected Patient: 11917, DetectionCount: 1
-Time: 3352.77, Detected Patient: 11908, DetectionCount: 1
-Time: 3353.46, Detected Patient: 11949, DetectionCount: 1
-Time: 3355.23, Detected Patient: 11950, DetectionCount: 1
-Time: 3359.26, Detected Patient: 11904, DetectionCount: 1
-Time: 3360.50, Detected Patient: 11901, DetectionCount: 1
-Time: 3361.35, Detected Patient: 11965, DetectionCount: 1
-Time: 3361.81, Detected Patient: 11921, DetectionCount: 1
-Time: 3365.17, Detected Patient: 11971, DetectionCount: 1
-Time: 3365.59, Detected Patient: 12050, DetectionCount: 1
-Time: 3368.16, Detected Patient: 11934, DetectionCount: 1
-Time: 3368.84, Detected Patient: 12073, DetectionCount: 1
-Time: 3370.69, Detected Patient: 12081, DetectionCount: 1
-Time: 3370.73, Detected Patient: 11834, DetectionCount: 1
-Time: 3370.86, Detected Patient: 11970, DetectionCount: 1
-Time: 3379.39, Detected Patient: 12059, DetectionCount: 1
-Time: 3379.58, Detected Patient: 12006, DetectionCount: 1
-Time: 3380.76, Detected Patient: 12033, DetectionCount: 1
-Time: 3383.05, Detected Patient: 12044, DetectionCount: 1
-Time: 3390.42, Detected Patient: 12093, DetectionCount: 1
-Time: 3394.46, Detected Patient: 12019, DetectionCount: 1
-Time: 3398.01, Detected Patient: 12054, DetectionCount: 1
-Time: 3409.65, Detected Patient: 12177, DetectionCount: 1
-Time: 3411.85, Detected Patient: 12154, DetectionCount: 1
-Time: 3414.13, Detected Patient: 12144, DetectionCount: 1
-Time: 3414.97, Detected Patient: 12168, DetectionCount: 1
-Time: 3417.43, Detected Patient: 12164, DetectionCount: 1
-Time: 3424.32, Detected Patient: 12244, DetectionCount: 1
-Time: 3425.60, Detected Patient: 12275, DetectionCount: 1
-Time: 3427.76, Detected Patient: 12166, DetectionCount: 1
-Time: 3428.04, Detected Patient: 12178, DetectionCount: 1
-Time: 3429.30, Detected Patient: 12017, DetectionCount: 1
-Time: 3432.42, Detected Patient: 12217, DetectionCount: 1
-Time: 3442.09, Detected Patient: 12281, DetectionCount: 1
-Time: 3443.80, Detected Patient: 12245, DetectionCount: 1
-Time: 3449.28, Detected Patient: 12279, DetectionCount: 1
-Time: 3450.70, Detected Patient: 12307, DetectionCount: 1
-Time: 3452.51, Detected Patient: 12335, DetectionCount: 1
-Time: 3458.34, Detected Patient: 12249, DetectionCount: 1
-Time: 3460.49, Detected Patient: 12349, DetectionCount: 1
-Time: 3461.57, Detected Patient: 12326, DetectionCount: 1
-Time: 3462.39, Detected Patient: 12381, DetectionCount: 1
-Time: 3465.76, Detected Patient: 12352, DetectionCount: 1
-Time: 3469.73, Detected Patient: 12309, DetectionCount: 1
-Time: 3471.65, Detected Patient: 12432, DetectionCount: 1
-Time: 3472.03, Detected Patient: 12423, DetectionCount: 1
-Time: 3474.03, Detected Patient: 12431, DetectionCount: 1
-Time: 3477.83, Detected Patient: 12448, DetectionCount: 1
-Time: 3478.39, Detected Patient: 12457, DetectionCount: 1
-Time: 3479.48, Detected Patient: 12452, DetectionCount: 1
-Time: 3479.88, Detected Patient: 12426, DetectionCount: 1
-Time: 3480.93, Detected Patient: 12442, DetectionCount: 1
-Time: 3481.27, Detected Patient: 12438, DetectionCount: 1
-Time: 3493.70, Detected Patient: 12424, DetectionCount: 1
-Time: 3496.60, Detected Patient: 12477, DetectionCount: 1
-Time: 3500.42, Detected Patient: 12542, DetectionCount: 1
-Time: 3503.21, Detected Patient: 12525, DetectionCount: 1
-Time: 3508.97, Detected Patient: 12464, DetectionCount: 1
-Time: 3520.98, Detected Patient: 12602, DetectionCount: 1
-Time: 3534.25, Detected Patient: 12590, DetectionCount: 1
-Time: 3538.10, Detected Patient: 12594, DetectionCount: 1
-Time: 3543.10, Detected Patient: 12570, DetectionCount: 1
-Time: 3544.20, Detected Patient: 12639, DetectionCount: 1
-Time: 3552.99, Detected Patient: 12641, DetectionCount: 1
-Time: 3554.48, Detected Patient: 12706, DetectionCount: 1
-Time: 3555.02, Detected Patient: 12616, DetectionCount: 1
-Time: 3565.54, Detected Patient: 12750, DetectionCount: 1
-Time: 3572.82, Detected Patient: 12656, DetectionCount: 1
-Time: 3574.83, Detected Patient: 12733, DetectionCount: 1
-Time: 3586.95, Detected Patient: 12798, DetectionCount: 1
-Time: 3591.45, Detected Patient: 12740, DetectionCount: 1
-Time: 3598.36, Detected Patient: 12856, DetectionCount: 1
-Time: 3603.17, Detected Patient: 12846, DetectionCount: 1
-Time: 3607.02, Detected Patient: 12855, DetectionCount: 1
-Time: 3612.07, Detected Patient: 12860, DetectionCount: 1
-Time: 3616.35, Detected Patient: 12878, DetectionCount: 1
-Time: 3619.67, Detected Patient: 12915, DetectionCount: 1
-Time: 3626.68, Detected Patient: 12964, DetectionCount: 1
-Time: 3631.36, Detected Patient: 12993, DetectionCount: 1
-Time: 3631.40, Detected Patient: 12829, DetectionCount: 1
-Time: 3632.88, Detected Patient: 12978, DetectionCount: 1
-Time: 3638.81, Detected Patient: 12966, DetectionCount: 1
-Time: 3643.37, Detected Patient: 13043, DetectionCount: 1
-Time: 3645.38, Detected Patient: 12981, DetectionCount: 1
-Time: 3648.47, Detected Patient: 13064, DetectionCount: 1
-Time: 3665.33, Detected Patient: 13053, DetectionCount: 1
-Time: 3667.98, Detected Patient: 13130, DetectionCount: 1
-Time: 3690.77, Detected Patient: 13213, DetectionCount: 1
-Time: 3691.86, Detected Patient: 13192, DetectionCount: 1
-Time: 3696.46, Detected Patient: 13234, DetectionCount: 1
-Time: 3697.85, Detected Patient: 12909, DetectionCount: 1
-Time: 3698.43, Detected Patient: 13033, DetectionCount: 1
-Time: 3702.04, Detected Patient: 13216, DetectionCount: 1
-Time: 3707.21, Detected Patient: 13166, DetectionCount: 1
-Time: 3713.28, Detected Patient: 13304, DetectionCount: 1
-Time: 3716.28, Detected Patient: 13240, DetectionCount: 1
-Time: 3719.61, Detected Patient: 13316, DetectionCount: 1
-Time: 3728.58, Detected Patient: 13329, DetectionCount: 1
-Time: 3733.04, Detected Patient: 13379, DetectionCount: 1
-Time: 3750.39, Detected Patient: 13429, DetectionCount: 1
-Time: 3754.79, Detected Patient: 13483, DetectionCount: 1
-Time: 3758.76, Detected Patient: 13472, DetectionCount: 1
-Time: 3764.46, Detected Patient: 13517, DetectionCount: 1
-Time: 3767.99, Detected Patient: 13481, DetectionCount: 1
-Time: 3769.47, Detected Patient: 13537, DetectionCount: 1
-Time: 3781.45, Detected Patient: 13562, DetectionCount: 1
-Time: 3797.19, Detected Patient: 13627, DetectionCount: 1
-Time: 3800.00, Detected Patient: 13598, DetectionCount: 1
-Time: 3800.50, Detected Patient: 13603, DetectionCount: 1
-Time: 3803.92, Detected Patient: 13654, DetectionCount: 1
-Time: 3810.04, Detected Patient: 13675, DetectionCount: 1
-Time: 3814.61, Detected Patient: 13688, DetectionCount: 1
-Time: 3828.58, Detected Patient: 13646, DetectionCount: 1
-Time: 3831.48, Detected Patient: 13712, DetectionCount: 1
-Time: 3836.05, Detected Patient: 13753, DetectionCount: 1
-Time: 3837.99, Detected Patient: 13737, DetectionCount: 1
-Time: 3847.59, Detected Patient: 13787, DetectionCount: 1
-Time: 3851.50, Detected Patient: 13830, DetectionCount: 1
-Time: 3866.93, Detected Patient: 13855, DetectionCount: 1
-Time: 3866.97, Detected Patient: 13873, DetectionCount: 1
-Time: 3870.59, Detected Patient: 13887, DetectionCount: 1
-Time: 3885.36, Detected Patient: 13942, DetectionCount: 1
-Time: 3889.16, Detected Patient: 13923, DetectionCount: 1
-Time: 3895.06, Detected Patient: 13977, DetectionCount: 1
-Time: 3901.22, Detected Patient: 13999, DetectionCount: 1
-Time: 3920.74, Detected Patient: 13990, DetectionCount: 1
-Time: 3922.94, Detected Patient: 14048, DetectionCount: 1
-Time: 3928.52, Detected Patient: 14083, DetectionCount: 1
-Time: 3933.91, Detected Patient: 14103, DetectionCount: 1
-Time: 3935.61, Detected Patient: 14125, DetectionCount: 1
-Time: 3936.31, Detected Patient: 14053, DetectionCount: 1
-Time: 3937.71, Detected Patient: 14123, DetectionCount: 1
-Time: 3938.65, Detected Patient: 14059, DetectionCount: 1
-Time: 3941.19, Detected Patient: 14131, DetectionCount: 1
-Time: 3947.60, Detected Patient: 14144, DetectionCount: 1
-Time: 3959.88, Detected Patient: 14209, DetectionCount: 1
-Time: 3962.31, Detected Patient: 14191, DetectionCount: 1
-Time: 3985.82, Detected Patient: 14271, DetectionCount: 1
-Time: 3987.65, Detected Patient: 14206, DetectionCount: 1
-Time: 4005.94, Detected Patient: 14348, DetectionCount: 1
-Time: 4017.96, Detected Patient: 14394, DetectionCount: 1
-Time: 4030.68, Detected Patient: 14461, DetectionCount: 1
-Time: 4036.34, Detected Patient: 14443, DetectionCount: 1
-Time: 4036.81, Detected Patient: 14471, DetectionCount: 1
-Time: 4055.31, Detected Patient: 14503, DetectionCount: 1
-Time: 4063.55, Detected Patient: 14532, DetectionCount: 1
-Time: 4073.79, Detected Patient: 14594, DetectionCount: 1
-Time: 4080.69, Detected Patient: 14571, DetectionCount: 1
-Time: 4082.35, Detected Patient: 14616, DetectionCount: 1
-Time: 4084.42, Detected Patient: 14554, DetectionCount: 1
-Time: 4084.59, Detected Patient: 14627, DetectionCount: 1
-Time: 4088.12, Detected Patient: 14614, DetectionCount: 1
-Time: 4100.46, Detected Patient: 14665, DetectionCount: 1
-Time: 4105.24, Detected Patient: 14697, DetectionCount: 1
-Time: 4107.27, Detected Patient: 14703, DetectionCount: 1
-Time: 4109.08, Detected Patient: 14727, DetectionCount: 1
-Time: 4111.50, Detected Patient: 14682, DetectionCount: 1
-Time: 4112.13, Detected Patient: 14700, DetectionCount: 1
-Time: 4116.77, Detected Patient: 14735, DetectionCount: 1
-Time: 4125.83, Detected Patient: 14758, DetectionCount: 1
-Time: 4140.35, Detected Patient: 14812, DetectionCount: 1
-Time: 4146.49, Detected Patient: 14866, DetectionCount: 1
-Time: 4147.74, Detected Patient: 14881, DetectionCount: 1
-Time: 4150.44, Detected Patient: 14822, DetectionCount: 1
-Time: 4174.46, Detected Patient: 14927, DetectionCount: 1
-Time: 4181.78, Detected Patient: 14975, DetectionCount: 1
-Time: 4187.46, Detected Patient: 15034, DetectionCount: 1
-Time: 4194.29, Detected Patient: 15039, DetectionCount: 1
-Time: 4196.18, Detected Patient: 15027, DetectionCount: 1
-Time: 4203.18, Detected Patient: 14996, DetectionCount: 1
-Time: 4206.25, Detected Patient: 14990, DetectionCount: 1
-Time: 4211.14, Detected Patient: 15086, DetectionCount: 1
-Time: 4213.57, Detected Patient: 15105, DetectionCount: 1
-Time: 4222.84, Detected Patient: 15136, DetectionCount: 1
-Time: 4224.08, Detected Patient: 15134, DetectionCount: 1
-Time: 4229.15, Detected Patient: 15003, DetectionCount: 1
-Time: 4233.03, Detected Patient: 15171, DetectionCount: 1
-Time: 4239.73, Detected Patient: 15207, DetectionCount: 1
-Time: 4270.70, Detected Patient: 15288, DetectionCount: 1
-Time: 4271.84, Detected Patient: 15308, DetectionCount: 1
-Time: 4274.17, Detected Patient: 15298, DetectionCount: 1
-Time: 4291.53, Detected Patient: 15299, DetectionCount: 1
-Time: 4295.54, Detected Patient: 15356, DetectionCount: 1
-Time: 4304.79, Detected Patient: 15396, DetectionCount: 1
-Time: 4316.07, Detected Patient: 15422, DetectionCount: 1
-Time: 4317.34, Detected Patient: 15407, DetectionCount: 1
-Time: 4321.71, Detected Patient: 15467, DetectionCount: 1
-Time: 4326.30, Detected Patient: 15472, DetectionCount: 1
-Time: 4331.86, Detected Patient: 15504, DetectionCount: 1
-Time: 4332.45, Detected Patient: 15424, DetectionCount: 1
-Time: 4335.15, Detected Patient: 15429, DetectionCount: 1
-Time: 4335.44, Detected Patient: 15515, DetectionCount: 1
-Time: 4345.31, Detected Patient: 15481, DetectionCount: 1
-Time: 4350.53, Detected Patient: 15439, DetectionCount: 1
-Time: 4364.97, Detected Patient: 15588, DetectionCount: 1
-Time: 4365.08, Detected Patient: 15555, DetectionCount: 1
-Time: 4380.41, Detected Patient: 15655, DetectionCount: 1
-Time: 4383.26, Detected Patient: 15649, DetectionCount: 1
-Time: 4385.31, Detected Patient: 15680, DetectionCount: 1
-Time: 4403.10, Detected Patient: 15544, DetectionCount: 1
-Time: 4405.62, Detected Patient: 15729, DetectionCount: 1
-Time: 4408.33, Detected Patient: 15743, DetectionCount: 1
-Time: 4431.66, Detected Patient: 15833, DetectionCount: 1
-Time: 4434.19, Detected Patient: 15693, DetectionCount: 1
-Time: 4467.10, Detected Patient: 15993, DetectionCount: 1
-Time: 4468.63, Detected Patient: 15974, DetectionCount: 1
-Time: 4472.69, Detected Patient: 15970, DetectionCount: 1
-Time: 4476.51, Detected Patient: 15999, DetectionCount: 1
-Time: 4477.07, Detected Patient: 15995, DetectionCount: 1
-Time: 4477.12, Detected Patient: 15987, DetectionCount: 1
-Time: 4479.32, Detected Patient: 16010, DetectionCount: 1
-Time: 4479.54, Detected Patient: 15996, DetectionCount: 1
-Time: 4488.57, Detected Patient: 16029, DetectionCount: 1
-Time: 4513.66, Detected Patient: 16121, DetectionCount: 1
-Time: 4519.49, Detected Patient: 16149, DetectionCount: 1
-Time: 4537.96, Detected Patient: 16142, DetectionCount: 1
-Time: 4543.60, Detected Patient: 16222, DetectionCount: 1
-Time: 4558.77, Detected Patient: 16268, DetectionCount: 1
-Time: 4560.19, Detected Patient: 16260, DetectionCount: 1
-Time: 4561.32, Detected Patient: 16135, DetectionCount: 1
-Time: 4568.52, Detected Patient: 16299, DetectionCount: 1
-Time: 4592.22, Detected Patient: 16363, DetectionCount: 1
-Time: 4598.09, Detected Patient: 16387, DetectionCount: 1
+Time,DetectedPatientID,DetectionCount
+2.66,83,1
+24.98,107,1
+26.09,131,1
+28.37,116,1
+29.24,139,1
+33.95,96,1
+34.08,171,1
+38.74,143,1
+39.63,140,1
+41.76,150,1
+51.27,174,1
+51.74,226,1
+52.49,114,1
+54.24,178,1
+61.36,135,1
+62.05,192,1
+65.26,244,1
+70.03,294,1
+75.74,300,1
+76.23,310,1
+79.43,258,1
+85.44,318,1
+87.85,339,1
+96.05,354,1
+99.05,348,1
+101.71,337,1
+104.51,306,1
+107.74,308,1
+109.88,315,1
+120.99,407,1
+121.31,410,1
+123.21,416,1
+129.55,409,1
+130.28,485,1
+144.00,536,1
+148.10,554,1
+148.21,470,1
+150.15,562,1
+159.98,568,1
+162.15,506,1
+165.79,567,1
+166.78,616,1
+169.75,529,1
+172.49,623,1
+174.15,647,1
+175.42,604,1
+181.97,660,1
+182.06,633,1
+182.25,664,1
+184.69,667,1
+185.75,687,1
+190.03,620,1
+191.60,652,1
+196.67,665,1
+198.93,628,1
+217.50,774,1
+217.65,800,1
+219.80,683,1
+222.16,790,1
+224.08,631,1
+225.22,534,1
+225.87,795,1
+226.89,752,1
+227.83,773,1
+228.06,784,1
+230.43,744,1
+233.76,811,1
+237.16,870,1
+237.61,782,1
+241.17,828,1
+241.57,777,1
+244.12,887,1
+249.26,831,1
+250.86,865,1
+256.29,902,1
+259.06,897,1
+262.60,901,1
+265.00,931,1
+272.04,944,1
+274.24,962,1
+277.84,1016,1
+285.43,945,1
+287.17,992,1
+291.67,993,1
+294.08,959,1
+294.76,1026,1
+295.54,1066,1
+295.77,964,1
+298.27,1050,1
+299.58,969,1
+301.71,1077,1
+303.02,1089,1
+303.29,980,1
+303.63,1056,1
+306.15,1065,1
+312.44,1029,1
+314.32,1042,1
+314.73,1139,1
+315.64,1118,1
+319.36,1098,1
+319.79,1088,1
+322.24,1176,1
+323.81,1145,1
+325.34,1085,1
+334.33,1167,1
+339.85,1220,1
+341.46,1151,1
+345.66,1199,1
+346.02,1230,1
+346.65,1007,1
+352.55,1248,1
+355.38,1169,1
+356.66,1261,1
+356.93,1264,1
+359.34,1243,1
+359.44,1124,1
+365.73,1253,1
+368.90,1281,1
+369.60,1276,1
+370.77,1296,1
+376.61,1360,1
+378.19,1354,1
+382.93,1283,1
+384.77,1308,1
+386.66,1390,1
+386.87,1378,1
+387.32,1346,1
+389.92,1371,1
+392.58,1393,1
+396.25,1411,1
+397.76,1294,1
+399.60,1316,1
+406.76,1433,1
+407.24,1423,1
+409.68,1394,1
+418.06,1481,1
+422.13,1453,1
+424.99,1257,1
+430.61,1504,1
+431.68,1491,1
+434.60,1547,1
+436.41,1549,1
+437.79,1557,1
+438.45,1572,1
+449.79,1571,1
+452.88,1462,1
+453.29,1551,1
+453.70,1610,1
+458.20,1581,1
+459.41,1593,1
+461.44,1634,1
+468.92,1622,1
+469.75,1635,1
+470.18,1577,1
+478.88,1650,1
+488.92,1629,1
+490.57,1694,1
+492.12,1607,1
+492.70,1726,1
+498.77,1760,1
+503.97,1795,1
+505.09,1579,1
+507.50,1797,1
+507.53,1669,1
+508.31,1786,1
+510.31,1831,1
+513.15,1791,1
+513.49,1814,1
+513.77,1810,1
+516.30,1774,1
+521.18,1768,1
+529.31,1823,1
+531.36,1845,1
+534.14,1757,1
+536.45,1803,1
+541.57,1923,1
+544.10,1739,1
+549.14,1902,1
+555.91,1967,1
+556.61,1973,1
+558.18,1962,1
+558.98,1906,1
+562.81,1986,1
+578.26,2055,1
+578.43,2073,1
+579.17,1993,1
+580.37,2064,1
+580.76,2024,1
+581.43,1901,1
+585.32,2025,1
+593.59,2137,1
+595.31,2104,1
+596.41,2067,1
+605.76,2145,1
+609.57,2106,1
+611.28,2143,1
+611.65,2193,1
+612.42,2119,1
+614.84,2092,1
+615.39,2121,1
+615.74,2208,1
+617.88,2097,1
+619.13,1884,1
+622.13,2054,1
+624.72,2146,1
+644.82,2042,1
+648.43,2235,1
+654.59,2326,1
+655.01,2307,1
+655.80,2308,1
+657.00,2333,1
+661.81,2295,1
+662.71,2230,1
+663.51,2237,1
+665.72,2384,1
+668.29,2405,1
+670.56,2381,1
+675.62,2424,1
+675.90,2387,1
+678.46,2452,1
+680.23,2471,1
+682.50,2462,1
+686.47,2430,1
+691.27,2483,1
+691.50,2464,1
+701.02,2271,1
+702.82,2539,1
+705.33,2480,1
+707.24,2540,1
+707.38,2549,1
+710.13,2253,1
+711.76,2536,1
+715.33,2469,1
+716.38,2502,1
+727.64,2557,1
+730.31,2552,1
+733.85,2643,1
+735.47,2633,1
+739.89,2644,1
+743.48,2594,1
+746.48,2647,1
+750.40,2656,1
+754.18,2748,1
+756.33,2733,1
+757.56,2705,1
+760.48,2670,1
+764.02,2604,1
+773.09,2763,1
+773.88,2810,1
+773.90,2700,1
+777.00,2802,1
+781.21,2762,1
+784.78,2827,1
+795.54,2836,1
+805.78,2936,1
+806.35,2908,1
+807.76,2882,1
+810.41,2850,1
+814.62,2898,1
+815.51,2975,1
+818.50,2980,1
+826.75,2932,1
+827.24,2977,1
+834.11,3030,1
+835.98,3019,1
+857.45,3028,1
+859.11,3166,1
+866.64,3127,1
+871.70,3174,1
+873.93,3097,1
+878.97,3175,1
+879.38,3103,1
+879.73,3197,1
+889.80,3265,1
+891.10,3187,1
+891.17,3256,1
+892.85,3114,1
+893.28,3230,1
+895.75,3234,1
+904.48,3282,1
+906.97,3274,1
+910.89,3324,1
+918.63,3228,1
+921.82,3387,1
+927.00,3365,1
+928.38,3317,1
+932.12,3422,1
+935.40,3320,1
+940.77,3246,1
+943.14,3450,1
+948.05,3283,1
+948.53,3511,1
+949.85,3494,1
+950.94,3339,1
+957.94,3424,1
+958.67,3525,1
+959.80,3515,1
+966.34,3540,1
+969.57,3542,1
+969.87,3537,1
+970.43,3493,1
+970.44,3536,1
+974.76,3518,1
+976.43,3565,1
+977.19,3499,1
+990.83,3586,1
+993.40,3665,1
+998.29,3640,1
+1001.44,3702,1
+1005.16,3604,1
+1005.45,3696,1
+1005.51,3715,1
+1009.31,3591,1
+1010.03,3628,1
+1011.11,3590,1
+1017.08,3671,1
+1021.03,3753,1
+1024.58,3773,1
+1031.56,3793,1
+1031.78,3707,1
+1033.71,3738,1
+1035.02,3849,1
+1037.88,3804,1
+1037.92,3834,1
+1038.60,3841,1
+1041.51,3857,1
+1054.59,3852,1
+1058.98,3820,1
+1060.07,3898,1
+1064.08,3775,1
+1065.27,3771,1
+1065.92,3709,1
+1067.43,3913,1
+1068.04,3955,1
+1070.14,3797,1
+1076.09,3941,1
+1078.85,3932,1
+1082.53,3967,1
+1087.01,4001,1
+1094.25,4053,1
+1095.64,3951,1
+1098.73,3918,1
+1100.71,4008,1
+1101.94,3971,1
+1104.09,4024,1
+1115.64,4107,1
+1119.42,4055,1
+1120.13,4070,1
+1123.14,4054,1
+1125.73,4078,1
+1133.16,4105,1
+1144.09,4114,1
+1147.65,4112,1
+1151.95,4229,1
+1158.59,4138,1
+1169.36,4254,1
+1180.67,4291,1
+1183.53,4247,1
+1187.56,4323,1
+1191.48,4347,1
+1193.12,4369,1
+1204.30,4253,1
+1208.40,4391,1
+1210.12,4424,1
+1210.88,4366,1
+1211.34,4350,1
+1215.32,4388,1
+1221.41,4466,1
+1227.52,4415,1
+1229.16,4427,1
+1229.19,4475,1
+1235.64,4489,1
+1241.30,4419,1
+1243.99,4465,1
+1248.93,4540,1
+1250.90,4506,1
+1259.72,4611,1
+1261.23,4564,1
+1261.40,4579,1
+1262.88,4529,1
+1265.02,4439,1
+1268.62,4549,1
+1272.85,4629,1
+1273.34,4442,1
+1275.37,4656,1
+1295.25,4732,1
+1299.23,4745,1
+1299.65,4677,1
+1300.22,4680,1
+1300.47,4672,1
+1303.85,4711,1
+1305.80,4775,1
+1306.46,4721,1
+1313.34,4695,1
+1313.37,4736,1
+1315.06,4689,1
+1316.56,4747,1
+1320.44,4582,1
+1321.13,4814,1
+1321.32,4790,1
+1322.63,4835,1
+1335.27,4846,1
+1337.07,4841,1
+1338.19,4801,1
+1341.14,4752,1
+1352.21,4858,1
+1355.38,4914,1
+1358.34,4921,1
+1359.38,4777,1
+1363.89,4966,1
+1365.40,4952,1
+1367.25,4949,1
+1367.27,4935,1
+1368.77,4916,1
+1371.03,4936,1
+1371.19,4924,1
+1375.58,4729,1
+1376.62,4974,1
+1378.42,4987,1
+1379.90,4986,1
+1380.49,5026,1
+1384.71,4957,1
+1408.25,5074,1
+1411.42,5068,1
+1411.76,5124,1
+1413.37,5127,1
+1415.26,5048,1
+1418.30,5093,1
+1424.67,5116,1
+1441.86,5095,1
+1443.59,5220,1
+1444.97,5225,1
+1445.18,5194,1
+1454.73,5284,1
+1457.22,5195,1
+1458.54,5272,1
+1464.58,5236,1
+1468.00,5264,1
+1470.14,5265,1
+1475.89,5314,1
+1484.64,5318,1
+1493.46,5261,1
+1494.18,5345,1
+1500.23,5371,1
+1503.27,5412,1
+1503.76,5332,1
+1508.15,5457,1
+1510.89,5435,1
+1518.58,5502,1
+1524.79,5280,1
+1527.68,5438,1
+1530.07,5428,1
+1532.93,5504,1
+1535.20,5485,1
+1535.59,5551,1
+1535.66,5548,1
+1537.51,5486,1
+1543.52,5576,1
+1549.60,5498,1
+1550.33,5581,1
+1550.72,5552,1
+1553.14,5570,1
+1553.41,5612,1
+1553.96,5616,1
+1553.99,5574,1
+1555.31,5630,1
+1559.23,5583,1
+1570.71,5592,1
+1578.96,5666,1
+1580.70,5642,1
+1593.42,5744,1
+1593.94,5754,1
+1594.62,5767,1
+1596.97,5693,1
+1598.22,5710,1
+1607.25,5691,1
+1616.78,5663,1
+1616.85,5797,1
+1617.53,5871,1
+1619.44,5670,1
+1620.92,5846,1
+1627.24,5877,1
+1630.47,5898,1
+1634.03,5870,1
+1634.12,5927,1
+1641.73,5875,1
+1649.36,5915,1
+1650.72,5904,1
+1661.70,6002,1
+1661.88,5963,1
+1673.59,6067,1
+1674.04,6005,1
+1679.34,5976,1
+1689.88,6062,1
+1691.69,6054,1
+1709.64,6099,1
+1712.69,6191,1
+1722.65,6210,1
+1723.01,6122,1
+1724.85,6246,1
+1728.71,6245,1
+1728.97,6244,1
+1740.36,6233,1
+1740.59,6165,1
+1749.91,6113,1
+1751.94,6282,1
+1754.60,6229,1
+1756.75,6276,1
+1757.85,6273,1
+1762.72,6329,1
+1770.64,6334,1
+1771.06,6301,1
+1779.57,6396,1
+1782.18,6397,1
+1782.42,6442,1
+1784.53,6455,1
+1787.87,6423,1
+1800.05,6448,1
+1803.83,6517,1
+1807.51,6540,1
+1808.22,6516,1
+1825.20,6499,1
+1827.28,6584,1
+1827.86,6490,1
+1828.33,6600,1
+1832.00,6631,1
+1835.88,6651,1
+1837.18,6500,1
+1839.57,6568,1
+1841.88,6501,1
+1846.80,6650,1
+1855.78,6649,1
+1859.54,6643,1
+1862.91,6626,1
+1864.63,6711,1
+1876.16,6702,1
+1883.61,6820,1
+1888.47,6691,1
+1889.53,6758,1
+1889.85,6775,1
+1891.81,6827,1
+1894.84,6791,1
+1897.48,6802,1
+1900.05,6761,1
+1901.59,6893,1
+1901.70,6860,1
+1903.52,6806,1
+1905.66,6685,1
+1909.09,6883,1
+1909.62,6854,1
+1911.67,6819,1
+1916.71,6884,1
+1924.55,6933,1
+1924.84,6812,1
+1928.91,6981,1
+1931.15,6939,1
+1934.57,6751,1
+1935.67,6979,1
+1937.24,6843,1
+1941.70,7022,1
+1946.66,7050,1
+1950.90,7057,1
+1952.85,7024,1
+1954.23,7064,1
+1960.50,6985,1
+1960.87,7071,1
+1971.96,6852,1
+1976.75,7097,1
+1980.34,7123,1
+1980.58,7129,1
+1982.55,7150,1
+1983.95,7091,1
+1987.82,7092,1
+1997.34,7214,1
+1999.64,7255,1
+2001.94,7185,1
+2002.64,7117,1
+2005.15,7166,1
+2008.48,7266,1
+2009.20,7226,1
+2009.48,7177,1
+2010.13,7139,1
+2013.98,7243,1
+2024.01,7258,1
+2030.17,7235,1
+2031.49,7272,1
+2033.46,7115,1
+2033.71,7346,1
+2035.06,7370,1
+2043.41,7382,1
+2046.90,7411,1
+2046.93,7389,1
+2046.97,7405,1
+2051.82,7321,1
+2054.68,7379,1
+2055.03,7386,1
+2056.35,7449,1
+2056.68,7393,1
+2058.39,7396,1
+2061.73,7423,1
+2064.03,7453,1
+2073.30,7523,1
+2074.76,7447,1
+2075.71,7421,1
+2076.22,7478,1
+2078.47,7465,1
+2085.21,7483,1
+2089.39,7484,1
+2095.01,7461,1
+2096.95,7557,1
+2109.91,7617,1
+2118.84,7567,1
+2119.59,7652,1
+2128.34,7632,1
+2132.98,7655,1
+2138.89,7693,1
+2140.32,7721,1
+2148.08,7712,1
+2151.54,7723,1
+2152.51,7616,1
+2154.41,7687,1
+2154.76,7698,1
+2156.95,7745,1
+2157.76,7633,1
+2157.80,7763,1
+2158.88,7757,1
+2174.63,7856,1
+2174.63,7799,1
+2176.11,7794,1
+2179.33,7854,1
+2181.75,7848,1
+2187.41,7824,1
+2187.84,7880,1
+2189.25,7897,1
+2192.94,7900,1
+2194.13,7877,1
+2203.75,7936,1
+2210.13,7896,1
+2231.25,8026,1
+2235.75,8061,1
+2244.09,7860,1
+2246.13,8144,1
+2246.13,8056,1
+2248.62,8079,1
+2254.58,8116,1
+2258.67,8158,1
+2262.45,8179,1
+2262.56,8148,1
+2269.25,8210,1
+2272.29,8205,1
+2273.94,8216,1
+2278.61,8242,1
+2280.19,8246,1
+2280.92,8191,1
+2281.11,8197,1
+2281.59,8235,1
+2287.02,8188,1
+2295.55,8291,1
+2302.69,8265,1
+2311.21,8351,1
+2325.86,8358,1
+2329.65,8301,1
+2331.94,8378,1
+2332.02,8409,1
+2333.31,8417,1
+2335.79,8415,1
+2336.91,8387,1
+2338.83,8385,1
+2339.50,8431,1
+2344.84,8425,1
+2353.99,8285,1
+2359.09,8477,1
+2362.21,8461,1
+2363.51,8496,1
+2366.15,8486,1
+2382.19,8416,1
+2388.91,8631,1
+2390.15,8214,1
+2390.85,8464,1
+2391.26,8613,1
+2392.83,8560,1
+2396.15,8566,1
+2400.22,8619,1
+2406.95,8641,1
+2408.87,8672,1
+2410.88,8699,1
+2421.45,8674,1
+2425.15,8735,1
+2428.11,8750,1
+2430.52,8723,1
+2436.10,8755,1
+2436.64,8771,1
+2437.53,8782,1
+2438.93,8658,1
+2449.99,8643,1
+2451.86,8788,1
+2458.02,8850,1
+2462.73,8677,1
+2467.59,8840,1
+2469.59,8920,1
+2474.54,8883,1
+2474.70,8914,1
+2478.93,8865,1
+2487.06,8930,1
+2487.11,8949,1
+2490.49,8924,1
+2497.21,8938,1
+2504.61,8961,1
+2509.86,9066,1
+2511.98,9081,1
+2514.23,8972,1
+2516.47,8971,1
+2517.14,8992,1
+2518.85,9089,1
+2520.12,9107,1
+2522.88,8903,1
+2524.49,9014,1
+2525.16,9070,1
+2525.46,8901,1
+2528.95,9109,1
+2529.46,9090,1
+2533.61,9024,1
+2538.21,9161,1
+2540.10,8984,1
+2542.25,9132,1
+2544.13,9157,1
+2549.65,9173,1
+2556.55,9147,1
+2559.15,9174,1
+2560.03,9134,1
+2564.58,9221,1
+2565.15,9168,1
+2573.82,9246,1
+2583.15,9234,1
+2587.36,9257,1
+2592.23,9348,1
+2596.48,9347,1
+2597.04,9288,1
+2600.35,9303,1
+2613.81,9339,1
+2614.20,9385,1
+2614.30,9390,1
+2618.92,9430,1
+2624.16,9431,1
+2633.53,9438,1
+2646.70,9485,1
+2647.32,9492,1
+2652.83,9554,1
+2656.45,9521,1
+2664.56,9562,1
+2666.90,9536,1
+2673.49,9560,1
+2674.79,9605,1
+2684.88,9663,1
+2686.70,9636,1
+2687.06,9573,1
+2694.04,9679,1
+2698.61,9666,1
+2699.36,9659,1
+2702.59,9682,1
+2705.27,9624,1
+2716.25,9758,1
+2723.43,9760,1
+2725.14,9800,1
+2726.89,9788,1
+2728.73,9744,1
+2744.98,9875,1
+2746.43,9781,1
+2746.68,9871,1
+2747.92,9892,1
+2748.94,9837,1
+2749.54,9833,1
+2751.29,9834,1
+2751.33,9900,1
+2751.61,9784,1
+2752.29,9861,1
+2753.52,9882,1
+2758.76,9884,1
+2759.00,9772,1
+2761.95,9839,1
+2777.57,9919,1
+2782.78,9962,1
+2782.97,9966,1
+2788.02,10035,1
+2794.21,9959,1
+2799.83,9759,1
+2800.67,9958,1
+2801.07,10086,1
+2802.27,9981,1
+2803.41,10015,1
+2807.81,10021,1
+2814.46,10059,1
+2814.49,10132,1
+2817.71,10078,1
+2823.53,10010,1
+2825.37,10144,1
+2827.77,10157,1
+2828.32,10094,1
+2835.82,10118,1
+2840.67,10122,1
+2843.31,10117,1
+2845.20,10203,1
+2846.61,10145,1
+2854.31,10215,1
+2854.93,10245,1
+2859.97,10177,1
+2860.13,10292,1
+2868.40,10268,1
+2875.28,10269,1
+2875.35,10229,1
+2875.59,10164,1
+2876.82,10313,1
+2876.84,10272,1
+2880.45,10361,1
+2882.58,10262,1
+2882.63,10308,1
+2885.84,10364,1
+2889.55,10335,1
+2892.12,10366,1
+2892.26,10393,1
+2897.93,10348,1
+2898.75,10384,1
+2905.82,10387,1
+2914.01,9898,1
+2917.96,10353,1
+2918.63,10455,1
+2921.53,10392,1
+2923.37,10439,1
+2924.18,10279,1
+2927.44,10363,1
+2931.22,10551,1
+2931.80,10462,1
+2933.00,10510,1
+2933.11,10513,1
+2935.31,10515,1
+2935.99,10570,1
+2950.87,10643,1
+2951.47,10565,1
+2954.08,10585,1
+2958.87,10578,1
+2966.07,10631,1
+2968.31,10637,1
+2970.60,10612,1
+2971.74,10681,1
+2973.12,10320,1
+2974.83,10667,1
+2978.95,10701,1
+2994.38,10672,1
+2994.83,10738,1
+2996.34,10564,1
+3000.93,10805,1
+3001.07,10778,1
+3001.89,10692,1
+3009.25,10604,1
+3021.61,10870,1
+3024.22,10881,1
+3024.49,10839,1
+3033.38,10803,1
+3037.14,10852,1
+3040.61,10910,1
+3043.10,10920,1
+3047.20,10759,1
+3049.10,10863,1
+3057.07,10891,1
+3064.94,10951,1
+3067.60,11018,1
+3069.17,10978,1
+3074.68,11033,1
+3075.80,10819,1
+3078.58,10946,1
+3080.14,11022,1
+3090.37,11093,1
+3091.14,11044,1
+3095.65,11092,1
+3097.37,11074,1
+3099.52,10829,1
+3101.59,11043,1
+3102.90,11124,1
+3102.99,11100,1
+3105.61,11106,1
+3108.58,11118,1
+3117.66,11081,1
+3117.89,11090,1
+3118.58,11073,1
+3126.58,11174,1
+3127.88,11132,1
+3128.27,11101,1
+3141.81,11267,1
+3144.59,11096,1
+3147.48,11290,1
+3149.78,11274,1
+3150.56,11221,1
+3163.88,11286,1
+3170.52,11336,1
+3172.88,11377,1
+3183.16,11363,1
+3190.71,11403,1
+3195.57,11416,1
+3197.50,11462,1
+3214.62,11507,1
+3217.76,11408,1
+3217.78,11523,1
+3221.21,11546,1
+3225.52,11559,1
+3229.23,11600,1
+3233.12,11508,1
+3239.73,11478,1
+3240.96,11604,1
+3241.90,11576,1
+3244.12,11530,1
+3247.10,11628,1
+3252.92,11663,1
+3252.97,11686,1
+3262.03,11681,1
+3262.16,11598,1
+3263.13,11621,1
+3265.06,11677,1
+3266.18,11640,1
+3269.35,11386,1
+3276.53,11721,1
+3277.19,11733,1
+3278.06,11697,1
+3278.91,11748,1
+3281.77,11730,1
+3282.42,11754,1
+3284.07,11700,1
+3287.02,11788,1
+3287.96,11694,1
+3291.13,11702,1
+3296.37,11753,1
+3296.45,11825,1
+3302.52,11789,1
+3310.48,11641,1
+3314.35,11874,1
+3317.87,11920,1
+3326.02,11872,1
+3329.08,11848,1
+3334.46,11945,1
+3334.90,11785,1
+3335.65,11973,1
+3335.86,11719,1
+3340.14,11941,1
+3350.76,12008,1
+3353.17,12004,1
+3358.61,11987,1
+3363.62,11940,1
+3365.59,12074,1
+3371.78,12050,1
+3376.34,12117,1
+3385.16,11993,1
+3387.50,11964,1
+3388.29,12082,1
+3391.52,12171,1
+3393.44,12096,1
+3397.42,12175,1
+3398.26,12185,1
+3407.28,12163,1
+3409.07,12159,1
+3409.77,12160,1
+3413.47,12188,1
+3424.73,12233,1
+3425.55,12183,1
+3426.59,12260,1
+3427.81,12222,1
+3429.68,12270,1
+3429.78,12251,1
+3432.12,12248,1
+3443.23,12304,1
+3452.03,12323,1
+3455.06,12281,1
+3455.86,12361,1
+3458.33,12367,1
+3464.85,12337,1
+3473.34,12412,1
+3478.09,12435,1
+3479.60,12441,1
+3487.91,12440,1
+3488.16,12378,1
+3490.64,12436,1
+3498.98,12438,1
+3500.14,12487,1
+3502.27,12452,1
+3504.29,12466,1
+3518.46,12536,1
+3525.69,12551,1
+3529.57,12590,1
+3532.65,12612,1
+3541.22,12659,1
+3541.29,12596,1
+3543.45,12555,1
+3544.30,12592,1
+3544.68,12629,1
+3549.05,12652,1
+3549.38,12624,1
+3550.38,12538,1
+3551.40,12631,1
+3552.55,12710,1
+3562.05,12719,1
+3573.80,12796,1
+3576.29,12801,1
+3579.13,12786,1
+3580.28,12816,1
+3584.15,12744,1
+3592.71,12854,1
+3595.87,12876,1
+3596.33,12819,1
+3597.49,12769,1
+3604.94,12908,1
+3605.12,12798,1
+3610.71,12887,1
+3611.78,12877,1
+3614.54,12946,1
+3619.74,12932,1
+3624.82,12984,1
+3635.67,13028,1
+3635.69,12944,1
+3639.18,13040,1
+3640.23,13057,1
+3641.18,13038,1
+3649.18,13043,1
+3649.39,13007,1
+3650.07,13090,1
+3654.77,13019,1
+3655.52,13082,1
+3656.42,13109,1
+3658.50,13063,1
+3661.71,13100,1
+3662.36,13107,1
+3672.90,13167,1
+3679.09,13152,1
+3692.40,13231,1
+3693.11,13252,1
+3698.26,13235,1
+3714.70,13096,1
+3715.83,13060,1
+3716.49,13325,1
+3716.89,13292,1
+3717.99,13258,1
+3735.41,13370,1
+3736.40,13411,1
+3736.54,13374,1
+3743.28,13362,1
+3760.32,13460,1
+3770.11,13531,1
+3772.57,13475,1
+3776.38,13530,1
+3805.52,13500,1
+3828.75,13700,1
+3836.28,13721,1
+3861.21,13854,1
+3862.38,13843,1
+3864.67,13893,1
+3869.27,13834,1
+3871.45,13889,1
+3873.51,13888,1
+3879.74,13945,1
+3891.14,13976,1
+3900.83,13885,1
+3902.09,14043,1
+3914.50,14007,1
+3925.42,14093,1
+3930.40,14106,1
+3934.90,14155,1
+3935.93,14149,1
+3941.04,14129,1
+3946.42,14225,1
+3946.46,14179,1
+3952.80,14230,1
+3958.66,14256,1
+3959.76,14265,1
+3967.83,14300,1
+3967.95,14284,1
+3980.61,14349,1
+3981.57,14319,1
+4010.58,14417,1
+4021.05,14467,1
+4033.54,14507,1
+4043.50,14512,1
+4044.23,14545,1
+4044.38,14415,1
+4057.02,14533,1
+4057.89,14530,1
+4063.32,14498,1
+4075.80,14661,1
+4077.79,14627,1
+4087.12,14677,1
+4088.21,14565,1
+4093.78,14662,1
+4097.50,14628,1
+4099.83,14698,1
+4102.04,14714,1
+4102.87,14759,1
+4114.89,14741,1
+4125.38,14852,1
+4125.85,14760,1
+4148.75,14932,1
+4164.54,14949,1
+4176.10,14979,1
+4184.26,15033,1
+4185.31,15067,1
+4185.47,15024,1
+4187.14,15028,1
+4201.37,15097,1
+4209.37,15094,1
+4211.39,15144,1
+4224.53,15213,1
+4229.51,15113,1
+4230.44,15249,1
+4231.26,15139,1
+4241.71,15219,1
+4247.87,15269,1
+4271.11,15386,1
+4284.38,15362,1
+4289.12,15431,1
+4301.97,15457,1
+4313.92,15504,1
+4316.49,15494,1
+4317.15,15492,1
+4332.87,15584,1
+4338.84,15469,1
+4341.61,15592,1
+4341.90,15551,1
+4360.21,15598,1
+4366.66,15705,1
+4367.64,15646,1
+4372.11,15710,1
+4378.10,15755,1
+4393.30,15764,1
+4393.79,15800,1
+4397.04,15817,1
+4398.38,15758,1
+4398.70,15752,1
+4400.01,15693,1
+4407.58,15763,1
+4410.65,15844,1
+4419.21,15810,1
+4426.06,15898,1
+4430.13,15901,1
+4433.43,15942,1
+4439.19,15812,1
+4444.59,15975,1
+4449.53,16009,1
+4454.45,16016,1
+4457.73,15952,1
+4458.70,16000,1
+4472.80,16033,1
+4481.68,16077,1
+4492.72,16092,1
+4492.94,16091,1
+4506.41,16145,1
+4516.40,16160,1
+4518.25,16096,1
+4519.10,16234,1
+4528.42,16186,1
+4529.26,16270,1
+4541.36,16318,1
+4546.85,16308,1
+4554.81,16283,1
+4559.57,16279,1
+4564.24,16348,1
+4577.48,16430,1
+4579.94,16437,1
+4587.88,16400,1
+4590.91,16441,1
+4600.92,16485,1
+4610.96,16549,1
+4626.76,16607,1
+4627.24,16595,1
+4631.52,16530,1
+4647.27,16689,1
+4649.88,16653,1
+4657.79,16702,1
+4669.43,16742,1
+4674.63,16741,1
+4676.46,16759,1
+4684.33,16754,1
+4684.87,16776,1
+4685.21,16810,1
+4700.89,16830,1
+4710.42,16898,1
+4718.06,16859,1
+4722.12,16822,1
+4724.39,16954,1
+4725.18,16926,1
+4728.09,16982,1
+4747.11,16813,1
+4754.50,17076,1
+4770.41,17124,1
+4774.80,17110,1
+4777.98,17148,1
+4785.90,17141,1
+4786.48,17160,1
+4796.23,17182,1
+4797.36,17199,1
+4808.78,17260,1
+4836.44,17347,1
+4838.06,17353,1
+4838.16,17375,1
+4841.54,17330,1
+4849.23,17328,1
+4852.05,17351,1
+4854.26,17414,1
+4868.21,17474,1
+4876.60,17417,1
+4877.55,17496,1
+4884.78,17470,1
+4885.37,17510,1
+4902.03,17596,1
+4903.61,17509,1
+4917.23,17648,1
+4927.04,17570,1
+4939.63,17723,1
+4940.93,17683,1
+4946.87,17752,1
+4953.61,17750,1
+4971.50,17845,1
+4983.33,17926,1
+5012.59,18003,1
+5015.54,17988,1
+5016.72,18043,1
+5019.73,18031,1
+5025.11,18050,1
+5036.21,18045,1
+5051.72,18162,1
+5072.72,18243,1
+5077.25,18224,1
+5078.82,18214,1
+5078.95,18242,1
+5083.78,18248,1
+5085.89,18295,1
+5105.38,18296,1
+5120.52,18407,1
+5123.08,18393,1
+5123.24,18378,1
+5124.36,18409,1
+5143.28,18414,1
+5146.91,18445,1
+5159.25,18471,1
+5162.24,18543,1
+5165.94,18555,1
+5166.88,18575,1
+5170.65,18507,1
+5172.21,18574,1
+5184.77,18576,1
+5185.07,18611,1
+5185.19,18516,1
+5189.55,18596,1
+5191.84,18572,1
+5195.48,18680,1
+5200.12,18634,1
+5205.62,18711,1
+5209.87,18675,1
+5211.61,18730,1
+5212.15,18656,1
+5215.99,18715,1
+5222.23,18685,1
+5226.86,18721,1
+5239.38,18799,1
+5239.73,18848,1
+5244.23,18865,1
+5254.78,18856,1
+5256.07,18857,1
+5260.05,18932,1
+5260.30,18860,1
+5264.22,18924,1
+5267.61,18917,1
+5285.06,19003,1
+5292.36,18996,1
+5322.80,19071,1
+5338.89,19153,1
+5339.32,19127,1
+5342.23,19144,1
+5363.16,19261,1
+5372.04,19337,1
+5372.77,19317,1
+5373.72,19307,1
+5373.73,19338,1
+5389.81,19322,1
+5394.28,19186,1
+5394.93,19356,1
+5409.45,19441,1
+5414.92,19476,1
+5417.12,19491,1
+5420.12,19503,1
+5421.99,19471,1
+5423.05,19470,1
+5425.60,19523,1
+5430.57,19501,1
+5432.83,19505,1
+5441.21,19552,1
+5441.97,19559,1
+5448.70,19489,1
+5455.70,19515,1
+5459.20,19608,1
+5464.87,19628,1

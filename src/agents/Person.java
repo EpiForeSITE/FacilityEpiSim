@@ -37,6 +37,7 @@ public class Person extends Agent {
 		try {
 			if (!SingleFacilityBuilder.isBatchRun) {
 				surveillanceWriter = new PrintWriter("surveillance.txt");
+				surveillanceWriter.printf("Time, Patient, Colonized, Detected%n");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -136,7 +137,7 @@ public class Person extends Agent {
 					startNextPeriodicSurveillanceTimer();
 				}
 				if (!SingleFacilityBuilder.isBatchRun) {
-					surveillanceWriter.printf("Time: %.2f, Patient: %d, Colonized: %b, Detected: %b%n", currentTime,
+					surveillanceWriter.printf("%.2f,%d,%b,%b%n", currentTime,
 							this.hashCode(), pd.isColonized(), pd.isDetected());
 				}
 			}

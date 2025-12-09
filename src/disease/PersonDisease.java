@@ -39,8 +39,11 @@ public class PersonDisease {
 		try {
 			if (!SingleFacilityBuilder.isBatchRun) {
 				decolWriter = new PrintWriter("decolonization.txt");
+				decolWriter.println("time,decolonized_patient_id");
 				clinicalWriter = new PrintWriter("clinicalDetection.txt");
+				clinicalWriter.println("Time,DetectedPatientID,DetectionCount");
 				verificationWriter = new PrintWriter("detection_verification.txt");
+				verificationWriter.println("time,patient_id,source,colonized,detection_count");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -69,7 +72,7 @@ public class PersonDisease {
 		if (colonized) {
 			colonized = false;
 			if (!SingleFacilityBuilder.isBatchRun && decolWriter != null) {
-				decolWriter.printf("Time: %.2f, Decolonized Patient: %d%n", currentTime, person.hashCode());
+				decolWriter.printf("%.2f,%d%n", currentTime, person.hashCode());
 				decolWriter.flush();
 			}
 			if (clinicalDetectionAction != null) {
@@ -104,7 +107,7 @@ public class PersonDisease {
 		incrementDetectionCount();
 
 		if (!SingleFacilityBuilder.isBatchRun && clinicalWriter != null) {
-			clinicalWriter.printf("Time: %.2f, Detected Patient: %d, DetectionCount: %d%n", currentTime,
+			clinicalWriter.printf("%.2f,%d,%d%n", currentTime,
 					person.hashCode(), getDetectionCount());
 			clinicalWriter.flush();
 		}
@@ -112,7 +115,7 @@ public class PersonDisease {
 
 		// Verification log for detection source
 		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
-			verificationWriter.printf("Time: %.2f, Patient: %d, Source: CLINICAL, Colonized: %b, DetectionCount: %d%n",
+			verificationWriter.printf("%.2f,%d,CLINICAL,%b,%d%n",
 					currentTime, person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
 		}
@@ -141,7 +144,7 @@ public class PersonDisease {
 		// Verification log
 		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
 			verificationWriter.printf(
-					"Time: %.2f, Patient: %d, Source: SURVEILLANCE, Colonized: %b, DetectionCount: %d%n", currentTime,
+					"%.2f,%d,SURVEILLANCE,%b,%d%n", currentTime,
 					person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
 		}

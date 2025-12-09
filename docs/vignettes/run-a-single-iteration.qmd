@@ -33,3 +33,23 @@ conforms to expectations.
 6. Update parameters as necessary.  
 
     ![](images/parameters-panel.JPG)
+
+7. When the parameters are configured the way you want them, find the blue **Initialize Run** button on the toolbar.  Click it, wait for the simulation to initialize, the press the **start** button right next to it.
+
+	![initialize button and start button][images/initialize-and-run.jpg]
+
+8. You'll see the **Tick Count** in the upper right begin to increase.  The simulation is running!
+9. When it reaches the end, close the window and look in the root folder of the project for new .txt files containing the results.
+   1.  admissions.txt
+   2.  clinicalDetection.txt
+   3.  daily_population_stats.txt
+   4.  daily_prevalence.txt
+   5.  daily_stats.txt
+   6.  decolonization.txt
+   7.  detection_verification.txt
+   8.  discharged_patients.csv
+   9.  sim_modeloutputs.<with a date>.txt
+   10. surveillance.txt
+   11. transmissions.txt
+    
+10.  See more about these files [here](single-iteration-data-analysis.html)
