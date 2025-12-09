@@ -39,7 +39,9 @@ public class PersonDisease {
 		try {
 			if (!SingleFacilityBuilder.isBatchRun) {
 				decolWriter = new PrintWriter("decolonization.txt");
+				decolWriter.println("time,decolonized_patient_id");
 				clinicalWriter = new PrintWriter("clinicalDetection.txt");
+				clinicalWriter.println("Time,DetectedPatientID,DetectionCount");
 				verificationWriter = new PrintWriter("detection_verification.txt");
 			}
 		} catch (IOException e) {
@@ -69,7 +71,7 @@ public class PersonDisease {
 		if (colonized) {
 			colonized = false;
 			if (!SingleFacilityBuilder.isBatchRun && decolWriter != null) {
-				decolWriter.printf("Time: %.2f, Decolonized Patient: %d%n", currentTime, person.hashCode());
+				decolWriter.printf("%.2f,%d%n", currentTime, person.hashCode());
 				decolWriter.flush();
 			}
 			if (clinicalDetectionAction != null) {
@@ -104,7 +106,7 @@ public class PersonDisease {
 		incrementDetectionCount();
 
 		if (!SingleFacilityBuilder.isBatchRun && clinicalWriter != null) {
-			clinicalWriter.printf("Time: %.2f, Detected Patient: %d, DetectionCount: %d%n", currentTime,
+			clinicalWriter.printf("%.2f,%d,%d%n", currentTime,
 					person.hashCode(), getDetectionCount());
 			clinicalWriter.flush();
 		}

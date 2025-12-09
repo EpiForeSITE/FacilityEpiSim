@@ -40,6 +40,7 @@ public class Region extends AgentContainer {
 			if(!SingleFacilityBuilder.isBatchRun) {
 
 			writer = new PrintWriter("daily_population_stats.txt");
+			writer.println("Time,total_population,colonized,detected,isolated");
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -195,7 +196,8 @@ public class Region extends AgentContainer {
 		double currentTime = schedule.getTickCount();
 		if (currentTime > 3650) {
 			if(!SingleFacilityBuilder.isBatchRun) {
-			writer.printf("Time: %.2f, Total: %d, Colonized: %d, Detected: %d, Isolated: %d%n", currentTime, totalPopulation, totalColonized,
+			writer.printf("%.2f,%d,%d,%d,"
+				+ "%d%n", currentTime, totalPopulation, totalColonized,
 					totalDetected, totalIsolated);
 			}
 		}

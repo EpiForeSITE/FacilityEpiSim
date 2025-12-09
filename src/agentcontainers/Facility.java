@@ -103,6 +103,7 @@ public class Facility extends AgentContainer{
 		try {
 			if(!SingleFacilityBuilder.isBatchRun) {
             admissionsWriter = new PrintWriter("admissions.txt");
+            admissionsWriter.println("time,patientid,importation");
 			}
         }
 	 catch (FileNotFoundException e) {
@@ -526,7 +527,8 @@ public class Facility extends AgentContainer{
 	}
 	public void logPatientAdmission(double time, int patientID, boolean importation) {
 		if(!SingleFacilityBuilder.isBatchRun) {
-          admissionsWriter.printf("Time: %.2f, Patient ID: %d, Importation: %b%n", time, patientID, importation);
+		
+          admissionsWriter.printf("%.2f,%d,%b%n", time, patientID, importation);
 		}
     }
     

@@ -60,3 +60,4 @@ _freeze/*
 !*.demo.txt
 *.csv
 _site/*.*
+_freeze/

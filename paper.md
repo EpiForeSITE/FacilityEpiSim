@@ -84,6 +84,8 @@ knowledge all these existing simulation models use discrete time steps rather th
 event-based framework implemented in our model, which obviates the need for choosing a time step frequency that
 could unintentionally affect simulation dynamics.
 
+![Parameters Panel Image][./docs/vignettes/images/parameters-panel.JPG]
+
 # Acknowledgements
 
 This work was supported by the Centers for Disease Control and Prevention, Modeling Infectious Diseases in
