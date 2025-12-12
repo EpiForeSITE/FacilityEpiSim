@@ -1,3 +1,230 @@
 ---
 title: "Batch Iteration Data Analysis"
 ---
+
+# Batch iteration Data Analysis
+
+## Merge Data
+
+```{r}
+# Load the two data files using base R
+param_map <- read.table("../data/sim_modeloutputs.2025.Dec.10.15_31_11.batch_param_map.demo.txt",
+                        header = TRUE,
+                        sep = ",",
+                        check.names = FALSE,
+                        stringsAsFactors = TRUE)
+model_outputs <- read.table("../data/sim_modeloutputs.2025.Dec.10.15_31_11.demo.txt",
+                            header = TRUE,
+                            sep = ",",
+                            stringsAsFactors = TRUE)
+
+# Join the datasets on "run"
+combined_data_df <- merge(param_map, model_outputs, by = "run")
+
+# Filter out the first 25 runs
+combined_data_df <- combined_data_df[combined_data_df$run > 25, ]
+
+# Create a table of column names and types
+col_info <- data.frame(
+  Column = names(combined_data_df),
+  Type = sapply(combined_data_df, class),
+  stringsAsFactors = FALSE
+)
+
+print(col_info, row.names = FALSE)
+```
+
+## Sensitivity Analysis
+
+The data in the demo were created by sweeping the beta parameter from 0.0 to 0.2.  Let's plots some of the important outputs relative to the beta parameter.
+
+```{r}
+# Plot number of transmissions vs beta, colored by extraIteration
+# Create color palette for extraIteration values
+extra_iter_colors <- rainbow(length(unique(combined_data_df$extraIteration)))
+color_map <- extra_iter_colors[as.factor(combined_data_df$extraIteration)]
+
+plot(combined_data_df$beta, combined_data_df$NumberOfTransmissions,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Number of Transmissions",
+     main = "Transmissions vs Beta Parameter",
+     pch = 19,
+     col = color_map)
+
+# Add legend
+legend("topleft",
+       legend = sort(unique(combined_data_df$extraIteration)),
+       col = extra_iter_colors,
+       pch = 19,
+       title = "Extra Iteration")
+```
+
+```{r}
+# Plot clinical detections vs beta, colored by extraIteration
+plot(combined_data_df$beta, combined_data_df$ClinicalDetections,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Clinical Detections",
+     main = "Clinical Detections vs Beta Parameter",
+     pch = 19,
+     col = color_map)
+
+# Add legend
+legend("topleft",
+       legend = sort(unique(combined_data_df$extraIteration)),
+       col = extra_iter_colors,
+       pch = 19,
+       title = "Extra Iteration")
+```
+
+```{r}
+# Plot mean daily prevalence vs beta, colored by extraIteration
+plot(combined_data_df$beta, combined_data_df$MeanDailyPrevalence,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Mean Daily Prevalence",
+     main = "Mean Daily Prevalence vs Beta Parameter",
+     pch = 19,
+     col = color_map)
+
+# Add legend
+legend("topleft",
+       legend = sort(unique(combined_data_df$extraIteration)),
+       col = extra_iter_colors,
+       pch = 19,
+       title = "Extra Iteration")
+```
+
+```{r}
+# Scatter plot of beta vs extra-iteration from parameter map, colored by extraIteration
+# Create color palette for parameter map
+param_extra_iter_colors <- rainbow(length(unique(param_map$extraIteration)))
+param_color_map <- param_extra_iter_colors[as.factor(param_map$extraIteration)]
+
+plot(param_map$beta, param_map$extraIteration,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Extra Iteration",
+     main = "Beta vs Extra Iteration Parameters",
+     pch = 19,
+     col = param_color_map)
+
+# Add legend
+legend("topright",
+       legend = sort(unique(param_map$extraIteration)),
+       col = param_extra_iter_colors,
+       pch = 19,
+       title = "Extra Iteration")
+```
+
+## Investigating the Sawtooth Pattern
+
+Since extraIteration is constant (all = 0), the pattern must come from something else.
+
+```{r}
+# Sort data by beta to see the pattern
+sorted_by_beta <- combined_data_df[order(combined_data_df$beta, combined_data_df$run), ]
+
+# Look at the data sorted by beta
+cat("Data sorted by beta, showing run number and MeanDailyPrevalence:\n")
+cat("Beta    | Run | MeanDailyPrev | RandomSeed\n")
+cat("--------+-----+---------------+-----------\n")
+for(i in 1:min(30, nrow(sorted_by_beta))) {
+  cat(sprintf("%.5f | %3d | %13.6f | %d\n",
+              sorted_by_beta$beta[i],
+              sorted_by_beta$run[i],
+              sorted_by_beta$MeanDailyPrevalence[i],
+              sorted_by_beta$randomSeed[i]))
+}
+
+# Count statistics
+runs_per_beta <- table(combined_data_df$beta)
+cat(sprintf("\nNumber of runs per unique beta value: %d\n", as.numeric(names(table(runs_per_beta)))[1]))
+cat(sprintf("Number of unique beta values: %d\n", length(unique(combined_data_df$beta))))
+cat(sprintf("Total number of runs: %d\n", nrow(combined_data_df)))
+
+# Check if randomSeed varies
+cat(sprintf("\nNumber of unique random seeds: %d\n", length(unique(combined_data_df$randomSeed))))
+cat(sprintf("Random seed values: %s\n", paste(unique(combined_data_df$randomSeed), collapse=", ")))
+
+# Plot run number vs beta to see the assignment pattern
+plot(combined_data_df$beta, combined_data_df$run,
+     xlab = "Beta",
+     ylab = "Run Number",
+     main = "Run Number Assignment vs Beta",
+     pch = 19,
+     col = "blue")
+```
+
+## Alternative Visualization: Sorted by Beta
+
+Since there's only one run per beta value (no replicates), let's create cleaner plots by sorting the data by beta:
+
+```{r}
+# Sort data by beta for cleaner visualization
+sorted_data <- combined_data_df[order(combined_data_df$beta), ]
+
+# Plot transmissions vs beta (sorted)
+plot(sorted_data$beta, sorted_data$NumberOfTransmissions,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Number of Transmissions",
+     main = "Transmissions vs Beta (Data Sorted by Beta)",
+     pch = 19,
+     col = "blue",
+     type = "b")  # Both points and lines
+
+# Add trend line
+abline(lm(NumberOfTransmissions ~ beta, data = sorted_data), col = "red", lwd = 2, lty = 2)
+```
+
+```{r}
+# Plot clinical detections vs beta (sorted)
+plot(sorted_data$beta, sorted_data$ClinicalDetections,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Clinical Detections",
+     main = "Clinical Detections vs Beta (Data Sorted by Beta)",
+     pch = 19,
+     col = "darkgreen",
+     type = "b")
+
+# Add trend line
+abline(lm(ClinicalDetections ~ beta, data = sorted_data), col = "red", lwd = 2, lty = 2)
+```
+
+```{r}
+# Plot mean daily prevalence vs beta (sorted)
+plot(sorted_data$beta, sorted_data$MeanDailyPrevalence,
+     xlab = "Beta (Transmission Rate)",
+     ylab = "Mean Daily Prevalence",
+     main = "Mean Daily Prevalence vs Beta (Data Sorted by Beta)",
+     pch = 19,
+     col = "purple",
+     type = "b")
+
+# Add trend line
+abline(lm(MeanDailyPrevalence ~ beta, data = sorted_data), col = "red", lwd = 2, lty = 2)
+```
+
+## Descriptive Statistics for Input Parameters
+
+```{r}
+# Descriptive statistics for beta
+cat("Beta (Transmission Rate) Statistics:\n")
+cat("-----------------------------------\n")
+cat(sprintf("Mean:     %.4f\n", mean(param_map$beta)))
+cat(sprintf("Median:   %.4f\n", median(param_map$beta)))
+cat(sprintf("SD:       %.4f\n", sd(param_map$beta)))
+cat(sprintf("Min:      %.4f\n", min(param_map$beta)))
+cat(sprintf("Max:      %.4f\n", max(param_map$beta)))
+cat(sprintf("Range:    %.4f\n", max(param_map$beta) - min(param_map$beta)))
+cat(sprintf("N:        %d\n\n", length(param_map$beta)))
+
+# Descriptive statistics for extraIteration
+cat("Extra Iteration Statistics:\n")
+cat("---------------------------\n")
+cat(sprintf("Mean:     %.2f\n", mean(param_map$extraIteration)))
+cat(sprintf("Median:   %.2f\n", median(param_map$extraIteration)))
+cat(sprintf("SD:       %.2f\n", sd(param_map$extraIteration)))
+cat(sprintf("Min:      %.0f\n", min(param_map$extraIteration)))
+cat(sprintf("Max:      %.0f\n", max(param_map$extraIteration)))
+cat(sprintf("Range:    %.0f\n", max(param_map$extraIteration) - min(param_map$extraIteration)))
+cat(sprintf("N:        %d\n", length(param_map$extraIteration)))
+```
+

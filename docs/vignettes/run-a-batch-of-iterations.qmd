@@ -1,3 +1,67 @@
 ---
 title: "Run a Batch of Iterations of the Model"
 ---
+
+## Prerequisites
+- a functioning installation of Repast Simphony
+- a project in Repast that is a clone of the facilityepisim project
+
+## Run the model in a batch
+
+Batch runs are used for a variety of purposes, especially sensitivity analysis and running experiments.  In order to run a batch in Repast you'll have to launch the batch runner.
+
+### Step by Step
+
+1. Find the green triangle run button on the toolbar in Repast Simphony
+2. Pull down the drop-down menu and click Batch single-facility Model.
+
+![Launch the batch runner](images/run-pull-down-batch.jpg)
+
+3.  Wait for the UI to load.
+4.  You will see the Repast Simphony batch running interface
+
+![Repast Simphony Batch Interface](images/batch-ui-1.jpg)
+
+5. On the model screen you can specify different model configurations and options.  In **facilityepisim** you should usually be able to leave everything on this screen as is.
+
+6.  Click the Batch Parameters tab to specify parameters and parameter ranges for this batch.  
+
+![Batch parameter setup](images/batch-ui-parameters-panel.jpg)
+
+7.  Numeric and String parameters can be assigned constant values that stay the same throughout the batch, ranges (with min, max and step) that will sweep the parameter in question through the range, or a defined set of values in a space-separated list.
+8.  Set a parameter to be swept through a range like this:  
+
+![Parameter range setup](images/batch-ui-range.jpg)
+
+::: {.callout-note}
+## Note:
+The number of iterations in the batch is determined by the total combinations of all the batch parameters.  
+
+If all the parameters are set to a constant, there will be 1 iteration.  
+
+If one of the parameters (Say, Parameter A) is set to a range (min:0, max:9, step:1) there will be 10 iterations, one with each value specified by the range.
+
+If **another** parameter (B) is set to the same range (min:0, max:9, step:1), the iteration count is multiplicative;  There will be 100 iterations, where the runs take all the combinations of the two parameter ranges (A0,B0 ; A0,B1 ; A0,B2 .... A1,B0 ; A1,B1 ; .... A9,B8 ; A9,B9)
+
+So, it's worth taking a moment to carefully consider the parameters that you've configured in the batch.  Another parameter with 10 values will bring the iteration count to 1000. A fourth will bring it to 10,000, etc. 
+
+**Note, also** that there's a parameter in **facilityepisim** called Generate Daily Output Files.  These are the files created by the single-run version of the model.  In batch mode, it's best to leave these turned off, or you risk filling up your disk and crashing the batch.
+:::
+
+9. The hosts panel is used to configure how many processor cores you'll dedicate to this batch.  It is up to you to know the number of cores you have access to.  The Repast batch interface has some neat features for offloading the work to a server via SSH that can be experimented with or read about in the Repast documentation.
+
+![Batch Hosts panel](images/batch-ui-hosts.jpg)
+
+10.  In this example we're allocating 14 local cores to the batch.  This is more than most consumer workstations will have available.  You'll have to decide for yourself how many cores to throw at your batch, and don't forget to leave a core or two for the overhead of running the rest of the computer while the batch is underway.
+11.  When all of the parameters, simulation options and host settings are configured, find and click the green "Execute Batch Runs" button on the toolbar of the batch interface.  You will see the console tab of the batch interface, and the terminal of the Repast IDE start kicking out start-up information.
+
+![Running Batch](images/batch-ui-running.jpg)
+
+12. Wait for the batch to complete.  This will take an amount of time greater than 0 seconds and less than an infinite number of seconds.  Inclusive.  You will periodically see output in the Repast Simphony console.  These are coming from the individual instances of the model, and are a good sanity check to make sure the batch is still running.  If this output should ever stop altogether, you have probably overrun your disk, your RAM or both.  
+13. When the batch is complete, you'll see output in the console indicating completion.  
+
+![The batch is complete](images/batch-complete.jpg)
+
+14.  Look for the outputs in the "output" folder in the root of the project.  The files will be named "sim_modeloutputs.\<todays_date_and_time\>.txt" and "sim_modeloutputs.\<todays_date_and_time\>.batch_param_map.txt".  A comparison of these two files will show that they are a set of ouputs from the model, and a listing of all the parameters by iteration, and they can be joined on a key called "run".  This will give you all the outputs for each iteration and the parameters that were used to create them.  
+
+To learn more about these files, check here: [Batch Iteration Data Analysis](batch-iteration-data-analysis.qmd)

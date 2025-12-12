@@ -1,0 +1,276 @@
+---
+title: "Base Case Analysis"
+---
+
+# Base Case Analysis
+
+This analysis examines the distribution of outputs from multiple simulation runs at the same parameter values (base case).
+
+## Load Data
+
+```{r}
+# Load the parameter map and model outputs
+param_map <- read.table("../data/sim_modeloutputs.2025.Dec.12.11_22_51.batch_param_map.txt",
+                        header = TRUE,
+                        sep = ",",
+                        check.names = FALSE,
+                        stringsAsFactors = TRUE)
+
+model_outputs <- read.table("../data/sim_modeloutputs.2025.Dec.12.11_22_51.txt",
+                            header = TRUE,
+                            sep = ",",
+                            stringsAsFactors = TRUE)
+
+# Join the datasets on "run"
+combined_data <- merge(param_map, model_outputs, by = "run")
+
+# Filter out runs 0-5
+combined_data <- combined_data[combined_data$run > 5, ]
+
+# Display basic information about the dataset
+cat(sprintf("Number of runs: %d (after filtering out runs 0-5)\n", nrow(combined_data)))
+cat(sprintf("Number of variables: %d\n\n", ncol(combined_data)))
+
+# Show column names and types
+cat("Variables in the dataset:\n")
+str(combined_data)
+```
+
+## Number of Transmissions by Run Number
+
+```{r}
+# Scatter plot of NumberOfTransmissions vs run number
+plot(combined_data$run, combined_data$NumberOfTransmissions,
+     xlab = "Run Number",
+     ylab = "Number of Transmissions",
+     main = "Number of Transmissions by Run Number",
+     pch = 19,
+     col = "steelblue")
+
+# Add horizontal line at the mean
+abline(h = mean(combined_data$NumberOfTransmissions), col = "red", lwd = 2, lty = 2)
+legend("topright",
+       legend = sprintf("Mean: %.1f", mean(combined_data$NumberOfTransmissions)),
+       col = "red", lty = 2, lwd = 2)
+```
+
+## Investigating Outliers (Parallel Computing Issue)
+
+```{r}
+# Find outliers in NumberOfTransmissions
+cat("Investigating outlier runs:\n")
+cat("===========================\n\n")
+
+# Calculate z-scores
+mean_trans <- mean(combined_data$NumberOfTransmissions)
+sd_trans <- sd(combined_data$NumberOfTransmissions)
+combined_data$z_score <- (combined_data$NumberOfTransmissions - mean_trans) / sd_trans
+
+# Sort by run number to check if first 10 are outliers
+sorted_by_run <- combined_data[order(combined_data$run), ]
+
+# Check statistics for first 10 vs rest
+first_10 <- sorted_by_run[1:min(10, nrow(sorted_by_run)), ]
+rest <- sorted_by_run[(min(11, nrow(sorted_by_run))+1):nrow(sorted_by_run), ]
+
+cat("Comparing first 10 runs vs. remaining runs:\n")
+cat("============================================\n\n")
+
+cat("First 10 runs (potentially distributed to cores at startup):\n")
+cat(sprintf("  Mean Transmissions: %.1f (SD: %.1f)\n",
+            mean(first_10$NumberOfTransmissions),
+            sd(first_10$NumberOfTransmissions)))
+cat(sprintf("  Range: %d to %d\n",
+            min(first_10$NumberOfTransmissions),
+            max(first_10$NumberOfTransmissions)))
+
+if(nrow(rest) > 0) {
+  cat("\nRemaining runs:\n")
+  cat(sprintf("  Mean Transmissions: %.1f (SD: %.1f)\n",
+              mean(rest$NumberOfTransmissions),
+              sd(rest$NumberOfTransmissions)))
+  cat(sprintf("  Range: %d to %d\n",
+              min(rest$NumberOfTransmissions),
+              max(rest$NumberOfTransmissions)))
+
+  # T-test to check if means are significantly different
+  t_result <- t.test(first_10$NumberOfTransmissions, rest$NumberOfTransmissions)
+  cat(sprintf("\nT-test p-value: %.6f\n", t_result$p.value))
+  if(t_result$p.value < 0.05) {
+    cat("** SIGNIFICANT DIFFERENCE detected (p < 0.05) **\n")
+    cat("This suggests a parallel computing initialization issue!\n")
+  }
+}
+
+cat("\n\nRun-by-run breakdown of first 15 runs:\n")
+cat("Run | ExtraIter | Transmissions | Z-score | Inferred Core\n")
+cat("----|-----------|---------------|---------|---------------\n")
+for(i in 1:min(15, nrow(sorted_by_run))) {
+  inferred_core <- (sorted_by_run$run[i] - 1) %% 10
+  cat(sprintf("%3d | %9d | %13d | %7.2f | %13d\n",
+              sorted_by_run$run[i],
+              sorted_by_run$extraIteration[i],
+              sorted_by_run$NumberOfTransmissions[i],
+              sorted_by_run$z_score[i],
+              inferred_core))
+}
+
+# Check if there's a pattern by inferred core
+cat("\n\nAnalysis by inferred core (assuming run %% 10 mapping):\n")
+cat("=========================================================\n")
+sorted_by_run$inferred_core <- (sorted_by_run$run - 1) %% 10
+
+core_stats <- aggregate(NumberOfTransmissions ~ inferred_core,
+                       data = sorted_by_run,
+                       FUN = function(x) c(mean = mean(x),
+                                          sd = sd(x),
+                                          n = length(x)))
+
+cat("\nCore | Mean Trans | SD      | N runs\n")
+cat("-----|------------|---------|-------\n")
+for(i in 0:9) {
+  if(i %in% core_stats$inferred_core) {
+    idx <- which(core_stats$inferred_core == i)
+    cat(sprintf("%4d | %10.1f | %7.1f | %6d\n",
+                i,
+                core_stats$NumberOfTransmissions[idx,1],
+                core_stats$NumberOfTransmissions[idx,2],
+                core_stats$NumberOfTransmissions[idx,3]))
+  }
+}
+
+# Check relationship between extraIteration and run number
+cat("\n\nRelationship between run number and extraIteration:\n")
+cat("====================================================\n")
+cat("Run | ExtraIter | Run %% 10 | ExtraIter %% 10\n")
+cat("----|-----------|----------|----------------\n")
+for(i in 1:min(20, nrow(sorted_by_run))) {
+  cat(sprintf("%3d | %9d | %8d | %15d\n",
+              sorted_by_run$run[i],
+              sorted_by_run$extraIteration[i],
+              sorted_by_run$run[i] %% 10,
+              sorted_by_run$extraIteration[i] %% 10))
+}
+```
+
+## Importation Rate vs Importation Prevalence
+
+```{r}
+# Scatter plot of importationRate vs ImportationPrevalence
+plot(combined_data$importationRate, combined_data$ImportationPrevalence,
+     xlab = "Importation Rate (Parameter)",
+     ylab = "Importation Prevalence (Output)",
+     main = "Importation Rate vs Importation Prevalence",
+     pch = 19,
+     col = "darkblue")
+
+# Add correlation information
+cor_val <- cor(combined_data$importationRate, combined_data$ImportationPrevalence)
+text(x = max(combined_data$importationRate) * 0.95,
+     y = min(combined_data$ImportationPrevalence) * 1.05,
+     labels = sprintf("Correlation: %.4f", cor_val),
+     adj = c(1, 0))
+```
+
+## Output Distributions
+
+### Clinical Detections
+
+```{r}
+hist(combined_data$ClinicalDetections,
+     main = "Distribution of Clinical Detections",
+     xlab = "Clinical Detections",
+     col = "steelblue",
+     breaks = 20)
+abline(v = mean(combined_data$ClinicalDetections), col = "red", lwd = 2, lty = 2)
+abline(v = median(combined_data$ClinicalDetections), col = "darkgreen", lwd = 2, lty = 2)
+legend("topright",
+       legend = c(sprintf("Mean: %.1f", mean(combined_data$ClinicalDetections)),
+                  sprintf("Median: %.1f", median(combined_data$ClinicalDetections))),
+       col = c("red", "darkgreen"), lty = 2, lwd = 2)
+```
+
+### Mean Daily Prevalence
+
+```{r}
+hist(combined_data$MeanDailyPrevalence,
+     main = "Distribution of Mean Daily Prevalence",
+     xlab = "Mean Daily Prevalence",
+     col = "coral",
+     breaks = 20)
+abline(v = mean(combined_data$MeanDailyPrevalence), col = "red", lwd = 2, lty = 2)
+abline(v = median(combined_data$MeanDailyPrevalence), col = "darkgreen", lwd = 2, lty = 2)
+legend("topright",
+       legend = c(sprintf("Mean: %.4f", mean(combined_data$MeanDailyPrevalence)),
+                  sprintf("Median: %.4f", median(combined_data$MeanDailyPrevalence))),
+       col = c("red", "darkgreen"), lty = 2, lwd = 2)
+```
+
+### Number of Transmissions
+
+```{r}
+hist(combined_data$NumberOfTransmissions,
+     main = "Distribution of Number of Transmissions",
+     xlab = "Number of Transmissions",
+     col = "lightgreen",
+     breaks = 20)
+abline(v = mean(combined_data$NumberOfTransmissions), col = "red", lwd = 2, lty = 2)
+abline(v = median(combined_data$NumberOfTransmissions), col = "darkgreen", lwd = 2, lty = 2)
+legend("topright",
+       legend = c(sprintf("Mean: %.1f", mean(combined_data$NumberOfTransmissions)),
+                  sprintf("Median: %.1f", median(combined_data$NumberOfTransmissions))),
+       col = c("red", "darkgreen"), lty = 2, lwd = 2)
+```
+
+### Mean Discharge Prevalence
+
+```{r}
+hist(combined_data$MeanDischargePrevalence,
+     main = "Distribution of Mean Discharge Prevalence",
+     xlab = "Mean Discharge Prevalence",
+     col = "plum",
+     breaks = 20)
+abline(v = mean(combined_data$MeanDischargePrevalence), col = "red", lwd = 2, lty = 2)
+abline(v = median(combined_data$MeanDischargePrevalence), col = "darkgreen", lwd = 2, lty = 2)
+legend("topright",
+       legend = c(sprintf("Mean: %.4f", mean(combined_data$MeanDischargePrevalence)),
+                  sprintf("Median: %.4f", median(combined_data$MeanDischargePrevalence))),
+       col = c("red", "darkgreen"), lty = 2, lwd = 2)
+```
+
+### Importation Prevalence
+
+```{r}
+hist(combined_data$ImportationPrevalence,
+     main = "Distribution of Importation Prevalence",
+     xlab = "Importation Prevalence",
+     col = "khaki",
+     breaks = 20)
+abline(v = mean(combined_data$ImportationPrevalence), col = "red", lwd = 2, lty = 2)
+abline(v = median(combined_data$ImportationPrevalence), col = "darkgreen", lwd = 2, lty = 2)
+legend("topright",
+       legend = c(sprintf("Mean: %.4f", mean(combined_data$ImportationPrevalence)),
+                  sprintf("Median: %.4f", median(combined_data$ImportationPrevalence))),
+       col = c("red", "darkgreen"), lty = 2, lwd = 2)
+```
+
+## Summary Statistics
+
+```{r}
+# Create a summary table for all numeric output variables
+output_vars <- c("ClinicalDetections", "MeanDailyPrevalence", "MeanDischargePrevalence",
+                 "ImportationPrevalence", "NumberOfTransmissions")
+
+summary_table <- data.frame(
+  Variable = output_vars,
+  Mean = sapply(output_vars, function(v) mean(combined_data[[v]])),
+  Median = sapply(output_vars, function(v) median(combined_data[[v]])),
+  SD = sapply(output_vars, function(v) sd(combined_data[[v]])),
+  Min = sapply(output_vars, function(v) min(combined_data[[v]])),
+  Max = sapply(output_vars, function(v) max(combined_data[[v]])),
+  CV = sapply(output_vars, function(v) sd(combined_data[[v]]) / mean(combined_data[[v]]))
+)
+
+# Format the table
+print(summary_table, row.names = FALSE, digits = 4)
+```
