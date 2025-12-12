@@ -67,12 +67,14 @@ and @Toth2020CDiffVaccine. These studies demonstrated the utility of this simula
 novel insights for public health. 
 
 With this open source version of our model, users can now configure simulation settings to particular
-facilities, infectious organisms, and surveillance intervention strategies of interest. The code generates time
-series outputs, event logs for admissions, transmissions, detections, etc., and perform batch runs with
-parameter sweeps to test a range of assumptions or surveillance strategies. We also provide R scripts that
-analyze raw simulation output to verify model behaviors and view sensitivity analysis results. These
-capabilities will allow users to extend our prior, published research findings and generate new insights
-for public health.
+facilities, infectious organisms, and surveillance intervention strategies of interest (\autoref{fig:parampanel}).
+The code generates time series outputs, event logs for admissions, transmissions, detections, etc., and can
+also perform batch runs with parameter sweeps to test a range of assumptions or surveillance strategies. We also
+provide R scripts that analyze raw simulation output to verify model behaviors and view sensitivity analysis
+results. These capabilities will allow users to extend our prior, published research findings and generate new
+insights for public health.
+
+![Parameters panel available when running the non-batch version of the simulation in Repast Simphony.\label{fig:parampanel}](./docs/vignettes/images/parameters-panel.JPG)
 
 While several open source software packages exist for general infectious disease outbreak simulation
 (e.g., @Jenness2013EpiModel, @Gozzi2025Epydemix, @Lorton2019CMS, @Grefenstette2013FRED, @Gallagher2024epiabm, 
@@ -83,8 +85,6 @@ spatial hospital layout and staffing rather than transmission dynamics and surve
 knowledge all these existing simulation models use discrete time steps rather than the continuous-time,
 event-based framework implemented in our model, which obviates the need for choosing a time step frequency that
 could unintentionally affect simulation dynamics.
-
-![Parameters Panel Image](./docs/vignettes/images/parameters-panel.JPG)
 
 # Acknowledgements
 
