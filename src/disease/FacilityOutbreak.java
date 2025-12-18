@@ -15,6 +15,7 @@ import repast.simphony.engine.schedule.ISchedulableAction;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameters;
 
 public class FacilityOutbreak {
 	private Disease disease;
@@ -50,12 +51,14 @@ public class FacilityOutbreak {
 	ExponentialDistribution distro;
 	double meanIntraEventTime;
 	private PrintWriter logWriter;
+	private Parameters params;
 
 	public FacilityOutbreak(double intra_event_time, Disease disease2) {
+	    params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 		disease = disease2;
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!params.getBoolean("isBatchRun")) {
 		
 				
 			logWriter = new PrintWriter("transmissions.txt");
@@ -115,7 +118,7 @@ public class FacilityOutbreak {
 		if (pdC != null && pdS != null) {
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!params.getBoolean("isBatchRun")) {
 			logWriter.printf("%.2f,%d,%d%n", transmissionTime,
 					pdC.hashCode(), pdS.hashCode());
 			}
@@ -176,7 +179,7 @@ public class FacilityOutbreak {
 			}
 			transmissionRate = newTransmissionRate;
 			if (transmissionRate > 0) {
-				distro = new ExponentialDistribution(1 / transmissionRate);
+				distro = new ExponentialDistribution(new utils.RepastRandomGenerator(), 1 / transmissionRate);
 				double timeToNextEvent = distro.sample();
 				ScheduleParameters params = ScheduleParameters.createOneTime(schedule.getTickCount() + timeToNextEvent); // or
 																															// any
@@ -216,7 +219,7 @@ public class FacilityOutbreak {
 	}
 
 	double uniform() {
-		return Math.random();
+		return repast.simphony.random.RandomHelper.nextDouble();
 	}
 
 	public void setFacility(Facility f) {

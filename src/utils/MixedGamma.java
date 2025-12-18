@@ -17,7 +17,7 @@ public class MixedGamma extends GammaDistribution {
     public MixedGamma(double shape1, double scale1,
                       double shape2, double scale2,
                       double prob1) {
-        this(new Well19937c(), shape1, scale1, shape2, scale2, prob1);
+        this(new RepastRandomGenerator(), shape1, scale1, shape2, scale2, prob1);
     }
 
     public MixedGamma(RandomGenerator rng,

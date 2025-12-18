@@ -9,14 +9,38 @@ This analysis examines the distribution of outputs from multiple simulation runs
 ## Load Data
 
 ```{r}
+# Automatically find the most recent batch output files
+data_dir <- "../data"
+
+# Find all batch_param_map files and sort by modification time
+param_map_files <- list.files(data_dir,
+                               pattern = "sim_modeloutputs.*batch_param_map\\.txt$",
+                               full.names = TRUE)
+param_map_files <- param_map_files[order(file.info(param_map_files)$mtime, decreasing = TRUE)]
+
+# Find all model output files (excluding batch_param_map) and sort by modification time
+output_files <- list.files(data_dir,
+                           pattern = "sim_modeloutputs.*\\.txt$",
+                           full.names = TRUE)
+output_files <- output_files[!grepl("batch_param_map", output_files)]
+output_files <- output_files[order(file.info(output_files)$mtime, decreasing = TRUE)]
+
+# Use the most recent files
+most_recent_param_map <- param_map_files[1]
+most_recent_output <- output_files[1]
+
+cat(sprintf("Loading most recent batch run data:\n"))
+cat(sprintf("  Parameter map: %s\n", basename(most_recent_param_map)))
+cat(sprintf("  Model outputs: %s\n\n", basename(most_recent_output)))
+
 # Load the parameter map and model outputs
-param_map <- read.table("../data/sim_modeloutputs.2025.Dec.12.11_22_51.batch_param_map.txt",
+param_map <- read.table(most_recent_param_map,
                         header = TRUE,
                         sep = ",",
                         check.names = FALSE,
                         stringsAsFactors = TRUE)
 
-model_outputs <- read.table("../data/sim_modeloutputs.2025.Dec.12.11_22_51.txt",
+model_outputs <- read.table(most_recent_output,
                             header = TRUE,
                             sep = ",",
                             stringsAsFactors = TRUE)
@@ -24,11 +48,11 @@ model_outputs <- read.table("../data/sim_modeloutputs.2025.Dec.12.11_22_51.txt",
 # Join the datasets on "run"
 combined_data <- merge(param_map, model_outputs, by = "run")
 
-# Filter out runs 0-5
-combined_data <- combined_data[combined_data$run > 5, ]
+# Filter out runs 0-5 (optional - commented out by default)
+# combined_data <- combined_data[combined_data$run > 5, ]
 
 # Display basic information about the dataset
-cat(sprintf("Number of runs: %d (after filtering out runs 0-5)\n", nrow(combined_data)))
+cat(sprintf("Number of runs: %d\n", nrow(combined_data)))
 cat(sprintf("Number of variables: %d\n\n", ncol(combined_data)))
 
 # Show column names and types

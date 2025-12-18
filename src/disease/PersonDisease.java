@@ -8,10 +8,13 @@ import java.io.PrintWriter;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import repast.simphony.engine.schedule.ScheduleParameters;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ISchedulableAction;
 
 public class PersonDisease {
+    
+	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 
 	private Disease disease;
 	private Person person;
@@ -29,15 +32,15 @@ public class PersonDisease {
 
 	private ISchedulableAction clinicalDetectionAction;
 
-	private static PrintWriter decolWriter;
-	private static PrintWriter clinicalWriter;
-	private static PrintWriter verificationWriter; // NEW: verification log
-	public static int clinicalOutputNum;
-	public static int surveillanceOutputNum; // NEW: count surveillance detections
+	private  PrintWriter decolWriter;
+	private  PrintWriter clinicalWriter;
+	private  PrintWriter verificationWriter; // NEW: verification log
+	public int clinicalOutputNum;
+	public int surveillanceOutputNum; // NEW: count surveillance detections
 
-	static {
+	 {
 		try {
-			if (!SingleFacilityBuilder.isBatchRun) {
+			if (params.getBoolean("isBatchRun")) {
 				decolWriter = new PrintWriter("decolonization.txt");
 				decolWriter.println("time,decolonized_patient_id");
 				clinicalWriter = new PrintWriter("clinicalDetection.txt");
@@ -71,7 +74,7 @@ public class PersonDisease {
 
 		if (colonized) {
 			colonized = false;
-			if (!SingleFacilityBuilder.isBatchRun && decolWriter != null) {
+			if (!params.getBoolean("isBatchRun") && decolWriter != null) {
 				decolWriter.printf("%.2f,%d%n", currentTime, person.hashCode());
 				decolWriter.flush();
 			}
@@ -106,7 +109,7 @@ public class PersonDisease {
 
 		incrementDetectionCount();
 
-		if (!SingleFacilityBuilder.isBatchRun && clinicalWriter != null) {
+		if (!params.getBoolean("isBatchRun") && clinicalWriter != null) {
 			clinicalWriter.printf("%.2f,%d,%d%n", currentTime,
 					person.hashCode(), getDetectionCount());
 			clinicalWriter.flush();
@@ -114,7 +117,7 @@ public class PersonDisease {
 		clinicalOutputNum++;
 
 		// Verification log for detection source
-		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
+		if (!params.getBoolean("isBatchRun") && verificationWriter != null) {
 			verificationWriter.printf("%.2f,%d,CLINICAL,%b,%d%n",
 					currentTime, person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
@@ -142,7 +145,7 @@ public class PersonDisease {
 		surveillanceOutputNum++;
 		double currentTime = schedule.getTickCount();
 		// Verification log
-		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
+		if (!params.getBoolean("isBatchRun") && verificationWriter != null) {
 			verificationWriter.printf(
 					"%.2f,%d,SURVEILLANCE,%b,%d%n", currentTime,
 					person.hashCode(), colonized, getDetectionCount());
@@ -197,6 +200,10 @@ public class PersonDisease {
 		colonized = true;
 		startDecolonizationTimer();
 		person.updateAllTransmissionRateContributions();
+		startClinicalDetectionTimer();
+		if (schedule.getTickCount() >= params.getInteger("burnInPeriod")) {
+			this.person.getRootContext().addTransmissionPostBurnIn();
+		}
 	}
 
 	public void addAcquisition() {
@@ -224,8 +231,8 @@ public class PersonDisease {
 			double meanTimeToClinicalDetection = disease
 					.getMeanTimeToClinicalDetection(person.getCurrentFacility().getType());
 
-			decolonizationDistribution = new ExponentialDistribution(disease.getAvgDecolonizationTime());
-			clinicalDetectionDistribution = new ExponentialDistribution(meanTimeToClinicalDetection);
+			decolonizationDistribution = new ExponentialDistribution(new utils.RepastRandomGenerator(), disease.getAvgDecolonizationTime());
+			clinicalDetectionDistribution = new ExponentialDistribution(new utils.RepastRandomGenerator(), meanTimeToClinicalDetection);
 		} else {
 			System.err.println("Cannot initialize distributions: disease, person, or current facility is null.");
 		}

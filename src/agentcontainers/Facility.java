@@ -18,6 +18,7 @@ import utils.TimeUtils;
 import utils.MixedGamma;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -80,8 +81,12 @@ public class Facility extends AgentContainer{
 	private int totalImports;
 	private PrintWriter admissionsWriter;
 	public boolean importation;
-	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+	private Parameters params;
 	
+	private int clinicalOutputNum;
+	private int surveillanceOutputNum;
+	
+	public PrintWriter surveillanceWriter;
 
 
 	// LOS distribution parameters (set by builder to avoid re-reading Parameters here)
@@ -99,12 +104,18 @@ public class Facility extends AgentContainer{
 		super();
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
-		region = new Region(this);
+		// Region will be set by SingleFacilityBuilder - don't create here to avoid orphaned objects
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!params.getBoolean("isBatchRun")) {
             admissionsWriter = new PrintWriter("admissions.txt");
             admissionsWriter.println("time,patientid,importation");
+            surveillanceWriter = new PrintWriter("surveillance.txt");
+	    surveillanceWriter.printf("Time, Patient, Colonized, Detected%n");
 			}
+			
+				
+			 
+			
         }
 	 catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -353,7 +364,7 @@ public class Facility extends AgentContainer{
 	 * @return a random double in the range [0, 1)
 	 */
 	public double uniform() {
-		return Math.random();
+		return repast.simphony.random.RandomHelper.nextDouble();
 	}
 
 	/**
@@ -364,7 +375,7 @@ public class Facility extends AgentContainer{
 	 * @return a random sample from the gamma distribution
 	 */
 	public double gamma(double shape, double scale) {
-		GammaDistribution gammaDistribution = new GammaDistribution(shape, scale);
+		GammaDistribution gammaDistribution = new GammaDistribution(new utils.RepastRandomGenerator(), shape, scale);
 		return gammaDistribution.sample();
 	}
 
@@ -375,7 +386,7 @@ public class Facility extends AgentContainer{
 	 * @return a random sample from the exponential distribution
 	 */
 	public double exponential(double rate) {
-		ExponentialDistribution exponentialDistribution = new ExponentialDistribution(rate);
+		ExponentialDistribution exponentialDistribution = new ExponentialDistribution(new utils.RepastRandomGenerator(), rate);
 		return exponentialDistribution.sample();
 	}
 
@@ -526,9 +537,9 @@ public class Facility extends AgentContainer{
 		return outbreaks;
 	}
 	public void logPatientAdmission(double time, int patientID, boolean importation) {
-		if(!SingleFacilityBuilder.isBatchRun) {
+		if(!params.getBoolean("isBatchRun")) {
 		
-          admissionsWriter.printf("%.2f,%d,%b%n", time, patientID, importation);
+		    admissionsWriter.printf("%.2f,%d,%b%n", time, patientID, importation);
 		}
     }
     
@@ -574,5 +585,21 @@ public class Facility extends AgentContainer{
             }
         }
         return null;
+    }
+
+    public int getClinicalOutputNum() {
+        return clinicalOutputNum;
+    }
+
+    public void setClinicalOutputNum(int clinicalOutputNum) {
+        this.clinicalOutputNum = clinicalOutputNum;
+    }
+
+    public int getSurveillanceOutputNum() {
+        return surveillanceOutputNum;
+    }
+
+    public void setSurveillanceOutputNum(int surveillanceOutputNum) {
+        this.surveillanceOutputNum = surveillanceOutputNum;
     }
 }

@@ -6,6 +6,7 @@ import builders.SingleFacilityBuilder;
 import disease.Disease;
 import disease.PersonDisease;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,11 +15,13 @@ import java.util.HashMap;
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
+import repast.simphony.parameter.Parameters;
+import repast.simphony.util.ContextUtils;
 
 public class Person extends Agent {
 
 	private Region region;
-	private static ISchedule schedule;
+	private ISchedule schedule;
 	private Facility currentFacility;
 	private boolean isolated = false;
 	private double admissionTime;
@@ -30,19 +33,17 @@ public class Person extends Agent {
 	private ArrayList<Person> people = new ArrayList<>();
 	private ExponentialDistribution distro;
 	private HashMap<String, Object> properties;
-	private static PrintWriter surveillanceWriter;
+	private PrintWriter surveillanceWriter;
 	private boolean noMoreEvents = false;
+	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 
-	static {
-		try {
-			if (!SingleFacilityBuilder.isBatchRun) {
-				surveillanceWriter = new PrintWriter("surveillance.txt");
-				surveillanceWriter.printf("Time, Patient, Colonized, Detected%n");
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	 
+	public void printContext() {
+	    Object con = ContextUtils.getContext(currentFacility);
+	  System.out.println("Context: " + con.toString());
 	}
+		
+	
 	
 	@Override
 	public int hashCode() {
@@ -58,7 +59,7 @@ public class Person extends Agent {
 		properties = new HashMap<String, Object>();
 	}
 
-	public static void setSchedule(ISchedule sched) {
+	public void setSchedule(ISchedule sched) {
 		schedule = sched;
 	}
 
@@ -136,8 +137,8 @@ public class Person extends Agent {
 				} else {
 					startNextPeriodicSurveillanceTimer();
 				}
-				if (!SingleFacilityBuilder.isBatchRun) {
-					surveillanceWriter.printf("%.2f,%d,%b,%b%n", currentTime,
+				if (!params.getBoolean("isBatchRun")) {
+					currentFacility.surveillanceWriter.printf("%.2f,%d,%b,%b%n", currentTime,
 							this.hashCode(), pd.isColonized(), pd.isDetected());
 				}
 			}
@@ -145,7 +146,7 @@ public class Person extends Agent {
 	}
 
 	public double uniform() {
-		return Math.random();
+		return repast.simphony.random.RandomHelper.nextDouble();
 	}
 
 	public PersonDisease add_diseases() {
@@ -249,7 +250,7 @@ public class Person extends Agent {
 		this.distro = distro;
 	}
 
-	public static ISchedule getSchedule() {
+	public ISchedule getSchedule() {
 		return schedule;
 	}
 
@@ -280,4 +281,10 @@ public class Person extends Agent {
 	public void setNoMoreEvents(boolean noMoreEvents) {
 	    this.noMoreEvents = noMoreEvents;
 	}
+	
+	public SingleFacilityBuilder getRootContext() {
+	    Object con = ContextUtils.getContext(currentFacility);
+	    return (SingleFacilityBuilder) con;
+	}
+		
 }

@@ -15,7 +15,7 @@ abstract class Process {
         if (intra_event_time > 0) {
             schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
             meanIntraEventTime = intra_event_time;
-            distro = new ExponentialDistribution(intra_event_time);
+            distro = new ExponentialDistribution(new utils.RepastRandomGenerator(), intra_event_time);
         }
     }
 

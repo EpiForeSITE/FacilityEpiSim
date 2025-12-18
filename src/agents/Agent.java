@@ -2,16 +2,19 @@ package agents;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 
+import builders.SingleFacilityBuilder;
+import repast.simphony.context.Context;
 import repast.simphony.engine.schedule.ISchedulableAction;
 import repast.simphony.engine.schedule.ISchedule;
+import repast.simphony.util.ContextUtils;
 
 abstract class Agent {
-    private static int idCounter = 0;
+    public static int idCounter = 0;
     protected int id;
 	
 
 	Agent() {
-	this.id = idCounter++;
+	    this.id = idCounter++;
 		
 	}
 
@@ -21,6 +24,9 @@ abstract class Agent {
 	    // TODO Auto-generated method stub
 	    return this.id;
 		    }
+	
+	
+
 
 	
 }

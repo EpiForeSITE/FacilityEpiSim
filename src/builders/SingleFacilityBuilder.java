@@ -52,9 +52,15 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private List<Double> dailyPrevalenceSamples = new ArrayList<>();
 	public ArrayList<String> dailyPrev = new ArrayList<String>();
 	private PrintWriter simulationOutputFile;
-	public static boolean isBatchRun;
+	public boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
 	public ArrayList<DischargedPatient> dischargedPatients = new ArrayList<DischargedPatient>();
+
+	// Logging writers moved from PersonDisease
+	private PrintWriter decolWriter;
+	private PrintWriter clinicalWriter;
+	private PrintWriter verificationWriter;
+	private static PrintWriter debugWriter;
 	private Context<Object> context;
 	private double admissionsIntraEventTime = 21.1199 / 75.0;
 	private int[] facilitySize = { 75 };
@@ -67,13 +73,33 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private double shape2;
 	private double scale2;
 	private double prob1;
+	private int runId;
+	private String runPrefix;
+	private int totalAdmissionsBurnIn;
+	private int colonizedAdmissionsBurnIn;
+	private int transmissionsAtBurnInEnd;
+
+	private int transmissionCountPostBurnIn;
+	
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		this.context = context;
+		Person.idCounter = 0;
 		// System.out.println("Starting simulation build.");
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+		
+
+		// Initialize debug writer (static, shared across all runs)
+		if (debugWriter == null) {
+			try {
+				debugWriter = new PrintWriter(new java.io.FileWriter("batch_debug.csv", false));
+				debugWriter.println("runId,totalAdmissionsBurnIn,colonizedAdmissionsBurnIn,transmissionsAtBurnInEnd,totalAdmissionsFinal,transmissionsFinal,clinicalDetections");
+			} catch (java.io.IOException e) {
+				e.printStackTrace();
+			}
+		}
 
 		shape1 = params.getDouble("shape1");
 		scale1 = params.getDouble("scale1");
@@ -85,6 +111,21 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		doActiveSurveillanceAfterBurnIn = params.getBoolean("doActiveSurveillanceAfterBurnIn");
 		daysBetweenTests = params.getDouble("daysBetweenTests");
 		isBatchRun = params.getBoolean("isBatchRun");
+		
+		this.runId = params.getInteger("extraIteration");
+		this.runPrefix = "[RUN " + runId + "]";
+
+		System.out.println(runPrefix + " DEBUG - Run parameters:");
+		System.out.println(runPrefix + "  isolationEffectiveness: " + isolationEffectiveness);
+		System.out.println(runPrefix + "  beta: " + params.getDouble("beta"));
+		System.out.println(runPrefix + "  importationRate: " + params.getDouble("importationRate"));
+		System.out.println(runPrefix + "  doActiveSurveillanceAfterBurnIn: " + doActiveSurveillanceAfterBurnIn);
+
+		// Debug: Log first 5 random numbers to check if RNG is properly seeded
+		System.out.println(runPrefix + " DEBUG - First 5 random numbers from RandomHelper:");
+		for (int i = 0; i < 5; i++) {
+			System.out.println(runPrefix + "  Random " + i + ": " + repast.simphony.random.RandomHelper.nextDouble());
+		}
 
 		facility = new Facility();
 		facility.setShape1(shape1);
@@ -98,6 +139,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		System.out.println("Mean LOS set to: " + facility.getMeanLOS());
 		this.region = new Region(facility);
 		facility.setRegion(region);
+		region.setBuilder(this); // Set builder reference for logging
 		setupAgents();
 
 		scheduleEvents();
@@ -115,11 +157,39 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		if (!isBatchRun) {
 			try {
 				dailyStatsWriter = new PrintWriter("daily_stats.txt");
+				decolWriter = new PrintWriter("decolonization.txt");
+				decolWriter.println("time,decolonized_patient_id");
+				clinicalWriter = new PrintWriter("clinicalDetection.txt");
+				clinicalWriter.println("Time,DetectedPatientID,DetectionCount");
+				verificationWriter = new PrintWriter("detection_verification.txt");
+				verificationWriter.println("time,patient_id,source,colonized,detection_count");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		return context;
+	}
+
+	// Logging methods for PersonDisease events
+	public void logDecolonization(double time, int patientId) {
+		if (decolWriter != null) {
+			decolWriter.printf("%.2f,%d%n", time, patientId);
+			decolWriter.flush();
+		}
+	}
+
+	public void logClinicalDetection(double time, int patientId, int detectionCount) {
+		if (clinicalWriter != null) {
+			clinicalWriter.printf("%.2f,%d,%d%n", time, patientId, detectionCount);
+			clinicalWriter.flush();
+		}
+	}
+
+	public void logVerification(double time, int patientId, String source, boolean colonized, int detectionCount) {
+		if (verificationWriter != null) {
+			verificationWriter.printf("%.2f,%d,%s,%b,%d%n", time, patientId, source, colonized, detectionCount);
+			verificationWriter.flush();
+		}
 	}
 
 	// Oct 4, 2024 WRR: Here's one possible implementation of regular repeating
@@ -234,6 +304,18 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 
 	public void doEndBurnInPeriod() {
 
+		// Store burn-in data for file output
+		this.totalAdmissionsBurnIn = facility.getNumAdmissions();
+		this.colonizedAdmissionsBurnIn = region.colonizedAdmissionsDuringBurnIn;
+		this.transmissionsAtBurnInEnd = getNumberOfTransmissions();
+
+		// Debug: Log state at end of burn-in
+		System.out.println(runPrefix + " DEBUG - End of burn-in (tick " + schedule.getTickCount() + "):");
+		System.out.println(runPrefix + "  Total patients admitted: " + totalAdmissionsBurnIn);
+		System.out.println(runPrefix + "  Colonized admissions during burn-in: " + colonizedAdmissionsBurnIn);
+		System.out.println(runPrefix + "  Current patients: " + facility.getCurrentPatients().size());
+		System.out.println(runPrefix + "  Transmissions so far: " + transmissionsAtBurnInEnd);
+
 		region.setInBurnInPeriod(false);
 		region.startDailyPopulationTallyTimer();
 		doActiveSurveillance = doActiveSurveillanceAfterBurnIn;
@@ -247,7 +329,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	}
 
 	public int getClinicalDetections() {
-		return PersonDisease.clinicalOutputNum;
+		return facility.getClinicalOutputNum();
 	}
 	
 	public void writeDailyPrevToFile() {
@@ -277,6 +359,25 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 
 	public void doSimulationEnd() throws IOException {
 	    System.out.println("Simulation ending at tick: " + schedule.getTickCount());
+
+	    // Debug: Log final state
+	    System.out.println(runPrefix + " DEBUG - End of simulation:");
+	    System.out.println(runPrefix + "  Total transmissions: " + getNumberOfTransmissions());
+	    System.out.println(runPrefix + "  Total admissions: " + facility.getNumAdmissions());
+	    System.out.println(runPrefix + "  Clinical detections: " + getClinicalDetections());
+
+	    // Write debug data to CSV
+	    synchronized(debugWriter) {
+	        debugWriter.printf("%d,%d,%d,%d,%d,%d,%d%n",
+	            runId,
+	            totalAdmissionsBurnIn,
+	            colonizedAdmissionsBurnIn,
+	            transmissionsAtBurnInEnd,
+	            facility.getNumAdmissions(),
+	            getNumberOfTransmissions(),
+	            getClinicalDetections());
+	        debugWriter.flush();
+	    }
 	    
 	    if (!params.getBoolean("isBatchRun")) {
 	        writeDailyPrevToFile();
@@ -295,6 +396,15 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		simulationOutputFile.close();
 		if (dailyStatsWriter != null) {
 			dailyStatsWriter.close();
+		}
+		if (decolWriter != null) {
+			decolWriter.close();
+		}
+		if (clinicalWriter != null) {
+			clinicalWriter.close();
+		}
+		if (verificationWriter != null) {
+			verificationWriter.close();
 		}
 		stop = true;
 		System.out.println("Ending simulation at tick: " + schedule.getTickCount());
@@ -461,4 +571,14 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		return context;
 	}
 
+	public void addTransmissionPostBurnIn()
+	{
+	    this.transmissionCountPostBurnIn++;
+	    return;
+	}
+	
+	public int getTransmissionCountPostBurnIn()
+	{
+	    return this.transmissionCountPostBurnIn;
+	}
 }

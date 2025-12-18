@@ -7,6 +7,7 @@ import disease.FacilityOutbreak;
 import disease.PersonDisease;
 import repast.simphony.engine.schedule.ISchedule;
 import repast.simphony.engine.schedule.ScheduleParameters;
+import repast.simphony.parameter.Parameters;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +21,8 @@ public class Region extends AgentContainer {
 	private int numImportations = 0;
 	private boolean useSingleImportation = false;
 	public int numTransmissionsFromInitialCase = 0;
+	public int colonizedAdmissionsDuringBurnIn = 0;
+	public int colonizedAdmissionsAfterBurnIn = 0;
 	public int colonizedCount;
 	private double intra_event_time;
 	private ISchedule schedule;
@@ -29,6 +32,8 @@ public class Region extends AgentContainer {
 	public ArrayList<Person> people = new ArrayList<Person>();
 	private int totalImports;
 	private PrintWriter writer;
+	private Parameters params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+	private SingleFacilityBuilder builder; // Reference to builder for logging
 
 	public Region(Facility f) {
 		super();
@@ -37,7 +42,7 @@ public class Region extends AgentContainer {
 			facilities.add(f);
 		}
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!params.getBoolean("isBatchRun")) {
 
 			writer = new PrintWriter("daily_population_stats.txt");
 			writer.println("Time,total_population,colonized,detected,isolated");
@@ -94,6 +99,11 @@ public class Region extends AgentContainer {
 				// Jan 10, 2025 WRR: This needs to go in Facility.admitPerson() at the top
 				if (uniform() < d.getImportationProb()) {
 					pd.colonize();
+					if (inBurnInPeriod) {
+						colonizedAdmissionsDuringBurnIn++;
+					} else {
+						colonizedAdmissionsAfterBurnIn++;
+					}
 				}
 			}
 		}
@@ -144,7 +154,7 @@ public class Region extends AgentContainer {
 	}
 
 	public double uniform() {
-		return Math.random();
+		return repast.simphony.random.RandomHelper.nextDouble();
 	}
 
 	public Person add_people(Facility f) {
@@ -195,7 +205,7 @@ public class Region extends AgentContainer {
 
 		double currentTime = schedule.getTickCount();
 		if (currentTime > 3650) {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!params.getBoolean("isBatchRun")) {
 			writer.printf("%.2f,%d,%d,%d,"
 				+ "%d%n", currentTime, totalPopulation, totalColonized,
 					totalDetected, totalIsolated);
@@ -300,6 +310,14 @@ public class Region extends AgentContainer {
 
 	public int getTotalImports() {
 		return totalImports;
+	}
+
+	public SingleFacilityBuilder getBuilder() {
+		return builder;
+	}
+
+	public void setBuilder(SingleFacilityBuilder builder) {
+		this.builder = builder;
 	}
 
 }
