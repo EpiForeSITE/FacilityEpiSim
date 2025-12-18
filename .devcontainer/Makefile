@@ -76,7 +76,7 @@ compile:
 	@if [ -d "$(REPAST_HOME)" ]; then \
 		cd $(PROJECT_ROOT) && \
 		find src -name "*.java" -print0 | xargs -0 javac \
-			-cp "$(BIN_DIR):$(REPAST_HOME)/eclipse/plugins/*:$(REPAST_HOME)/eclipse/plugins/repast.simphony.core_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.core_2.11.0_extracted/lib/*:$(REPAST_HOME)/eclipse/plugins/repast.simphony.essentials_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.essentials_2.11.0_extracted/lib/*:$(REPAST_HOME)/eclipse/plugins/libs.ext_2.11.0_extracted/lib/*" \
+			-cp "$(BIN_DIR):$(REPAST_HOME)/eclipse/plugins/*:$(REPAST_HOME)/eclipse/plugins/repast.simphony.runtime_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.batch_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.scenario_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.core_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.core_2.11.0_extracted/lib/*:$(REPAST_HOME)/eclipse/plugins/repast.simphony.essentials_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/repast.simphony.essentials_2.11.0_extracted/lib/*:$(REPAST_HOME)/eclipse/plugins/repast.simphony.dataLoader_2.11.0_extracted/bin:$(REPAST_HOME)/eclipse/plugins/libs.ext_2.11.0_extracted/lib/*" \
 			-d $(BIN_DIR); \
 		echo "✓ Compilation complete"; \
 	else \

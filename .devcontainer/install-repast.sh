@@ -54,7 +54,7 @@ sudo chmod -R 755 "$REPAST_DIR"
 # Extract nested JARs from OSGI bundles for easier access
 echo "Extracting nested libraries from OSGI bundles..."
 cd "$REPAST_DIR/eclipse/plugins"
-for jar in repast.simphony.runtime_2.11.0.jar repast.simphony.core_2.11.0.jar repast.simphony.essentials_2.11.0.jar libs.ext_2.11.0.jar; do
+for jar in repast.simphony.runtime_2.11.0.jar repast.simphony.batch_2.11.0.jar repast.simphony.core_2.11.0.jar repast.simphony.essentials_2.11.0.jar repast.simphony.dataLoader_2.11.0.jar repast.simphony.data_2.11.0.jar repast.simphony.scenario_2.11.0.jar libs.ext_2.11.0.jar; do
     if [ -f "$jar" ]; then
         sudo unzip -q -o "$jar" -d "${jar%.jar}_extracted" 2>/dev/null || true
     fi

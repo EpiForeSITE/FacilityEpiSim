@@ -76,7 +76,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
 				<parameter name="simulationDurationAfterBurnIn" displayName="19. Total Simulation time (including burn-in)" type="int" 
-						defaultValue="5475" 
+						defaultValue="20" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
@@ -116,7 +116,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
 											/>
 				<parameter name="burnInPeriod" displayName="18. Burn In Period (days)" type="int" 
-						defaultValue="3650" 
+						defaultValue="10" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 											/>
