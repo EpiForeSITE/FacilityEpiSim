@@ -1,0 +1,142 @@
+name: Run Simulation
+
+on:
+  workflow_dispatch:
+    inputs:
+      simulation_duration:
+        description: 'Simulation duration (days after burn-in)'
+        required: false
+        default: '60'
+        type: string
+      burn_in_period:
+        description: 'Burn-in period (days)'
+        required: false
+        default: '30'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  run-simulation:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      
+      - name: Install Repast Simphony
+        run: |
+          cd .devcontainer
+          chmod +x install-repast.sh
+          sudo ./install-repast.sh
+          echo "REPAST_HOME=/opt/repast-simphony-2.11.0" >> $GITHUB_ENV
+      
+      - name: Compile Java code
+        run: |
+          cd .devcontainer
+          make compile
+      
+      - name: Set simulation parameters
+        run: |
+          # Backup original parameters
+          cp single-facility.rs/parameters.xml single-facility.rs/parameters_original.xml
+          
+          # Update parameters with user inputs
+          sed -i 's/defaultValue="3650"/defaultValue="${{ github.event.inputs.burn_in_period }}"/' single-facility.rs/parameters.xml
+          sed -i 's/defaultValue="5475"/defaultValue="${{ github.event.inputs.simulation_duration }}"/' single-facility.rs/parameters.xml
+          
+          echo "Updated parameters:"
+          echo "  Burn-in period: ${{ github.event.inputs.burn_in_period }} days"
+          echo "  Simulation duration: ${{ github.event.inputs.simulation_duration }} days"
+      
+      - name: Run simulation
+        run: |
+          export REPAST_HOME=/opt/repast-simphony-2.11.0
+          REPAST_PLUGINS="$REPAST_HOME/eclipse/plugins"
+          CLASSPATH="bin:$REPAST_PLUGINS/*"
+          
+          # Add all extracted plugin directories to classpath
+          for dir in $REPAST_PLUGINS/*_extracted; do
+            if [ -d "$dir/bin" ]; then CLASSPATH="$CLASSPATH:$dir/bin"; fi
+            if [ -d "$dir/lib" ]; then CLASSPATH="$CLASSPATH:$dir/lib/*"; fi
+          done
+          
+          echo "Running simulation..."
+          java -Xmx2g -Xms512m \
+            -Djava.awt.headless=true \
+            --add-opens=java.base/java.lang=ALL-UNNAMED \
+            --add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+            --add-opens=java.base/java.util=ALL-UNNAMED \
+            --add-exports=java.base/jdk.internal.ref=ALL-UNNAMED \
+            -cp "$CLASSPATH" \
+            runners.SimpleHeadlessRunner "$(pwd)/single-facility.rs"
+      
+      - name: List output files
+        run: |
+          echo "=== Simulation Output Files ==="
+          ls -lh *.txt *.csv 2>/dev/null | grep -v -E "Single|model_description|license|todo" || echo "No output files found"
+          
+          echo ""
+          echo "=== File line counts ==="
+          wc -l admissions.txt transmissions.txt clinicalDetection.txt surveillance.txt decolonization.txt 2>/dev/null || echo "Some files not found"
+      
+      - name: Create simulation summary
+        run: |
+          cat > simulation_summary.md << EOF
+          # Simulation Run Summary
+          
+          **Run Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Parameters:**
+          - Burn-in period: ${{ github.event.inputs.burn_in_period }} days
+          - Simulation duration: ${{ github.event.inputs.simulation_duration }} days
+          
+          ## Output Files Created
+          
+          $(ls -lh *.txt *.csv 2>/dev/null | grep -v -E "Single|model_description|license|todo" | awk '{print "- " $9 " (" $5 ")"}' || echo "No files")
+          
+          ## Event Counts
+          
+          $(if [ -f admissions.txt ]; then echo "- Admissions: $(wc -l < admissions.txt) events"; fi)
+          $(if [ -f transmissions.txt ]; then echo "- Transmissions: $(wc -l < transmissions.txt) events"; fi)
+          $(if [ -f clinicalDetection.txt ]; then echo "- Clinical Detections: $(wc -l < clinicalDetection.txt) events"; fi)
+          $(if [ -f surveillance.txt ]; then echo "- Surveillance Tests: $(wc -l < surveillance.txt) events"; fi)
+          $(if [ -f decolonization.txt ]; then echo "- Decolonizations: $(wc -l < decolonization.txt) events"; fi)
+          
+          ## Sample Data
+          
+          ### Admissions (first 5 lines)
+          \`\`\`
+          $(head -5 admissions.txt 2>/dev/null || echo "No data")
+          \`\`\`
+          
+          ### Transmissions (first 5 lines)
+          \`\`\`
+          $(head -5 transmissions.txt 2>/dev/null || echo "No data")
+          \`\`\`
+          EOF
+          
+          cat simulation_summary.md
+      
+      - name: Upload simulation outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-results-${{ github.run_number }}
+          path: |
+            *.txt
+            *.csv
+            simulation_summary.md
+          retention-days: 30
+      
+      - name: Restore original parameters
+        if: always()
+        run: |
+          if [ -f single-facility.rs/parameters_original.xml ]; then
+            mv single-facility.rs/parameters_original.xml single-facility.rs/parameters.xml
+          fi
