@@ -64,14 +64,76 @@ quarto --version
 
 ## Working in the Container
 
+### Running Repast Simphony Simulations
+
+The devcontainer includes scripts and a Makefile for running simulations headlessly:
+
+```bash
+# Navigate to the devcontainer directory
+cd .devcontainer
+
+# View all available simulation targets
+make help
+
+# Install Repast Simphony (first time only)
+make install-repast
+
+# Compile the Java code
+make compile
+
+# Run a single simulation (produces detailed output files)
+make run-single
+
+# Run a batch simulation (produces aggregated 1-row-per-run outputs)
+make run-batch
+
+# Run with custom parameters
+make run-single-custom SCENARIO=/path/to/scenario
+make run-batch-custom PARAMS=/path/to/batch_params.xml
+```
+
+#### Using Shell Scripts Directly
+
+You can also run the scripts directly:
+
+```bash
+cd .devcontainer
+
+# Install Repast Simphony
+./install-repast.sh
+
+# Run single simulation
+./run-single.sh ../single-facility.rs
+
+# Run batch simulation
+./run-batch.sh .. ../batch/batch_params.xml
+```
+
+#### Output Files
+
+**Single Run Outputs** (in project root):
+- `admissions.txt` - Patient admission events
+- `transmissions.txt` - Disease transmission events
+- `clinicalDetection.txt` - Clinical detection events
+- `surveillance.txt` - Surveillance testing results
+- `decolonization.txt` - Decolonization events
+- `daily_population_stats.txt` - Daily population statistics
+- `discharged_patients.csv` - Discharged patient records
+
+**Batch Run Outputs** (in `output/` directory):
+- Aggregated CSV files with one row per simulation run
+- Summary statistics across parameter sweeps
+
 ### Compiling Java Code
 
 ```bash
-# Compile the simulation
+# From project root
+cd .devcontainer
 make compile
 
-# View available make targets
-make help
+# Or compile from project root using existing Makefile
+cd ..
+make compile
 ```
 
 ### Running R Analysis

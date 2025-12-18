@@ -18,8 +18,11 @@
 		}
 	},
 	"forwardPorts": [],
-	"postCreateCommand": "java -version && R --version && quarto --version && echo \"JAVA_HOME is set to: $JAVA_HOME\"",
+	"postCreateCommand": "java -version && R --version && quarto --version && echo \"JAVA_HOME is set to: $JAVA_HOME\" && echo \"\" && echo \"To run simulations, use the scripts in .devcontainer/ or run 'make help' in .devcontainer/ directory\"",
 	"remoteUser": "vscode",
+	"remoteEnv": {
+		"REPAST_HOME": "/opt/repast-simphony-2.11.0"
+	},
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 	"workspaceFolder": "/workspace",
 	"features": {
