@@ -6,8 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Set environment variables
 ENV LANG=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8 \
-    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    LC_ALL=en_US.UTF-8
 
 # Update package lists and install basic utilities
 RUN apt-get update && apt-get install -y \
@@ -28,6 +27,12 @@ RUN apt-get update && apt-get install -y \
     openjdk-11-jre \
     maven \
     && rm -rf /var/lib/apt/lists/*
+
+# Set JAVA_HOME based on architecture
+# Create a script that will set JAVA_HOME dynamically based on the system architecture
+RUN ARCH=$(dpkg --print-architecture) && \
+    echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-${ARCH}" >> /etc/bash.bashrc && \
+    echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/bash.bashrc
 
 # Verify Java installation
 RUN java -version && javac -version
@@ -51,11 +56,12 @@ RUN apt-get update && apt-get install -y \
 # Install common R packages needed for analysis
 RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyr', 'readr', 'knitr', 'rmarkdown'), repos='https://cloud.r-project.org/')"
 
-# Install Quarto (using stable version)
+# Install Quarto (using stable version, architecture-aware)
 ARG QUARTO_VERSION=1.4.549
-RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb && \
-    dpkg -i quarto-${QUARTO_VERSION}-linux-amd64.deb && \
-    rm quarto-${QUARTO_VERSION}-linux-amd64.deb
+RUN ARCH=$(dpkg --print-architecture) && \
+    wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${ARCH}.deb && \
+    dpkg -i quarto-${QUARTO_VERSION}-linux-${ARCH}.deb && \
+    rm quarto-${QUARTO_VERSION}-linux-${ARCH}.deb
 
 # Verify Quarto installation
 RUN quarto --version

@@ -7,11 +7,17 @@ This directory contains the development container configuration for the Single-F
 The devcontainer provides a complete development environment with:
 
 - **Ubuntu 22.04 LTS** - Stable Linux base
-- **Java 11** - Required for Repast Simphony 2.11.0
+- **Java 11** - Required for Repast Simphony 2.11.0 (architecture-aware: supports AMD64 and ARM64)
 - **R** - For data analysis and statistics
   - Pre-installed packages: ggplot2, dplyr, tidyr, readr, knitr, rmarkdown
-- **Quarto** - For creating documentation and reports
+- **Quarto** - For creating documentation and reports (architecture-aware: supports AMD64 and ARM64)
 - **Development Tools** - git, make, vim, nano, and other utilities
+
+### Multi-Architecture Support
+
+The container automatically detects your system architecture (AMD64/x86_64 or ARM64/aarch64) and installs the appropriate versions of Java and Quarto. This means it works seamlessly on:
+- Intel/AMD processors (x86_64/amd64)
+- Apple Silicon (M1/M2/M3) and other ARM64 systems
 
 ## Prerequisites
 
