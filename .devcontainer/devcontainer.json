@@ -4,8 +4,6 @@
 		"dockerfile": "ContainerFile",
 		"context": ".."
 	},
-	
-	// Configure tool-specific properties
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -28,26 +26,14 @@
 			]
 		}
 	},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally
 	"forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created
 	"postCreateCommand": "java -version && R --version && quarto --version",
-
-	// Comment out to connect as root instead
 	"remoteUser": "vscode",
-
-	// Set environment variables
 	"remoteEnv": {
 		"JAVA_HOME": "/usr/lib/jvm/java-11-openjdk-amd64"
 	},
-
-	// Mount the project directory
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 	"workspaceFolder": "/workspace",
-
-	// Features to add to the dev container
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": true,
