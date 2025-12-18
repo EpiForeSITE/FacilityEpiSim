@@ -19,7 +19,6 @@
 			},
 			"extensions": [
 				"vscjava.vscode-java-pack",
-				"vscjava.vscode-maven",
 				"redhat.java",
 				"REditorSupport.r",
 				"quarto.quarto"
@@ -36,9 +35,6 @@
 	"workspaceFolder": "/workspace",
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"installOhMyZsh": true,
-			"configureZshAsDefaultShell": true,
 			"username": "vscode",
 			"userUid": "1000",
 			"userGid": "1000"
