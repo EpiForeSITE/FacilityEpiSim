@@ -6,8 +6,8 @@ set -e
 
 REPAST_VERSION="2.11.0"
 REPAST_DIR="/opt/repast-simphony-${REPAST_VERSION}"
-REPAST_ARCHIVE="repast.simphony.2.11.0.tar.gz"
-REPAST_URL="https://github.com/Repast/repast.simphony/releases/download/v${REPAST_VERSION}/${REPAST_ARCHIVE}"
+REPAST_ARCHIVE="repast.simphony.updatesite.${REPAST_VERSION}.zip"
+REPAST_URL="https://github.com/Repast/repast.simphony/releases/download/v.${REPAST_VERSION}/${REPAST_ARCHIVE}"
 
 echo "Installing Repast Simphony ${REPAST_VERSION}..."
 
@@ -31,13 +31,34 @@ wget -q "$REPAST_URL" || {
 
 # Extract
 echo "Extracting Repast Simphony..."
-sudo tar -xzf "$REPAST_ARCHIVE" -C "$REPAST_DIR" --strip-components=1
+sudo unzip -q "$REPAST_ARCHIVE" -d "$REPAST_DIR"
+
+# The updatesite zip contains plugins in repast.simphony.updatesite subdirectory
+# Create eclipse/plugins directory structure
+sudo mkdir -p "$REPAST_DIR/eclipse/plugins"
+sudo mkdir -p "$REPAST_DIR/eclipse/features"
+if [ -d "$REPAST_DIR/repast.simphony.updatesite/plugins" ]; then
+    sudo mv "$REPAST_DIR/repast.simphony.updatesite/plugins"/* "$REPAST_DIR/eclipse/plugins/" 2>/dev/null || true
+fi
+if [ -d "$REPAST_DIR/repast.simphony.updatesite/features" ]; then
+    sudo mv "$REPAST_DIR/repast.simphony.updatesite/features"/* "$REPAST_DIR/eclipse/features/" 2>/dev/null || true
+fi
+sudo rm -rf "$REPAST_DIR/repast.simphony.updatesite"
 
 # Clean up
 rm -f "$REPAST_ARCHIVE"
 
 # Set permissions
 sudo chmod -R 755 "$REPAST_DIR"
+
+# Extract nested JARs from OSGI bundles for easier access
+echo "Extracting nested libraries from OSGI bundles..."
+cd "$REPAST_DIR/eclipse/plugins"
+for jar in repast.simphony.runtime_2.11.0.jar repast.simphony.core_2.11.0.jar repast.simphony.essentials_2.11.0.jar libs.ext_2.11.0.jar; do
+    if [ -f "$jar" ]; then
+        sudo unzip -q -o "$jar" -d "${jar%.jar}_extracted" 2>/dev/null || true
+    fi
+done
 
 echo "Repast Simphony installed successfully at $REPAST_DIR"
 echo "Add this to your environment:"
