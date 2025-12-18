@@ -115,17 +115,9 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		this.runId = params.getInteger("extraIteration");
 		this.runPrefix = "[RUN " + runId + "]";
 
-		System.out.println(runPrefix + " DEBUG - Run parameters:");
-		System.out.println(runPrefix + "  isolationEffectiveness: " + isolationEffectiveness);
-		System.out.println(runPrefix + "  beta: " + params.getDouble("beta"));
-		System.out.println(runPrefix + "  importationRate: " + params.getDouble("importationRate"));
-		System.out.println(runPrefix + "  doActiveSurveillanceAfterBurnIn: " + doActiveSurveillanceAfterBurnIn);
-
-		// Debug: Log first 5 random numbers to check if RNG is properly seeded
-		System.out.println(runPrefix + " DEBUG - First 5 random numbers from RandomHelper:");
-		for (int i = 0; i < 5; i++) {
-			System.out.println(runPrefix + "  Random " + i + ": " + repast.simphony.random.RandomHelper.nextDouble());
-		}
+		// Note: Debug logging that consumed random numbers has been removed to prevent
+		// affecting simulation reproducibility. Random numbers should only be consumed
+		// by simulation logic, not by logging statements.
 
 		facility = new Facility();
 		facility.setShape1(shape1);

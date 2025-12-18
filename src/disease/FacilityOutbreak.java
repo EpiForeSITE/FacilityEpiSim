@@ -99,10 +99,6 @@ public class FacilityOutbreak {
 					pdS = pd;
 				}
 			}
-			if (pdS != null) {
-				pdS.colonize();
-				pdS.addAcquisition();
-			}
 			if (uC > unifC && uS > unifS) {
 				break;
 			}
@@ -116,6 +112,9 @@ public class FacilityOutbreak {
 		}
 		
 		if (pdC != null && pdS != null) {
+			// Colonize the susceptible person (transmission event)
+			pdS.colonize();
+			pdS.addAcquisition();
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
 			if(!params.getBoolean("isBatchRun")) {
@@ -123,7 +122,6 @@ public class FacilityOutbreak {
 					pdC.hashCode(), pdS.hashCode());
 			}
 		}
-		transmissionsTally++;
 	}
 
 	public void updateTransmissionRate(Region r) {
