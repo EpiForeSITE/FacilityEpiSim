@@ -45,12 +45,33 @@ The simulation operates on several key components:
 
 ### Prerequisites
 
-- **Java Runtime Environment (JRE)**: Java 8 or higher
+- **Java Runtime Environment (JRE)**: Java 8 or higher (Java 11 recommended for Repast Simphony 2.11.0)
 - **Repast Simphony**: Included in the project dependencies
 
 ### Installation Options
 
-#### Option 1: Using Pre-built Model Archive (Recommended)
+#### Option 1: Using Development Container (Recommended for Development)
+
+This option provides a fully configured development environment with Java 11, R, and Quarto pre-installed.
+
+1. Install prerequisites:
+   - [Docker Desktop](https://www.docker.com/products/docker-desktop)
+   - [Visual Studio Code](https://code.visualstudio.com/)
+   - [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/EpiForeSITE/single-facility-repast.git
+   ```
+
+3. Open in VS Code and reopen in container:
+   - Open the project folder in VS Code
+   - Click "Reopen in Container" when prompted (or use Command Palette: "Remote-Containers: Reopen in Container")
+   - Wait for the container to build (first time takes 5-10 minutes)
+
+4. You're ready to develop! See `.devcontainer/README.md` for more details.
+
+#### Option 2: Using Pre-built Model Archive
 
 1. Download the model archive from the releases section
 2. Extract to your desired location
@@ -58,7 +79,7 @@ The simulation operates on several key components:
    - **Windows**: Double-click `start_model.bat`
    - **Linux/macOS**: Double-click `start_model.command` or run from terminal
 
-#### Option 2: Development Setup with Eclipse
+#### Option 3: Development Setup with Eclipse
 
 1. Clone this repository:
    ```bash

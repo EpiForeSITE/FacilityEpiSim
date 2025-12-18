@@ -1,0 +1,92 @@
+# Use Ubuntu 22.04 LTS as base image
+FROM ubuntu:22.04
+
+# Set non-interactive mode for apt
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Set environment variables
+ENV LANG=en_US.UTF-8 \
+    LC_ALL=en_US.UTF-8 \
+    JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+# Update package lists and install basic utilities
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    build-essential \
+    ca-certificates \
+    gnupg \
+    software-properties-common \
+    locales \
+    && locale-gen en_US.UTF-8 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Java 11 (required for Repast Simphony 2.11.0)
+RUN apt-get update && apt-get install -y \
+    openjdk-11-jdk \
+    openjdk-11-jre \
+    maven \
+    && rm -rf /var/lib/apt/lists/*
+
+# Verify Java installation
+RUN java -version && javac -version
+
+# Install R
+RUN apt-get update && apt-get install -y \
+    r-base \
+    r-base-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    libfontconfig1-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install common R packages needed for analysis
+RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyr', 'readr', 'knitr', 'rmarkdown'), repos='https://cloud.r-project.org/')"
+
+# Install Quarto
+RUN wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-amd64.deb && \
+    dpkg -i quarto-1.4.549-linux-amd64.deb && \
+    rm quarto-1.4.549-linux-amd64.deb
+
+# Verify Quarto installation
+RUN quarto --version
+
+# Install additional tools for development
+RUN apt-get update && apt-get install -y \
+    vim \
+    nano \
+    less \
+    make \
+    zip \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user for development
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the default user
+USER $USERNAME
+
+# Set working directory
+WORKDIR /workspace
+
+# Default command
+CMD ["/bin/bash"]
