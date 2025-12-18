@@ -127,7 +127,9 @@ The Makefile is configured for Java 11. If you see version mismatches:
 # Verify JAVA_HOME
 echo $JAVA_HOME
 
-# Should output: /usr/lib/jvm/java-11-openjdk-amd64
+# Should output (architecture-dependent):
+# On AMD64: /usr/lib/jvm/java-11-openjdk-amd64
+# On ARM64: /usr/lib/jvm/java-11-openjdk-arm64
 ```
 
 ### R Package Issues
@@ -157,7 +159,11 @@ If you need a different Java version, modify the ContainerFile:
 
 ```dockerfile
 RUN apt-get install -y openjdk-17-jdk openjdk-17-jre
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# Update JAVA_HOME for the new version (architecture-aware)
+RUN ARCH=$(dpkg --print-architecture) && \
+    echo "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-${ARCH}" >> /etc/bash.bashrc && \
+    echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-${ARCH}" >> /etc/environment
 ```
 
 ### Adding System Packages

@@ -29,10 +29,12 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set JAVA_HOME based on architecture
-# Create a script that will set JAVA_HOME dynamically based on the system architecture
+# Set it in multiple places to ensure it's available in all contexts
 RUN ARCH=$(dpkg --print-architecture) && \
     echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-${ARCH}" >> /etc/bash.bashrc && \
-    echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/bash.bashrc
+    echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/bash.bashrc && \
+    echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-${ARCH}" >> /etc/environment && \
+    echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-${ARCH}" > /etc/profile.d/java-home.sh
 
 # Verify Java installation
 RUN java -version && javac -version
@@ -58,7 +60,9 @@ RUN R -e "install.packages(c('ggplot2', 'dplyr', 'tidyr', 'readr', 'knitr', 'rma
 
 # Install Quarto (using stable version, architecture-aware)
 ARG QUARTO_VERSION=1.4.549
-RUN ARCH=$(dpkg --print-architecture) && \
+RUN set -e && \
+    ARCH=$(dpkg --print-architecture) && \
+    echo "Downloading Quarto for architecture: ${ARCH}" && \
     wget https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-${ARCH}.deb && \
     dpkg -i quarto-${QUARTO_VERSION}-linux-${ARCH}.deb && \
     rm quarto-${QUARTO_VERSION}-linux-${ARCH}.deb
