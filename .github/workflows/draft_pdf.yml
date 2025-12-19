@@ -1,5 +1,5 @@
 name: Draft PDF
-on: [ push, JOSSpaper ]
+on: [ push, pull_request ]
 
 jobs:
   paper:
