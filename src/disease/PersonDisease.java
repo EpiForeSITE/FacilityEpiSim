@@ -29,9 +29,9 @@ public class PersonDisease {
 
 	private ISchedulableAction clinicalDetectionAction;
 
-	private static PrintWriter decolWriter;
-	private static PrintWriter clinicalWriter;
-	private static PrintWriter verificationWriter; // NEW: verification log
+	public static PrintWriter decolWriter;
+	public static PrintWriter clinicalWriter;
+	public static PrintWriter verificationWriter; // NEW: verification log
 	public static int clinicalOutputNum;
 	public static int surveillanceOutputNum; // NEW: count surveillance detections
 

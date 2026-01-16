@@ -60,6 +60,7 @@ public class Disease {
 		return (Double) params.getValue("probSurveillanceDetection");
 	}
 
+
 	public boolean allowImportationsDuringBurnIn(){
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		return (Boolean) params.getValue("allowImportationsDuringBurnIn");
@@ -70,6 +71,7 @@ public class Disease {
 		return (Boolean) params.getValue("isolatePatientWhenDetected");
 	}
 
+	//Todo:  What if the first run NEVER turns on active surveillance after burn in?
 	public boolean isActiveSurveillanceAgent(){
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		return (Boolean) params.getValue("isActiveSurveillanceAgent");

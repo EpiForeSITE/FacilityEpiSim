@@ -7,6 +7,8 @@ import builders.SingleFacilityBuilder;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.apache.commons.math3.ode.events.EventHandler;
@@ -45,6 +47,7 @@ public class FacilityOutbreak {
 	private ISchedule schedule;
 	private boolean stop = false;
 	private Region region;
+	
 
 	ISchedulableAction nextAction;
 	ExponentialDistribution distro;
@@ -96,6 +99,9 @@ public class FacilityOutbreak {
 					pdS = pd;
 				}
 			}
+			// TODO: BUG - This block is INSIDE the for loop but should be OUTSIDE.
+			// Once pdS is set, colonize() and addAcquisition() are called on every
+			// remaining iteration until break, causing multiple colonizations/acquisitions.
 			if (pdS != null) {
 				pdS.colonize();
 				pdS.addAcquisition();

@@ -168,13 +168,12 @@ public class Facility extends AgentContainer{
 		getCurrentPatients().add(p);
 		getRegion().getPeople().add(p);
 
-		if(onActiveSurveillance && !p.isIsolated() && getTimeBetweenMidstaySurveillanceTests() > 0)
-			
+		//todo:  missing braces here?  Smoking gun?
+		if(onActiveSurveillance && !p.isIsolated() && getTimeBetweenMidstaySurveillanceTests() > 0) {
 			p.doSurveillanceTest();
 			p.startNextPeriodicSurveillanceTimer();
-
+		}
 		p.updateAllTransmissionRateContributions();
-
 		if(!getRegion().isInBurnInPeriod()) updateAdmissionTally(p);
 	}
 	/**

@@ -30,7 +30,7 @@ public class Person extends Agent {
 	private ArrayList<Person> people = new ArrayList<>();
 	private ExponentialDistribution distro;
 	private HashMap<String, Object> properties;
-	private static PrintWriter surveillanceWriter;
+	public static PrintWriter surveillanceWriter;
 	private boolean noMoreEvents = false;
 
 	static {

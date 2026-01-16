@@ -49,12 +49,12 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	public Facility facility;
 	private boolean stop = false;
 	private Parameters params;
-	private List<Double> dailyPrevalenceSamples = new ArrayList<>();
-	public ArrayList<String> dailyPrev = new ArrayList<String>();
+	private List<Double> dailyPrevalenceSamples;
+	public ArrayList<String> dailyPrev;
 	private PrintWriter simulationOutputFile;
 	public static boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
-	public ArrayList<DischargedPatient> dischargedPatients = new ArrayList<DischargedPatient>();
+	public ArrayList<DischargedPatient> dischargedPatients;
 	private Context<Object> context;
 	private double admissionsIntraEventTime = 21.1199 / 75.0;
 	private int[] facilitySize = { 75 };
@@ -67,6 +67,9 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private double shape2;
 	private double scale2;
 	private double prob1;
+	
+	private List<Double> daily_prevalences = new ArrayList<Double>();
+
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		this.context = context;
@@ -74,6 +77,11 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
+		this.daily_prevalences = new ArrayList<Double>();
+		this.dailyPrev = new ArrayList<String>();
+		this.dailyPrevalenceSamples = new ArrayList<Double>();
+		this.dischargedPatients = new ArrayList<DischargedPatient>();
+		
 
 		shape1 = params.getDouble("shape1");
 		scale1 = params.getDouble("scale1");
@@ -129,6 +137,19 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 
 	@ScheduledMethod(start = 1.0, interval = 1)
 	public void dailyEvents() {
+	    
+	    Facility fac = this.facility;
+	    int infectedCount = 0;
+	    int total = 0;
+	    for(Person p : fac.getCurrentPatients()) {
+	        total++;
+	        if (p.personDiseases.get(0).isColonized()) {
+	            infectedCount++;
+	        }
+	        this.daily_prevalences.add((double) infectedCount / total);
+	    }
+	    
+	    
 		if (facility.getPopulationSize() != 0) {
 			region.doPopulationTally();
 			region.logDailyPopulationStats();
@@ -182,6 +203,8 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 			region.getDiseases().add(disease);
 			disease.setDiseaseName("CRE");
 		}
+		//todo: what?
+		
 
 		for (int i = 0; i < region.getFacilities().size(); i++) {
 			Facility f = region.getFacilities().get(i);
@@ -277,11 +300,19 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 
 	public void doSimulationEnd() throws IOException {
 	    System.out.println("Simulation ending at tick: " + schedule.getTickCount());
+	    PersonDisease.clinicalOutputNum = 0; // Reset clinical detection count for next run
+	    PersonDisease.surveillanceOutputNum = 0; // Reset surveillance detection count for next run
+	    PersonDisease.decolWriter.close();
+	    PersonDisease.clinicalWriter.close();
+	    PersonDisease.verificationWriter.close();
+	    Person.surveillanceWriter.close();
 	    
 	    if (!params.getBoolean("isBatchRun")) {
 	        writeDailyPrevToFile();
 	        writeDischargedPatientFile();
 	    }
+	    
+	    
 
 
 
@@ -329,12 +360,15 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	}
 
 	public double getMeanDailyPrevalence() {
-	    if (dailyPrevalenceSamples.isEmpty()) {
-	    	return 0.0;
-	    }
 	    double sum = 0.0;
-	    for (double val : dailyPrevalenceSamples) { sum += val;}
-	    return sum / dailyPrevalenceSamples.size();
+	    int n = daily_prevalences.size();
+	
+	    for (Double dp : daily_prevalences) {
+	        sum += dp;
+	    }
+	    System.out.println("Prevalence: " + sum + "/" + n);
+	    return sum/n;
+	    
 	}
 
     public double getMeanDischargePrevalence() {
