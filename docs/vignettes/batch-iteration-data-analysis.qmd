@@ -9,10 +9,10 @@ library(readr)
 library(ggplot2)
 
 # Read in the simulation outputs
-sim_outputs <- read_csv("../data/sim_modeloutputs.txt")
+sim_outputs <- read_csv("../data/sim_modeloutputs.demo.txt")
 
 # Read in the batch parameter map
-batch_params <- read_csv("../data/sim_modeloutputs.batch_param_map.txt")
+batch_params <- read_csv("../data/sim_modeloutputs.batch_param_map.demo.txt")
 
 # Join the datasets on the "run" column
 combined_data <- sim_outputs %>%
