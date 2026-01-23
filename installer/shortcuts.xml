@@ -5,10 +5,10 @@
 
   <skipIfNotSupported/>
   
-  <programGroup defaultName="single-facility" location="applications"/>
+  <programGroup defaultName="FacilityEpiSim" location="applications"/>
   
   <shortcut
-            name="single-facility"
+            name="FacilityEpiSim"
             programGroup="yes"
             desktop="no"
             applications="no"
@@ -18,7 +18,7 @@
      		commandLine=""
      		workingDirectory="$INSTALL_PATH"
             description="This runs the model"
-            iconFile="$INSTALL_PATH\single-facility\icons\model.bmp"
+            iconFile="$INSTALL_PATH\FacilityEpiSim\icons\model.bmp"
      		iconIndex="0"
      		initialState="noShow">
             
@@ -32,7 +32,7 @@
             applications="no"
             startMenu="no"
             startup="no"
-            target="$INSTALL_PATH\single-facility\docs\index.html"
+            target="$INSTALL_PATH\FacilityEpiSim\docs\index.html"
             commandLine=""
             iconFile="%SystemRoot%\system32\SHELL32.dll"
      		iconIndex="23" 
@@ -43,7 +43,7 @@
     </shortcut>
 
     <shortcut
-            name="single-facility Uninstaller"
+            name="FacilityEpiSim Uninstaller"
             programGroup="yes"
             desktop="no"
             applications="no"

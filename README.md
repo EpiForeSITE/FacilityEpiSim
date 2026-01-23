@@ -1,4 +1,4 @@
-# Single Facility Disease Transmission Model
+# FacilityEpiSim - Disease Transmission Model
 
 A Java-based agent-based model (ABM) built with Repast Simphony for simulating disease transmission in healthcare facilities, with a focus on Carbapenem-resistant Enterobacteriaceae (CRE) and other healthcare-associated infections.
 
@@ -62,7 +62,7 @@ The simulation operates on several key components:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/EpiForeSITE/single-facility-repast.git
+   git clone https://github.com/EpiForeSITE/FacilityEpiSim.git
    ```
 
 2. Open Eclipse with Repast Simphony plugin installed
@@ -84,7 +84,7 @@ After launching, you should see the Repast Simphony GUI with:
 
 ### Key Parameters
 
-The simulation behavior is controlled through parameters defined in `single-facility.rs/parameters.xml`:
+The simulation behavior is controlled through parameters defined in `FacilityEpiSim.rs/parameters.xml`:
 
 #### Disease Parameters
 - **`longTermAcuteCareBeta`** (default: 0.0615): Base transmission rate coefficient
@@ -215,4 +215,4 @@ When using this model in research, please cite:
 
 ---
 
-*This documentation provides a comprehensive overview of the single-facility disease transmission model. For technical details about the implementation, refer to the source code and inline comments.*
+*This documentation provides a comprehensive overview of the FacilityEpiSim disease transmission model. For technical details about the implementation, refer to the source code and inline comments.*

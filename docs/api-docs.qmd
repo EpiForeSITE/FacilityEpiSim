@@ -12,7 +12,7 @@ title: "API Reference"
 
 ## Available Packages
 
-The Single-Facility Disease Transmission Model includes the following Java packages:
+The FacilityEpiSim Disease Transmission Model includes the following Java packages:
 
 - **`agents`** - Individual patient agents and discharged patient data
 - **`agentcontainers`** - Facility and region containers for managing agents  
@@ -26,7 +26,7 @@ The Single-Facility Disease Transmission Model includes the following Java packa
 
 ## Core Classes
 
-### `SingleFacilityBuilder`
+### `FacilityEpiSimBuilder`
 
 Main simulation controller.
 
@@ -395,7 +395,7 @@ public static boolean randomTrue(Double probability)
 ### Creating a Simulation Run
 
 ```java
-// In SingleFacilityBuilder.build()
+// In FacilityEpiSimBuilder.build()
 Facility facility = new Facility();
 facility.setMeanLOS(25.0);
 facility.setBetaIsolationReduction(0.5);

@@ -3,7 +3,7 @@ package disease;
 import agentcontainers.Facility;
 import agentcontainers.Region;
 import agents.Person;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -58,7 +58,7 @@ public class FacilityOutbreak {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 		disease = disease2;
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 		
 				
 			logWriter = new PrintWriter("transmissions.txt");
@@ -121,7 +121,7 @@ public class FacilityOutbreak {
 		if (pdC != null && pdS != null) {
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 			logWriter.printf("%.2f,%d,%d%n", transmissionTime,
 					pdC.hashCode(), pdS.hashCode());
 			}

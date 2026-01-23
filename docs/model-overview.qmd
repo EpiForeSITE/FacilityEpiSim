@@ -152,7 +152,7 @@ Currently supports one facility type:
 - High prevalence of comorbidities
 - Longer stays than acute care
 - Higher disease transmission risk
-- Default for single-facility model
+- Default for FacilityEpiSim model
 
 ## Output Statistics
 

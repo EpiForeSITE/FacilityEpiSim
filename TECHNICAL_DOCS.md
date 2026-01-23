@@ -4,11 +4,11 @@
 
 ### Class Hierarchy and Design Patterns
 
-The single-facility disease transmission model follows object-oriented design principles with clear separation of concerns:
+The FacilityEpiSim disease transmission model follows object-oriented design principles with clear separation of concerns:
 
 #### Core Components
 
-1. **SingleFacilityBuilder** (`builders/SingleFacilityBuilder.java`)
+1. **FacilityEpiSimBuilder** (`builders/FacilityEpiSimBuilder.java`)
    - Main simulation controller implementing `ContextBuilder<Object>`
    - Manages simulation lifecycle (initialization, burn-in, data collection, termination)
    - Handles parameter loading and output file generation
@@ -34,7 +34,7 @@ The single-facility disease transmission model follows object-oriented design pr
 
 ### Key Design Patterns
 
-- **Builder Pattern**: SingleFacilityBuilder constructs and configures the simulation context
+- **Builder Pattern**: FacilityEpiSimBuilder constructs and configures the simulation context
 - **Observer Pattern**: Repast's scheduling system allows event-driven programming
 - **Strategy Pattern**: Different facility types use varying parameter sets
 - **State Pattern**: PersonDisease objects maintain colonization/detection states

@@ -19,7 +19,7 @@ This guide will help you run your first simulation in under 10 minutes.
 2. **If you have the source code:**
    - Open in Eclipse with Repast Simphony
    - Right-click the project → Run As → Java Application
-   - Select `SingleFacilityBuilder` as the main class
+   - Select `FacilityEpiSimBuilder` as the main class
 
 ### Step 2: Configure Basic Parameters
 

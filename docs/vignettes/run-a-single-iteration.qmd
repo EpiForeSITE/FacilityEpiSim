@@ -16,7 +16,7 @@ conforms to expectations.
 
 1. Find the green triangle run button.
 
-2. Pull down the drop-down menu and click single-facility model.
+2. Pull down the drop-down menu and click FacilityEpiSim model.
 
 	![](images/run-pull-down-button-01.jpg)
 

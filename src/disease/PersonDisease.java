@@ -1,7 +1,7 @@
 package disease;
 
 import agents.Person;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,7 +37,7 @@ public class PersonDisease {
 
 	static {
 		try {
-			if (!SingleFacilityBuilder.isBatchRun) {
+			if (!FacilityEpiSim.isBatchRun) {
 				decolWriter = new PrintWriter("decolonization.txt");
 				decolWriter.println("time,decolonized_patient_id");
 				clinicalWriter = new PrintWriter("clinicalDetection.txt");
@@ -71,7 +71,7 @@ public class PersonDisease {
 
 		if (colonized) {
 			colonized = false;
-			if (!SingleFacilityBuilder.isBatchRun && decolWriter != null) {
+			if (!FacilityEpiSim.isBatchRun && decolWriter != null) {
 				decolWriter.printf("%.2f,%d%n", currentTime, person.hashCode());
 				decolWriter.flush();
 			}
@@ -106,7 +106,7 @@ public class PersonDisease {
 
 		incrementDetectionCount();
 
-		if (!SingleFacilityBuilder.isBatchRun && clinicalWriter != null) {
+		if (!FacilityEpiSim.isBatchRun && clinicalWriter != null) {
 			clinicalWriter.printf("%.2f,%d,%d%n", currentTime,
 					person.hashCode(), getDetectionCount());
 			clinicalWriter.flush();
@@ -114,7 +114,7 @@ public class PersonDisease {
 		clinicalOutputNum++;
 
 		// Verification log for detection source
-		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
+		if (!FacilityEpiSim.isBatchRun && verificationWriter != null) {
 			verificationWriter.printf("%.2f,%d,CLINICAL,%b,%d%n",
 					currentTime, person.hashCode(), colonized, getDetectionCount());
 			verificationWriter.flush();
@@ -142,7 +142,7 @@ public class PersonDisease {
 		surveillanceOutputNum++;
 		double currentTime = schedule.getTickCount();
 		// Verification log
-		if (!SingleFacilityBuilder.isBatchRun && verificationWriter != null) {
+		if (!FacilityEpiSim.isBatchRun && verificationWriter != null) {
 			verificationWriter.printf(
 					"%.2f,%d,SURVEILLANCE,%b,%d%n", currentTime,
 					person.hashCode(), colonized, getDetectionCount());

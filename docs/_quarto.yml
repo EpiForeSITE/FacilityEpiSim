@@ -51,9 +51,9 @@ website:
 
   page-footer:
     left: |
-      Single-Facility Disease Transmission Model (Repast Simphony)
+      FacilityEpiSim Disease Transmission Model (Repast Simphony)
 
-      Built with [Quarto](https://quarto.org) | [View on GitHub](https://github.com/anthropics/damon-single-facility)
+      Built with [Quarto](https://quarto.org) | [View on GitHub](https://github.com/EpiForeSITE/FacilityEpiSim)
     center: |
       Documentation and source code
 

@@ -2,7 +2,7 @@ package agents;
 
 import agentcontainers.Facility;
 import agentcontainers.Region;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 import disease.Disease;
 import disease.PersonDisease;
 
@@ -35,7 +35,7 @@ public class Person extends Agent {
 
 	static {
 		try {
-			if (!SingleFacilityBuilder.isBatchRun) {
+			if (!FacilityEpiSim.isBatchRun) {
 				surveillanceWriter = new PrintWriter("surveillance.txt");
 				surveillanceWriter.printf("Time, Patient, Colonized, Detected%n");
 			}
@@ -136,7 +136,7 @@ public class Person extends Agent {
 				} else {
 					startNextPeriodicSurveillanceTimer();
 				}
-				if (!SingleFacilityBuilder.isBatchRun) {
+				if (!FacilityEpiSim.isBatchRun) {
 					surveillanceWriter.printf("%.2f,%d,%b,%b%n", currentTime,
 							this.hashCode(), pd.isColonized(), pd.isDetected());
 				}

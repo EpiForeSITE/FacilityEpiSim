@@ -34,7 +34,7 @@ import java.util.List;
 //these all go in 
 // Do several batches with days betweeen and DoActiveSurveillanceAfterBurnIn
 
-public class SingleFacilityBuilder implements ContextBuilder<Object> {
+public class FacilityEpiSim implements ContextBuilder<Object> {
 	private ISchedule schedule;
 	private double isolationEffectiveness;
 	private boolean doActiveSurveillance = false;
@@ -302,10 +302,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	    System.out.println("Simulation ending at tick: " + schedule.getTickCount());
 	    PersonDisease.clinicalOutputNum = 0; // Reset clinical detection count for next run
 	    PersonDisease.surveillanceOutputNum = 0; // Reset surveillance detection count for next run
-	    PersonDisease.decolWriter.close();
-	    PersonDisease.clinicalWriter.close();
-	    PersonDisease.verificationWriter.close();
-	    Person.surveillanceWriter.close();
+	    
 	    
 	    if (!params.getBoolean("isBatchRun")) {
 	        writeDailyPrevToFile();
@@ -336,6 +333,10 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	    // repast.simphony.engine.environment.RunEnvironment.getInstance().endAt(totalTime);
 	    repast.simphony.engine.environment.RunEnvironment.getInstance().endRun();
 	    System.out.println("Simulation ended.");
+	    //PersonDisease.decolWriter.close();
+	    //PersonDisease.clinicalWriter.close();
+	    //PersonDisease.verificationWriter.close();
+	   // Person.surveillanceWriter.close();
 
 	}
 	/*

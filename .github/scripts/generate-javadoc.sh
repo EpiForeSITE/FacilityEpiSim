@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Generating Javadoc for Single-Facility project..."
+echo "Generating Javadoc for FacilityEpiSim project..."
 
 # Create directories
 STUBS_DIR="/tmp/repast-stubs"
@@ -155,9 +155,9 @@ if javadoc \
     -sourcepath src \
     -subpackages agents:agentcontainers:builders:data:disease:processes:utils \
     -classpath "$LIBS_DIR/commons-math3-3.6.1.jar:$STUBS_DIR/repast-stubs.jar" \
-    -windowtitle "Single-Facility Disease Transmission Model API" \
-    -doctitle "Single-Facility Disease Transmission Model<br/>API Documentation" \
-    -header "<b>Single-Facility Model</b>" \
+    -windowtitle "FacilityEpiSim Disease Transmission Model API" \
+    -doctitle "FacilityEpiSim Disease Transmission Model<br/>API Documentation" \
+    -header "<b>FacilityEpiSim Model</b>" \
     -bottom "Copyright &#169; 2024 EpiForeSITE. All Rights Reserved." \
     -use \
     -version \

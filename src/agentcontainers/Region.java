@@ -1,7 +1,7 @@
 package agentcontainers;
 
 import agents.Person;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 import disease.Disease;
 import disease.FacilityOutbreak;
 import disease.PersonDisease;
@@ -37,7 +37,7 @@ public class Region extends AgentContainer {
 			facilities.add(f);
 		}
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 
 			writer = new PrintWriter("daily_population_stats.txt");
 			writer.println("Time,total_population,colonized,detected,isolated");
@@ -195,7 +195,7 @@ public class Region extends AgentContainer {
 
 		double currentTime = schedule.getTickCount();
 		if (currentTime > 3650) {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 			writer.printf("%.2f,%d,%d,%d,"
 				+ "%d%n", currentTime, totalPopulation, totalColonized,
 					totalDetected, totalIsolated);

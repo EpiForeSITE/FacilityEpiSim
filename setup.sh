@@ -1,7 +1,7 @@
 #!/bin/bash
-# Setup script for single-facility simulation Makefile
+# Setup script for FacilityEpiSim simulation Makefile
 
-echo "Setting up single-facility simulation environment..."
+echo "Setting up FacilityEpiSim simulation environment..."
 
 # Check if config.mk exists
 if [ ! -f "config.mk" ]; then
