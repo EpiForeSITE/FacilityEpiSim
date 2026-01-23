@@ -54,7 +54,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 	private PrintWriter simulationOutputFile;
 	public static boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
-	public ArrayList<DischargedPatient> dischargedPatients;
+	public ArrayList<DischargedPatient> dischargedPatients ;
 	private Context<Object> context;
 	private double admissionsIntraEventTime = 21.1199 / 75.0;
 	private int[] facilitySize = { 75 };
@@ -82,7 +82,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 		this.dailyPrevalenceSamples = new ArrayList<Double>();
 		this.dischargedPatients = new ArrayList<DischargedPatient>();
 		
-
+		double is = params.getDouble("isolationEffectiveness");
 		shape1 = params.getDouble("shape1");
 		scale1 = params.getDouble("scale1");
 		shape2 = params.getDouble("shape2");
