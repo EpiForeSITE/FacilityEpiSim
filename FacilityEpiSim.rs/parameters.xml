@@ -15,8 +15,8 @@
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
-				<parameter name="isBatchRun" displayName="22. Generate daily output files (uncheck for batch run)" type="boolean" 
-						defaultValue="true" 
+				<parameter name="isBatchRun" displayName="22. Suppress daily output files (check for batch run)" type="boolean"
+						defaultValue="false" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$BooleanConverter"
 											/>
