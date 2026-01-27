@@ -1,5 +1,5 @@
 ---
-title: "Single-Facility Disease Transmission Model"
+title: "FacilityEpiSim Disease Transmission Model"
 subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
 ---
 
@@ -42,7 +42,7 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 2. **Clone Repository**: Get the source code
 3. **Configure Parameters**: Via the Repast Model Runner
 4. **Run Simulation**: Via the Repast Model Runner
-5. **Analyze Results**: Use R scripts in `analysis/`
+5. **Analyze Results**: Use R scripts in `new_analysis/`
 
 👉 [Get Started →](getting-started.qmd)
 
@@ -65,10 +65,10 @@ If you use this model in research, please cite:
 
 ```bibtex
 @software{toth2024,
-  title = {Single-Facility Disease Transmission Model},
+  title = {FacilityEpiSim Disease Transmission Model},
   author = {Toth, Damon},
   year = {2024},
-  url = {https://github.com/EpiForeSITE/single-facility},
+  url = {https://github.com/EpiForeSITE/FacilityEpiSim},
   orcid = {0000-0001-7393-4814}
 }
 ```

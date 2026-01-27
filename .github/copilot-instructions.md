@@ -1,11 +1,11 @@
-# Single-Facility Instructions for Copilot
+# FacilityEpiSim Instructions for Copilot
 
 ## Purpose
 
 These instructions are designed to help GitHub Copilot generate code that adheres to the specific coding standards and practices of our project. By following these guidelines, we aim to maintain code quality, consistency, and readability across our codebase.
 
 ## Project Overview
-The Single-Facility project is a simulation model built using the Repast Simphony framework. It focuses on simulating the operations and dynamics a single hospital, including patient flow, and disease dynamics and transmission.  
+The FacilityEpiSim project is a simulation model built using the Repast Simphony framework. It focuses on simulating the operations and dynamics a single hospital, including patient flow, and disease dynamics and transmission.  
 
 In single-iteration mode we run a simulation and collect large quantities of data on the events that occur.  These include admission, discharge, clinical detection, detection by surveillance, decolonization and isolation, and transmission events.  These files are output in the base folder and have either .txt or .csv extensions.  These data need to be analyzed in the new_analysis folder using R scripts, specifically quarto reports.  
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Single-Facility Disease Transmission Model"
+title: "FacilityEpiSim Disease Transmission Model"
 message: "If you use this software, please cite it as below."
 type: software
 
@@ -27,8 +27,8 @@ funders:
     website: "https://www.cdc.gov/forecasting/index.html"
     note: "Cooperative agreement CDC-RFA-FT-23-0069"
 
-repository-code: "https://github.com/EpiForeSITE/single-facility"
-url: "https://epiforesite.github.io/single-facility/"
+repository-code: "https://github.com/EpiForeSITE/FacilityEpiSim"
+url: "https://epiforesite.github.io/FacilityEpiSim/"
 
 license: MIT
 keywords:

@@ -1,7 +1,7 @@
 <repast.simphony.data2.engine.DataSetDescriptor simphonyVersion="2.11.0">
   <name>doSimulationEnd</name>
   <type>NON_AGGREGATE</type>
-  <sourceType>builders.SingleFacilityBuilder</sourceType>
+  <sourceType>builders.FacilityEpiSim</sourceType>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
   <inclRandomSeed>false</inclRandomSeed>
@@ -20,7 +20,7 @@
       <string>DoActiveSurveillance</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>DoActiveSurveillance</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>isDoActiveSurveillance</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -28,7 +28,7 @@
       <string>IsolationEffectiveness</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>IsolationEffectiveness</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getIsolationEffectiveness</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -36,7 +36,7 @@
       <string>DaysBetweenTests</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>DaysBetweenTests</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getDaysBetweenTests</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -44,7 +44,7 @@
       <string>ClinicalDetections</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>ClinicalDetections</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getClinicalDetections</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -52,7 +52,7 @@
       <string>MeanDailyPrevalence</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>MeanDailyPrevalence</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getMeanDailyPrevalence</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -60,7 +60,7 @@
       <string>MeanDischargePrevalence</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>MeanDischargePrevalence</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getMeanDischargePrevalence</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -68,7 +68,7 @@
       <string>ImportationPrevalence</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>ImportationPrevalence</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getImportationPrevalence</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
@@ -76,7 +76,7 @@
       <string>NumberOfTransmissions</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
         <id>NumberOfTransmissions</id>
-        <className>builders.SingleFacilityBuilder</className>
+        <className>builders.FacilityEpiSim</className>
         <methodName>getNumberOfTransmissions</methodName>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>

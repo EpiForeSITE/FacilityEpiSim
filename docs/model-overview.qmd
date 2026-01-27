@@ -56,7 +56,7 @@ When a new patient is admitted:
 :::
 Disease transmission within the facility follows a **contact transmission model**:
 
-- **Beta coefficient** (`longTermAcuteCareBeta`, default: 0.0615)
+- **Beta coefficient** (`beta`, default: 0.0615)
   - Probability of transmission per unit time between colonized and susceptible patient
   - Accounts for contact rates, pathogen viability, and inoculum size
 
@@ -152,7 +152,7 @@ Currently supports one facility type:
 - High prevalence of comorbidities
 - Longer stays than acute care
 - Higher disease transmission risk
-- Default for single-facility model
+- Default for FacilityEpiSim model
 
 ## Output Statistics
 

@@ -2,7 +2,7 @@ package agents;
 
 import agentcontainers.Facility;
 import agentcontainers.Region;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 import disease.Disease;
 import disease.PersonDisease;
 
@@ -33,14 +33,22 @@ public class Person extends Agent {
 	public static PrintWriter surveillanceWriter;
 	private boolean noMoreEvents = false;
 
-	static {
+	public static void initSurveillanceWriter() {
 		try {
-			if (!SingleFacilityBuilder.isBatchRun) {
+			if (!FacilityEpiSim.isBatchRun) {
 				surveillanceWriter = new PrintWriter("surveillance.txt");
 				surveillanceWriter.printf("Time, Patient, Colonized, Detected%n");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	public static void closeSurveillanceWriter() {
+		if (surveillanceWriter != null) {
+			surveillanceWriter.flush();
+			surveillanceWriter.close();
+			surveillanceWriter = null;
 		}
 	}
 	
@@ -136,7 +144,7 @@ public class Person extends Agent {
 				} else {
 					startNextPeriodicSurveillanceTimer();
 				}
-				if (!SingleFacilityBuilder.isBatchRun) {
+				if (!FacilityEpiSim.isBatchRun && surveillanceWriter != null) {
 					surveillanceWriter.printf("%.2f,%d,%b,%b%n", currentTime,
 							this.hashCode(), pd.isColonized(), pd.isDetected());
 				}

@@ -18,23 +18,23 @@ See [System Requirements](system-requirements.qmd) for detailed setup instructio
 ### Project Structure
 
 ```
-single-facility/
+FacilityEpiSim/
 ├── src/                          # Java source code
 │   ├── agents/                   # Agent classes (Person, DischargedPatient)
 │   ├── agentcontainers/          # Container classes (Facility, Region)
-│   ├── builders/                 # Simulation builder (SingleFacilityBuilder)
+│   ├── builders/                 # Simulation builder (FacilityEpiSim)
 │   ├── disease/                  # Disease logic (Disease, FacilityOutbreak, PersonDisease)
 │   ├── processes/                # Process definitions (Admission)
 │   ├── data/                     # Data classes (PatientData)
 │   └── utils/                    # Utility classes (TimeUtils, Chooser)
 │
-├── single-facility.rs/           # Repast Simphony configuration
+├── FacilityEpiSim.rs/           # Repast Simphony configuration
 │   ├── parameters.xml            # Parameter defaults
 │   ├── batch_params.xml          # Batch run configuration
 │   └── scenario.xml              # Scenario definition
 │
 ├── launchers/                    # Eclipse launch configurations
-│   └── single-facility Model.launch
+│   └── FacilityEpiSim Model.launch
 │
 ├── new_analysis/                 # R analysis scripts
 └── Makefile                      # Build targets
@@ -63,11 +63,11 @@ Configure parameters through the Repast runtime or by manually editing the param
 
 ### Parameters File
 
-Edit `single-facility.rs/parameters.xml` to configure:
+Edit `FacilityEpiSim.rs/parameters.xml` to configure:
 
 ```xml
 <!-- Disease transmission -->
-<parameter name="longTermAcuteCareBeta" value="0.0615"/>
+<parameter name="beta" value="0.0615"/>
 
 <!-- Importation probability -->
 <parameter name="importationRate" value="0.206"/>

@@ -34,7 +34,7 @@ import java.util.List;
 //these all go in 
 // Do several batches with days betweeen and DoActiveSurveillanceAfterBurnIn
 
-public class SingleFacilityBuilder implements ContextBuilder<Object> {
+public class FacilityEpiSim implements ContextBuilder<Object> {
 	private ISchedule schedule;
 	private double isolationEffectiveness;
 	private boolean doActiveSurveillance = false;
@@ -54,7 +54,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	private PrintWriter simulationOutputFile;
 	public static boolean isBatchRun;
 	private PrintWriter dailyStatsWriter;
-	public ArrayList<DischargedPatient> dischargedPatients;
+	public ArrayList<DischargedPatient> dischargedPatients ;
 	private Context<Object> context;
 	private double admissionsIntraEventTime = 21.1199 / 75.0;
 	private int[] facilitySize = { 75 };
@@ -82,7 +82,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		this.dailyPrevalenceSamples = new ArrayList<Double>();
 		this.dischargedPatients = new ArrayList<DischargedPatient>();
 		
-
+		double is = params.getDouble("isolationEffectiveness");
 		shape1 = params.getDouble("shape1");
 		scale1 = params.getDouble("scale1");
 		shape2 = params.getDouble("shape2");
@@ -93,6 +93,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		doActiveSurveillanceAfterBurnIn = params.getBoolean("doActiveSurveillanceAfterBurnIn");
 		daysBetweenTests = params.getDouble("daysBetweenTests");
 		isBatchRun = params.getBoolean("isBatchRun");
+		Person.initSurveillanceWriter();
 
 		facility = new Facility();
 		facility.setShape1(shape1);
@@ -263,6 +264,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 		if (doActiveSurveillance) {
 			for (Facility f : region.getFacilities()) {
 				f.setTimeBetweenMidstaySurveillanceTests(daysBetweenTests);
+				f.startActiveSurveillance();
 			}
 		}
 
@@ -302,10 +304,7 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	    System.out.println("Simulation ending at tick: " + schedule.getTickCount());
 	    PersonDisease.clinicalOutputNum = 0; // Reset clinical detection count for next run
 	    PersonDisease.surveillanceOutputNum = 0; // Reset surveillance detection count for next run
-	    PersonDisease.decolWriter.close();
-	    PersonDisease.clinicalWriter.close();
-	    PersonDisease.verificationWriter.close();
-	    Person.surveillanceWriter.close();
+	    
 	    
 	    if (!params.getBoolean("isBatchRun")) {
 	        writeDailyPrevToFile();
@@ -336,6 +335,10 @@ public class SingleFacilityBuilder implements ContextBuilder<Object> {
 	    // repast.simphony.engine.environment.RunEnvironment.getInstance().endAt(totalTime);
 	    repast.simphony.engine.environment.RunEnvironment.getInstance().endRun();
 	    System.out.println("Simulation ended.");
+	    //PersonDisease.decolWriter.close();
+	    //PersonDisease.clinicalWriter.close();
+	    //PersonDisease.verificationWriter.close();
+	    Person.closeSurveillanceWriter();
 
 	}
 	/*
