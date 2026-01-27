@@ -47,7 +47,7 @@ summary(clinical_detections_df)
 
 The output file daily_population_stats.txt shows the total number of patients in the facility on a given day, the number of those who are colonized, detected and isolation.  By default, it starts at the end of the burn-in period.  There is another sanity check embedded in this file; it should always be the case that detected == isolated.  We isolate detected patients, and we don't isolate anybody else.
 
-```{r}
+```{r daily_population}
 
 # Read daily_population_stats.txt (comma-delimited)
 daily_pop_df <- read.table('../data/daily_population_stats.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
@@ -60,12 +60,12 @@ summary(daily_pop_df)
 ```
 ### Daily Population Time Series
 
-```{r}
+```{r population_plot}
 # Time-series plot: population, colonized, detected vs time
 library(ggplot2)
 
-# Assume columns: time, Total Population, Colonized, Detected
-ggplot(daily_pop_df, aes(x = time)) +
+# Assume columns: Time, total_population, colonized, detected
+ggplot(daily_pop_df, aes(x = Time)) +
 	geom_line(aes(y = `total_population`, color = 'Population')) +
 	geom_line(aes(y = colonized, color = 'Colonized')) +
 	geom_line(aes(y = detected, color = 'Detected')) +
@@ -134,13 +134,18 @@ This is every surveillance test run after the end of the burn-in period.
 
 ```{r}
 # Read surveillance.demo.txt (comma-delimited)
-surveillance_df <- read.table('../data/surveillance.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
-
-# Show structure and summary
-cat('Surveillance events:')
-head(surveillance_df)
-cat('\nSummary statistics:')
-summary(surveillance_df)
+# Check if file exists and has data
+if (file.size('../data/surveillance.demo.txt') > 0) {
+  surveillance_df <- read.table('../data/surveillance.demo.txt', header=TRUE, sep=',', stringsAsFactors=FALSE)
+  
+  # Show structure and summary
+  cat('Surveillance events:')
+  head(surveillance_df)
+  cat('\nSummary statistics:')
+  summary(surveillance_df)
+} else {
+  cat('No surveillance events in this dataset.\n')
+}
 ```
 
 ## Patient-to-Patient transmission
