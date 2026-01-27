@@ -26,7 +26,7 @@ The FacilityEpiSim Disease Transmission Model includes the following Java packag
 
 ## Core Classes
 
-### `FacilityEpiSimBuilder`
+### `FacilityEpiSim`
 
 Main simulation controller.
 
@@ -395,7 +395,7 @@ public static boolean randomTrue(Double probability)
 ### Creating a Simulation Run
 
 ```java
-// In FacilityEpiSimBuilder.build()
+// In FacilityEpiSim.build()
 Facility facility = new Facility();
 facility.setMeanLOS(25.0);
 facility.setBetaIsolationReduction(0.5);

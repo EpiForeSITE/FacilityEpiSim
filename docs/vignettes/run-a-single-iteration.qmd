@@ -36,7 +36,7 @@ conforms to expectations.
 
 7. When the parameters are configured the way you want them, find the blue **Initialize Run** button on the toolbar.  Click it, wait for the simulation to initialize, the press the **start** button right next to it.
 
-	![initialize button and start button][images/initialize-and-run.jpg]
+	![initialize button and start button](images/initialize-and-run.jpg)
 
 8. You'll see the **Tick Count** in the upper right begin to increase.  The simulation is running!
 9. When it reaches the end, close the window and look in the root folder of the project for new .txt files containing the results.

@@ -22,7 +22,7 @@ FacilityEpiSim/
 ├── src/                          # Java source code
 │   ├── agents/                   # Agent classes (Person, DischargedPatient)
 │   ├── agentcontainers/          # Container classes (Facility, Region)
-│   ├── builders/                 # Simulation builder (FacilityEpiSimBuilder)
+│   ├── builders/                 # Simulation builder (FacilityEpiSim)
 │   ├── disease/                  # Disease logic (Disease, FacilityOutbreak, PersonDisease)
 │   ├── processes/                # Process definitions (Admission)
 │   ├── data/                     # Data classes (PatientData)
@@ -67,7 +67,7 @@ Edit `FacilityEpiSim.rs/parameters.xml` to configure:
 
 ```xml
 <!-- Disease transmission -->
-<parameter name="longTermAcuteCareBeta" value="0.0615"/>
+<parameter name="beta" value="0.0615"/>
 
 <!-- Importation probability -->
 <parameter name="importationRate" value="0.206"/>

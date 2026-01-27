@@ -93,6 +93,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 		doActiveSurveillanceAfterBurnIn = params.getBoolean("doActiveSurveillanceAfterBurnIn");
 		daysBetweenTests = params.getDouble("daysBetweenTests");
 		isBatchRun = params.getBoolean("isBatchRun");
+		Person.initSurveillanceWriter();
 
 		facility = new Facility();
 		facility.setShape1(shape1);
@@ -263,6 +264,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 		if (doActiveSurveillance) {
 			for (Facility f : region.getFacilities()) {
 				f.setTimeBetweenMidstaySurveillanceTests(daysBetweenTests);
+				f.startActiveSurveillance();
 			}
 		}
 
@@ -336,7 +338,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 	    //PersonDisease.decolWriter.close();
 	    //PersonDisease.clinicalWriter.close();
 	    //PersonDisease.verificationWriter.close();
-	   // Person.surveillanceWriter.close();
+	    Person.closeSurveillanceWriter();
 
 	}
 	/*

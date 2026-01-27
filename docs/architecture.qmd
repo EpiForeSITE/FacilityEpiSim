@@ -9,7 +9,7 @@ title: "Architecture & Design"
 ## Overview
 
 ```
-SingleFacilityBuilder (Simulation Controller)
+FacilityEpiSim (Simulation Controller)
     ├── Region (Multi-facility Container)
     │   └── Facility (Healthcare Facility Agent)
     │       ├── LinkedList<Person> currentPatients
@@ -24,7 +24,7 @@ SingleFacilityBuilder (Simulation Controller)
 
 ## Core Classes
 
-### `SingleFacilityBuilder` (`builders/`)
+### `FacilityEpiSim` (`builders/`)
 **Role**: Main simulation controller and Repast builder
 
 **Key Methods**:
@@ -143,7 +143,7 @@ public void dailyUpdate() {
 ```
 
 **Key scheduled methods**:
-- `SingleFacilityBuilder.updateDailyStatistics()` - Every day
+- `FacilityEpiSim.updateDailyStatistics()` - Every day
 - `Facility.updatePopulationTally()` - Every day
 - `Person.startDischargeTimer()` - Scheduled per patient
 
@@ -173,7 +173,7 @@ Key events:
 ### Simulation Initialization
 
 ```
-1. SingleFacilityBuilder.build() called
+1. FacilityEpiSim.build() called
 2. Create Facility agent
 3. Create initial patients (burn-in)
 4. For each patient:
@@ -188,7 +188,7 @@ Key events:
 ```
 
 1. Facility.updatePopulationTally() records daily stats
-2. SingleFacilityBuilder.updateDailyStatistics() writes outputs
+2. FacilityEpiSim.updateDailyStatistics() writes outputs
 
 ```
 
@@ -266,7 +266,7 @@ Minimal output focused on summary statistics for parameter sweeps.
 1. Create new Disease subclass
 2. Define disease-specific parameters in `parameters.xml`
 3. Add detection/transmission logic in Disease class
-4. Create in `SingleFacilityBuilder.build()`
+4. Create in `FacilityEpiSim.build()`
 
 ### Modifying Transmission Logic
 

@@ -227,3 +227,20 @@ join-outputs:
 	map_file=$$(ls -t sim_modeloutputs.*.batch_param_map.txt | head -1); \
 	data_file=$$(ls -t sim_modeloutputs.*.txt | grep -v batch_param_map | head -1); \
 	awk 'NR==FNR && FNR>1 {a[$$1]=$$0; next} FNR>1 && $$1 in a {print a[$$1] "," substr($$0, index($$0,$$2))}' $$map_file $$data_file > new_analysis/$$output_file
+
+# Copy latest output files to docs/data as demo files (excludes sim_modeloutputs)
+.PHONY: demodata
+demodata:
+	@echo "Copying latest output files to docs/data as demo files..."
+	@for file in admissions.txt clinicalDetection.txt daily_population_stats.txt \
+		decolonization.txt detection_verification.txt simulation_results.txt \
+		surveillance.txt transmissions.txt; do \
+		if [ -f "$$file" ]; then \
+			base=$$(basename "$$file" .txt); \
+			cp "$$file" "docs/data/$${base}.demo.txt"; \
+			echo "  $$file -> docs/data/$${base}.demo.txt"; \
+		else \
+			echo "  Warning: $$file not found, skipping"; \
+		fi; \
+	done
+	@echo "Done!"

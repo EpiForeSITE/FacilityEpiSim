@@ -45,7 +45,7 @@ The simulation operates on several key components:
 
 ### Prerequisites
 
-- **Java Runtime Environment (JRE)**: Java 8 or higher
+- **Java Runtime Environment (JRE)**: Java 11
 - **Repast Simphony**: Included in the project dependencies
 
 ### Installation Options
@@ -87,7 +87,7 @@ After launching, you should see the Repast Simphony GUI with:
 The simulation behavior is controlled through parameters defined in `FacilityEpiSim.rs/parameters.xml`:
 
 #### Disease Parameters
-- **`longTermAcuteCareBeta`** (default: 0.0615): Base transmission rate coefficient
+- **`beta`** (default: 0.0615): Base transmission rate coefficient
 - **`avgDecolonizationTime`** (default: 387.0 days): Average time for natural clearance
 - **`importationRate`** (default: 0.206): Probability of arriving colonized
 

@@ -255,7 +255,7 @@ if (patient.isIsolated()) {
 ## Parameter Sensitivity
 
 ### High Impact on Transmission
-- `longTermAcuteCareBeta` - Direct multiplier on force of infection
+- `beta` - Direct multiplier on force of infection
 - `importationRate` - Seeding of disease
 - `isolationEffectiveness` - Reduces transmission from detected cases
 

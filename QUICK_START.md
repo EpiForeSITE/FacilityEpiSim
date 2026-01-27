@@ -4,7 +4,7 @@ This guide will help you run your first simulation in under 10 minutes.
 
 ## Prerequisites
 
-- Java 8 or higher installed on your system
+- Java 11 installed on your system
 - Basic familiarity with running Java applications
 
 ## Running Your First Simulation
@@ -19,14 +19,14 @@ This guide will help you run your first simulation in under 10 minutes.
 2. **If you have the source code:**
    - Open in Eclipse with Repast Simphony
    - Right-click the project → Run As → Java Application
-   - Select `FacilityEpiSimBuilder` as the main class
+   - Select `FacilityEpiSim` as the main class
 
 ### Step 2: Configure Basic Parameters
 
 When the Repast GUI opens, you'll see a parameters panel. For your first run, you can use the defaults, but here are the key settings:
 
 **Essential Parameters:**
-- `longTermAcuteCareBeta`: 0.0615 (transmission rate)
+- `beta`: 0.0615 (transmission rate)
 - `importationRate`: 0.206 (probability patients arrive infected)
 - `isolationEffectiveness`: 0.5 (50% reduction in transmission when isolated)
 - `isBatchRun`: false (enables detailed output files)

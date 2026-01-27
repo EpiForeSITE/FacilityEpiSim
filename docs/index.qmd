@@ -42,7 +42,7 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 2. **Clone Repository**: Get the source code
 3. **Configure Parameters**: Via the Repast Model Runner
 4. **Run Simulation**: Via the Repast Model Runner
-5. **Analyze Results**: Use R scripts in `analysis/`
+5. **Analyze Results**: Use R scripts in `new_analysis/`
 
 👉 [Get Started →](getting-started.qmd)
 
