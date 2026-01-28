@@ -2,9 +2,6 @@
 title: "Model Overview"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
 
 ## Disease Transmission Dynamics
 
@@ -12,7 +9,7 @@ The model simulates disease transmission using a **modified SIS (Susceptible-Inf
 
 ### Disease States
 
-Each patient has an associated `PersonDisease` object that tracks:
+Each patient has an associated `PersonDisease` object that represents 3 states:
 
 - **Susceptible**: Patient is not colonized
 - **Colonized**: Patient is asymptomatic carrier of the disease
@@ -39,14 +36,7 @@ When a new patient is admitted:
 
 1. **Importation probability** (`importationRate`, default: 0.206) determines if they arrive colonized
 2. If colonized, they immediately enter the **Colonized** state
-3. They begin shedding and can transmit to other patients
-
-### Configuration
-
-```xml
-<parameter name="importationRate" value="0.206"/>
-<!-- Probability (0-1) that new admits arrive colonized -->
-```
+3. They become transmissible and can transmit to other patients
 
 ## Transmission
 
@@ -83,7 +73,7 @@ When a patient is isolated:
 - **Triggered**: When patient admitted (if `onActiveSurveillance = true`)
 - **Probability**: `probSurveillanceDetection` per disease
 - **Adherence**: `admissionSurveillanceAdherence` (default: 0.911)
-- **Outcome**: If positive, patient is isolated
+- **Outcome**: If detected by surveillance, patient is isolated
 
 #### Periodic Surveillance
 - **Interval**: `daysBetweenMidstaySurveillanceTests` (default: 14 days)
@@ -178,11 +168,10 @@ Currently supports one facility type:
 ## Key Assumptions
 
 1. **Homogeneous mixing**: All patients have equal contact probability (modified by isolation)
-2. **Independent diseases**: Multiple diseases tracked independently
-3. **Perfect detection**: Detected patients are immediately and perfectly isolated
-4. **No treatment**: Decolonization only through natural clearance
-5. **No reinfection**: Once decolonized, patients are not immediately re-infected
-6. **Exponential distributions**: Natural processes follow exponential distributions
+2. **Perfect detection**: Detected patients are immediately and perfectly isolated
+3. **No treatment**: Decolonization only through natural clearance
+4. **No reinfection**: Once decolonized, patients are not immediately re-infected
+
 
 ## Model Limitations
 
@@ -192,6 +181,3 @@ Currently supports one facility type:
 - No staff agents (only patient populations)
 - Simplified detection and isolation mechanics
 - No cost/economic considerations
-
-## Next Steps
-

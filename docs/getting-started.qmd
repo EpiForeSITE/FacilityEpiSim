@@ -28,14 +28,14 @@ FacilityEpiSim/
 │   ├── data/                     # Data classes (PatientData)
 │   └── utils/                    # Utility classes (TimeUtils, Chooser)
 │
-├── FacilityEpiSim.rs/           # Repast Simphony configuration
+├── FacilityEpiSim.rs/            # Repast Simphony configuration
 │   ├── parameters.xml            # Parameter defaults
-│   ├── batch_params.xml          # Batch run configuration
 │   └── scenario.xml              # Scenario definition
 │
+├── batch/                        # Batch configuration files
+│   └── batch_params.xml          # Batch Parameters
+│              
 ├── launchers/                    # Eclipse launch configurations
-│   └── FacilityEpiSim Model.launch
-│
 ├── new_analysis/                 # R analysis scripts
 └── Makefile                      # Build targets
 ```
@@ -44,7 +44,8 @@ FacilityEpiSim/
 
 ### Eclipse
 1. **Import Project** 
-   - File → Import → General → Existing Projects into Workspace
+   - Clone FacilityEpiSim into a working folder
+   - In Repast: File → Import → General → Existing Projects into Workspace
    - Select the project directory
    - Click Finish
 
@@ -91,22 +92,17 @@ See [Parameters](parameters.qmd) for complete documentation.
 After running a simulation, check:
 
 - **Batch-run Mode**:
-   - **`simulation_results.demo.txt`** -  Summary statistics and aggregates - One row per iteration
+   - **`outputs/sim_modeloutputs.<datetime>.txt`** -  Summary statistics and aggregates - One row per iteration
 - **Single-run Mode**:
-   - **`daily_population_stats.demo.txt`**  Time series data (one row per day)
-   - **`admissions.demo.txt`** - Patient admission events
-   - **`transmissions.demo.txt`** - Transmission events (if enabled)
-   - **`clinicalDetection.demo.txt`** - Clinical detection events
-   - **`decolonization.demo.txt`** - Decolonization outcomes
-   - **`surveillance.demo.txt`** - Surveillance test results
+   - **`daily_population_stats.txt`**  Time series data (one row per day)
+   - **`admissions.txt`** - Patient admission events
+   - **`transmissions.txt`** - Transmission events (if enabled)
+   - **`clinicalDetection.txt`** - Clinical detection events
+   - **`decolonization.txt`** - Decolonization outcomes
+   - **`surveillance.txt`** - Surveillance test results
 
-
-
-## Next Steps
 
  
-- **Dive into Architecture**: Review [Architecture](architecture.qmd)
-
 ## Troubleshooting
 
 ### No Launchers Availble in Repast IDE

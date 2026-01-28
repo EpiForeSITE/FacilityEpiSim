@@ -2,25 +2,8 @@
 title: "Architecture & Design"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
 
-## Overview
 
-```
-FacilityEpiSim (Simulation Controller)
-    ├── Region (Multi-facility Container)
-    │   └── Facility (Healthcare Facility Agent)
-    │       ├── LinkedList<Person> currentPatients
-    │       ├── ArrayList<FacilityOutbreak> outbreaks
-    │       └── [Disease logic]
-    │
-    └── Context<Object> (Repast context graph)
-        ├── Facility agents
-        ├── Person agents
-        └── DischargedPatient records
-```
 
 ## Core Classes
 
@@ -147,15 +130,7 @@ public void dailyUpdate() {
 - `Facility.updatePopulationTally()` - Every day
 - `Person.startDischargeTimer()` - Scheduled per patient
 
-### Dependency Injection
 
-Agents receive references to container objects:
-
-```java
-Person p = new Person(facility);  // Person knows its Facility
-FacilityOutbreak fo = new FacilityOutbreak(meanTime, disease);
-fo.setFacility(facility);  // Outbreak knows its Facility
-```
 
 ### Event-Driven Simulation
 
@@ -203,122 +178,5 @@ Key events:
 6. Remove from Repast context (garbage collection)
 ```
 
-## Class Hierarchy
 
-```
-AgentContainer (extends ArrayList)
-    └── Facility
-        └── [Contains: LinkedList<Person>, ArrayList<FacilityOutbreak>]
 
-Person (Agent)
-    └── [Contains: ArrayList<PersonDisease>]
-
-PersonDisease (State object)
-    └── [Contains: Reference to Disease]
-
-FacilityOutbreak (Agent)
-    └── [Contains: Reference to Disease and Facility]
-
-Process (Abstract base class)
-    └── Admission, SimpleProcess
-
-TimeUtils (Utility class)
-    └── static methods for time conversion
-
-Chooser (Utility class)
-    └── static methods for weighted random selection
-```
-
-## Statistics & Output
-
-### Output Files (Non-Batch)
-
-**`simulation_results.demo.txt`**
-```
-Total Admissions: 1000
-Total Patient Days: 250000
-Mean LOS: 25.0 days
-Prevalence: 0.15
-...
-```
-
-**`daily_population_stats.demo.txt`**
-```
-Tick,Population,Colonized,Isolated,...
-1.0,298,45,10
-2.0,299,46,11
-...
-```
-
-**Event logs** (admissions.demo.txt, transmissions.demo.txt, etc.)
-```
-Time: 100.50, Patient ID: 12345, Status: [event-specific data]
-```
-
-### Batch Mode Output
-
-Minimal output focused on summary statistics for parameter sweeps.
-
-## Extension Points
-
-### Adding a New Disease Type
-
-1. Create new Disease subclass
-2. Define disease-specific parameters in `parameters.xml`
-3. Add detection/transmission logic in Disease class
-4. Create in `FacilityEpiSim.build()`
-
-### Modifying Transmission Logic
-
-1. Edit `FacilityOutbreak.updateTransmissionRate()`
-2. Modify beta calculation based on population state
-3. Adjust contact model assumptions
-
-### Adding Surveillance Strategies
-
-1. Create custom surveillance logic in Facility or Person
-2. Schedule surveillance events differently
-3. Modify detection probabilities
-
-### Multi-Facility Networks
-
-1. Create Region with multiple Facility agents
-2. Add inter-facility transmission logic
-3. Coordinate disease spread across facilities
-
-## Testing & Validation
-
-### Unit Testing
-- Test individual class methods (Person, Disease, etc.)
-- Verify probability distributions
-
-### Integration Testing
-- Run small simulations (short duration, small population)
-- Verify output file formats
-- Check transmission rate calculations
-
-### Validation
-- Compare against analytical predictions
-- Output consistency checks
-
-## Performance Considerations
-
-### Typical Runtime
-- 5-15 minutes for standard run (15 years, 300 patients)
-- Scales linearly with population size
-- Scales logarithmically with simulation duration
-
-### Memory Usage
-- ~1-2 GB for typical parameters
-- Discharged patients are dereferenced immediately
-- Repast context handles garbage collection
-
-### Optimization Opportunities
-- Cache transmission rates
-- Use spatial indices for large populations
-- Batch random number generation
-
-## Next Steps
-
-- See [API Documentation](api-docs.qmd) for detailed method references
-- Review source code with [Javadoc](../docs/index.html)

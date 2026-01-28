@@ -33,7 +33,6 @@ website:
     - id: getting-started
       contents:
         - getting-started.qmd
-        - system-requirements.qmd
     - id: documentation
       contents:
         - model-overview.qmd
