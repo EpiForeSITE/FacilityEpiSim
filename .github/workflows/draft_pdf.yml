@@ -1,5 +1,11 @@
 name: Draft PDF
-on: [ push, pull_request ]
+
+on: 
+  push: 
+    branches: 
+      - master
+      - JOSSpaper
+
 
 jobs:
   paper:

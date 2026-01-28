@@ -1,4 +1,4 @@
-# Configuration for single-facility simulation Makefile
+# Configuration for FacilityEpiSim simulation Makefile
 # Copy this file to 'config.mk' and adjust the paths for your system
 
 # Path to your Repast Simphony installation

@@ -1,11 +1,11 @@
-# Makefile for single-facility simulation
+# Makefile for FacilityEpiSim simulation
 
 # Include configuration if available
 -include config.mk
 
 # Variables
 PROJECT_ROOT = .
-SIMULATION_CONFIG = $(PROJECT_ROOT)/single-facility.rs
+SIMULATION_CONFIG = $(PROJECT_ROOT)/FacilityEpiSim.rs
 BIN_DIR = $(PROJECT_ROOT)/bin
 LIB_DIR = $(PROJECT_ROOT)/lib
 MAIN_CLASS = repast.simphony.runtime.RepastMain
@@ -51,7 +51,7 @@ else
 endif
 
 # Program arguments - point to the .rs scenario directory
-PROGRAM_ARGS = $(PROJECT_ROOT)/single-facility.rs
+PROGRAM_ARGS = $(PROJECT_ROOT)/FacilityEpiSim.rs
 
 # Default target
 .PHONY: help
@@ -117,7 +117,7 @@ create-run-script:
 	@echo "Creating batch script to run simulation..."
 	@echo "@echo off" > run_simulation.bat
 	@echo "cd /d $(PROJECT_ROOT)" >> run_simulation.bat  
-	@echo "echo Running single-facility simulation..." >> run_simulation.bat
+	@echo "echo Running FacilityEpiSim simulation..." >> run_simulation.bat
 	@echo "echo Use Eclipse to run the simulation with proper plugin support" >> run_simulation.bat
 	@echo "pause" >> run_simulation.bat
 	@echo "Batch script created: run_simulation.bat"
@@ -129,7 +129,7 @@ validate: compile
 	@echo "Classes available:"
 	@find $(BIN_DIR) -name "*.class" | head -10
 	@echo "To run: Use Eclipse with the launcher configuration"
-	@echo "  File: launchers/single-facility Model.launch"
+	@echo "  File: launchers/FacilityEpiSim Model.launch"
 
 # Target for batch runs - optimized for command line
 .PHONY: run-batch
@@ -143,7 +143,7 @@ run-batch:
 		-Dplugin.dir="../" \
 		-Dboot.config="boot.properties" \
 		-cp "$(PROJECT_ROOT)/bin$(CLASSPATH_SEP)../repast.simphony.bin_and_src_2.11.0/repast.simphony.bin_and_src.jar$(CLASSPATH_SEP)lib/*$(CLASSPATH_SEP)../repast.simphony.core_2.11.0/lib/*$(CLASSPATH_SEP)../repast.simphony.batch_2.11.0/lib/*$(CLASSPATH_SEP)../repast.simphony.data_2.11.0/lib/*$(CLASSPATH_SEP)../repast.simphony.essentials_2.11.0/lib/*$(CLASSPATH_SEP)../libs.ext_2.11.0/lib/*" \
-		$(MAIN_CLASS) -batch "$(PROJECT_ROOT)/single-facility.rs" "$(PROJECT_ROOT)/batch/batch_params.xml"
+
 
 # Target to compile Java sources (if needed)
 .PHONY: compile
@@ -160,8 +160,8 @@ javadoc: compile
 	"$(JAVADOC_BIN)" -d $(DOCS_DIR) -sourcepath src \
 		-cp "$(BIN_DIR)$(CLASSPATH_SEP)$(REPAST_BIN_JAR)$(CLASSPATH_SEP)$(REPAST_CORE_JARS)" \
 		agents agentcontainers builders data disease processes utils \
-		-windowtitle "Single-Facility Disease Transmission Model" \
-		-doctitle "Single-Facility Disease Transmission Model (Repast Simphony)" \
+		-windowtitle "FacilityEpiSim Disease Transmission Model" \
+		-doctitle "FacilityEpiSim Disease Transmission Model (Repast Simphony)" \
 		-use -version -author -linksource
 	@echo "Javadoc generated successfully!"
 	@echo "View documentation at: $(DOCS_DIR)/index.html"
@@ -227,3 +227,20 @@ join-outputs:
 	map_file=$$(ls -t sim_modeloutputs.*.batch_param_map.txt | head -1); \
 	data_file=$$(ls -t sim_modeloutputs.*.txt | grep -v batch_param_map | head -1); \
 	awk 'NR==FNR && FNR>1 {a[$$1]=$$0; next} FNR>1 && $$1 in a {print a[$$1] "," substr($$0, index($$0,$$2))}' $$map_file $$data_file > new_analysis/$$output_file
+
+# Copy latest output files to docs/data as demo files (excludes sim_modeloutputs)
+.PHONY: demodata
+demodata:
+	@echo "Copying latest output files to docs/data as demo files..."
+	@for file in admissions.txt clinicalDetection.txt daily_population_stats.txt \
+		decolonization.txt detection_verification.txt simulation_results.txt \
+		surveillance.txt transmissions.txt; do \
+		if [ -f "$$file" ]; then \
+			base=$$(basename "$$file" .txt); \
+			cp "$$file" "docs/data/$${base}.demo.txt"; \
+			echo "  $$file -> docs/data/$${base}.demo.txt"; \
+		else \
+			echo "  Warning: $$file not found, skipping"; \
+		fi; \
+	done
+	@echo "Done!"

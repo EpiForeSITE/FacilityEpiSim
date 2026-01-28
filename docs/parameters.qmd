@@ -5,7 +5,8 @@ title: "Parameters Reference"
 
 ## Location
 
-All parameters are defined in: **`single-facility.rs/parameters.xml`**
+All parameters are defined in: **`FacilityEpiSim.rs/parameters.xml`**
+
 ## Parameter Table
 
 | Display Name | Variable Name | Type | Default Value |

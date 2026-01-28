@@ -4,11 +4,11 @@
 
 ### Class Hierarchy and Design Patterns
 
-The single-facility disease transmission model follows object-oriented design principles with clear separation of concerns:
+The FacilityEpiSim disease transmission model follows object-oriented design principles with clear separation of concerns:
 
 #### Core Components
 
-1. **SingleFacilityBuilder** (`builders/SingleFacilityBuilder.java`)
+1. **FacilityEpiSim** (`builders/FacilityEpiSim.java`)
    - Main simulation controller implementing `ContextBuilder<Object>`
    - Manages simulation lifecycle (initialization, burn-in, data collection, termination)
    - Handles parameter loading and output file generation
@@ -34,7 +34,7 @@ The single-facility disease transmission model follows object-oriented design pr
 
 ### Key Design Patterns
 
-- **Builder Pattern**: SingleFacilityBuilder constructs and configures the simulation context
+- **Builder Pattern**: FacilityEpiSim constructs and configures the simulation context
 - **Observer Pattern**: Repast's scheduling system allows event-driven programming
 - **Strategy Pattern**: Different facility types use varying parameter sets
 - **State Pattern**: PersonDisease objects maintain colonization/detection states
@@ -96,13 +96,13 @@ Different facility types use scaled transmission parameters:
 | Facility Type | Beta Multiplier | Detection Time Factor |
 |---------------|-----------------|----------------------|
 | Acute Care | 1.0 | 1.0 |
-| Long-term Acute Care | `longTermAcuteCareBeta` | 0.87 |
+| Long-term Acute Care | `beta` | 0.87 |
 | Nursing Home | 0.1 | 8.0 |
 
 ### Parameter Sensitivity
 
 Critical parameters for model behavior:
-- **High Sensitivity**: `longTermAcuteCareBeta`, `importationRate`, `isolationEffectiveness`
+- **High Sensitivity**: `beta`, `importationRate`, `isolationEffectiveness`
 - **Medium Sensitivity**: `avgDecolonizationTime`, `daysBetweenTests`
 - **Low Sensitivity**: `probSurveillanceDetection`, detection time variations
 

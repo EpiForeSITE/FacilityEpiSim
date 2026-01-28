@@ -2,9 +2,7 @@
 title: "Disease Transmission Mechanisms"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
+
 
 ## Overview
 
@@ -136,19 +134,6 @@ When population changes (admission/discharge):
    - Occurs regardless of surveillance
    - Result: Immediate isolation if detected
 
-**Code**:
-```java
-// Surveillance detection
-if (onActiveSurveillance && uniform() < probSurveillanceDetection * adherence) {
-    pd.setDetected(true);
-    p.isolate();
-}
-
-// Clinical detection timer
-if (pd.isColonized()) {
-    pd.startClinicalDetectionTimer();  // Scheduled
-}
-```
 
 ### Colonized → Decolonized
 
@@ -156,11 +141,6 @@ if (pd.isColonized()) {
 
 **Rate**: Exponential with mean `avgDecolonizationTime` (default: 387 days)
 
-**Code**:
-```java
-double decolonizationTime = exponential(1.0 / avgDecolonizationTime);
-pd.startDecolonizationTimer();  // Scheduled
-```
 
 ## Importation Mechanism
 
@@ -196,7 +176,6 @@ P(detection) = probSurveillanceDetection × admissionSurveillanceAdherence
 - `probSurveillanceDetection` = ~0.95 (per test)
 - `admissionSurveillanceAdherence` = 0.911
 
-**Expected outcome**: ~87% of colonized admits detected
 
 ### Periodic Testing
 
@@ -209,8 +188,6 @@ P(detection) = probSurveillanceDetection × midstaySurveillanceAdherence
 
 **Default values**:
 - `midstaySurveillanceAdherence` = 0.954
-
-**Effect**: ~91% of tests performed detect colonization
 
 ## Isolation Effectiveness
 
@@ -235,13 +212,7 @@ Isolation works by **reducing transmission risk**:
 - Detected patients do not transmit (β = 0)
 - Unrealistic but useful for theoretical analysis
 
-### Code
-```java
-double betaAdjusted = beta;
-if (patient.isIsolated()) {
-    betaAdjusted = beta * (1 - isolationEffectiveness);
-}
-```
+
 
 ## Key Simplifications
 
@@ -255,7 +226,7 @@ if (patient.isIsolated()) {
 ## Parameter Sensitivity
 
 ### High Impact on Transmission
-- `longTermAcuteCareBeta` - Direct multiplier on force of infection
+- `beta` - Direct multiplier on force of infection
 - `importationRate` - Seeding of disease
 - `isolationEffectiveness` - Reduces transmission from detected cases
 
@@ -266,10 +237,5 @@ if (patient.isIsolated()) {
 ### Lower Impact
 - `probClinicalDetection` - Natural detection pathway
 - Detection adherence rates - Affects who gets tested
-
-
-### Empirical Validation
-- Run with known parameters
-- Compare outputs to published studies
 
 

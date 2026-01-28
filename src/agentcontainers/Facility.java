@@ -1,6 +1,6 @@
 package agentcontainers;
 import agents.Person;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 import disease.Disease;
 import disease.FacilityOutbreak;
 import disease.PersonDisease;
@@ -27,7 +27,7 @@ import java.util.LinkedList;
  * <p>
  * {@code Facility} is the primary container for managing patient agents, disease outbreaks,
  * and healthcare operations. It tracks patient admissions, discharges, disease transmission,
- * and surveillance testing within a single facility. The facility operates within a {@link Region}
+ * and surveillance testing within a facility. The facility operates within a {@link Region}
  * that coordinates multi-facility interactions if needed.
  * Key responsibilities include:
  * </p>
@@ -101,7 +101,7 @@ public class Facility extends AgentContainer{
 		params = repast.simphony.engine.environment.RunEnvironment.getInstance().getParameters();
 		region = new Region(this);
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
             admissionsWriter = new PrintWriter("admissions.txt");
             admissionsWriter.println("time,patientid,importation");
 			}
@@ -168,13 +168,12 @@ public class Facility extends AgentContainer{
 		getCurrentPatients().add(p);
 		getRegion().getPeople().add(p);
 
-		if(onActiveSurveillance && !p.isIsolated() && getTimeBetweenMidstaySurveillanceTests() > 0)
-			
+		//todo:  missing braces here?  Smoking gun?
+		if(onActiveSurveillance && !p.isIsolated() && getTimeBetweenMidstaySurveillanceTests() > 0) {
 			p.doSurveillanceTest();
 			p.startNextPeriodicSurveillanceTimer();
-
+		}
 		p.updateAllTransmissionRateContributions();
-
 		if(!getRegion().isInBurnInPeriod()) updateAdmissionTally(p);
 	}
 	/**
@@ -198,7 +197,7 @@ public class Facility extends AgentContainer{
 
 		getCurrentPatients().remove(p);
 		updateTransmissionRate();
-		SingleFacilityBuilder builder = getSimulationBuilder();
+		FacilityEpiSim builder = getSimulationBuilder();
 		p.setDischargeTime(TimeUtils.getSchedule().getTickCount());
 		if (!region.isInBurnInPeriod()) {
 			builder.dischargedPatients.add(new agents.DischargedPatient(p));
@@ -526,7 +525,7 @@ public class Facility extends AgentContainer{
 		return outbreaks;
 	}
 	public void logPatientAdmission(double time, int patientID, boolean importation) {
-		if(!SingleFacilityBuilder.isBatchRun) {
+		if(!FacilityEpiSim.isBatchRun) {
 		
           admissionsWriter.printf("%.2f,%d,%b%n", time, patientID, importation);
 		}
@@ -545,16 +544,16 @@ public class Facility extends AgentContainer{
     }
     
     /**
-     * Gets the SingleFacilityBuilder from the root context.
+     * Gets the FacilityEpiSimBuilder from the root context.
      * This allows access to the main simulation controller and its methods/data.
-     * 
-     * @return the SingleFacilityBuilder instance, or null if not found
+     *
+     * @return the FacilityEpiSimBuilder instance, or null if not found
      */
-    public SingleFacilityBuilder getSimulationBuilder() {
+    public FacilityEpiSim getSimulationBuilder() {
         Context<Object> rootContext = getRootContext();
         for (Object obj : rootContext) {
-            if (obj instanceof SingleFacilityBuilder) {
-                return (SingleFacilityBuilder) obj;
+            if (obj instanceof FacilityEpiSim) {
+                return (FacilityEpiSim) obj;
             }
         }
         return null;

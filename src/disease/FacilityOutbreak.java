@@ -3,10 +3,12 @@ package disease;
 import agentcontainers.Facility;
 import agentcontainers.Region;
 import agents.Person;
-import builders.SingleFacilityBuilder;
+import builders.FacilityEpiSim;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.math3.distribution.ExponentialDistribution;
 import org.apache.commons.math3.ode.events.EventHandler;
@@ -45,6 +47,7 @@ public class FacilityOutbreak {
 	private ISchedule schedule;
 	private boolean stop = false;
 	private Region region;
+	
 
 	ISchedulableAction nextAction;
 	ExponentialDistribution distro;
@@ -55,7 +58,7 @@ public class FacilityOutbreak {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 		disease = disease2;
 		try {
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 		
 				
 			logWriter = new PrintWriter("transmissions.txt");
@@ -96,6 +99,9 @@ public class FacilityOutbreak {
 					pdS = pd;
 				}
 			}
+			// TODO: BUG - This block is INSIDE the for loop but should be OUTSIDE.
+			// Once pdS is set, colonize() and addAcquisition() are called on every
+			// remaining iteration until break, causing multiple colonizations/acquisitions.
 			if (pdS != null) {
 				pdS.colonize();
 				pdS.addAcquisition();
@@ -115,7 +121,7 @@ public class FacilityOutbreak {
 		if (pdC != null && pdS != null) {
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
-			if(!SingleFacilityBuilder.isBatchRun) {
+			if(!FacilityEpiSim.isBatchRun) {
 			logWriter.printf("%.2f,%d,%d%n", transmissionTime,
 					pdC.hashCode(), pdS.hashCode());
 			}

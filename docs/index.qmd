@@ -1,6 +1,6 @@
 ---
-title: "Single-Facility Disease Transmission Model"
-subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
+title: "FacilityEpiSim Disease Transmission Model"
+subtitle: "Agent-Based Modeling of Disease Transmission in a health care facility"
 ---
 
 
@@ -9,7 +9,7 @@ subtitle: "Agent-Based Modeling of Disease Transmission in Healthcare"
 
 This is an **agent-based model (ABM)** built with **Repast Simphony 2.11.0** for simulating disease transmission in healthcare facilities.
 
-The model simulates patient flow through a inpatient over approximately **15 years** (10-year burn-in + 5-year measurement period), tracking:
+The model simulates patient flow through a inpatient facility over approximately **15 years** (10-year burn-in + 5-year measurement period), tracking:
 
 - Patient admissions, lengths of stay, and discharges
 - Disease importation and transmission dynamics
@@ -42,7 +42,7 @@ The model simulates patient flow through a inpatient over approximately **15 yea
 2. **Clone Repository**: Get the source code
 3. **Configure Parameters**: Via the Repast Model Runner
 4. **Run Simulation**: Via the Repast Model Runner
-5. **Analyze Results**: Use R scripts in `analysis/`
+5. **Analyze Results**: Use R scripts in `new_analysis/`
 
 👉 [Get Started →](getting-started.qmd)
 
@@ -65,10 +65,10 @@ If you use this model in research, please cite:
 
 ```bibtex
 @software{toth2024,
-  title = {Single-Facility Disease Transmission Model},
+  title = {FacilityEpiSim Disease Transmission Model},
   author = {Toth, Damon},
   year = {2024},
-  url = {https://github.com/EpiForeSITE/single-facility},
+  url = {https://github.com/EpiForeSITE/FacilityEpiSim},
   orcid = {0000-0001-7393-4814}
 }
 ```
@@ -77,9 +77,9 @@ If you use this model in research, please cite:
 
 **Authors:**
 - Damon Toth (damon.toth@hsc.utah.edu) — [ORCID: 0000-0001-7393-4814](https://orcid.org/0000-0001-7393-4814)
-
-**Maintainer:**
 - Willy Ray (william.ray@hsc.utah.edu)
+- Karim Khader
+- Om Sanghvi
 
 ### Funding
 
@@ -87,7 +87,7 @@ This project was supported by the **Centers for Disease Control and Prevention's
 
 ## Resources
 
-- [Repast Simphony Documentation](https://repast.github.io/docs/)
+- [Repast Simphony Documentation](https://repast.github.io/docs.html)
 - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
 - [Quarto Documentation](https://quarto.org/docs/guide/)
 

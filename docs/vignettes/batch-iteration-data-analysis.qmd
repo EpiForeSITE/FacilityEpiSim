@@ -1,3 +1,124 @@
 ---
 title: "Batch Iteration Data Analysis"
 ---
+
+
+```{r}
+library(dplyr)
+library(readr)
+library(ggplot2)
+
+# Read in the simulation outputs
+sim_outputs <- read_csv("../data/sim_modeloutputs.demo.txt")
+
+# Read in the batch parameter map
+batch_params <- read_csv("../data/sim_modeloutputs.batch_param_map.demo.txt")
+
+# Join the datasets on the "run" column
+combined_data <- sim_outputs %>%
+  left_join(batch_params, by = "run")
+
+# View the structure of the combined data
+glimpse(combined_data)
+```
+
+## Beta Parameter Distribution Across Runs
+
+```{r}
+# Create scatter plot showing beta values across runs
+ggplot(combined_data, aes(x = run, y = beta)) +
+  geom_point(alpha = 0.6, size = 3, color = "darkgreen") +
+  labs(
+    title = "Beta Values Across Simulation Runs",
+    x = "Run Number",
+    y = "Beta (Transmission Rate Coefficient)",
+    caption = "Distribution of beta parameter values in batch runs"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+```
+
+## Sensitivity Analysis: Beta vs Number of Transmissions
+
+```{r}
+library(ggplot2)
+
+# Create scatter plot showing beta sensitivity
+ggplot(combined_data, aes(x = beta, y = NumberOfTransmissions)) +
+  geom_point(alpha = 0.6, size = 3) +
+  geom_smooth(method = "loess", se = TRUE, color = "blue") +
+  labs(
+    title = "Sensitivity of Number of Transmissions to Beta",
+    x = "Beta (Transmission Rate Coefficient)",
+    y = "Number of Transmissions",
+    caption = "Each point represents one simulation run"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+```
+
+## Sensitivity Analysis: Beta vs Clinical Detections
+
+```{r}
+# Create scatter plot showing beta sensitivity for clinical detections
+ggplot(combined_data, aes(x = beta, y = ClinicalDetections)) +
+  geom_point(alpha = 0.6, size = 3) +
+  geom_smooth(method = "loess", se = TRUE, color = "blue") +
+  labs(
+    title = "Sensitivity of Clinical Detections to Beta",
+    x = "Beta (Transmission Rate Coefficient)",
+    y = "Number of Clinical Detections",
+    caption = "Each point represents one simulation run"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+```
+
+## Sensitivity Analysis: Beta vs Mean Daily Prevalence
+
+```{r}
+# Create scatter plot showing beta sensitivity for mean daily prevalence
+ggplot(combined_data, aes(x = beta, y = MeanDailyPrevalence)) +
+  geom_point(alpha = 0.6, size = 3) +
+  geom_smooth(method = "loess", se = TRUE, color = "blue") +
+  labs(
+    title = "Sensitivity of Mean Daily Prevalence to Beta",
+    x = "Beta (Transmission Rate Coefficient)",
+    y = "Mean Daily Prevalence",
+    caption = "Each point represents one simulation run"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+```
+
+## Sensitivity Analysis: Beta vs Mean Discharge Prevalence
+
+```{r}
+# Create scatter plot showing beta sensitivity for mean discharge prevalence
+ggplot(combined_data, aes(x = beta, y = MeanDischargePrevalence)) +
+  geom_point(alpha = 0.6, size = 3) +
+  geom_smooth(method = "loess", se = TRUE, color = "blue") +
+  labs(
+    title = "Sensitivity of Mean Discharge Prevalence to Beta",
+    x = "Beta (Transmission Rate Coefficient)",
+    y = "Mean Discharge Prevalence",
+    caption = "Each point represents one simulation run"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    axis.title = element_text(face = "bold")
+  )
+```

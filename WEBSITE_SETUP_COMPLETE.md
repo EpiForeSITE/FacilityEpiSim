@@ -38,7 +38,7 @@ Files created:
 ### Step 1: Commit Your Changes
 
 ```bash
-cd /c/Users/willy/projects/damon-single-facility
+cd /c/Users/willy/projects/FacilityEpiSim
 git add .
 git commit -m "Add Quarto website and GitHub Actions workflow"
 git push origin main
@@ -55,7 +55,7 @@ git push origin main
 
 1. Go to **Actions** tab on GitHub
 2. Watch "Build and Deploy Website" complete
-3. Visit: `https://YOUR-USERNAME.github.io/damon-single-facility`
+3. Visit: `https://YOUR-USERNAME.github.io/FacilityEpiSim`
 
 ## File Structure
 
@@ -105,7 +105,7 @@ make clean-docs           # Clean all generated docs
 Your website will be live at:
 
 ```
-https://YOUR-USERNAME.github.io/damon-single-facility/
+https://YOUR-USERNAME.github.io/FacilityEpiSim/
 ```
 
 ## Website Features
@@ -182,7 +182,7 @@ Deploy to GitHub Pages
 1. **Push to GitHub**: `git push origin main`
 2. **Enable Pages**: Repository Settings → Pages → GitHub Actions
 3. **Wait for deploy**: ~2-5 minutes
-4. **Share the link**: `https://YOUR-USERNAME.github.io/damon-single-facility`
+4. **Share the link**: `https://YOUR-USERNAME.github.io/FacilityEpiSim`
 
 ## Documentation
 

@@ -12,7 +12,7 @@ title: "API Reference"
 
 ## Available Packages
 
-The Single-Facility Disease Transmission Model includes the following Java packages:
+The FacilityEpiSim Disease Transmission Model includes the following Java packages:
 
 - **`agents`** - Individual patient agents and discharged patient data
 - **`agentcontainers`** - Facility and region containers for managing agents  
@@ -22,11 +22,10 @@ The Single-Facility Disease Transmission Model includes the following Java packa
 - **`processes`** - Admission and other simulation processes
 - **`utils`** - Utility classes for time conversion, random selection, and distributions
 
-[Browse the complete Javadoc documentation →](javadoc/index.html)
 
 ## Core Classes
 
-### `SingleFacilityBuilder`
+### `FacilityEpiSim`
 
 Main simulation controller.
 
@@ -392,36 +391,6 @@ public static boolean randomTrue(Double probability)
 
 ## Common Usage Patterns
 
-### Creating a Simulation Run
-
-```java
-// In SingleFacilityBuilder.build()
-Facility facility = new Facility();
-facility.setMeanLOS(25.0);
-facility.setBetaIsolationReduction(0.5);
-
-Person patient = new Person(facility);
-facility.admitPatient(patient);
-```
-
-### Sampling Random Values
-
-```java
-// Uniform random [0, 1)
-double r = facility.uniform();
-
-// Exponential with mean 10
-double exponentialValue = facility.exponential(0.1);
-
-// Gamma distribution
-double gammaValue = facility.gamma(7.6, 3.4);
-
-// Weighted choice
-Object choice = Chooser.choose(
-    Arrays.asList("Option A", "Option B"),
-    Arrays.asList(0.3, 0.7)
-);
-```
 
 ### Checking Disease Status
 
@@ -434,13 +403,6 @@ for (PersonDisease pd : patient.getDiseases()) {
 }
 ```
 
-### Time Conversion
-
-```java
-double tick = 100.5;
-String timeString = TimeUtils.tickToTime(tick);
-// Result: "Day 100,12:00"
-```
 
 ---
 

@@ -1,6 +1,6 @@
 # Conceptual Design for Model Verification
 
-This document outlines the conceptual design for verifying that the single-facility simulation model is working as intended. It provides a step-by-step approach to ensure the model's correctness and reliability through data analysis and consistency checks.
+This document outlines the conceptual design for verifying that the FacilityEpiSim simulation model is working as intended. It provides a step-by-step approach to ensure the model's correctness and reliability through data analysis and consistency checks.
 
 ---
 
