@@ -74,7 +74,7 @@ provide R scripts that analyze raw simulation output to verify model behaviors a
 results. These capabilities will allow users to extend our prior, published research findings and generate new
 insights for public health.
 
-![Parameters panel available when running the non-batch version of the simulation in Repast Simphony.\label{fig:parampanel}](./docs/vignettes/images/parameters-panel.JPG)
+![Parameters panel available when running the non-batch version of the simulation in Repast Simphony.\label{fig:parampanel}](./docs/vignettes/images/parameters-panel.JPG){ width=40% }
 
 While several open source software packages exist for general infectious disease outbreak simulation
 (e.g., @Jenness2013EpiModel, @Gozzi2025Epydemix, @Lorton2019CMS, @Grefenstette2013FRED, @Gallagher2024epiabm, 
