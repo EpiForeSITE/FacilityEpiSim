@@ -37,6 +37,8 @@ The model simulates patient flow through a inpatient facility over approximately
 
 ## Getting Started
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Af7-H9zbAas?si=7AHewKEgy8BtO-0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Quick Start
 1. **Install Requirements**: Java 11 + Repast Simphony 2.11.0
 2. **Clone Repository**: Get the source code
