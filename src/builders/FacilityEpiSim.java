@@ -121,13 +121,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 		context.add(region);
 		context.add(this);
 		// Oct 4, 2024 WRR: return facility?
-		if (!isBatchRun) {
-			try {
-				dailyStatsWriter = new PrintWriter("daily_stats.txt");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+	
 		return context;
 	}
 
@@ -323,9 +317,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 				+ daysBetweenTests + "," + getClinicalDetections() + "," + getMeanDailyPrevalence() + "," + getMeanDischargePrevalence() + "," + getImportationPrevalence() + "," + getNumberOfTransmissions());
 		simulationOutputFile.flush();
 		simulationOutputFile.close();
-		if (dailyStatsWriter != null) {
-			dailyStatsWriter.close();
-		}
+		
 		stop = true;
 		System.out.println("Ending simulation at tick: " + schedule.getTickCount());
 

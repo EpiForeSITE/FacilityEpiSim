@@ -44,12 +44,11 @@ conforms to expectations.
    2.  clinicalDetection.txt
    3.  daily_population_stats.txt
    4.  daily_prevalence.txt
-   5.  daily_stats.txt
-   6.  decolonization.txt
-   7.  detection_verification.txt
-   8.  discharged_patients.csv
-   9.  sim_modeloutputs.<with a date>.txt
-   10. surveillance.txt
-   11. transmissions.txt
+   5.  decolonization.txt
+   6.  detection_verification.txt
+   7.  discharged_patients.csv
+   8.  sim_modeloutputs.<with a date>.txt (this is a one-run, one-line version of the data that will come from a batch run)
+   9.  surveillance.txt
+   10. transmissions.txt
     
 10.  See more about these files [here](single-iteration-data-analysis.html)

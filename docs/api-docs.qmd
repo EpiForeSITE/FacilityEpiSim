@@ -2,9 +2,7 @@
 title: "API Reference"
 ---
 
-::: {.callout-note}
-**NOTE: AI Generated. Still to be verified by Willy.**
-:::
+
 
 
 ## API Documentation
@@ -441,6 +439,3 @@ The model is **not thread-safe**. Repast Simphony runs sequentially:
 - Can be optimized with caching
 
 ---
-
-## For More Information
-

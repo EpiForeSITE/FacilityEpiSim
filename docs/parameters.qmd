@@ -23,7 +23,7 @@ All parameters are defined in: **`FacilityEpiSim.rs/parameters.xml`**
 | 10. Surveillance test sensitivity | probSurveillanceDetection | double | 0.8 |
 | 11. Isolate Patient When Detected | isolatePatientWhenDetected | boolean | true |
 | 12. Isolation Effectiveness (0.0 to 1.0) | isolationEffectiveness | double | 0.5 |
-| 13 Length of stay mixed gamma probability 1 | prob1 | double | 0.62531 |
+| 13. Length of stay mixed gamma probability 1 | prob1 | double | 0.62531 |
 | 14. Length of stay mixed gamma shape 1 | shape1 | double | 7.60197 |
 | 15. Length of stay Mixed gamma scale 1 | scale1 | double | 3.41952 |
 | 16. Length of stay mixed gamma shape 2 | shape2 | double | 1.23279 |
@@ -34,5 +34,5 @@ All parameters are defined in: **`FacilityEpiSim.rs/parameters.xml`**
 | 22. Generate daily output files (uncheck for batch run) | isBatchRun | boolean | false |
 | 23. (Batch Run Only) Extra Iterations at each parameter combination | extraIteration | int | 1 |
 | 24. Default Random Seed | randomSeed | int | __NULL__ |
-| Total Simulation time (including burn-in) | simulationDurationAfterBurnIn | int | 5475 |
+| 25. Total Simulation time (including burn-in) | simulationDurationAfterBurnIn | int | 5475 |
 
