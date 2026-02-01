@@ -525,7 +525,7 @@ public class Facility extends AgentContainer{
 		return outbreaks;
 	}
 	public void logPatientAdmission(double time, int patientID, boolean importation) {
-		if(!FacilityEpiSim.isBatchRun) {
+		if(!FacilityEpiSim.isBatchRun && admissionsWriter != null) {
 		
           admissionsWriter.printf("%.2f,%d,%b%n", time, patientID, importation);
 		}
@@ -573,5 +573,22 @@ public class Facility extends AgentContainer{
             }
         }
         return null;
+    }
+
+    public void finishSimulation() {
+        // Clean up the admissions writer if it was opened (single-run mode)
+        if (admissionsWriter != null) {
+            try {
+                admissionsWriter.flush();
+            } catch (Exception e) {
+                // ignore flush errors
+            }
+            try {
+                admissionsWriter.close();
+            } catch (Exception e) {
+                // ignore close errors
+            }
+            admissionsWriter = null;
+        }
     }
 }

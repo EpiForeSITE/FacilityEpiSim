@@ -86,6 +86,14 @@ knowledge all these existing simulation models use discrete time steps rather th
 event-based framework implemented in our model, which obviates the need for choosing a time step frequency that
 could unintentionally affect simulation dynamics.
 
+# AI Usage Disclosure
+
+Generative AI was used in the creation of this project. Tools used include GitHub Copilot, Copilot Agents, and Claude Code.
+A variety of models were used with each tool, including Sonnet 4.5, Opus 4.5, GPT 4, GPT 5 and GPT-5 mini. These were used primarily
+in the creation of code and documentation. AI assisted in the generation of code, debugging, bootstrapping data analysis, scaffolding for
+documentation and some documentation generation. The authors of this paper assert that human authors reviewed, edited and validated
+all AI-assisted outputs and made the core design decisions.
+
 # Acknowledgements
 
 This work was supported by the Centers for Disease Control and Prevention, Modeling Infectious Diseases in

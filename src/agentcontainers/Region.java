@@ -206,6 +206,16 @@ public class Region extends AgentContainer {
 	public void finishSimulation() {
 		stop = true;
 		schedule.setFinishing(true);
+		// Call finishSimulation on each facility so they can close their writers
+		for (Facility f : facilities) {
+			if (f != null) {
+				try {
+					f.finishSimulation();
+				} catch (Exception e) {
+					// ignore errors closing facility resources
+				}
+			}
+		}
 		if (writer != null) {
 			writer.flush();
 			writer.close();
