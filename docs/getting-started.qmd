@@ -54,9 +54,6 @@ FacilityEpiSim/
    - Configure the parameters in the parameters tab, initialize the simulation and run it
    - Look in the root folder for the txt files 
 
-::: {.callout-note}
-**TODO: make a animated gif example of running the single-run**
-:::
 
 ## Manual Parameter Configuration
 
