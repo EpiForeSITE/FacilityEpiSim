@@ -184,7 +184,10 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
        }
 	 
         
-        dailyPrev.add(facility.getPopulationSize() + "," + colonized  + "," + detected +"," + isolated + ",\n");
+        if (!region.isInBurnInPeriod()) {
+            double currentTime = schedule.getTickCount();
+            dailyPrev.add(String.format("%.2f,%d,%d,%d,%d%n", currentTime, facility.getPopulationSize(), colonized, detected, isolated));
+        }
 	}
 
 	public void setupAgents() {
@@ -271,7 +274,7 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 	
 	public void writeDailyPrevToFile() {
 	    try (PrintWriter writer = new PrintWriter(new FileWriter("daily_prevalence.txt"))) {
-	        writer.println("TotalPatients,Colonized,Detected,Isolated");
+	        writer.println("Time,TotalPatients,Colonized,Detected,Isolated");
 	        for (String line : dailyPrev) {
 	            writer.print(line);
 	        }
@@ -323,14 +326,18 @@ public class FacilityEpiSim implements ContextBuilder<Object> {
 
 
 	    // writeSimulationResults();
+	    // Close outbreak writers directly to ensure they're flushed
+	    for (FacilityOutbreak fo : facility.getOutbreaks()) {
+	        if (fo != null) {
+	            fo.closeLogWriter();
+	        }
+	    }
 	    region.finishSimulation();
+	    PersonDisease.closeWriters();
+	    Person.closeSurveillanceWriter();
+	    System.out.println("Simulation ended.");
 	    // repast.simphony.engine.environment.RunEnvironment.getInstance().endAt(totalTime);
 	    repast.simphony.engine.environment.RunEnvironment.getInstance().endRun();
-	    System.out.println("Simulation ended.");
-	    //PersonDisease.decolWriter.close();
-	    //PersonDisease.clinicalWriter.close();
-	    //PersonDisease.verificationWriter.close();
-	    Person.closeSurveillanceWriter();
 
 	}
 	/*

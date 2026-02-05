@@ -73,6 +73,7 @@ help:
 	@echo "Utilities:"
 	@echo "  clean             - Clean compiled files"
 	@echo "  clean-docs        - Clean generated documentation"
+	@echo "  check_all_flushed - Verify output files have complete final rows"
 	@echo "  debug-classpath   - Show classpath information for debugging"
 	@echo "  help              - Show this help message"
 	@echo ""
@@ -227,6 +228,38 @@ join-outputs:
 	map_file=$$(ls -t sim_modeloutputs.*.batch_param_map.txt | head -1); \
 	data_file=$$(ls -t sim_modeloutputs.*.txt | grep -v batch_param_map | head -1); \
 	awk 'NR==FNR && FNR>1 {a[$$1]=$$0; next} FNR>1 && $$1 in a {print a[$$1] "," substr($$0, index($$0,$$2))}' $$map_file $$data_file > new_analysis/$$output_file
+
+# Check that all output .txt files have complete final rows (properly flushed)
+.PHONY: check_all_flushed
+check_all_flushed:
+	@echo "Checking output files for complete final rows..."
+	@echo ""
+	@all_ok=true; \
+	for file in admissions.txt clinicalDetection.txt daily_population_stats.txt \
+		decolonization.txt detection_verification.txt simulation_results.txt \
+		surveillance.txt transmissions.txt daily_prevalence.txt discharged_patients.csv; do \
+		if [ -f "$$file" ]; then \
+			last_char=$$(tail -c 1 "$$file" | od -An -tx1 | tr -d ' '); \
+			last_line=$$(tail -n 1 "$$file"); \
+			if [ "$$last_char" = "0a" ] || [ -z "$$last_char" ]; then \
+				echo "[OK]   $$file"; \
+				echo "       Last row: $$last_line"; \
+			else \
+				echo "[FAIL] $$file - incomplete final row (missing newline)"; \
+				echo "       Last row: $$last_line"; \
+				all_ok=false; \
+			fi; \
+		else \
+			echo "[SKIP] $$file - not found"; \
+		fi; \
+		echo ""; \
+	done; \
+	if [ "$$all_ok" = "true" ]; then \
+		echo "All output files have complete final rows."; \
+	else \
+		echo "WARNING: Some files have incomplete final rows (not properly flushed)."; \
+		exit 1; \
+	fi
 
 # Copy latest output files to docs/data as demo files (excludes sim_modeloutputs)
 .PHONY: demodata

@@ -281,4 +281,33 @@ public class PersonDisease {
 	    return this.person.hashCode();
 		    }
 
+	public static void closeWriters() {
+		if (decolWriter != null) {
+			try {
+				decolWriter.flush();
+				decolWriter.close();
+			} catch (Exception e) {
+				// ignore errors
+			}
+			decolWriter = null;
+		}
+		if (clinicalWriter != null) {
+			try {
+				clinicalWriter.flush();
+				clinicalWriter.close();
+			} catch (Exception e) {
+				// ignore errors
+			}
+			clinicalWriter = null;
+		}
+		if (verificationWriter != null) {
+			try {
+				verificationWriter.flush();
+				verificationWriter.close();
+			} catch (Exception e) {
+				// ignore errors
+			}
+			verificationWriter = null;
+		}
+	}
 }

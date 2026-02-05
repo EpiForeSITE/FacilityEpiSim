@@ -26,6 +26,7 @@ public class FacilityOutbreak {
 	private double numSusceptibleEffective;
 	private double numContagiousEffective;
 	private int transmissionsTally = 0;
+	private int loggedTransmissions = 0;
 	private int numAdmissionsColonized = 0;
 	private double importationRate;
 	private double prevalence;
@@ -53,16 +54,16 @@ public class FacilityOutbreak {
 	ExponentialDistribution distro;
 	double meanIntraEventTime;
 	private PrintWriter logWriter;
+	private java.io.FileOutputStream logFileStream;
 
 	public FacilityOutbreak(double intra_event_time, Disease disease2) {
 		schedule = repast.simphony.engine.environment.RunEnvironment.getInstance().getCurrentSchedule();
 		disease = disease2;
 		try {
 			if(!FacilityEpiSim.isBatchRun) {
-		
-				
-			logWriter = new PrintWriter("transmissions.txt");
-			logWriter.println("time,from_patientID,to_patientID");
+				logFileStream = new java.io.FileOutputStream("transmissions.txt");
+				logWriter = new PrintWriter(new java.io.OutputStreamWriter(logFileStream), true);
+				logWriter.println("time,from_patientID,to_patientID");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -121,9 +122,18 @@ public class FacilityOutbreak {
 		if (pdC != null && pdS != null) {
 			transmissionsTally++;
 			double transmissionTime = schedule.getTickCount();
-			if(!FacilityEpiSim.isBatchRun) {
-			logWriter.printf("%.2f,%d,%d%n", transmissionTime,
-					pdC.hashCode(), pdS.hashCode());
+			boolean pastBurnIn = !facility.getRegion().isInBurnInPeriod();
+			if(!FacilityEpiSim.isBatchRun && !stop && pastBurnIn) {
+				if (logWriter != null) {
+					String line = String.format("%.2f,%d,%d", transmissionTime,
+							pdC.hashCode(), pdS.hashCode());
+					logWriter.println(line);
+					loggedTransmissions++;
+				} else if (loggedTransmissions > 0) {
+					System.err.printf("WARNING: logWriter is null at tick %.2f (logged %d transmissions before this)%n",
+							transmissionTime, loggedTransmissions);
+					loggedTransmissions = -1; // Only print warning once
+				}
 			}
 		}
 		transmissionsTally++;
@@ -180,15 +190,17 @@ public class FacilityOutbreak {
 			if (nextAction != null) {
 				schedule.removeAction(nextAction);
 			}
+			double oldRate = transmissionRate;
 			transmissionRate = newTransmissionRate;
 			if (transmissionRate > 0) {
 				distro = new ExponentialDistribution(1 / transmissionRate);
 				double timeToNextEvent = distro.sample();
-				ScheduleParameters params = ScheduleParameters.createOneTime(schedule.getTickCount() + timeToNextEvent); // or
-																															// any
-				// time-based
-				// logic
+				ScheduleParameters params = ScheduleParameters.createOneTime(schedule.getTickCount() + timeToNextEvent);
 				nextAction = schedule.schedule(params, this, "doTransmission");
+			} else if (oldRate > 0) {
+				// Rate dropped to zero - log this
+				System.out.printf("Transmission rate dropped to 0 at tick %.2f (was %.6f, S=%.2f, C=%.2f)%n",
+						schedule.getTickCount(), oldRate, numSusceptibleEffective, numContagiousEffective);
 			}
 		}
 	}
@@ -455,5 +467,34 @@ public class FacilityOutbreak {
 
 	public double getTransmissionRate() {
 		return transmissionRate;
+	}
+
+	public void closeLogWriter() {
+		stop = true;  // Prevent any more writes FIRST
+		double tick = schedule.getTickCount();
+		System.out.printf("closeLogWriter() called at tick %.2f, logged %d transmissions, logWriter=%s%n",
+				tick, loggedTransmissions, (logWriter != null ? "open" : "null"));
+		if (logWriter != null) {
+			try {
+				logWriter.flush();
+			} catch (Exception e) {
+				System.err.println("Error flushing logWriter: " + e.getMessage());
+			}
+			try {
+				// Force sync to disk before closing
+				if (logFileStream != null) {
+					logFileStream.getFD().sync();
+				}
+			} catch (Exception e) {
+				System.err.println("Error syncing logWriter: " + e.getMessage());
+			}
+			try {
+				logWriter.close();
+			} catch (Exception e) {
+				System.err.println("Error closing logWriter: " + e.getMessage());
+			}
+			logWriter = null;
+			logFileStream = null;
+		}
 	}
 }

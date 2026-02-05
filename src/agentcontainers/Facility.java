@@ -590,5 +590,11 @@ public class Facility extends AgentContainer{
             }
             admissionsWriter = null;
         }
+        // Close log writers for all outbreaks
+        for (FacilityOutbreak fo : outbreaks) {
+            if (fo != null) {
+                fo.closeLogWriter();
+            }
+        }
     }
 }
