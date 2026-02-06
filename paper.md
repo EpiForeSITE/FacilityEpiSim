@@ -46,7 +46,7 @@ patients and evaluate the utility of patient surveillance strategies before impl
 
 # Statement of need
 
-The tool is an agent-based model (ABM) built with Repast Simphony 2.11.0 for simulating transmission of
+The tool is an agent-based model (ABM) built with Repast Simphony 2.11.0 @North2013RepastSimphony for simulating transmission of
 an infectious organism in a healthcare facility. The model simulates flow of inpatients or residents
 of the facility over a specified time period, tracking patient admissions, lengths of stay, and
 discharges, disease importation and transmission dynamics, clinical detection and active surveillance
