@@ -4,7 +4,7 @@ title: "Run a Single Iteration of the Model"
 
 ## Prerequisites
 - a functioning installation of Repast Simphony
-- a project in Repast that is a clone of the facilityepisim project
+- a project in Repast that is a clone of the FacilityEpiSim project
 
 ## Run the model one time
 Single runs of the model are useful primarily for verifying that the 

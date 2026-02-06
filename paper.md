@@ -1,5 +1,5 @@
 ---
-title: 'facilityepisim: an agent-based simulation package for infectious disease transmission in healthcare facilities'
+title: 'FacilityEpiSim: an agent-based simulation package for infectious disease transmission in healthcare facilities'
 tags:
   - Java
   - Repast
@@ -39,7 +39,7 @@ and financial strain on health systems worldwide. HAIs arise from complex intera
 patients, healthcare workers, the clinical environment, and microbial evolution. Because these
 interconnected processes are difficult to observe in real-world or experimental settings, models 
 provide a powerful, risk-free way to understand how infections spread and how interventions may
-reduce transmission. We developed facilityepisim, a continuous-time, agent-based simulation model of
+reduce transmission. We developed FacilityEpiSim, a continuous-time, agent-based simulation model of
 infectious disease transmission in healthcare facilities. The software tool allows modelers and
 their public health collaborators to run simulations to study transmission dynamics among facility
 patients and evaluate the utility of patient surveillance strategies before implementing them.  
