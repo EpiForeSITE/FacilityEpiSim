@@ -41,9 +41,7 @@ When a new patient is admitted:
 ## Transmission
 
 ### Beta-Based Transmission
-::: {.callout-note}
-**TODO:  Find a link to the mathematical explanation of this.**
-:::
+
 Disease transmission within the facility follows a **contact transmission model**:
 
 - **Beta coefficient** (`beta`, default: 0.0615)

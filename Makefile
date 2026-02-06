@@ -230,8 +230,8 @@ join-outputs:
 	awk 'NR==FNR && FNR>1 {a[$$1]=$$0; next} FNR>1 && $$1 in a {print a[$$1] "," substr($$0, index($$0,$$2))}' $$map_file $$data_file > new_analysis/$$output_file
 
 # Check that all output .txt files have complete final rows (properly flushed)
-.PHONY: check_all_flushed
-check_all_flushed:
+.PHONY: check-all-flushed
+check-all-flushed:
 	@echo "Checking output files for complete final rows..."
 	@echo ""
 	@all_ok=true; \
